@@ -1,0 +1,39 @@
+.container {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.container img {
+  margin: 0 auto;
+	width: 100%;
+	display: block;
+	vertical-align: top;
+}
+
+.text-container {
+	background-color: #102455;
+	height: 388px;
+	text-align: center;
+}
+
+.text-container div {
+	margin: 0 auto;
+  padding-top: 80px;
+  width: 628px;
+}
+
+.text-container p {
+	width: 572px;
+	text-align: left;
+  margin: 0;
+  font-size: 20px;
+  color: #FFF;
+}
+
+.text-container p:first-child {
+	width: 628px;
+  font-size: 44px;
+  margin-bottom: 54px;
+}
