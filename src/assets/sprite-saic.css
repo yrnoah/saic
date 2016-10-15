@@ -18,181 +18,163 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 */
 .icon-angel-down-red {
   background-image: url(sprite-saic.png);
-  background-position: -2582px -734px;
-  width: 118px;
-  height: 64px;
+  background-position: -1160px -395px;
+  width: 59px;
+  height: 32px;
 }
 .icon-angel-down {
   background-image: url(sprite-saic.png);
-  background-position: -2582px -798px;
-  width: 118px;
-  height: 64px;
+  background-position: -1160px -427px;
+  width: 59px;
+  height: 32px;
 }
 .icon-angel-right {
   background-image: url(sprite-saic.png);
-  background-position: -2696px -946px;
-  width: 18px;
-  height: 28px;
+  background-position: -1242px -324px;
+  width: 9px;
+  height: 14px;
 }
 .icon-avatar-1 {
   background-image: url(sprite-saic.png);
-  background-position: -2530px -1174px;
-  width: 84px;
-  height: 84px;
+  background-position: -1132px -465px;
+  width: 42px;
+  height: 42px;
 }
 .icon-avatar-2 {
   background-image: url(sprite-saic.png);
-  background-position: -2390px -1174px;
-  width: 140px;
-  height: 140px;
+  background-position: -1174px -465px;
+  width: 42px;
+  height: 42px;
 }
 .icon-avatar-3 {
   background-image: url(sprite-saic.png);
-  background-position: -2582px -946px;
-  width: 84px;
-  height: 84px;
+  background-position: -1090px -507px;
+  width: 42px;
+  height: 42px;
 }
 .icon-avatar-4 {
   background-image: url(sprite-saic.png);
-  background-position: -2614px -1174px;
-  width: 84px;
-  height: 84px;
+  background-position: -1174px -507px;
+  width: 42px;
+  height: 42px;
 }
 .icon-avatar-5 {
   background-image: url(sprite-saic.png);
-  background-position: -2582px -862px;
-  width: 84px;
-  height: 84px;
+  background-position: -1090px -465px;
+  width: 42px;
+  height: 42px;
 }
 .icon-avatar-6 {
   background-image: url(sprite-saic.png);
-  background-position: -2582px -1030px;
-  width: 84px;
-  height: 84px;
+  background-position: -1132px -507px;
+  width: 42px;
+  height: 42px;
 }
 .icon-avatar-user {
   background-image: url(sprite-saic.png);
-  background-position: -2250px -1174px;
-  width: 140px;
-  height: 140px;
-}
-.icon-bg-international {
-  background-image: url(sprite-saic.png);
-  background-position: -750px 0px;
-  width: 750px;
-  height: 815px;
-}
-.icon-bg-market {
-  background-image: url(sprite-saic.png);
-  background-position: 0px 0px;
-  width: 750px;
-  height: 870px;
-}
-.icon-bg-news {
-  background-image: url(sprite-saic.png);
-  background-position: -1500px 0px;
-  width: 750px;
-  height: 808px;
-}
-.icon-bg-shanghai {
-  background-image: url(sprite-saic.png);
-  background-position: 0px -870px;
-  width: 750px;
-  height: 700px;
+  background-position: -1090px -395px;
+  width: 70px;
+  height: 70px;
 }
 .icon-button-action {
   background-image: url(sprite-saic.png);
-  background-position: -2666px -896px;
-  width: 40px;
-  height: 30px;
+  background-position: -1222px -324px;
+  width: 20px;
+  height: 15px;
 }
 .icon-folder {
   background-image: url(sprite-saic.png);
-  background-position: -750px -870px;
+  background-position: 0px 0px;
   width: 750px;
   height: 576px;
 }
 .icon-heart {
   background-image: url(sprite-saic.png);
-  background-position: -2666px -946px;
-  width: 30px;
-  height: 28px;
+  background-position: -1240px -307px;
+  width: 15px;
+  height: 14px;
 }
 .icon-label-dollar {
   background-image: url(sprite-saic.png);
-  background-position: -2582px -1114px;
-  width: 72px;
-  height: 48px;
+  background-position: -1219px -395px;
+  width: 36px;
+  height: 24px;
 }
 .icon-label-law {
   background-image: url(sprite-saic.png);
-  background-position: -2316px -1314px;
-  width: 54px;
-  height: 58px;
+  background-position: -1222px -253px;
+  width: 27px;
+  height: 29px;
 }
 .icon-label-market {
   background-image: url(sprite-saic.png);
-  background-position: -2530px -1258px;
-  width: 62px;
-  height: 50px;
+  background-position: -1222px -282px;
+  width: 31px;
+  height: 25px;
 }
 .icon-label-product {
   background-image: url(sprite-saic.png);
-  background-position: -2250px -1314px;
-  width: 66px;
-  height: 66px;
+  background-position: -1222px -220px;
+  width: 33px;
+  height: 33px;
 }
 .icon-label-selected {
   background-image: url(sprite-saic.png);
-  background-position: -2666px -862px;
-  width: 36px;
-  height: 34px;
+  background-position: -1222px -307px;
+  width: 18px;
+  height: 17px;
+}
+.icon-logo-small {
+  background-image: url(sprite-saic.png);
+  background-position: -1090px -220px;
+  width: 132px;
+  height: 175px;
 }
 .icon-logo {
   background-image: url(sprite-saic.png);
-  background-position: -2250px -734px;
-  width: 332px;
-  height: 440px;
+  background-position: -1090px 0px;
+  width: 166px;
+  height: 220px;
 }
 .icon-pic-1 {
   background-image: url(sprite-saic.png);
-  background-position: -2250px 0px;
-  width: 466px;
-  height: 384px;
+  background-position: 0px -751px;
+  width: 233px;
+  height: 192px;
 }
 .icon-pic-2 {
   background-image: url(sprite-saic.png);
-  background-position: -2250px -384px;
-  width: 452px;
-  height: 350px;
+  background-position: -522px -576px;
+  width: 226px;
+  height: 175px;
 }
 .icon-pic-3 {
   background-image: url(sprite-saic.png);
-  background-position: -522px -1570px;
-  width: 522px;
-  height: 350px;
+  background-position: 0px -576px;
+  width: 261px;
+  height: 175px;
 }
 .icon-pic-4 {
   background-image: url(sprite-saic.png);
-  background-position: 0px -1570px;
-  width: 522px;
-  height: 350px;
+  background-position: -261px -576px;
+  width: 261px;
+  height: 175px;
 }
 .icon-pic-5 {
   background-image: url(sprite-saic.png);
-  background-position: -1566px -1570px;
-  width: 522px;
-  height: 350px;
+  background-position: -750px -397px;
+  width: 261px;
+  height: 175px;
 }
 .icon-pic-6 {
   background-image: url(sprite-saic.png);
-  background-position: -1044px -1570px;
-  width: 522px;
-  height: 350px;
+  background-position: -750px -222px;
+  width: 261px;
+  height: 175px;
 }
 .icon-text-report {
   background-image: url(sprite-saic.png);
-  background-position: -1500px -870px;
-  width: 680px;
-  height: 444px;
+  background-position: -750px 0px;
+  width: 340px;
+  height: 222px;
 }

@@ -10,6 +10,7 @@
 <style scoped>
 	.slogan {
 		position: relative;
+    background-color: #102455;
 	}
 
 	img {
@@ -21,13 +22,13 @@
 
 	.slogan div {
 		position: absolute;
-		bottom: 120px;
+		bottom: 60px;
 		width: 100%;
     text-align: center;
 	}
 
 	p {
     color: #FFF;
-    font-size: 36px;
+    font-size: 18px;
   }
 </style>

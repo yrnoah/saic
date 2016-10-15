@@ -21,7 +21,7 @@
 	}
 
 	.navy-line {
-		height: 80px;
+		height: 40px;
 		background-color: #206CC3;
 	}
 </style>

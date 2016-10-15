@@ -7,6 +7,7 @@
       <international></international>
       <market></market>
       <slogan></slogan>
+      <introduction></introduction>
 		</div>
 	</div>
 </template>
@@ -19,6 +20,7 @@
   import International from '../components/International';
   import Market from '../components/Market';
   import Slogan from '../components/Slogan';
+  import Introduction from '../components/Introduction';
 
   export default {
     components: {
@@ -28,12 +30,12 @@
       International,
       Market,
       Slogan,
+      Introduction,
     },
     ready() {
       const appSwiper = new Swiper('.swiper-container', {
         direction: 'vertical',
         loop: false,
-        mousewheelControl: true,
       });
       appSwiper.onResize();
     },
@@ -46,7 +48,9 @@
 	.swiper-container {
 		height: 100%;
 		width: 100%;
-    min-height: 1334px;
-    min-width: 750px;
 	}
+  .swiper-slide {
+    overflow: hidden;
+    height: 100%;
+  }
 </style>

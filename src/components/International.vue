@@ -20,10 +20,11 @@
 	}
 
 	.text-container div {
-    padding-top: 54px;
+    padding-top: 20px;
 	}
 
 	.text-container p:first-child {
-    font-size: 38px;
+    font-size: 19px;
+    margin-bottom: 20px;
 	}
 </style>

@@ -1,8 +1,8 @@
 <template>
 	<div class="swiper-slide cover">
-		<div class="icon-text-report"></div>
+		<img src="../images/text-report.png" alt="report" class="report">
     <img src="../images/folder.png" alt="folder" class="folder">
-		<div class="folder-container">
+		<div class="angel">
       <div class="icon-angel-down-red animate-bounce-down"></div>
 		</div>
 	</div>
@@ -14,13 +14,17 @@
 		height: 100%;
 	}
 
-	.icon-text-report {
-		margin: 132px auto 60px auto;
+	.report {
+		width: 272px;
+    height: 178px;
+    margin: 66px auto 30px auto;
+    display: block;
+    vertical-align: top;
 	}
 
-	.folder-container {
+	.angel {
 		position: absolute;
-		bottom: 60px;
+		bottom: 20px;
 		left: 0;
 		right: 0;
 	}
@@ -39,14 +43,14 @@
 
 	@keyframes bounce-down {
 		25% {
-			transform: translateY(-15px);
+			transform: translateY(-5px);
 		}
 		50%,
 		100% {
 			transform: translateY(0);
 		}
 		75% {
-			transform: translateY(20px);
+			transform: translateY(10px);
 		}
 	}
 
