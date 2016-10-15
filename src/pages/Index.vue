@@ -15,6 +15,7 @@
       <recruit></recruit>
       <requirement></requirement>
       <provide></provide>
+      <provide-detail></provide-detail>
       <email></email>
 		</div>
 	</div>
@@ -38,6 +39,7 @@
   import Recruit from '../components/Recruit';
   import Requirement from '../components/Requirement';
   import Provide from '../components/Provide';
+  import ProvideDetail from '../components/ProvideDetail';
   import Email from '../components/Email';
 
   export default {
@@ -57,6 +59,7 @@
       Requirement,
       Provide,
       Email,
+      ProvideDetail,
     },
     ready() {
       appSwiper = new Swiper('.swiper-container', {
