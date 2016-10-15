@@ -1,21 +1,29 @@
 <template>
 	<div class="swiper-container">
 		<div class="swiper-wrapper">
-      <cover></cover>
-      <elite></elite>
-      <enterprise></enterprise>
-      <international></international>
-      <market></market>
-      <slogan></slogan>
-      <introduction></introduction>
-      <major></major>
-      <choice></choice>
+			<cover></cover>
+			<elite></elite>
+			<enterprise></enterprise>
+			<international></international>
+			<market></market>
+			<slogan></slogan>
+			<introduction></introduction>
+			<major></major>
+			<choice></choice>
+			<login></login>
+			<years></years>
+      <recruit></recruit>
+      <requirement></requirement>
+      <provide></provide>
+      <email></email>
 		</div>
 	</div>
 </template>
 
 <script>
   import Swiper from '../utils/swiper-3.3.1.min.js';
+  let appSwiper;
+  import { $ } from '../utils/utils.js';
   import Cover from '../components/Cover';
   import Elite from '../components/Elite';
   import Enterprise from '../components/Enterprise';
@@ -25,6 +33,12 @@
   import Introduction from '../components/Introduction';
   import Major from '../components/Major';
   import Choice from '../components/Choice';
+  import Login from '../components/Login';
+  import Years from '../components/YearAnimation';
+  import Recruit from '../components/Recruit';
+  import Requirement from '../components/Requirement';
+  import Provide from '../components/Provide';
+  import Email from '../components/Email';
 
   export default {
     components: {
@@ -37,28 +51,45 @@
       Introduction,
       Major,
       Choice,
+      Login,
+      Years,
+      Recruit,
+      Requirement,
+      Provide,
+      Email,
     },
     ready() {
-      const appSwiper = new Swiper('.swiper-container', {
+      appSwiper = new Swiper('.swiper-container', {
         direction: 'vertical',
         loop: false,
+        noSwiping: true,
+        noSwipingClass: 'stop-swiping',
       });
-      appSwiper.onResize();
+      $('.skipBtn').click(() => {
+        console.log(appSwiper); // tofix
+        appSwiper.slidePrev();
+      });
+    },
+    methods: {
+      slideNext() { // tofix
+        console.log(appSwiper);
+        appSwiper.slidePrev();
+      },
     },
   };
 </script>
 
 <style>
-  @import '../assets/swiper-3.3.1.min.css';
-  @import '../assets/sprite-saic.css';
+	@import '../assets/swiper-3.3.1.min.css';
+	@import '../assets/sprite-saic.css';
 	.swiper-container {
 		height: 100%;
 		width: 100%;
-    max-width: 750px;
-    max-height: 1206px;
+		max-width: 750px;
 	}
-  .swiper-slide {
-    overflow: hidden;
-    height: 100%;
-  }
+
+	.swiper-slide {
+		overflow: hidden;
+		height: 100%;
+	}
 </style>

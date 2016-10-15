@@ -7,6 +7,8 @@
 <style>
 	html {
 		height: 100%;
+    min-height: 560px;
+    max-width: 750px;
 	}
 
 	body {
