@@ -37,10 +37,11 @@
 		width: 100%;
 		background-color: #EAECEF;
 	}
-  .detail p {
-    color: #4A4A4A;
-    font-size: 16px;
-    text-align: left;
-    padding: 20px 30px;
-  }
+
+	.detail p {
+		color: #4A4A4A;
+		font-size: 14px;
+		text-align: left;
+		padding: 10px 30px;
+	}
 </style>

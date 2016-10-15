@@ -22,13 +22,14 @@
 
 	.slogan div {
 		position: absolute;
-		bottom: 60px;
+		bottom: 30px;
 		width: 100%;
     text-align: center;
 	}
 
 	p {
     color: #FFF;
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: 200;
   }
 </style>

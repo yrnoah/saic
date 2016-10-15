@@ -8,6 +8,8 @@
       <market></market>
       <slogan></slogan>
       <introduction></introduction>
+      <major></major>
+      <choice></choice>
 		</div>
 	</div>
 </template>
@@ -21,6 +23,8 @@
   import Market from '../components/Market';
   import Slogan from '../components/Slogan';
   import Introduction from '../components/Introduction';
+  import Major from '../components/Major';
+  import Choice from '../components/Choice';
 
   export default {
     components: {
@@ -31,6 +35,8 @@
       Market,
       Slogan,
       Introduction,
+      Major,
+      Choice,
     },
     ready() {
       const appSwiper = new Swiper('.swiper-container', {
@@ -48,6 +54,8 @@
 	.swiper-container {
 		height: 100%;
 		width: 100%;
+    max-width: 750px;
+    max-height: 1206px;
 	}
   .swiper-slide {
     overflow: hidden;
