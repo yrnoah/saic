@@ -1,14 +1,24 @@
 <template>
-	<div class="swiper-slide login">
+	<div class="swiper-slide login stop-swiping">
 		<div class="weui-uploader">
 			<p>添加照片</p>
 			<input id="uploaderInput" class="uploader" type="file" accept="image/*" multiple/>
 		</div>
 		<input type="text" placeholder="输入昵称" class="nameInput">
     <button class="submit">确认</button>
-    <div class="skipBtn">跳过次步骤&nbsp;&gt;</div>
+    <div class="skipBtn" @click="skip">跳过次步骤&nbsp;&gt;</div>
 	</div>
 </template>
+
+<script>
+  export default {
+    methods: {
+      skip() {
+        this.$dispatch('slideNext');
+      },
+    },
+  };
+</script>
 
 <style scoped>
 	.login {

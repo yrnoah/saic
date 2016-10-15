@@ -24,7 +24,7 @@
 <script>
   import Swiper from '../utils/swiper-3.3.1.min.js';
   let appSwiper;
-  import { $ } from '../utils/utils.js';
+  // import { $ } from '../utils/utils.js';
   import Cover from '../components/Cover';
   import Elite from '../components/Elite';
   import Enterprise from '../components/Enterprise';
@@ -68,15 +68,10 @@
         noSwiping: true,
         noSwipingClass: 'stop-swiping',
       });
-      $('.skipBtn').click(() => {
-        console.log(appSwiper); // tofix
-        appSwiper.slidePrev();
-      });
     },
-    methods: {
-      slideNext() { // tofix
-        console.log(appSwiper);
-        appSwiper.slidePrev();
+    events: {
+      'slideNext'() {
+        appSwiper.slideNext();
       },
     },
   };
