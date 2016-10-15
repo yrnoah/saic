@@ -12,11 +12,12 @@
 			<choice></choice>
 			<login></login>
 			<years></years>
-      <recruit></recruit>
-      <requirement></requirement>
-      <provide></provide>
-      <provide-detail></provide-detail>
-      <email></email>
+			<wx-circles></wx-circles>
+			<recruit></recruit>
+			<requirement></requirement>
+			<provide></provide>
+			<provide-detail></provide-detail>
+			<email></email>
 		</div>
 	</div>
 </template>
@@ -41,6 +42,7 @@
   import Provide from '../components/Provide';
   import ProvideDetail from '../components/ProvideDetail';
   import Email from '../components/Email';
+  import WxCircles from '../components/WechatCircles';
 
   export default {
     components: {
@@ -60,6 +62,7 @@
       Provide,
       Email,
       ProvideDetail,
+      WxCircles,
     },
     ready() {
       appSwiper = new Swiper('.swiper-container', {
@@ -67,10 +70,21 @@
         loop: false,
         noSwiping: true,
         noSwipingClass: 'stop-swiping',
+        onSlideNextEnd: (swiper) => {
+          if (swiper.activeIndex === 9) {
+            appSwiper.lockSwipeToNext();
+          }
+        },
+        onSlidePrevEnd: (swiper) => {
+          if (swiper.activeIndex === 8) {
+            appSwiper.unlockSwipeToNext();
+          }
+        },
       });
     },
     events: {
       'slideNext'() {
+        appSwiper.unlockSwipeToNext();
         appSwiper.slideNext();
       },
     },
@@ -83,11 +97,9 @@
 	.swiper-container {
 		height: 100%;
 		width: 100%;
-		max-width: 750px;
 	}
 
 	.swiper-slide {
 		overflow: hidden;
-		height: 100%;
 	}
 </style>

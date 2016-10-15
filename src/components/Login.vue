@@ -1,5 +1,5 @@
 <template>
-	<div class="swiper-slide login stop-swiping">
+	<div class="swiper-slide login">
 		<div class="weui-uploader">
 			<p>添加照片</p>
 			<input id="uploaderInput" class="uploader" type="file" accept="image/*" multiple/>

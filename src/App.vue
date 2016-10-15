@@ -20,6 +20,10 @@
     font-size: 12px;
 	}
 
+  p,div {
+    margin: 0;
+  }
+
   #app {
     flex: 1;
     height: 100%;
