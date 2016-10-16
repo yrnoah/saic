@@ -18,157 +18,85 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 */
 .icon-angel-down-red {
   background-image: url(sprite-saic.png);
-  background-position: -1147px -421px;
+  background-position: -197px -192px;
   width: 30px;
   height: 16px;
 }
 .icon-angel-down {
   background-image: url(sprite-saic.png);
-  background-position: -1117px -421px;
+  background-position: -235px -159px;
   width: 30px;
   height: 16px;
 }
 .icon-angel-right {
   background-image: url(sprite-saic.png);
-  background-position: -1164px -357px;
+  background-position: -47px -220px;
   width: 9px;
   height: 14px;
 }
-.icon-avatar-1 {
-  background-image: url(sprite-saic.png);
-  background-position: -1011px -449px;
-  width: 42px;
-  height: 42px;
-}
-.icon-avatar-2 {
-  background-image: url(sprite-saic.png);
-  background-position: -1123px -379px;
-  width: 42px;
-  height: 42px;
-}
-.icon-avatar-3 {
-  background-image: url(sprite-saic.png);
-  background-position: -1081px -379px;
-  width: 42px;
-  height: 42px;
-}
-.icon-avatar-4 {
-  background-image: url(sprite-saic.png);
-  background-position: -1131px -304px;
-  width: 42px;
-  height: 42px;
-}
-.icon-avatar-5 {
-  background-image: url(sprite-saic.png);
-  background-position: -1131px -262px;
-  width: 42px;
-  height: 42px;
-}
-.icon-avatar-6 {
-  background-image: url(sprite-saic.png);
-  background-position: -1131px -220px;
-  width: 42px;
-  height: 42px;
-}
-.icon-avatar-user {
-  background-image: url(sprite-saic.png);
-  background-position: -1011px -379px;
-  width: 70px;
-  height: 70px;
-}
 .icon-button-action {
   background-image: url(sprite-saic.png);
-  background-position: -1111px -449px;
+  background-position: -227px -192px;
   width: 20px;
   height: 15px;
 }
-.icon-folder {
+.icon-comment {
   background-image: url(sprite-saic.png);
-  background-position: 0px 0px;
-  width: 750px;
-  height: 576px;
+  background-position: -265px -159px;
+  width: 20px;
+  height: 16px;
+}
+.icon-heart-white {
+  background-image: url(sprite-saic.png);
+  background-position: -27px -220px;
+  width: 20px;
+  height: 18px;
 }
 .icon-heart {
   background-image: url(sprite-saic.png);
-  background-position: -1131px -449px;
+  background-position: -247px -192px;
   width: 15px;
   height: 14px;
 }
 .icon-label-dollar {
   background-image: url(sprite-saic.png);
-  background-position: -1081px -421px;
+  background-position: -199px -159px;
   width: 36px;
   height: 24px;
 }
 .icon-label-law {
   background-image: url(sprite-saic.png);
-  background-position: -1053px -449px;
+  background-position: 0px -220px;
   width: 27px;
   height: 29px;
 }
 .icon-label-market {
   background-image: url(sprite-saic.png);
-  background-position: -1080px -449px;
+  background-position: -166px -192px;
   width: 31px;
   height: 25px;
 }
 .icon-label-product {
   background-image: url(sprite-saic.png);
-  background-position: -1131px -346px;
+  background-position: -166px -159px;
   width: 33px;
   height: 33px;
 }
 .icon-label-selected {
   background-image: url(sprite-saic.png);
-  background-position: -1164px -346px;
+  background-position: -262px -192px;
   width: 12px;
   height: 11px;
 }
 .icon-logo-small {
   background-image: url(sprite-saic.png);
-  background-position: -1011px -220px;
+  background-position: -166px 0px;
   width: 120px;
   height: 159px;
 }
 .icon-logo {
   background-image: url(sprite-saic.png);
-  background-position: -1011px 0px;
+  background-position: 0px 0px;
   width: 166px;
   height: 220px;
-}
-.icon-pic-1 {
-  background-image: url(sprite-saic.png);
-  background-position: 0px -751px;
-  width: 233px;
-  height: 192px;
-}
-.icon-pic-2 {
-  background-image: url(sprite-saic.png);
-  background-position: -261px -576px;
-  width: 226px;
-  height: 175px;
-}
-.icon-pic-3 {
-  background-image: url(sprite-saic.png);
-  background-position: -750px -350px;
-  width: 261px;
-  height: 175px;
-}
-.icon-pic-4 {
-  background-image: url(sprite-saic.png);
-  background-position: -750px -175px;
-  width: 261px;
-  height: 175px;
-}
-.icon-pic-5 {
-  background-image: url(sprite-saic.png);
-  background-position: 0px -576px;
-  width: 261px;
-  height: 175px;
-}
-.icon-pic-6 {
-  background-image: url(sprite-saic.png);
-  background-position: -750px 0px;
-  width: 261px;
-  height: 175px;
 }

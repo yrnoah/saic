@@ -1,5 +1,5 @@
 <template>
-	<div class="wx-circles scroll">
+	<div class="wx-circles">
 		<div class="top-container">
 			<div class="this-year">
 				<span>2</span>
@@ -12,7 +12,7 @@
 			<img :src='user.avatar' alt="用户" class="avatar-user">
 			<p class="username">{{ user.name }}</p>
 		</div>
-		<div class="message" v-for="message in messages">
+		<div class="message" v-for="message in messages" track-by="$index">
 			<img alt="朋友1" class="friend-avatar" :src='message.avatar'>
 			<div class="message-detail">
 				<span class="friend-name">{{ message.username }}</span>
@@ -21,7 +21,12 @@
 				<p class="pic-location">{{ message.location }}</p>
 				<div class="action-container">
 					<p class="message-time">{{ message.time }}</p>
-					<div class="icon-button-action"></div>
+					<div class="icon-button-action" @click="showBtns($index)">
+						<div class="action-btns" v-bind:style="visible($index)">
+							<button @click="follow()"><div class="icon-heart-white btn-icon"></div>赞</button>
+							<button @click="writeComment()"><div class="icon-comment btn-icon"></div>评论</button>
+						</div>
+					</div>
 				</div>
 				<div class="comment-container">
 					<div class="follows">
@@ -33,8 +38,8 @@
 					<div class="comments" v-if='message.comments'>
 						<p v-for='comment in message.comments'>
 							<span>{{ comment.user }}</span>
-              <span v-if='comment.replyTo' class="normal-text">回复</span>
-              <span>{{ comment.replyTo }}</span>：{{ comment.detail }}
+							<span v-if='comment.replyTo' class="normal-text">回复</span>
+							<span>{{ comment.replyTo }}</span>：{{ comment.detail }}
 						</p>
 					</div>
 				</div>
@@ -50,17 +55,40 @@
       return {
         user: { name: '五年后的我', avarar: '../images/avatar-user.png' },
         messages: [],
+        activeBtnId: null,
       };
     },
     ready() {
       this.messages = messageData;
       window.addEventListener('scroll', () => {
+        this.activeBtnId = '';
         if (window.scrollY >= document.body.scrollHeight - document.body.clientHeight) {
           setTimeout(() => {
             this.$router.go({ name: 'recruit' });
           }, 4000);
         }
       });
+    },
+    methods: {
+      showBtns(index) {
+        this.activeBtnId = index;
+        console.log(this.activeBtnId, index);
+      },
+      visible(id) {
+        let btnClass;
+        if (id !== this.activeBtnId) {
+          btnClass = { display: 'none' };
+        } else {
+          btnClass = { display: '' };
+        }
+        return btnClass;
+      },
+      follow() {
+        console.log('follow');
+      },
+      writeComment() {
+        console.log('write');
+      },
     },
   };
 </script>
@@ -188,18 +216,54 @@
 		display: inline-block;
 		top: 0;
 		right: -20px;
+		overflow: visible;
+	}
+
+	.action-btns {
+		position: absolute;
+		left: -165px;
+		top: -10px;
+		border-radius: 5px;
+		background-color: #353a3d;
+		z-index: 2;
+    display: visible;
+	}
+
+  .activeBtn {
+    display: visible;
+  }
+
+	.action-btns button {
+		display: inline-block;
+		float: left;
+		width: 80px;
+		height: 40px;
+		color: #FFF;
+		outline: none;
+		border: none;
+		background-color: transparent;
+		vertical-align: middle;
+		font-size: 14px;
+		font-weight: 200;
+	}
+
+	.btn-icon {
+		display: inline-block;
+		vertical-align: top;
+		margin-right: 4px;
 	}
 
 	.comment-container {
 		margin: 10px 0;
 		padding: 4px 6px;
 		background-color: #F3F3F5;
+		position: relative;
 	}
 
-  .comments {
-    border-top: 1px solid #E1E2DF;
-    padding: 2px 0;
-  }
+	.comments {
+		border-top: 1px solid #E1E2DF;
+		padding: 2px 0;
+	}
 
 	.comments span {
 		color: #576B95;
@@ -211,9 +275,9 @@
 		vertical-align: top;
 	}
 
-  .follows {
-    padding-bottom: 2px;
-  }
+	.follows {
+		padding-bottom: 2px;
+	}
 
 	.follows p {
 		display: inline-block;
@@ -221,9 +285,23 @@
 		color: #576B95;
 		font-size: 12px;
 	}
-  .comments .normal-text {
-    color: #000;
-    font-size: 12px;
-    font-weight: normal;
-  }
+
+	.comments .normal-text {
+		color: #000;
+		font-size: 12px;
+		font-weight: normal;
+	}
+
+	.comment-container:before {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 4;
+		top: -8px;
+		width: 0;
+		height: 0;
+		border-right: 6px solid transparent;
+		border-left: 6px solid transparent;
+		border-bottom: 8px solid #F3F3F5;
+	}
 </style>
