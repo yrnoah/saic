@@ -6,19 +6,9 @@
 		</div>
 		<input type="text" placeholder="输入昵称" class="nameInput">
     <button class="submit">确认</button>
-    <div class="skipBtn" @click="skip">跳过次步骤&nbsp;&gt;</div>
+    <button class="skipBtn" v-link="{name: 'years'}">跳过次步骤&nbsp;&gt;</button>
 	</div>
 </template>
-
-<script>
-  export default {
-    methods: {
-      skip() {
-        this.$dispatch('slideNext');
-      },
-    },
-  };
-</script>
 
 <style scoped>
 	.login {
