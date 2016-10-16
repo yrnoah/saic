@@ -1,6 +1,8 @@
 <template>
 	<div class="swiper-container">
 		<div class="swiper-wrapper">
+      <start></start>
+      <decision></decision>
 			<recruit></recruit>
 			<requirement></requirement>
 			<provide></provide>
@@ -12,8 +14,10 @@
 
 <script>
   import Swiper from '../utils/swiper-3.3.1.min.js';
-  let appSwiper;
+  let recruitSwiper;
   // import { $ } from '../utils/utils.js';
+  import Start from '../components/Start';
+  import Decision from '../components/Decision';
   import Recruit from '../components/Recruit';
   import Requirement from '../components/Requirement';
   import Provide from '../components/Provide';
@@ -22,6 +26,8 @@
 
   export default {
     components: {
+      Start,
+      Decision,
       Recruit,
       Requirement,
       Provide,
@@ -29,15 +35,15 @@
       ProvideDetail,
     },
     ready() {
-      appSwiper = new Swiper('.swiper-container', {
+      recruitSwiper = new Swiper('.swiper-container', {
         direction: 'vertical',
         loop: false,
       });
     },
     events: {
       'slideNext'() {
-        appSwiper.unlockSwipeToNext();
-        appSwiper.slideNext();
+        recruitSwiper.unlockSwipeToNext();
+        recruitSwiper.slideNext();
       },
     },
   };

@@ -1,7 +1,7 @@
 <template>
-	<div class="swiper-slide start">
+	<div class="swiper-slide decision">
 		<current-year></current-year>
-    <p class="start-content">千里之行&nbsp;始于足下</p>
+		<p class="decision-content">今天的一个决定<br>将帮助你成就五年后的自己</p>
 	</div>
 </template>
 
@@ -15,13 +15,13 @@
 </script>
 
 <style scoped>
-	.start {
+	.decision {
 		position: relative;
 		background: url('../images/bg-navy.png') no-repeat 100% 100%;
 		background-size: cover;
 		text-align: center;
 	}
-  .start-content {
+  .decision-content {
     color: #FFF;
     font-size: 20px;
     font-weight: 200;
