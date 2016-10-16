@@ -23,8 +23,8 @@
 					<p class="message-time">{{ message.time }}</p>
 					<div class="icon-button-action" @click="showBtns($index)">
 						<div class="action-btns" v-bind:style="visible($index)">
-							<button @click="follow()"><div class="icon-heart-white btn-icon"></div>赞</button>
-							<button @click="writeComment()"><div class="icon-comment btn-icon"></div>评论</button>
+							<button @click="follow($index)"><div class="icon-heart-white btn-icon"></div>赞</button>
+							<button @click="writeComment($index)"><div class="icon-comment btn-icon"></div>评论</button>
 						</div>
 					</div>
 				</div>
@@ -61,10 +61,11 @@
     ready() {
       this.messages = messageData;
       window.addEventListener('scroll', () => {
-        this.activeBtnId = '';
-        if (window.scrollY >= document.body.scrollHeight - document.body.clientHeight) {
-          setTimeout(() => {
+        this.activeBtnId = null;
+        if (window.scrollY >= document.body.scrollHeight - document.body.clientHeight - 10) {
+          const goRecruit = setTimeout(() => {
             this.$router.go({ name: 'recruit' });
+            clearTimeout(goRecruit);
           }, 4000);
         }
       });
@@ -72,7 +73,6 @@
     methods: {
       showBtns(index) {
         this.activeBtnId = index;
-        console.log(this.activeBtnId, index);
       },
       visible(id) {
         let btnClass;
@@ -83,11 +83,15 @@
         }
         return btnClass;
       },
-      follow() {
-        console.log('follow');
+      follow(index) {
+        // 查找是否包含自己
+        this.activeBtnId = null;
+        this.messages[index].follows = [...this.messages[index].follows, '我'];
       },
-      writeComment() {
-        console.log('write');
+      writeComment(index) {
+        // 调用输入法
+        this.activeBtnId = null;
+        console.log('write', index);
       },
     },
   };
@@ -152,6 +156,7 @@
 		height: 50px;
 		display: inline-block;
 		vertical-align: top;
+    background-color: transparent;
 	}
 
 	.username {
@@ -273,6 +278,8 @@
 	.icon-heart {
 		display: inline-block;
 		vertical-align: top;
+    position: relative;
+    top: 4px;
 	}
 
 	.follows {

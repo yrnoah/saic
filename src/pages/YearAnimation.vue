@@ -41,16 +41,18 @@
         onSlideChangeEnd: (swiper) => {
           if (swiper.activeIndex === 7) {
             animationSwiper.stopAutoplay();
-            setTimeout(() => {
+            const goCircles = setTimeout(() => {
               this.$router.go({ name: 'circles' });
-            }, 2000);
+              clearTimeout(goCircles);
+            }, 3000);
           }
         },
       });
       window.addEventListener('scroll', () => {
-        if (window.scrollY >= document.body.scrollHeight - document.body.clientHeight) {
-          setTimeout(() => {
+        if (window.scrollY >= document.body.scrollHeight - document.body.clientHeight - 10) {
+          const finishAnimation = setTimeout(() => {
             this.$router.go({ name: 'circles' });
+            clearTimeout(finishAnimation);
           }, 1000);
         }
       });
