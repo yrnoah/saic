@@ -9,74 +9,33 @@
 			</div>
 			<div class="red-line"></div>
 			<div class="lt-red-line"></div>
-			<img src="../images/avatar-user.png" alt="用户" class="avatar-user">
-			<p class="username">五年后的我</p>
+			<img :src='user.avatar' alt="用户" class="avatar-user">
+			<p class="username">{{ user.name }}</p>
 		</div>
-		<div class="message">
-			<img src="../images/avatar-1.png" alt="朋友1" class="friend-avatar">
+		<div class="message" v-for="message in messages">
+			<img alt="朋友1" class="friend-avatar" :src='message.avatar'>
 			<div class="message-detail">
-				<span class="friend-name">郑宴</span>
-				<p class="message-content">手握999k纯金笔都不如最后落笔那一刻的爽快，是时候该轮到我们上场了！</p>
+				<span class="friend-name">{{ message.username }}</span>
+				<p class="message-content">{{ message.content }}</p>
 				<img src="../images/pic-1.png" alt="详情1" class="detail-img">
-				<p class="pic-name">SAIC MOTOR Middle East FZE</p>
+				<p class="pic-location">{{ message.location }}</p>
 				<div class="action-container">
-					<p class="message-time">3分钟前</p>
+					<p class="message-time">{{ message.time }}</p>
 					<div class="icon-button-action"></div>
 				</div>
 				<div class="comment-container">
 					<div class="follows">
 						<div class="icon-heart"></div>
-						<p>金纪，翁玉华，Lily，Rebecca，简晰，崔爽文，葛文德，张雅琴</p>
+						<p>
+							<span v-for='follow in message.follows'>{{ follow }}，</span>
+						</p>
 					</div>
-					<div class="comments">
-						<p>简晰：恭喜郑总！阿联酋最大的经销商都被你们拿下了！</p>
-						<p>林晨：干得漂亮！</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="message">
-			<img src="../images/avatar-1.png" alt="朋友1" class="friend-avatar">
-			<div class="message-detail">
-				<span class="friend-name">郑宴</span>
-				<p class="message-content">手握999k纯金笔都不如最后落笔那一刻的爽快，是时候该轮到我们上场了！</p>
-				<img src="../images/pic-1.png" alt="详情1" class="detail-img">
-				<p class="pic-name">SAIC MOTOR Middle East FZE</p>
-				<div class="action-container">
-					<p class="message-time">3分钟前</p>
-					<div class="icon-button-action"></div>
-				</div>
-				<div class="comment-container">
-					<div class="follows">
-						<div class="icon-heart"></div>
-						<p>金纪，翁玉华，Lily，Rebecca，简晰，崔爽文，葛文德，张雅琴</p>
-					</div>
-					<div class="comments">
-						<p>简晰：恭喜郑总！阿联酋最大的经销商都被你们拿下了！</p>
-						<p>林晨：干得漂亮！</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="message">
-			<img src="../images/avatar-1.png" alt="朋友1" class="friend-avatar">
-			<div class="message-detail">
-				<span class="friend-name">郑宴</span>
-				<p class="message-content">手握999k纯金笔都不如最后落笔那一刻的爽快，是时候该轮到我们上场了！</p>
-				<img src="../images/pic-1.png" alt="详情1" class="detail-img">
-				<p class="pic-name">SAIC MOTOR Middle East FZE</p>
-				<div class="action-container">
-					<p class="message-time">3分钟前</p>
-					<div class="icon-button-action"></div>
-				</div>
-				<div class="comment-container">
-					<div class="follows">
-						<div class="icon-heart"></div>
-						<p>金纪，翁玉华，Lily，Rebecca，简晰，崔爽文，葛文德，张雅琴</p>
-					</div>
-					<div class="comments">
-						<p>简晰：恭喜郑总！阿联酋最大的经销商都被你们拿下了！</p>
-						<p>林晨：干得漂亮！</p>
+					<div class="comments" v-if='message.comments'>
+						<p v-for='comment in message.comments'>
+							<span>{{ comment.user }}</span>
+              <span v-if='comment.replyTo' class="normal-text">回复</span>
+              <span>{{ comment.replyTo }}</span>：{{ comment.detail }}
+						</p>
 					</div>
 				</div>
 			</div>
@@ -85,13 +44,21 @@
 </template>
 
 <script>
+  import messageData from '../utils/mock-data.js';
   export default {
+    data() {
+      return {
+        user: { name: '五年后的我', avarar: '../images/avatar-user.png' },
+        messages: [],
+      };
+    },
     ready() {
+      this.messages = messageData;
       window.addEventListener('scroll', () => {
         if (window.scrollY >= document.body.scrollHeight - document.body.clientHeight) {
           setTimeout(() => {
             this.$router.go({ name: 'recruit' });
-          }, 2000);
+          }, 4000);
         }
       });
     },
@@ -170,6 +137,7 @@
 
 	.message {
 		padding: 10px 5px;
+		border-bottom: 1px solid #E1E2DF;
 	}
 
 	.friend-avatar {
@@ -199,7 +167,7 @@
 		margin: 5px 0;
 	}
 
-	.pic-name {
+	.pic-location {
 		color: #576B95;
 		font-size: 12px;
 		margin: 0;
@@ -225,7 +193,17 @@
 	.comment-container {
 		margin: 10px 0;
 		padding: 4px 6px;
-		background-color: #E1E2DF;
+		background-color: #F3F3F5;
+	}
+
+  .comments {
+    border-top: 1px solid #E1E2DF;
+    padding: 2px 0;
+  }
+
+	.comments span {
+		color: #576B95;
+		font-weight: bold;
 	}
 
 	.icon-heart {
@@ -233,10 +211,19 @@
 		vertical-align: top;
 	}
 
+  .follows {
+    padding-bottom: 2px;
+  }
+
 	.follows p {
 		display: inline-block;
 		width: 90%;
 		color: #576B95;
 		font-size: 12px;
 	}
+  .comments .normal-text {
+    color: #000;
+    font-size: 12px;
+    font-weight: normal;
+  }
 </style>
