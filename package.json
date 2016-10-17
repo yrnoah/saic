@@ -6,7 +6,11 @@
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
+<<<<<<< 044f0a8b733b834f992c49a8ea783a5f37642605
     "build": "node build/build.js",
+=======
+    "build": "node build/build.js && node build/pro-server.js",
+>>>>>>> 部署发布服务器
     "unit": "karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
