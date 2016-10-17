@@ -4,17 +4,17 @@
 			<p>此外，我们还有以下几点要求：</p>
 			<div class="detail">
 				<ol>
-					<li>有理想有激情，认同我们的企业文化，愿意奔赴海外工作
+					<li class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">有理想有激情，认同我们的企业文化，愿意奔赴海外工作
 					</li>
-					<li>专业基础扎实，逻辑、沟通和执行能力强</li>
-					<li>良好的英语听说读写能力</li>
-					<li>熟练操作各种办公软件</li>
+					<li class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">专业基础扎实，逻辑、沟通和执行能力强</li>
+					<li class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">良好的英语听说读写能力</li>
+					<li class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">熟练操作各种办公软件</li>
 				</ol>
 			</div>
 		</div>
-    <div class="logo-container">
-      <div class="icon-logo-small"></div>
-    </div>
+		<div class="logo-container">
+			<div class="icon-logo-small"></div>
+		</div>
 	</div>
 </template>
 
@@ -56,22 +56,22 @@
 	ol {
 		list-style-type: upper-alpha;
 		margin: 0;
-    width: 80%;
+		width: 80%;
 	}
 
 	.detail li {
 		text-align: left;
 		color: #13387E;
-    margin-bottom: 5px;
+		margin-bottom: 5px;
 	}
 
-  .logo-container {
-    width: 100%;
-    position: absolute;
-    bottom: 50px;
-  }
+	.logo-container {
+		width: 100%;
+		position: absolute;
+		bottom: 50px;
+	}
 
-  .icon-logo-small {
-    margin: 20px auto;
-  }
+	.icon-logo-small {
+		margin: 20px auto;
+	}
 </style>

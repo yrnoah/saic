@@ -1,7 +1,7 @@
 <template>
 	<div class="swiper-slide provide-detail">
 		<div class="provide-container">
-			<div class="detail main">
+			<div class="detail main ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
 				<h4>核心法定福利</h4>
 				<div>
 					<span class="left-margin">五险一金</span>
@@ -10,7 +10,7 @@
 					<div class="icon-label-selected"></div>
 				</div>
 			</div>
-			<div class="detail hommization">
+			<div class="detail hommization ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
 				<h4>专属人性福利</h4>
 				<div class="bottom-margin">
 					<span class="tab">不惧高房价</span>
@@ -37,7 +37,7 @@
 					<div class="icon-label-selected"></div>
 				</div>
 			</div>
-			<div class="detail special">
+			<div class="detail special ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">
 				<h4>企业特色福利</h4>
 				<div>
 					<span class="left-margin">网红餐厅“阿桂厨房”</span>
@@ -46,7 +46,7 @@
 					<div class="icon-label-selected"></div>
 				</div>
 			</div>
-			<div class="detail assessment">
+			<div class="detail assessment ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="3.3s">
 				<h4>全方位人才评估，<br>多维职业发展体系</h4>
 				<div>
 					<span class="left-margin">潜力人才</span>

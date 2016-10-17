@@ -3,28 +3,28 @@
 		<div class="major-detail">
 			<div class="icon-label-market"></div>
 			<div>
-				<p>市场营销类：</p>
-				<p>市场营销、品牌宣传、销售管理</p>
+				<p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">市场营销类：</p>
+				<p class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">市场营销、品牌宣传、销售管理</p>
 			</div>
 		</div>
 		<div class="major-detail">
 			<div class="icon-label-product"></div>
 			<div>
-				<p>产品研究类：</p>
-				<p>产品规划、售后市场调研</p>
+				<p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s">产品研究类：</p>
+				<p class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">产品规划、售后市场调研</p>
 			</div>
 		</div>
 		<div class="major-detail">
 			<div class="icon-label-dollar"></div>
 			<div>
-				<p>金融财务类：</p>
-				<p>财务管理、金融分析、商务投资</p>
+				<p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.7s">金融财务类：</p>
+				<p class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="2s">财务管理、金融分析、商务投资</p>
 			</div>
 		</div>
 		<div class="major-detail">
 			<div class="icon-label-law"></div>
 			<div>
-				<p>政法类：法务</p>
+				<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">政法类：法务</p>
 			</div>
 		</div>
 	</div>

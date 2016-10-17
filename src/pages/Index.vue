@@ -20,9 +20,7 @@
   import {
     swiperAnimateCache,
     swiperAnimate,
-    clearSwiperAnimate,
   } from '../utils/swiper.animate.min.js';
-  console.log(swiperAnimateCache, swiperAnimate, clearSwiperAnimate);
   let appSwiper;
   import Cover from '../components/Cover';
   import Elite from '../components/Elite';
@@ -50,6 +48,13 @@
     },
     ready() {
       appSwiper = new Swiper('.swiper-container', {
+        onInit: (swiper) => {
+          swiperAnimateCache(swiper);
+          swiperAnimate(swiper);
+        },
+        onSlideChangeEnd: (swiper) => {
+          swiperAnimate(swiper);
+        },
         direction: 'vertical',
         loop: false,
       });

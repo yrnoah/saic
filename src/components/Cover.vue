@@ -1,9 +1,10 @@
 <template>
 	<div class="swiper-slide cover">
-		<img src="../images/text-report.png" alt="report" class="report">
-    <img src="../images/folder.png" alt="folder" class="folder">
+		<img src="../images/text-report.png" alt="report" class="report ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s"
+			swiper-animate-delay="0.3s">
+		<img src="../images/folder.png" alt="folder" class="folder">
 		<div class="angel">
-      <div class="icon-angel-down-red animate-bounce-down"></div>
+			<div class="icon-angel-down-red animate-bounce-down"></div>
 		</div>
 	</div>
 </template>
@@ -16,10 +17,10 @@
 
 	.report {
 		width: 272px;
-    height: 178px;
-    margin: 66px auto 30px auto;
-    display: block;
-    vertical-align: top;
+		height: 178px;
+		margin: 66px auto 30px auto;
+		display: block;
+		vertical-align: top;
 	}
 
 	.angel {
@@ -31,10 +32,10 @@
 
 	.folder {
 		position: absolute;
-    bottom: 0;
-    width: 100%;
-    display: block;
-    vertical-align: top;
+		bottom: 0;
+		width: 100%;
+		display: block;
+		vertical-align: top;
 	}
 
 	.icon-angel-down-red {

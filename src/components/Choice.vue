@@ -1,7 +1,7 @@
 <template>
 	<div class="swiper-slide choice">
 		<div>
-			<p>
+			<p class="ani" swiper-animate-effect="swing" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
 				假如我选择了上汽国际<br> 未来五年后的我会是<br> 什么样子？
 			</p>
 		</div>
