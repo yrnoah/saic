@@ -67,6 +67,6 @@
 	}
 
 	.swiper-slide {
-		overflow: scroll;
-	}
+    overflow: hidden;
+  }
 </style>

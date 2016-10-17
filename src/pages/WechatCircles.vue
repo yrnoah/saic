@@ -9,22 +9,36 @@
 			</div>
 			<div class="red-line"></div>
 			<div class="lt-red-line"></div>
-			<img :src='user.avatar' alt="用户" class="avatar-user">
+			<img v-if="user.avatar" :src='user.avatar' class="avatar-user">
+			<img v-else src='../images/avatar-user.png' class="avatar-user">
 			<p class="username">{{ user.name }}</p>
 		</div>
 		<div class="message" v-for="message in messages" track-by="$index">
-			<img alt="朋友1" class="friend-avatar" :src='message.avatar'>
+			<img v-if="message.index === 1" class="friend-avatar" src='../images/avatar-1.png'>
+			<img v-if="message.index === 2" class="friend-avatar" src='../images/avatar-2.png'>
+			<img v-if="message.index === 3" class="friend-avatar" src='../images/avatar-3.png'>
+			<img v-if="message.index === 4" class="friend-avatar" src='../images/avatar-4.png'>
+			<img v-if="message.index === 5" class="friend-avatar" src='../images/avatar-5.png'>
+			<img v-if="message.index === 6" class="friend-avatar" src='../images/avatar-6.png'>
 			<div class="message-detail">
 				<span class="friend-name">{{ message.username }}</span>
 				<p class="message-content">{{ message.content }}</p>
-				<img src="../images/pic-1.png" alt="详情1" class="detail-img">
+				<img v-if="message.index === 1" src="../images/pic-1.png" alt="详情1" class="detail-img">
+				<img v-if="message.index === 2" src="../images/pic-2.png" alt="详情2" class="detail-img">
+				<img v-if="message.index === 3" src="../images/pic-3.png" alt="详情3" class="detail-img">
+				<img v-if="message.index === 4" src="../images/pic-4.png" alt="详情4" class="detail-img">
+				<img v-if="message.index === 5" src="../images/pic-5.png" alt="详情5" class="detail-img">
+				<img v-if="message.index === 6" src="../images/pic-6.png" alt="详情6" class="detail-img">
 				<p class="pic-location">{{ message.location }}</p>
 				<div class="action-container">
 					<p class="message-time">{{ message.time }}</p>
 					<div class="icon-button-action" @click="showBtns($index)">
 						<div class="action-btns" v-bind:style="visible($index)">
 							<button @click="follow($index)"><div class="icon-heart-white btn-icon"></div>赞</button>
-							<button @click="writeComment($index)"><div class="icon-comment btn-icon"></div>评论</button>
+							<button>
+                <input type="text" class="commentInput" v-model="commentInput" @keyup.enter="submit">
+                <div class="icon-comment btn-icon"></div>评论
+              </button>
 						</div>
 					</div>
 				</div>
@@ -53,13 +67,23 @@
   export default {
     data() {
       return {
-        user: { name: '五年后的我', avarar: '../images/avatar-user.png' },
+        user: { name: '五年后的我', avatar: null },
         messages: [],
         activeBtnId: null,
+        commentInput: null,
+        shouldHideBtn: false,
       };
     },
     ready() {
       this.messages = messageData;
+      window.addEventListener('click', () => {
+        if (!this.shouldHideBtn) return;
+        const clearActionBtn = setTimeout(() => {
+          this.activeBtnId = null;
+          this.shouldHideBtn = false;
+          clearTimeout(clearActionBtn);
+        }, 500);
+      });
       window.addEventListener('scroll', () => {
         this.activeBtnId = null;
         if (window.scrollY >= document.body.scrollHeight - document.body.clientHeight - 10) {
@@ -85,13 +109,15 @@
       },
       follow(index) {
         // 查找是否包含自己
-        this.activeBtnId = null;
+        this.shouldHideBtn = true;
         this.messages[index].follows = [...this.messages[index].follows, '我'];
       },
-      writeComment(index) {
-        // 调用输入法
+      submit() {
+        this.messages[this.activeBtnId].comments = [...this.messages[this.activeBtnId].comments, {
+          user: '我', replyTo: null, detail: this.commentInput,
+        }];
         this.activeBtnId = null;
-        console.log('write', index);
+        this.commentInput = null;
       },
     },
   };
@@ -100,7 +126,6 @@
 <style scoped>
 	.wx-circles {
 		position: relative;
-		overflow: scroll;
 	}
 
 	.top-container {
@@ -156,7 +181,7 @@
 		height: 50px;
 		display: inline-block;
 		vertical-align: top;
-    background-color: transparent;
+		background-color: transparent;
 	}
 
 	.username {
@@ -231,12 +256,12 @@
 		border-radius: 5px;
 		background-color: #353a3d;
 		z-index: 2;
-    display: visible;
+		display: visible;
 	}
 
-  .activeBtn {
-    display: visible;
-  }
+	.activeBtn {
+		display: visible;
+	}
 
 	.action-btns button {
 		display: inline-block;
@@ -250,6 +275,20 @@
 		vertical-align: middle;
 		font-size: 14px;
 		font-weight: 200;
+		position: relative;
+	}
+
+	.commentInput {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: transparent;
+		z-index: 1;
+		border: none;
+		outline: none;
+		color: transparent;
 	}
 
 	.btn-icon {
@@ -278,8 +317,8 @@
 	.icon-heart {
 		display: inline-block;
 		vertical-align: top;
-    position: relative;
-    top: 4px;
+		position: relative;
+		top: 4px;
 	}
 
 	.follows {

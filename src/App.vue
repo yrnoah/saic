@@ -7,7 +7,7 @@
 <style>
 	html {
 		height: 100%;
-    min-height: 560px;
+    min-height: 480px;
     max-width: 750px;
 	}
 
