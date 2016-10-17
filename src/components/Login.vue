@@ -2,7 +2,7 @@
 	<div class="swiper-slide login">
 		<div class="weui-uploader">
 			<p>添加照片</p>
-      <img :src="file" class="uploadedImg">
+      <img v-if="file" :src="file" class="uploadedImg">
 			<input id="uploaderInput" class="uploader" type="file" accept="image/*" multiple v-on:change="chooseFileChange($event)" capture/>
 		</div>
 		<input type="text" placeholder="输入昵称" class="nameInput" v-model="nameInput">

@@ -62,7 +62,7 @@
 	.major-detail div p {
 		color: #FFF;
 		font-size: 12px;
-		font-weight: 200;
+		font-weight: normal;
 		margin: 0;
 	}
 </style>
