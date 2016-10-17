@@ -15,6 +15,16 @@
 		<div class="toNextPageBtn">
 			<div class="icon-angel-down animate-bounce-down"></div>
 		</div>
+		<div class="current-year-bg">
+			<div class="this-year">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div class="red-line"></div>
+			<div class="lt-red-line"></div>
+		</div>
 	</div>
 </template>
 <script>
@@ -98,7 +108,6 @@
 	}
 
 	.swiper-slide {
-		height: 15%;
 		position: relative;
 		overflow: visible;
 	}
@@ -114,7 +123,6 @@
 
 	.swiper-slide-active p {
 		color: #7897C4;
-		background-color: #FFF;
 		letter-spacing: 2px;
 		font-size: 50px;
 		min-width: 30px;
@@ -131,33 +139,9 @@
 	.swiper-slide-active div {
 		display: inline-block;
 		margin: 0 auto;
-		background-color: #002C4D;
-		border: 5px solid #FF626B;
 		padding: 8px 10px;
 		position: relative;
 		top: -10px;
-	}
-
-	.swiper-slide-active div:after {
-		content: '';
-		display: inline-block;
-		width: 90px;
-		height: 5px;
-		background-color: #FF252B;
-		position: absolute;
-		bottom: -10px;
-		left: 35px;
-	}
-
-	.swiper-slide-active div:before {
-		content: '';
-		display: inline-block;
-		width: 90px;
-		height: 10px;
-		background-color: #FF626B;
-		position: absolute;
-		bottom: -15px;
-		left: 35px;
 	}
 
 	.toNextPageBtn {
@@ -189,4 +173,91 @@
 	.animate-bounce-down {
 		animation: bounce-down 1s linear infinite;
 	}
+
+	.current-year-bg {
+		position: absolute;
+    top: 45%;
+    width: 100%;
+		text-align: center;
+	}
+
+	.this-year {
+		border: 5px solid #FF626B;
+		margin: 0 auto;
+		display: inline-block;
+		background-color: #002C4D;
+		padding: 8px;
+    position: relative;
+    top: -15px;
+	}
+
+	.this-year span {
+		color: #7897C4;
+    width: 34px;
+    height: 45px;
+		font-size: 45px;
+		line-height: 45px;
+		display: inline-block;
+    background-color: #FFF;
+    letter-spacing: 4px;
+	}
+
+	.red-line {
+		width: 90px;
+		height: 5px;
+		background-color: #FF252B;
+		margin: 0 auto;
+    position: relative;
+    top: -15px;
+	}
+
+	.lt-red-line {
+		width: 90px;
+		height: 10px;
+		background-color: #FF626B;
+		margin: 0 auto;
+    position: relative;
+    top: -15px;
+	}
 </style>
+
+	<!--.swiper-slide-active div {
+		display: inline-block;
+		margin: 0 auto;
+		background-color: #002C4D;
+		border: 5px solid #FF626B;
+		padding: 8px 10px;
+		position: relative;
+		top: -10px;
+	}
+
+	.swiper-slide-active p {
+		color: #7897C4;
+		background-color: #FFF;
+		letter-spacing: 2px;
+		font-size: 50px;
+		min-width: 30px;
+		letter-spacing: 4px;
+	}
+
+  	.swiper-slide-active div:after {
+		content: '';
+		display: inline-block;
+		width: 90px;
+		height: 5px;
+		background-color: #FF252B;
+		position: absolute;
+		bottom: -10px;
+		left: 35px;
+	}
+
+  	.swiper-slide-active div:before {
+		content: '';
+		display: inline-block;
+		width: 90px;
+		height: 10px;
+		background-color: #FF626B;
+		position: absolute;
+		bottom: -15px;
+		left: 35px;
+	}-->
