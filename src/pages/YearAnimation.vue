@@ -47,6 +47,7 @@
         direction: 'vertical',
         initialSlide: 1,
         autoplay: 500,
+        speed: 500,
         autoplayStopOnLast: true,
         autoplayDisableOnInteraction: false,
         setWrapperSize: true,
