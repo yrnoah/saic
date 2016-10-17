@@ -13,7 +13,7 @@
 			</div>
 		</div>
 		<div class="logo-container">
-			<div class="icon-logo-small ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
+			<div class="icon-logo-small ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s"></div>
 		</div>
 	</div>
 </template>

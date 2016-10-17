@@ -46,8 +46,8 @@
       animationSwiper = new Swiper('.swiper-animation', {
         direction: 'vertical',
         initialSlide: 1,
-        autoplay: 500,
-        speed: 400,
+        autoplay: 1,
+        freeMode: true,
         autoplayStopOnLast: true,
         autoplayDisableOnInteraction: false,
         setWrapperSize: true,

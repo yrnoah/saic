@@ -5,9 +5,9 @@
 				<h4>核心法定福利</h4>
 				<div>
 					<span class="left-margin">五险一金</span>
-					<div class="icon-label-selected"></div>
+					<div class="icon-label-selected ani" swiper-animate-effect="flash" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s"></div>
 					<span>年休假</span>
-					<div class="icon-label-selected"></div>
+					<div class="icon-label-selected ani" swiper-animate-effect="flash" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s"></div>
 				</div>
 			</div>
 			<div class="detail hommization ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
@@ -15,50 +15,50 @@
 				<div class="bottom-margin">
 					<span class="tab">不惧高房价</span>
 					<span>补充公积金</span>
-					<div class="icon-label-selected"></div>
+					<div class="icon-label-selected ani" swiper-animate-effect="flash" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s"></div>
 				</div>
         <div class="bottom-margin">
 					<span class="tab">健康No.1</span>
 					<span>补充医疗</span>
-					<div class="icon-label-selected"></div>
+					<div class="icon-label-selected ani" swiper-animate-effect="flash" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s"></div>
           <span>VIP体检</span>
-          <div class="icon-label-selected"></div>
+          <div class="icon-label-selected ani" swiper-animate-effect="flash" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s"></div>
 				</div>
         <div class="bottom-margin">
 					<span class="tab">全球保障</span>
 					<span>国际保险</span>
-					<div class="icon-label-selected"></div>
+					<div class="icon-label-selected ani" swiper-animate-effect="flash" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s"></div>
           <span>海外津贴</span>
-					<div class="icon-label-selected"></div>
+					<div class="icon-label-selected ani" swiper-animate-effect="flash" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s"></div>
 				</div>
         <div>
 					<span class="tab empty"></span>
 					<span>家属津贴</span>
-					<div class="icon-label-selected"></div>
+					<div class="icon-label-selected ani" swiper-animate-effect="flash" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s"></div>
 				</div>
 			</div>
 			<div class="detail special ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">
 				<h4>企业特色福利</h4>
 				<div>
 					<span class="left-margin">网红餐厅“阿桂厨房”</span>
-					<div class="icon-label-selected"></div>
+					<div class="icon-label-selected ani" swiper-animate-effect="flash" swiper-animate-duration="0.5s" swiper-animate-delay="2.8s"></div>
 					<span>健身中心</span>
-					<div class="icon-label-selected"></div>
+					<div class="icon-label-selected ani" swiper-animate-effect="flash" swiper-animate-duration="0.5s" swiper-animate-delay="2.8s"></div>
 				</div>
 			</div>
 			<div class="detail assessment ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="3.3s">
 				<h4>全方位人才评估，<br>多维职业发展体系</h4>
 				<div>
 					<span class="left-margin">潜力人才</span>
-					<div class="icon-label-selected"></div>
+					<div class="icon-label-selected ani" swiper-animate-effect="flash" swiper-animate-duration="0.5s" swiper-animate-delay="3.8s"></div>
 					<span class="left-long-margin">专业人才</span>
-					<div class="icon-label-selected"></div>
+					<div class="icon-label-selected ani" swiper-animate-effect="flash" swiper-animate-duration="0.5s" swiper-animate-delay="3.8s"></div>
 				</div>
         <div>
 					<span class="left-margin">管理人才</span>
-					<div class="icon-label-selected"></div>
+					<div class="icon-label-selected ani" swiper-animate-effect="flash" swiper-animate-duration="0.5s" swiper-animate-delay="3.8s"></div>
 					<span class="left-long-margin">国际人才</span>
-					<div class="icon-label-selected"></div>
+					<div class="icon-label-selected ani" swiper-animate-effect="flash" swiper-animate-duration="0.5s" swiper-animate-delay="3.8s"></div>
 				</div>
 			</div>
 		</div>

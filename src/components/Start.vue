@@ -1,7 +1,7 @@
 <template>
 	<div class="swiper-slide start">
 		<current-year></current-year>
-		<p class="start-content ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">千里之行&nbsp;始于足下</p>
+		<p class="start-content ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">千里之行&nbsp;始于足下</p>
 	</div>
 </template>
 

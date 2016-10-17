@@ -1,16 +1,16 @@
 <template>
-	<div class="current-year ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
-		<p>2015</p>
-		<div class="this-year">
+	<div class="current-year">
+		<p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">2015</p>
+		<div class="this-year ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
 			<span>2</span>
 			<span>0</span>
 			<span>1</span>
 			<span>6</span>
 		</div>
-		<div class="red-line"></div>
-		<div class="lt-red-line"></div>
-    <p>2017</p>
-    <p>2018</p>
+		<div class="red-line ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"></div>
+		<div class="lt-red-line ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"></div>
+    <p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">2017</p>
+    <p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">2018</p>
 	</div>
 </template>
 

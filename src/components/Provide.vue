@@ -1,8 +1,11 @@
 <template>
 	<div class="swiper-slide provide">
+    <img src="../images/bg-page9.png" class="provide-bg-img ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+    <img src="../images/people.png" class="people ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
+    <img src="../images/man-page9.png" class="man ani" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="1.3s">
 		<div class="container">
-			<h3 class="ani" swiper-animate-effect="shake" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">如果你最终成为我们的一员</h3>
-			<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">我们能提供给你的，<br>不仅是<span>具有市场竞争力的薪酬</span>，更有…</p>
+			<h3 class="ani" swiper-animate-effect="shake" swiper-animate-duration="0.5s" swiper-animate-delay="2s">如果你最终成为我们的一员</h3>
+			<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="2.5s">我们能提供给你的，<br>不仅是<span>具有市场竞争力的薪酬</span>，更有…</p>
 		</div>
 	</div>
 </template>
@@ -10,10 +13,29 @@
 <style scoped>
 	.provide {
 		position: relative;
-		background: url('../images/bg-provide.png') no-repeat 100% 100%;
-		background-size: cover;
 		text-align: center;
+    background-color: #091F5D;
 	}
+
+  .provide-bg-img,
+  .people,
+  .man {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .people {
+    z-index: 1;
+  }
+
+  .man {
+    z-index: 2;
+  }
 
   .provide .container {
     position: absolute;

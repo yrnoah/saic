@@ -3,8 +3,8 @@
 		<div class="icon-logo ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s"
 			swiper-animate-delay="0.3s"></div>
 		<p class="title ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.4s" swiper-animate-delay="0s">上汽集团海外战略平台</p>
-		<div class="detail">
-			<p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">
+		<div class="detail ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">
+			<p>
 				《财富》杂志世界500强企业第46位，<br> 分布全球9大新兴市场，
 				<br> 独具潜力的海外工作机会，
 				<br> 不仅给新人以更为广阔的国际视野和格局，
