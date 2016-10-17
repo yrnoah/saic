@@ -47,6 +47,7 @@
 		width: 100%;
 		position: relative;
 		overflow: hidden;
+    bottom: -6px;
 	}
 
 	.man-container {

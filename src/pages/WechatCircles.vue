@@ -97,7 +97,7 @@
             this.isWxCircles = false;
             clearTimeout(goRecruit);
             window.removeEventListener('scroll', () => { console.log('removed'); });
-          }, 3000);
+          }, 1000);
         }
       });
     },

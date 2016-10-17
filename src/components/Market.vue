@@ -5,7 +5,7 @@
 				<img src="../images/point-1.png" alt="" class="hot-point point-1">
 				<img src="../images/point-2.png" alt="" class="hot-point point-2">
 				<img src="../images/point-3.png" alt="" class="hot-point point-3">
-				<img src="../images/map.png" alt="market" class="bg-market ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+				<img src="../images/map.png" alt="market" class="bg-market">
 			</div>
 			<div class="market-middle-container">
 				<div class="icon-man-page4 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s"></div>

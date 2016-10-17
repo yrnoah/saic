@@ -1,9 +1,9 @@
 <template>
 	<div class="swiper-slide slogan">
 		<img src="../images/bg-page6.png" alt="slogan" class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+    <img src="../images/man-page6.png" class="slogan-man ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1.5s" swiper-animate-delay="1.3s">
     <div class="icon-text-choose ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s"></div>
 		<div class="bottom-slogan">
-      <div class="icon-man-page6 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1.5s" swiper-animate-delay="1.3s"></div>
 			<p class="ani" swiper-animate-effect="rubberBand" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">平台决定你的未来 眼界决定你的世界!</p>
 		</div>
 	</div>
@@ -33,10 +33,8 @@
     overflow: visible;
 	}
 
-  .icon-man-page6 {
-    margin: 0 auto;
-    position: relative;
-    bottom: -60px;
+  .slogan-man {
+    z-index: 1;
   }
 
 	p {
