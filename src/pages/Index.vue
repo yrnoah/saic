@@ -17,8 +17,13 @@
 
 <script>
   import Swiper from '../utils/swiper-3.3.1.min.js';
+  import {
+    swiperAnimateCache,
+    swiperAnimate,
+    clearSwiperAnimate,
+  } from '../utils/swiper.animate.min.js';
+  console.log(swiperAnimateCache, swiperAnimate, clearSwiperAnimate);
   let appSwiper;
-  // import { $ } from '../utils/utils.js';
   import Cover from '../components/Cover';
   import Elite from '../components/Elite';
   import Enterprise from '../components/Enterprise';
@@ -61,12 +66,13 @@
 <style>
 	@import '../assets/swiper-3.3.1.min.css';
 	@import '../assets/sprite-saic.css';
+	@import '../assets/animate.min.css';
 	.swiper-container {
 		height: 100%;
 		width: 100%;
 	}
 
 	.swiper-slide {
-    overflow: hidden;
-  }
+		overflow: hidden;
+	}
 </style>

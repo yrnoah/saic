@@ -72,25 +72,31 @@
         activeBtnId: null,
         commentInput: null,
         shouldHideBtn: false,
+        isWxCircles: true,
       };
     },
     ready() {
       this.messages = messageData;
+      this.isWxCircles = true;
       window.addEventListener('click', () => {
         if (!this.shouldHideBtn) return;
         const clearActionBtn = setTimeout(() => {
           this.activeBtnId = null;
           this.shouldHideBtn = false;
           clearTimeout(clearActionBtn);
+          window.removeEventListener('click', () => { console.log('removed'); });
         }, 500);
       });
       window.addEventListener('scroll', () => {
+        if (!this.isWxCircles) return;
         this.activeBtnId = null;
         if (window.scrollY >= document.body.scrollHeight - document.body.clientHeight - 10) {
           const goRecruit = setTimeout(() => {
             this.$router.go({ name: 'recruit' });
+            this.isWxCircles = false;
             clearTimeout(goRecruit);
-          }, 4000);
+            window.removeEventListener('scroll', () => { console.log('removed'); });
+          }, 3000);
         }
       });
     },

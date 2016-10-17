@@ -15,7 +15,6 @@
 <script>
   import Swiper from '../utils/swiper-3.3.1.min.js';
   let recruitSwiper;
-  // import { $ } from '../utils/utils.js';
   import Start from '../components/Start';
   import Decision from '../components/Decision';
   import Recruit from '../components/Recruit';
