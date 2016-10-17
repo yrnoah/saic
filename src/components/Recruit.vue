@@ -1,7 +1,7 @@
 <template>
 	<div class="swiper-slide major">
 		<div class="major-container">
-			<p>上汽国际面向2017届<br> 本科及以上应届毕业生进行招聘，<br> 我们需要以下四类专业的你：</p>
+			<p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">上汽国际面向2017届<br> 本科及以上应届毕业生进行招聘，<br> 我们需要以下四类专业的你：</p>
 			<list></list>
 		</div>
 	</div>

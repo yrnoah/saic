@@ -1,7 +1,8 @@
 <template>
 	<div class="swiper-slide elite">
 		<div class="container">
-			<img src="../images/bg-shanghai.png" alt="shanghai" class="bg-shanghai">
+			<img src="../images/bg-shanghai.png" alt="shanghai" class="bg-shanghai ani" swiper-animate-effect="rollIn" swiper-animate-duration="0.5s"
+			swiper-animate-delay="0.3s">
 			<div class="navy-line"></div>
 			<div class="text-container">
 				<div>

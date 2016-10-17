@@ -1,7 +1,8 @@
 <template>
 	<div class="swiper-slide market">
 		<div class="container">
-			<img src="../images/bg-market.png" alt="market" class="bg-market">
+			<img src="../images/bg-market.png" alt="market" class="bg-market ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.5s"
+			swiper-animate-delay="0.3s">
 			<div class="text-container">
 				<div>
 					<p class="ani" swiper-animate-effect="pluse" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">到2025年，南非和中东等地将成为最有价值的新兴市场</p>
@@ -16,7 +17,7 @@
 <style scoped>
 	@import '../assets/report-common-style.css';
 	.market {
-		background-color: #FFF;
+		background-color: #F2F6FF;
 		position: relative;
 	}
 </style>

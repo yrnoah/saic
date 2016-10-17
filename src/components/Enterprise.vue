@@ -1,7 +1,8 @@
 <template>
 	<div class="swiper-slide enterprise">
 		<div class="container">
-			<img src="../images/bg-enterprise.png" alt="enterprise" class="bg-enterprise">
+			<img src="../images/bg-enterprise.png" alt="enterprise" class="bg-enterprise ani" swiper-animate-effect="zoomInUp" swiper-animate-duration="0.5s"
+			swiper-animate-delay="0.3s">
 			<div class="text-container">
 				<div>
 					<p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">68%的大学生希望进入世界500强等大型企业</p>

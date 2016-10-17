@@ -1,8 +1,9 @@
 <template>
 	<div class="swiper-slide slogan">
-		<img src="../images/bg-slogan.png" alt="slogan">
+		<img src="../images/bg-slogan.png" alt="slogan" class="ani" swiper-animate-effect="swing" swiper-animate-duration="0.5s"
+			swiper-animate-delay="0.3s">
 		<div>
-			<p class="ani" swiper-animate-effect="rubberBand" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">平台决定你的未来 眼界决定你的世界!</p>
+			<p class="ani" swiper-animate-effect="rubberBand" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">平台决定你的未来 眼界决定你的世界!</p>
 		</div>
 	</div>
 </template>

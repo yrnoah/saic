@@ -9,6 +9,7 @@
 		height: 100%;
     min-height: 480px;
     max-width: 750px;
+    margin: 0;
 	}
 
 	body {
@@ -18,6 +19,7 @@
 		height: 100%;
     font-family: 'HanHei SC', 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'Microsoft Yahei', 'Arial', sans-serif;
     font-size: 12px;
+    margin: 0;
 	}
 
   p,div {

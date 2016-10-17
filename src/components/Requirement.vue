@@ -1,7 +1,7 @@
 <template>
 	<div class="swiper-slide requirement">
 		<div class="requirement-container">
-			<p>此外，我们还有以下几点要求：</p>
+			<p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">此外，我们还有以下几点要求：</p>
 			<div class="detail">
 				<ol>
 					<li class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">有理想有激情，认同我们的企业文化，愿意奔赴海外工作
@@ -13,7 +13,7 @@
 			</div>
 		</div>
 		<div class="logo-container">
-			<div class="icon-logo-small"></div>
+			<div class="icon-logo-small ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
 		</div>
 	</div>
 </template>

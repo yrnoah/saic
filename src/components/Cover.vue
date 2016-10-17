@@ -2,7 +2,8 @@
 	<div class="swiper-slide cover">
 		<img src="../images/text-report.png" alt="report" class="report ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s"
 			swiper-animate-delay="0.3s">
-		<img src="../images/folder.png" alt="folder" class="folder">
+		<img src="../images/folder.png" alt="folder" class="folder ani" swiper-animate-effect="wobble" swiper-animate-duration="0.5s"
+			swiper-animate-delay="0.3s">
 		<div class="angel">
 			<div class="icon-angel-down-red animate-bounce-down"></div>
 		</div>

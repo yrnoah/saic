@@ -22,7 +22,6 @@
     },
     created() {
       this.$file = document.querySelector('input[type="file"]');
-      console.log(this.$file);
     },
     methods: {
       chooseFileChange(e) {
@@ -54,7 +53,7 @@
 		height: 100px;
 		border-radius: 50px;
 		border: 1px solid #FFF;
-		margin: 150px auto 80px auto;
+		margin: 100px auto 80px auto;
 		position: relative;
 		line-height: 100px;
 		vertical-align: middle;
@@ -91,6 +90,11 @@
 		display: block;
 		margin: 0 auto;
 	}
+
+  Input::placeholder {
+    color: #FFF;
+    opacity: 0.6;
+  }
 
 	.submit {
 		width: 250px;

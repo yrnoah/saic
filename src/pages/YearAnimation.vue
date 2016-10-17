@@ -47,7 +47,7 @@
         direction: 'vertical',
         initialSlide: 1,
         autoplay: 500,
-        speed: 500,
+        speed: 400,
         autoplayStopOnLast: true,
         autoplayDisableOnInteraction: false,
         setWrapperSize: true,
@@ -190,6 +190,7 @@
 		padding: 8px;
     position: relative;
     top: -15px;
+    left: -1px;
 	}
 
 	.this-year span {
@@ -210,6 +211,7 @@
 		margin: 0 auto;
     position: relative;
     top: -15px;
+    left: -1px;
 	}
 
 	.lt-red-line {
@@ -219,6 +221,7 @@
 		margin: 0 auto;
     position: relative;
     top: -15px;
+    left: -1px;
 	}
 </style>
 

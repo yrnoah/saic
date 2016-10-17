@@ -35,7 +35,7 @@
 					<div class="icon-button-action" @click="showBtns($index)">
 						<div class="action-btns" v-bind:style="visible($index)">
 							<button @click="follow($index)"><div class="icon-heart-white btn-icon"></div>赞</button>
-							<button>
+							<button @click="writeComment()">
                 <input type="text" class="commentInput" v-model="commentInput" @keyup.enter="submit">
                 <div class="icon-comment btn-icon"></div>评论
               </button>
@@ -73,6 +73,7 @@
         commentInput: null,
         shouldHideBtn: false,
         isWxCircles: true,
+        avoideHideBtn: false,
       };
     },
     ready() {
@@ -88,7 +89,7 @@
         }, 500);
       });
       window.addEventListener('scroll', () => {
-        if (!this.isWxCircles) return;
+        if (!this.isWxCircles || this.avoideHideBtn) return;
         this.activeBtnId = null;
         if (window.scrollY >= document.body.scrollHeight - document.body.clientHeight - 10) {
           const goRecruit = setTimeout(() => {
@@ -115,13 +116,19 @@
       },
       follow(index) {
         // 查找是否包含自己
+        // const isExist = this.messages[index].follows.find(x => x === '我');
+        // if (isExist) return;
         this.shouldHideBtn = true;
         this.messages[index].follows = [...this.messages[index].follows, '我'];
+      },
+      writeComment() {
+        this.avoideHideBtn = true;
       },
       submit() {
         this.messages[this.activeBtnId].comments = [...this.messages[this.activeBtnId].comments, {
           user: '我', replyTo: null, detail: this.commentInput,
         }];
+        this.avoideHideBtn = false;
         this.activeBtnId = null;
         this.commentInput = null;
       },

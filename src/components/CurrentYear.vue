@@ -1,5 +1,5 @@
 <template>
-	<div class="current-year">
+	<div class="current-year ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
 		<p>2015</p>
 		<div class="this-year">
 			<span>2</span>
