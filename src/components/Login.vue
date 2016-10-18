@@ -37,7 +37,7 @@
       submit() {
         if (this.nameInput === null) return;
         User.setUser(this.nameInput, this.file);
-        this.$router.go({ name: 'circles' });
+        this.$router.go({ name: 'years' });
       },
     },
   };
