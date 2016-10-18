@@ -67,11 +67,11 @@
 
 <script>
   import messageData from '../utils/mock-data.js';
-  import { $ } from '../utils/utils.js';
+  import { $, User } from '../utils/utils.js';
   export default {
     data() {
       return {
-        user: { name: '五年后的我', avatar: null },
+        user: { name: User.name, avatar: User.avatar },
         messages: [],
         activeBtnId: null,
         commentInput: null,

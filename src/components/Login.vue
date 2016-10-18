@@ -12,6 +12,7 @@
 </template>
 
 <script>
+  import { User } from '../utils/utils.js';
   export default {
     data() {
       return {
@@ -34,7 +35,9 @@
         this.file = null;
       },
       submit() {
-        console.log(this.nameInput, this.file);
+        if (this.nameInput === null) return;
+        User.setUser(this.nameInput, this.file);
+        this.$router.go({ name: 'circles' });
       },
     },
   };
