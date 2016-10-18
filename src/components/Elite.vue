@@ -2,7 +2,7 @@
 	<div class="swiper-slide elite">
 		<div class="container">
 			<div class="elite-top-container">
-        <img src="../images/buildings.png" alt="shanghai" class="bg-shanghai ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+        <img src="../images/buildings.png" alt="shanghai" class="bg-shanghai ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
         <div class="position-container-top">
           <div class="icon-shanghai ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s"></div>
         </div>

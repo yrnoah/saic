@@ -53,13 +53,13 @@
         setWrapperSize: true,
         loop: false,
         onSlideChangeEnd: (swiper) => {
-          if (swiper.activeIndex === 7) {
+          if (swiper.activeIndex === 7 || swiper.activeIndex === 9) {
             animationSwiper.stopAutoplay();
             goCirclesTimeout = setTimeout(() => {
               this.$router.go({ name: 'circles' });
               clearTimeout(goCirclesTimeout);
               clearTimeout(animationFinishedTimeout);
-            }, 1500);
+            }, 500);
           }
         },
       });
@@ -72,7 +72,7 @@
             clearTimeout(goCirclesTimeout);
             clearTimeout(animationFinishedTimeout);
             window.removeEventListener('scroll', () => { console.log('removed'); });
-          }, 1000);
+          }, 500);
         }
       });
     },

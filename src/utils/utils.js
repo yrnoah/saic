@@ -1,3 +1,3 @@
 export function $(ele) {
-  return document.querySelector(ele);
+  return document.querySelectorAll(ele);
 }

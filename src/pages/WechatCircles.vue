@@ -33,10 +33,9 @@
 				<div class="action-container">
 					<p class="message-time">{{ message.time }}</p>
 					<div class="icon-button-action" @click="showBtns($index)">
-						<div class="action-btns" v-bind:style="visible($index)">
+						<div class="action-btns" v-bind:style="visible($index)" v-if="!isWrittingComment">
 							<button @click="follow($index)"><div class="icon-heart-white btn-icon"></div>赞</button>
 							<button @click="writeComment()">
-                <input type="text" class="commentInput" v-model="commentInput" @keyup.enter="submit">
                 <div class="icon-comment btn-icon"></div>评论
               </button>
 						</div>
@@ -57,6 +56,10 @@
 						</p>
 					</div>
 				</div>
+				<div :class="{ inputContainer: isWrittingComment, hideInput: !isWrittingComment }" v-if="activeBtnId === $index">
+					<input type="text" :class="{ activeInput: isWrittingComment, hideInput: !isWrittingComment }" v-model="commentInput" @keyup.enter="submit"
+						id="bottomInput" placeholder="请输入需要发表评论" @blur="inputBlurd">
+				</div>
 			</div>
 		</div>
 	</div>
@@ -64,6 +67,7 @@
 
 <script>
   import messageData from '../utils/mock-data.js';
+  import { $ } from '../utils/utils.js';
   export default {
     data() {
       return {
@@ -73,7 +77,7 @@
         commentInput: null,
         shouldHideBtn: false,
         isWxCircles: true,
-        avoideHideBtn: false,
+        isWrittingComment: false,
       };
     },
     ready() {
@@ -89,7 +93,7 @@
         }, 500);
       });
       window.addEventListener('scroll', () => {
-        if (!this.isWxCircles || this.avoideHideBtn) return;
+        if (!this.isWxCircles || this.isWrittingComment) return;
         this.activeBtnId = null;
         if (window.scrollY >= document.body.scrollHeight - document.body.clientHeight - 10) {
           const goRecruit = setTimeout(() => {
@@ -122,13 +126,23 @@
         this.messages[index].follows = [...this.messages[index].follows, '我'];
       },
       writeComment() {
-        this.avoideHideBtn = true;
+        this.isWrittingComment = true;
+        setTimeout(() => {
+          $('#bottomInput')[0].focus();
+        }, 500);
       },
       submit() {
-        this.messages[this.activeBtnId].comments = [...this.messages[this.activeBtnId].comments, {
-          user: '我', replyTo: null, detail: this.commentInput,
-        }];
-        this.avoideHideBtn = false;
+        if (this.commentInput !== null) {
+          this.messages[this.activeBtnId].comments = [...this.messages[this.activeBtnId].comments, {
+            user: '我', replyTo: null, detail: this.commentInput,
+          }];
+        }
+        this.isWrittingComment = false;
+        this.activeBtnId = null;
+        this.commentInput = null;
+      },
+      inputBlurd() {
+        this.isWrittingComment = false;
         this.activeBtnId = null;
         this.commentInput = null;
       },
@@ -304,6 +318,31 @@
 		color: transparent;
 	}
 
+	.hideInput {
+		width: 0;
+		height: 0;
+		background-color: transparent;
+		color: transparent;
+		border: none;
+		outline: none;
+		padding: 0;
+		margin: 0;
+		font-size: 0;
+	}
+
+	.inputContainer {
+		width: 100%;
+		background-color: #FFF;
+	}
+
+	.activeInput {
+		padding: 15px;
+		background-color: #FFF;
+		border: none;
+		outline: none;
+		color: #4A4A4A;
+	}
+
 	.btn-icon {
 		display: inline-block;
 		vertical-align: top;
@@ -364,3 +403,5 @@
 		border-bottom: 8px solid #F3F3F5;
 	}
 </style>
+
+<!--<input type="text" :class="{ activeInput: avoideHideBtn, commentInput: !avoideHideBtn }" v-model="commentInput" @keyup.enter="submit">-->
