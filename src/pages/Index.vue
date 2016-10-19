@@ -2,7 +2,7 @@
 	<div class="swiper-container">
 		<div class="sound">
 			<audio id="music" autoplay="autoplay" loop="loop">
-				<source src="../../static/lovely-pop-loop.mp3" type="audio/mpeg">
+				<source src="../../static/valentin-loop.mp3" type="audio/mpeg">
 			</audio>
 		</div>
 		<div class="swiper-wrapper">
