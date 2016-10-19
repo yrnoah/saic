@@ -1,5 +1,10 @@
 <template>
 	<div class="swiper-container">
+		<div class="sound">
+			<audio id="music" autoplay="autoplay" loop="loop">
+				<source src="../../static/lovely-pop-loop.mp3" type="audio/mpeg">
+			</audio>
+		</div>
 		<div class="swiper-wrapper">
 			<cover></cover>
 			<elite></elite>
@@ -32,8 +37,14 @@
   import Major from '../components/Major';
   import Choice from '../components/Choice';
   import Login from '../components/Login';
+  import { $ } from '../utils/utils.js';
 
   export default {
+    data() {
+      return {
+        isPlayingMusic: false,
+      };
+    },
     components: {
       Cover,
       Elite,
@@ -47,6 +58,7 @@
       Login,
     },
     ready() {
+      this.startMusic();
       appSwiper = new Swiper('.swiper-container', {
         onInit: (swiper) => {
           swiperAnimateCache(swiper);
@@ -63,6 +75,23 @@
       'slideNext'() {
         appSwiper.unlockSwipeToNext();
         appSwiper.slideNext();
+      },
+    },
+    methods: {
+      startMusic() {
+        const audio = $('#music')[0];
+        if (!this.isPlayingMusic) {
+          audio.play();
+          this.isPlayingMusic = true;
+        }
+      },
+      stopMusic() {
+        const audio = $('#music')[0];
+        if (this.isPlayingMusic) {
+          audio.pause();
+          audio.currentTime = 0;
+          this.isPlayingMusic = false;
+        }
       },
     },
   };

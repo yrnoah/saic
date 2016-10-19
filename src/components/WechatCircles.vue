@@ -88,7 +88,8 @@
           window.removeEventListener('click', () => { console.log('removed'); });
         }, 500);
       });
-      window.addEventListener('click', () => {
+      window.addEventListener('touchend', () => {
+        // console.log(this.isWxCircles, this.isWrittingComment);
         // if (!this.isWxCircles || this.isWrittingComment) return;
         // this.activeBtnId = null;
       });
