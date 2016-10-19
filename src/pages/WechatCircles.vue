@@ -51,7 +51,8 @@
 				</div>
 				<div :class="{ inputContainer: isWrittingComment, hideInput: !isWrittingComment }" v-if="activeBtnId === $index">
 					<input type="text" :class="{ activeInput: isWrittingComment, hideInput: !isWrittingComment }" v-model="commentInput" @keyup.enter="submit"
-						id="bottomInput" placeholder="请输入需要发表评论" @blur="inputBlurd">
+						id="bottomInput" placeholder="请输入需要发表评论">
+          <button :class="{ activeSubmitBtn: isWrittingComment, hideInput: !isWrittingComment }" @click="submit()">发送</button>
 				</div>
 			</div>
 		</div>
@@ -125,6 +126,7 @@
         }, 500);
       },
       submit() {
+        console.log(this.commentInput);
         if (this.commentInput !== null) {
           this.messages[this.activeBtnId].comments = [...this.messages[this.activeBtnId].comments, {
             user: '我', replyTo: null, detail: this.commentInput,
@@ -306,10 +308,21 @@
 	.activeInput {
 		padding: 15px;
 		background-color: #FFF;
-		border: none;
+		border: 1px solid #EBEBEB;
 		outline: none;
 		color: #4A4A4A;
+    border-radius: 5px;
 	}
+
+  .activeSubmitBtn {
+    color: #4A4A4A;
+    background-color: #F3F3F5;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
 
 	.btn-icon {
 		display: inline-block;
