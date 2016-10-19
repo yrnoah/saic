@@ -45,6 +45,7 @@
 		background: url('../images/bg-navy.png') no-repeat 100% 100%;
 		background-size: cover;
 		text-align: center;
+    font-family:
 	}
 
 	.years {
@@ -57,6 +58,14 @@
 		overflow: hidden;
 		z-index: 1;
 	}
+
+  .years p {
+    height: 97px;
+    line-height: 97px;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+  }
 
 	@keyframes slideUpYear {
 		0% {
@@ -166,7 +175,7 @@
 	}
 
 	.icon-clock {
-		margin: 200px auto 0 auto;
+		margin: 218px auto 0 auto;
 		position: relative;
 	}
 

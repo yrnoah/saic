@@ -5,7 +5,7 @@
 		<img src="../images/people.png" class="people ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
 		<img src="../images/man-page9.png" class="man" :class="{ 'moveMan': startMove, 'showMan': showMan }">
 		<div class="container">
-			<h3 class="ani" swiper-animate-effect="shake" swiper-animate-duration="0.5s" swiper-animate-delay="2s">如果你最终成为我们的一员</h3>
+			<h3 class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2s">如果你最终成为我们的一员</h3>
 			<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="2.5s">我们能提供给你的，<br>不仅是<span>具有市场竞争力的薪酬</span>，更有…</p>
 		</div>
 	</div>
