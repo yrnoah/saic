@@ -1,6 +1,5 @@
 <template>
 	<div class="swiper-slide wx-circles">
-		<div class="topTagArea"></div>
 		<div class="top-container swiper-no-swiping">
 			<div class="icon-2022"></div>
 			<img v-if="user.avatar" :src='user.avatar' class="avatar-user">
@@ -398,16 +397,16 @@
 	}
 
 	.tagArea {
-		height: 200px;
+		height: 500px;
 		width: 85%;
-		margin-top: -200px;
+		margin-top: -500px;
 		position: relative;
 		background-color: transparent;
 		z-index: 1;
 	}
 
 	.topTagArea {
-		height: 300px;
+		height: 100px;
 		position: absolute;
 		top: 0;
 		left: 0;

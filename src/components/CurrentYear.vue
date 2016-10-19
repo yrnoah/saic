@@ -1,9 +1,9 @@
 <template>
 	<div class="current-year">
-		<div class="icon-2015 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"></div>
-    <div class="icon-2016 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.4s"></div>
-    <div class="icon-2017 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"></div>
-    <div class="icon-2018 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"></div>
+		<div class="icon-2015 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="0s"></div>
+    <div class="icon-2016 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"></div>
+    <div class="icon-2017 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="0s"></div>
+    <div class="icon-2018 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="0s"></div>
 	</div>
 </template>
 

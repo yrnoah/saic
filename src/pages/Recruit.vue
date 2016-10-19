@@ -67,7 +67,7 @@
           }
         },
         onTouchEnd: (swiper) => {
-          const shouldReturn = (swiper.height - swiper.touches.currentY) < 200;
+          const shouldReturn = (swiper.height - swiper.touches.currentY) < 500;
           if (swiper.activeIndex === 1 && shouldReturn) {
             recruitSwiper.slidePrev();
             this.$broadcast('return2016');

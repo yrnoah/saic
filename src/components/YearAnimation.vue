@@ -71,6 +71,9 @@
 			<div class="icon-angel-down animate-bounce-down"></div>
 		</div>
 		<div class="icon-clock"></div>
+		<div class="clock-border">
+			<img src="../images/clock-border.png">
+		</div>
 	</div>
 	</div>
 </template>
@@ -345,6 +348,17 @@
 		margin: 218px auto 0 auto;
 		position: relative;
 	}
+
+	.clock-border {
+		position: absolute;
+		top: 218px;
+		width: 100%;
+		z-index: 2;
+	}
+
+	.clock-border {
+    margin: 0 auto;
+  }
 
 	.toNextPageBtn {
 		position: absolute;
