@@ -7,7 +7,7 @@
 		</div>
 		<input type="text" placeholder="输入昵称" class="nameInput" v-model="nameInput">
 		<button class="submit" @click="submit()">确认</button>
-		<button class="skipBtn" v-link="{name: 'years'}">跳过次步骤&nbsp;&gt;</button>
+		<button class="skipBtn" v-link="{name: 'recruit'}">跳过次步骤&nbsp;&gt;</button>
 	</div>
 </template>
 
@@ -37,7 +37,7 @@
       submit() {
         if (this.nameInput === null) return;
         User.setUser(this.nameInput, this.file);
-        this.$router.go({ name: 'years' });
+        this.$router.go({ name: 'recruit' });
       },
     },
   };

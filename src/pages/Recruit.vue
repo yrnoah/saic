@@ -1,6 +1,8 @@
 <template>
 	<div class="swiper-container">
 		<div class="swiper-wrapper">
+			<year-animation></year-animation>
+			<wechat></wechat>
 			<start></start>
 			<decision></decision>
 			<recruit></recruit>
@@ -26,6 +28,8 @@
   import Provide from '../components/Provide';
   import ProvideDetail from '../components/ProvideDetail';
   import Email from '../components/Email';
+  import YearAnimation from '../components/YearAnimation';
+  import Wechat from '../components/WeChatCircles';
 
   export default {
     components: {
@@ -36,15 +40,24 @@
       Provide,
       Email,
       ProvideDetail,
+      YearAnimation,
+      Wechat,
     },
     ready() {
       recruitSwiper = new Swiper('.swiper-container', {
+        noSwiping: true,
         onInit: (swiper) => {
           swiperAnimateCache(swiper);
           swiperAnimate(swiper);
         },
         onSlideChangeEnd: (swiper) => {
           swiperAnimate(swiper);
+          if (swiper.activeIndex === 6) {
+            this.$broadcast('startMoveMan');
+          }
+          if (swiper.activeIndex !== 6) {
+            this.$broadcast('hideMan');
+          }
         },
         direction: 'vertical',
         loop: false,
@@ -52,8 +65,10 @@
     },
     events: {
       'slideNext'() {
-        recruitSwiper.unlockSwipeToNext();
-        recruitSwiper.slideNext();
+        if (recruitSwiper.activeIndex === 0) {
+          recruitSwiper.unlockSwipeToNext();
+          recruitSwiper.slideNext();
+        }
       },
     },
   };
@@ -72,3 +87,10 @@
 		overflow: hidden;
 	}
 </style>
+
+<!--if (swiper.activeIndex === 0) {
+            const goWxCircles = setTimeout(() => {
+              recruitSwiper.slideNext();
+              clearTimeout(goWxCircles);
+            }, 3000);
+          }-->
