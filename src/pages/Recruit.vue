@@ -4,7 +4,6 @@
 			<year-animation></year-animation>
 			<wechat></wechat>
 			<start></start>
-			<decision></decision>
 			<recruit></recruit>
 			<requirement></requirement>
 			<provide></provide>
@@ -22,7 +21,6 @@
   } from '../utils/swiper.animate.min.js';
   let recruitSwiper;
   import Start from '../components/Start';
-  import Decision from '../components/Decision';
   import Recruit from '../components/Recruit';
   import Requirement from '../components/Requirement';
   import Provide from '../components/Provide';
@@ -34,7 +32,6 @@
   export default {
     components: {
       Start,
-      Decision,
       Recruit,
       Requirement,
       Provide,
@@ -52,11 +49,28 @@
         },
         onSlideChangeEnd: (swiper) => {
           swiperAnimate(swiper);
-          if (swiper.activeIndex === 6) {
+          if (swiper.activeIndex === 1) {
+            recruitSwiper.lockSwipeToNext();
+          } else {
+            recruitSwiper.unlockSwipeToNext();
+          }
+          if (swiper.activeIndex === 2) {
+            recruitSwiper.lockSwipeToPrev();
+          } else {
+            recruitSwiper.unlockSwipeToPrev();
+          }
+          if (swiper.activeIndex === 5) {
             this.$broadcast('startMoveMan');
           }
-          if (swiper.activeIndex !== 6) {
+          if (swiper.activeIndex !== 5) {
             this.$broadcast('hideMan');
+          }
+        },
+        onTouchEnd: (swiper) => {
+          const shouldReturn = (swiper.height - swiper.touches.currentY) < 200;
+          if (swiper.activeIndex === 1 && shouldReturn) {
+            recruitSwiper.slidePrev();
+            this.$broadcast('return2016');
           }
         },
         direction: 'vertical',
@@ -69,6 +83,16 @@
           recruitSwiper.unlockSwipeToNext();
           recruitSwiper.slideNext();
         }
+      },
+      'slideTo2'() {
+        if (recruitSwiper.activeIndex === 0) {
+          recruitSwiper.unlockSwipeToNext();
+          recruitSwiper.slideTo(2, 0);
+        }
+      },
+      'goBackYears'() {
+        recruitSwiper.slidePrev();
+        this.$broadcast('return2016');
       },
     },
   };
