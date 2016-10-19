@@ -87,11 +87,9 @@
       },
       stopMusic() {
         const audio = $('#music')[0];
-        if (this.isPlayingMusic) {
-          audio.pause();
-          audio.currentTime = 0;
-          this.isPlayingMusic = false;
-        }
+        audio.pause();
+        audio.currentTime = 0;
+        this.isPlayingMusic = false;
       },
     },
   };

@@ -95,6 +95,9 @@
         const input = $('input');
         const exculdeEl = [actionBtn, ...btn, ...input, ...actionIcon, ...actionBtnDiv];
         const shouldExculde = exculdeEl.find(x => x === e.target);
+        if (e.target.alt === '详情6' || e.target === $('.tagArea')[0]) {
+          this.slideBackYears(); // 因安卓失效改用swiper touch事件监听
+        }
         if (shouldExculde || !this.isWxCircles) return;
         this.hideAction();
       });
@@ -140,6 +143,9 @@
         this.isWrittingComment = false;
         this.activeBtnId = null;
         this.commentInput = null;
+      },
+      slideBackYears() {
+        // this.$dispatch('goBackYears');
       },
     },
   };
@@ -313,8 +319,8 @@
 		outline: none;
 		color: #4A4A4A;
 		border-radius: 5px;
-    position: relative;
-    z-index: 2;
+		position: relative;
+		z-index: 2;
 	}
 
 	.activeSubmitBtn {
@@ -325,8 +331,8 @@
 		padding: 10px;
 		border: none;
 		border-radius: 5px;
-    position: relative;
-    z-index: 2;
+		position: relative;
+		z-index: 2;
 	}
 
 	.btn-icon {
@@ -393,7 +399,7 @@
 
 	.tagArea {
 		height: 200px;
-    width: 85%;
+		width: 85%;
 		margin-top: -200px;
 		position: relative;
 		background-color: transparent;
