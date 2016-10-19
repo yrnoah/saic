@@ -14,5 +14,5 @@ Object.keys(proxyTable).forEach(function (context) {
   app.use(proxyMiddleware(context, options))
 })
 
-const port = 5002;
+const port = 5001;
 app.listen(port, (err) => { console.log("http oppened on " + port) });
