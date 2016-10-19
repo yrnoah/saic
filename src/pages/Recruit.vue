@@ -87,7 +87,7 @@
       'slideTo2'() {
         if (recruitSwiper.activeIndex === 0) {
           recruitSwiper.unlockSwipeToNext();
-          recruitSwiper.slideTo(2, 1000);
+          recruitSwiper.slideTo(2, 0);
         }
       },
       'goBackYears'() {
