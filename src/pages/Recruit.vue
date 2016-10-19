@@ -27,7 +27,7 @@
   import ProvideDetail from '../components/ProvideDetail';
   import Email from '../components/Email';
   import YearAnimation from '../components/YearAnimation';
-  import Wechat from '../components/WeChatCircles';
+  import Wechat from '../components/Wechat';
 
   export default {
     components: {
