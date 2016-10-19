@@ -74,47 +74,50 @@
 	}
 
 	.provide-container {
-		width: 90%;
+		width: 88%;
 		margin: 0 auto;
 	}
 
 	.detail {
 		background-color: #EAECEF;
 		width: 100%;
-		padding: 10px 0;
+		padding: 15px 0;
 		border-radius: 5px;
 		margin-bottom: 15px;
 		text-align: left;
 	}
 
 	.main {
-		margin-top: 30px;
+		margin-top: 10%;
 	}
 
 	h4 {
-		margin: 0 0 5px 5px;
-		font-size: 14px;
+		margin: 0 0 5px 12px;
+		font-size: 20px;
 		color: #163B80;
-		line-height: 16px;
+		line-height: 24px;
 	}
 
 	span {
 		color: #163B80;
-		font-size: 12px;
+		font-size: 17px;
+    margin-left: 8px;
 	}
 
 	.icon-label-selected {
 		display: inline-block;
 		margin: 0;
-		vertical-align: middle;
+		vertical-align: top;
+    position: relative;
+    top: 2px;
 	}
 
 	.left-margin {
-		margin-left: 5px;
+		margin-left: 12px;
 	}
 
   .left-long-margin {
-    margin-left: 15px;
+    margin-left: 35px;
   }
 
   .bottom-margin {
@@ -124,12 +127,13 @@
 	.tab {
 		background-color: #426396;
 		color: #FFF;
-    width: 65px;
-    margin: 0 0 0 5px;
+    width: 90px;
+    margin: 0 0 0 12px;
     padding: 1px 0;
     border-radius: 5px;
     display: inline-block;
     text-align: center;
+    font-size: 16px;
 	}
   .tab.empty {
     background-color: transparent;

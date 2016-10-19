@@ -5,6 +5,7 @@
 				<img src="../images/point-1.png" alt="" class="hot-point point-1">
 				<img src="../images/point-2.png" alt="" class="hot-point point-2">
 				<img src="../images/point-3.png" alt="" class="hot-point point-3">
+				<img src="../images/point-4.png" alt="" class="hot-point point-4">
 				<img src="../images/map.png" alt="market" class="bg-market">
 			</div>
 			<div class="market-middle-container">
@@ -18,8 +19,8 @@
 			</div>
 			<div class="text-container">
 				<div>
-					<p class="ani" swiper-animate-effect="pluse" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">到2025年，南非和中东等地将成为最有价值的新兴市场</p>
-					<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="2.8s">·咨询机构BMI Research在最新发布的报告中列出了 “未来的十大新兴市场”
+					<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">到2025年，南非和中东等地将成为最有价值的新兴市场</p>
+					<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="2.8s">咨询机构BMI Research在最新发布的报告中列出了<br>“未来的十大新兴市场”
 					</p>
 				</div>
 			</div>
@@ -85,11 +86,21 @@
 	}
 
 	@keyframes opacityChange {
-		0% { opacity: 0 }
-		25% { opacity: 0.2 }
-    50% { opacity: 0.5 }
-    75% { opacity: 0.7 }
-    100% { opacity: 1 }
+		0% {
+			opacity: 0
+		}
+		25% {
+			opacity: 0.2
+		}
+		50% {
+			opacity: 0.5
+		}
+		75% {
+			opacity: 0.7
+		}
+		100% {
+			opacity: 1
+		}
 	}
 
 	.hot-point {
@@ -100,13 +111,27 @@
 		z-index: 2;
 	}
 
-  .point-1 {
-    animation: opacityChange 1.0s infinite ease-in-out;
-  }
-  .point-2 {
-    animation: opacityChange 0.5s infinite ease-in-out;
-  }
-  .point-3 {
-    animation: opacityChange 2s infinite ease-in-out;
-  }
+	.point-1 {
+		animation: opacityChange 1.0s infinite ease-in-out;
+	}
+
+	.point-2 {
+		animation: opacityChange 0.5s infinite ease-in-out;
+	}
+
+	.point-3 {
+		animation: opacityChange 2s infinite ease-in-out;
+	}
+
+	.point-4 {
+		animation: opacityChange 1.5s infinite ease-in-out;
+	}
+
+	.text-container div {
+		padding: 28px 35px;
+	}
+
+	.text-container p:first-child {
+		margin-bottom: 26px;
+	}
 </style>

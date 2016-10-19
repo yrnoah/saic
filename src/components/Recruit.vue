@@ -26,20 +26,20 @@
 	}
 
 	.major-container {
-		width: 80%;
+		width: 90%;
 		height: 100%;
 		margin: 0 auto;
 		text-align: left;
 	}
 
 	p {
-		margin: 40px 0 30px 0;
+		margin: 46px 0 30px 0;
 		padding: 0;
 		color: #FFF;
-		font-size: 14px;
+		font-size: 20px;
     line-height: 24px;
 		text-align: left;
 		display: inline-block;
-		font-weight: 200;
+		font-weight: normal;
 	}
 </style>

@@ -13,7 +13,7 @@ class CurrentUser {
     this.avatar = avatar;
   }
   init() {
-    this.name = '我';
+    this.name = '五年后的我';
     this.avatar = null;
   }
 }

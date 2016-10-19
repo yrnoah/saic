@@ -1,14 +1,7 @@
 <template>
 	<div class="wx-circles">
 		<div class="top-container">
-			<div class="this-year">
-				<span>2</span>
-				<span>0</span>
-				<span>2</span>
-				<span>2</span>
-			</div>
-			<div class="red-line"></div>
-			<div class="lt-red-line"></div>
+			<div class="icon-2022"></div>
 			<img v-if="user.avatar" :src='user.avatar' class="avatar-user">
 			<img v-else src='../images/avatar-user.png' class="avatar-user">
 			<p class="username">{{ user.name }}</p>
@@ -52,7 +45,7 @@
 						<p v-for='comment in message.comments'>
 							<span>{{ comment.user }}</span>
 							<span v-if='comment.replyTo' class="normal-text">回复</span>
-							<span>{{ comment.replyTo }}</span>：{{ comment.detail }}
+							<span>{{ comment.replyTo }}</span>: {{ comment.detail }}
 						</p>
 					</div>
 				</div>
@@ -159,53 +152,26 @@
 		background: url('../images/bg-wx-circles.png') no-repeat 100% 100%;
 		background-size: cover;
 		width: 100%;
-		height: 200px;
+		height: 256px;
 		position: relative;
 		overflow: visible;
 		text-align: center;
 		margin-bottom: 30px;
 	}
 
-	.this-year {
-		border: 5px solid #FF626B;
-		margin: 0 auto;
-		display: inline-block;
-		background-color: #002C4D;
-		padding: 8px;
-		margin-top: 60px;
-	}
-
-	.this-year span {
-		color: #7897C4;
-		margin: 0 1px;
-		padding: 0 2px;
-		background-color: #FFFDF9;
-		font-size: 45px;
-		line-height: 50px;
-		display: inline-block;
-	}
-
-	.red-line {
-		width: 90px;
-		height: 5px;
-		background-color: #FF252B;
-		margin: 0 auto;
-	}
-
-	.lt-red-line {
-		width: 90px;
-		height: 10px;
-		background-color: #FF626B;
-		margin: 0 auto;
-	}
+	.icon-2022 {
+    margin: 0 auto;
+    position: relative;
+    top: 53px;
+  }
 
 	.avatar-user {
 		border: 2px solid #FFF;
 		position: absolute;
 		bottom: -20px;
-		right: 10px;
-		width: 50px;
-		height: 50px;
+		right: 12px;
+		width: 70px;
+		height: 70px;
 		display: inline-block;
 		vertical-align: top;
 		background-color: transparent;
@@ -213,21 +179,21 @@
 
 	.username {
 		color: #FFF;
-		font-size: 12px;
+		font-size: 15px;
 		margin: 0;
 		position: absolute;
-		right: 80px;
+		right: 105px;
 		bottom: 8px;
 	}
 
 	.message {
-		padding: 10px 5px;
+		padding: 20px 12px;
 		border-bottom: 1px solid #E1E2DF;
 	}
 
 	.friend-avatar {
-		width: 30px;
-		height: 30px;
+		width: 42px;
+		height: 42px;
 		display: inline-block;
 		vertical-align: top;
 		float: left;
@@ -235,16 +201,18 @@
 
 	.friend-name {
 		color: #576B95;
+    font-size: 15px;
 	}
 
 	.message-detail {
 		display: inline-block;
 		width: 80%;
-		margin: 0 0 0 5px;
+		margin: 0 0 0 9px;
 	}
 
 	.message-content {
 		margin: 0;
+    font-size: 15px;
 	}
 
 	.detail-img {
@@ -359,11 +327,13 @@
 	.comments {
 		border-top: 1px solid #E1E2DF;
 		padding: 2px 0;
+    font-size: 15px;
 	}
 
 	.comments span {
 		color: #576B95;
 		font-weight: bold;
+    font-size: 15px;
 	}
 
 	.icon-heart {
@@ -381,12 +351,12 @@
 		display: inline-block;
 		width: 90%;
 		color: #576B95;
-		font-size: 12px;
+		font-size: 15px;
 	}
 
 	.comments .normal-text {
 		color: #000;
-		font-size: 12px;
+		font-size: 15px;
 		font-weight: normal;
 	}
 

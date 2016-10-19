@@ -1,8 +1,9 @@
 <template>
 	<div class="swiper-slide provide">
-    <img src="../images/bg-page9.png" class="provide-bg-img ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
-    <img src="../images/people.png" class="people ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
-    <img src="../images/man-page9.png" class="man ani" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="1.3s">
+		<img src="../images/bg-page9.png" class="provide-bg-img ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s"
+			swiper-animate-delay="0.3s">
+		<img src="../images/people.png" class="people ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
+		<img src="../images/man-page9.png" class="man ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="3s" swiper-animate-delay="0.3s">
 		<div class="container">
 			<h3 class="ani" swiper-animate-effect="shake" swiper-animate-duration="0.5s" swiper-animate-delay="2s">如果你最终成为我们的一员</h3>
 			<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="2.5s">我们能提供给你的，<br>不仅是<span>具有市场竞争力的薪酬</span>，更有…</p>
@@ -14,50 +15,60 @@
 	.provide {
 		position: relative;
 		text-align: center;
-    background-color: #091F5D;
+		background-color: #091F5D;
 	}
 
-  .provide-bg-img,
-  .people,
-  .man {
-    width: 100%;
-    height: 100%;
-    display: inline-block;
-    vertical-align: top;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+	.provide-bg-img,
+	.people {
+		width: 100%;
+		height: 100%;
+		display: inline-block;
+		vertical-align: top;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 
-  .people {
-    z-index: 1;
-  }
+	.people {
+		z-index: 1;
+	}
 
-  .man {
-    z-index: 2;
-  }
 
-  .provide .container {
-    position: absolute;
-    bottom: 60px;
-    width: 100%;
-  }
+	.man {
+		width: 100%;
+		height: 100%;
+		display: inline-block;
+		vertical-align: top;
+		position: absolute;
+		top: -50px;
+		left: 0;
+		z-index: 2;
+	}
 
-  h3, p {
-    color: #FFF;
-    font-weight: 200;
-    margin: 0;
-  }
+	.provide .container {
+		position: absolute;
+		bottom: 15%;
+		width: 100%;
+	}
 
-  h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  p {
-    font-size: 12px;
-    line-height: 24px;
-  }
-  span {
-    font-size: 16px;
-  }
+	h3,
+	p {
+		color: #FFF;
+		font-weight: normal;
+		margin: 0;
+	}
+
+	h3 {
+		font-size: 24px;
+		margin-bottom: 10px;
+	}
+
+	p {
+		font-size: 16px;
+		line-height: 24px;
+	}
+
+	span {
+		font-size: 19px;
+	}
 </style>

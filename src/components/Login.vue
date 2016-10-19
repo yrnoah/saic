@@ -52,20 +52,20 @@
 	}
 
 	.weui-uploader {
-		width: 100px;
-		height: 100px;
-		border-radius: 50px;
+		width: 150px;
+		height: 150px;
+		border-radius: 75px;
 		border: 1px solid #FFF;
-		margin: 100px auto 80px auto;
+		margin: 20% auto 80px auto;
 		position: relative;
-		line-height: 100px;
+		line-height: 150px;
 		vertical-align: middle;
 	}
 
 	.weui-uploader p {
 		color: #FFF;
-		font-size: 14px;
-		font-weight: 100;
+		font-size: 20px;
+		font-weight: normal;
 		margin: 0;
 	}
 
@@ -85,13 +85,14 @@
 		color: #FFF;
 		background-color: transparent;
 		border: 1px solid #FFF;
-		border-radius: 20px;
-		width: 250px;
-		height: 40px;
-		font-size: 14px;
+		border-radius: 26px;
+		width: 280px;
+		height: 52px;
+		font-size: 20px;
 		outline: none;
 		display: block;
 		margin: 0 auto;
+    padding: 0;
 	}
 
   Input::placeholder {
@@ -100,17 +101,17 @@
   }
 
 	.submit {
-		width: 250px;
-		height: 40px;
-		border-radius: 20px;
+		width: 280px;
+		height: 52px;
+		border-radius: 26px;
 		background-color: #7ED321;
 		border: none;
 		color: #FFF;
-		font-size: 14px;
-		font-weight: 100;
+		font-size: 20px;
+		font-weight: normal;
 		outline: none;
 		display: block;
-		margin: 40px auto;
+		margin: 50px auto;
 	}
 
 	.skipBtn {
@@ -120,17 +121,18 @@
 		padding: 15px 20px;
 		position: absolute;
 		bottom: 15px;
-		right: 5px;
+		right: 0px;
 		outline: none;
+    font-size: 13px;
 	}
 
   .uploadedImg {
     position: absolute;
 		top: 0;
 		left: 0;
-		width: 100px;
-		height: 100px;
-    border-radius: 50px;
+		width: 150px;
+		height: 150px;
+    border-radius: 75px;
 		z-index: 1;
   }
 </style>

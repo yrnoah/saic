@@ -15,16 +15,15 @@
 	}
 
 	.report {
-		width: 272px;
-		height: 178px;
-		margin: 66px auto 30px auto;
+		width: 100%;
+    height: auto;
 		display: block;
 		vertical-align: top;
 	}
 
 	.angel {
 		position: absolute;
-		bottom: 20px;
+		bottom: 30px;
 		left: 0;
 		right: 0;
 	}

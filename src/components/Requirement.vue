@@ -2,7 +2,7 @@
 	<div class="swiper-slide requirement">
 		<div class="requirement-container">
 			<p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">此外，我们还有以下几点要求：</p>
-			<div class="detail">
+			<div class="detail ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
 				<ol>
 					<li class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">有理想有激情，认同我们的企业文化，愿意奔赴海外工作
 					</li>
@@ -11,9 +11,7 @@
 					<li class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">熟练操作各种办公软件</li>
 				</ol>
 			</div>
-		</div>
-		<div class="logo-container">
-			<div class="icon-logo-small ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s"></div>
+      <div class="icon-logo-small ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s"></div>
 		</div>
 	</div>
 </template>
@@ -34,14 +32,14 @@
 	}
 
 	p {
-		margin: 60px 0 15px 0;
+		margin: 60px 0 20px 0;
 		padding: 0;
 		color: #FFF;
-		font-size: 14px;
+		font-size: 20px;
 		line-height: 24px;
 		text-align: left;
 		display: inline-block;
-		font-weight: 200;
+		font-weight: normal;
 	}
 
 	.detail {
@@ -50,7 +48,7 @@
 		padding-bottom: 25px;
 		text-align: center;
 		background-color: #EAECEF;
-		border-radius: 5px;
+		border-radius: 10px;
 	}
 
 	ol {
@@ -63,15 +61,10 @@
 		text-align: left;
 		color: #13387E;
 		margin-bottom: 5px;
-	}
-
-	.logo-container {
-		width: 100%;
-		position: absolute;
-		bottom: 50px;
+    font-size: 17px;
 	}
 
 	.icon-logo-small {
-		margin: 20px auto;
+		margin: 40px auto;
 	}
 </style>

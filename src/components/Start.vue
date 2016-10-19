@@ -1,7 +1,7 @@
 <template>
 	<div class="swiper-slide start">
 		<current-year></current-year>
-		<p class="start-content ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">千里之行&nbsp;始于足下</p>
+		<p class="start-content ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">千里之行&nbsp;始于足下</p>
 	</div>
 </template>
 
@@ -24,8 +24,8 @@
 
 	.start-content {
 		color: #FFF;
-		font-size: 20px;
-		font-weight: 200;
-		margin-top: 50px;
+		font-size: 24px;
+		font-weight: normal;
+		margin-top: 82px;
 	}
 </style>

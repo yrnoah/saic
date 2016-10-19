@@ -16,29 +16,29 @@
 	}
 
 	.icon-logo-small {
-		margin: 50px auto 30px auto;
+		margin: 20% auto 36px auto;
 	}
 
   p {
     margin: 0;
     color: #FFF;
-    font-size: 12px;
-    font-weight: 200;
+    font-size: 14px;
+    font-weight: normal;
     text-align: center;
   }
 
   p:nth-child(2) {
-    letter-spacing: 4px;
-    font-size: 14px;
+    font-size: 20px;
     margin-bottom: 10px;
   }
   p:nth-child(4) {
-    padding: 15px;
+    padding: 20px 30px;
     background-color: #FFF;
     color: #094B98;
     display: inline-block;
-    margin: 30px auto;
-    border-radius: 5px;
+    margin: 50px auto;
+    border-radius: 10px;
     font-weight: normal;
+    font-size: 18px;
   }
 </style>

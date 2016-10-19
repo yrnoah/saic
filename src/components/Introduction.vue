@@ -1,8 +1,8 @@
 <template>
 	<div class="swiper-slide introduction">
 		<div class="icon-logo ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s"
-			swiper-animate-delay="0.3s"></div>
-		<p class="title ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.4s" swiper-animate-delay="0s">上汽集团海外战略平台</p>
+			swiper-animate-delay="0s"></div>
+		<p class="title ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.4s" swiper-animate-delay="0.3s">上汽集团海外战略平台</p>
 		<div class="detail ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">
 			<p>
 				《财富》杂志世界500强企业第46位，<br> 分布全球9大新兴市场，
@@ -24,25 +24,28 @@
 	}
 
 	.icon-logo {
-		margin: 15% auto 22px auto;
+		margin: 12% auto 22px auto;
 	}
 
 	.title {
 		font-size: 24px;
+    letter-spacing: 4px;
 		color: #FFF;
+    margin-bottom: 35px;
 	}
 
 	.detail {
-		position: absolute;
-		bottom: 0;
 		width: 100%;
 		background-color: #EAECEF;
 	}
 
 	.detail p {
 		color: #4A4A4A;
-		font-size: 14px;
+		font-size: 16px;
 		text-align: left;
-		padding: 10px 30px;
+		padding: 20px 0;
+    width: 310px;
+    margin: 0 auto;
+    line-height: 25px;
 	}
 </style>

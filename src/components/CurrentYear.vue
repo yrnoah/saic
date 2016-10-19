@@ -1,16 +1,9 @@
 <template>
 	<div class="current-year">
-		<p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">2015</p>
-		<div class="this-year ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
-			<span>2</span>
-			<span>0</span>
-			<span>1</span>
-			<span>6</span>
-		</div>
-		<div class="red-line ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"></div>
-		<div class="lt-red-line ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"></div>
-    <p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">2017</p>
-    <p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">2018</p>
+		<div class="icon-2015 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"></div>
+    <div class="icon-2016 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.4s"></div>
+    <div class="icon-2017 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"></div>
+    <div class="icon-2018 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"></div>
 	</div>
 </template>
 
@@ -20,7 +13,33 @@
 		text-align: center;
 	}
 
-	.this-year {
+	.current-year div {
+		margin-left: auto;
+    margin-right: auto;
+	}
+
+  .icon-2015 {
+    margin: 32px auto 17px auto;
+  }
+
+  .icon-2017 {
+    margin: 18px auto 17px auto;
+  }
+</style>
+
+<!--<p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">2015</p>
+<div class="this-year ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+	<span>2</span>
+	<span>0</span>
+	<span>1</span>
+	<span>6</span>
+</div>
+<div class="red-line ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"></div>
+<div class="lt-red-line ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"></div>
+<p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">2017</p>
+<p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">2018</p>-->
+
+<!--.this-year {
 		border: 5px solid #FF626B;
 		margin: 0 auto;
 		display: inline-block;
@@ -52,21 +71,19 @@
 		margin: 0 auto;
 	}
 
-  .current-year p{
-    color: #7897C4;
-    margin: 0;
-    font-size: 42px;
-    opacity: 0.7;
-  }
+	.current-year p {
+		color: #7897C4;
+		margin: 0;
+		font-size: 42px;
+		opacity: 0.7;
+	}
 
-  .current-year p:first-child {
-    margin: 40px auto 10px auto;
-    opacity: 0.8;
-  }
+	.current-year p:first-child {
+		margin: 40px auto 10px auto;
+		opacity: 0.8;
+	}
 
-  .current-year p:last-child {
-    opacity: 0.4;
-    font-size: 30px;
-  }
-
-</style>
+	.current-year p:last-child {
+		opacity: 0.4;
+		font-size: 30px;
+	}-->

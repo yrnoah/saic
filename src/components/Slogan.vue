@@ -1,10 +1,10 @@
 <template>
 	<div class="swiper-slide slogan">
-		<img src="../images/bg-page6.png" alt="slogan" class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
-    <img src="../images/man-page6.png" class="slogan-man ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1.5s" swiper-animate-delay="1.3s">
-    <div class="icon-text-choose ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s"></div>
+		<img src="../images/bg-page6.jpg" alt="slogan" class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+    <img src="../images/man-page6.png" class="slogan-man ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1.5s" swiper-animate-delay="0.8s">
+    <div class="icon-text-choose ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s"></div>
 		<div class="bottom-slogan">
-			<p class="ani" swiper-animate-effect="rubberBand" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">平台决定你的未来 眼界决定你的世界!</p>
+			<p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">平台决定你的未来 眼界决定你的世界!</p>
 		</div>
 	</div>
 </template>
@@ -39,7 +39,7 @@
 
 	p {
     color: #FFF;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: normal;
     position: relative;
     z-index: 1;
@@ -48,6 +48,6 @@
   .icon-text-choose {
     z-index: 1;
     position: relative;
-    margin: 60px auto;
+    margin: 35px auto;
   }
 </style>

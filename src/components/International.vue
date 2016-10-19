@@ -21,8 +21,8 @@
 			</div>
 			<div class="text-container">
 				<div>
-					<p class="ani" swiper-animate-effect="pulse" swiper-animate-duration="0.5s" swiper-animate-delay="3.8s">报告显示，同等学历和工作年限下，具有海外工作经验的人薪酬高于本土毕业生。其中，外语优势和国际性视野成为雇主比较看重的核心竞争力。</p>
-					<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="4.3s">·中国人才网-《2015年海归就业力调查报告》</p>
+					<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="3.8s">报告显示，同等学历和工作年限下，具有海外工作经验的人薪酬高于本土毕业生。其中，外语优势和国际性视野成为雇主比较看重的核心竞争力。</p>
+					<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="4.3s">中国人才网-《2015年海归就业力调查报告》</p>
 				</div>
 			</div>
 		</div>
@@ -47,7 +47,6 @@
 		width: 100%;
 		position: relative;
 		overflow: hidden;
-    bottom: -6px;
 	}
 
 	.man-container {
@@ -137,11 +136,11 @@
 	}
 
 	.text-container div {
-		padding: 20px 15px;
+		padding: 25px 35px;
 	}
 
 	.text-container p:first-child {
-		font-size: 16px;
+		font-size: 19px;
 		margin-bottom: 20px;
 	}
 </style>

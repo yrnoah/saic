@@ -1,7 +1,7 @@
 <template>
 	<div class="swiper-slide decision">
 		<current-year></current-year>
-		<p class="decision-content ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">今天的一个决定<br>将帮助你成就五年后的自己</p>
+		<p class="decision-content ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">今天的一个决定<br>将帮助你成就五年后的自己</p>
 	</div>
 </template>
 
@@ -23,8 +23,8 @@
 	}
   .decision-content {
     color: #FFF;
-    font-size: 20px;
-    font-weight: 200;
-    margin-top: 50px;
+    font-size: 24px;
+    font-weight: normal;
+    margin-top: 82px;
   }
 </style>
