@@ -88,7 +88,7 @@
         if (recruitSwiper.activeIndex === 0) {
           recruitSwiper.unlockSwipeToNext();
           recruitSwiper.slideTo(2, 0);
-        }
+	}
       },
       'goBackYears'() {
         recruitSwiper.slidePrev();
