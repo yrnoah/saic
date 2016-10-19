@@ -90,6 +90,7 @@ const messageData = [
     time: '2小时前',
     follows: ['简晰', '穆青', 'Bob', '郑宴', '林晨', 'Andy', '祝晶晶', '金纪', '翁玉华', 'Lily', 'Rebecca',
       '张雅琴', '江志平', 'Joan', 'Adam'],
+    comments: [],
   },
 ];
 export default messageData;

@@ -1,6 +1,6 @@
 <template>
 	<div class="swiper-slide wx-circles">
-    <div class="topTagArea"></div>
+		<div class="topTagArea"></div>
 		<div class="top-container swiper-no-swiping">
 			<div class="icon-2022"></div>
 			<img v-if="user.avatar" :src='user.avatar' class="avatar-user">
@@ -42,7 +42,7 @@
 							<span v-for='follow in message.follows'>{{ follow }}，</span>
 						</p>
 					</div>
-					<div class="comments" v-if='message.comments'>
+					<div class="comments" v-if='message.comments.length > 0'>
 						<p v-for='comment in message.comments'>
 							<span>{{ comment.user }}</span>
 							<span v-if='comment.replyTo' class="normal-text">回复</span>
@@ -53,11 +53,11 @@
 				<div :class="{ inputContainer: isWrittingComment, hideInput: !isWrittingComment }" v-if="activeBtnId === $index">
 					<input type="text" :class="{ activeInput: isWrittingComment, hideInput: !isWrittingComment }" v-model="commentInput" @keyup.enter="submit"
 						id="bottomInput" placeholder="请输入需要发表评论">
-          <button :class="{ activeSubmitBtn: isWrittingComment, hideInput: !isWrittingComment }" @click="submit()">发送</button>
+					<button :class="{ activeSubmitBtn: isWrittingComment, hideInput: !isWrittingComment }" @click="submit()">发送</button>
 				</div>
 			</div>
 		</div>
-    <div class="tagArea"></div>
+		<div class="tagArea"></div>
 	</div>
 </template>
 
@@ -85,13 +85,18 @@
           this.activeBtnId = null;
           this.shouldHideBtn = false;
           clearTimeout(clearActionBtn);
-          window.removeEventListener('click', () => { console.log('removed'); });
-        }, 500);
+        }, 200);
       });
-      window.addEventListener('touchend', () => {
-        // console.log(this.isWxCircles, this.isWrittingComment);
-        // if (!this.isWxCircles || this.isWrittingComment) return;
-        // this.activeBtnId = null;
+      window.addEventListener('touchend', (e) => {
+        const actionBtn = $('.icon-button-action')[0];
+        const actionBtnDiv = $('.action-btns');
+        const actionIcon = $('.btn-icon');
+        const btn = $('button');
+        const input = $('input');
+        const exculdeEl = [actionBtn, ...btn, ...input, ...actionIcon, ...actionBtnDiv];
+        const shouldExculde = exculdeEl.find(x => x === e.target);
+        if (shouldExculde || !this.isWxCircles) return;
+        this.hideAction();
       });
     },
     methods: {
@@ -109,19 +114,19 @@
       },
       follow(index) {
         // 查找是否包含自己
-        // const isExist = this.messages[index].follows.find(x => x === '我');
-        // if (isExist) return;
+        const isExist = this.messages[index].follows.find(x => x === '我');
         this.shouldHideBtn = true;
+        if (isExist) return;
         this.messages[index].follows = [...this.messages[index].follows, '我'];
       },
       writeComment() {
         this.isWrittingComment = true;
-        setTimeout(() => {
+        const focusTimeout = setTimeout(() => {
           $('#bottomInput')[0].focus();
-        }, 500);
+          clearTimeout(focusTimeout);
+        }, 200);
       },
       submit() {
-        console.log(this.commentInput);
         if (this.commentInput !== null) {
           this.messages[this.activeBtnId].comments = [...this.messages[this.activeBtnId].comments, {
             user: '我', replyTo: null, detail: this.commentInput,
@@ -131,7 +136,7 @@
         this.activeBtnId = null;
         this.commentInput = null;
       },
-      inputBlurd() {
+      hideAction() {
         this.isWrittingComment = false;
         this.activeBtnId = null;
         this.commentInput = null;
@@ -143,7 +148,7 @@
 <style scoped>
 	.wx-circles {
 		position: relative;
-    overflow-y: scroll;
+		overflow-y: scroll;
 	}
 
 	.top-container {
@@ -158,10 +163,10 @@
 	}
 
 	.icon-2022 {
-    margin: 0 auto;
-    position: relative;
-    top: 53px;
-  }
+		margin: 0 auto;
+		position: relative;
+		top: 53px;
+	}
 
 	.avatar-user {
 		border: 2px solid #FFF;
@@ -199,7 +204,7 @@
 
 	.friend-name {
 		color: #576B95;
-    font-size: 15px;
+		font-size: 15px;
 	}
 
 	.message-detail {
@@ -210,7 +215,7 @@
 
 	.message-content {
 		margin: 0;
-    font-size: 15px;
+		font-size: 15px;
 	}
 
 	.detail-img {
@@ -267,7 +272,7 @@
 		background-color: transparent;
 		vertical-align: middle;
 		font-size: 14px;
-		font-weight: 200;
+		font-weight: normal;
 		position: relative;
 	}
 
@@ -307,18 +312,22 @@
 		border: 1px solid #EBEBEB;
 		outline: none;
 		color: #4A4A4A;
-    border-radius: 5px;
+		border-radius: 5px;
+    position: relative;
+    z-index: 2;
 	}
 
-  .activeSubmitBtn {
-    color: #4A4A4A;
-    background-color: #F3F3F5;
-    font-size: 14px;
-    text-align: center;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-  }
+	.activeSubmitBtn {
+		color: #4A4A4A;
+		background-color: #F3F3F5;
+		font-size: 14px;
+		text-align: center;
+		padding: 10px;
+		border: none;
+		border-radius: 5px;
+    position: relative;
+    z-index: 2;
+	}
 
 	.btn-icon {
 		display: inline-block;
@@ -336,13 +345,13 @@
 	.comments {
 		border-top: 1px solid #E1E2DF;
 		padding: 2px 0;
-    font-size: 15px;
+		font-size: 15px;
 	}
 
 	.comments span {
 		color: #576B95;
 		font-weight: bold;
-    font-size: 15px;
+		font-size: 15px;
 	}
 
 	.icon-heart {
@@ -382,22 +391,24 @@
 		border-bottom: 8px solid #F3F3F5;
 	}
 
-  .tagArea {
-    height: 300px;
-    margin-top: -300px;
-    position: relative;
-    background-color: transparent;
-    z-index: 1;
-  }
-  .topTagArea {
-    height: 300px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: transparent;
-    z-index: 1;
-  }
+	.tagArea {
+		height: 200px;
+    width: 85%;
+		margin-top: -200px;
+		position: relative;
+		background-color: transparent;
+		z-index: 1;
+	}
+
+	.topTagArea {
+		height: 300px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		background-color: transparent;
+		z-index: 1;
+	}
 </style>
 
 <!--<input type="text" :class="{ activeInput: avoideHideBtn, commentInput: !avoideHideBtn }" v-model="commentInput" @keyup.enter="submit">-->
