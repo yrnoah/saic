@@ -335,12 +335,13 @@
 	.focus2022 {
 		color: #7897C4;
 		opacity: 1;
-		margin-top: 20px;
+		margin-top: 16px;
 		margin-bottom: 20px;
 	}
 
 	.focus2016 {
 		letter-spacing: 9px;
+    left: 1.5px;
 	}
 
 	.icon-clock {
