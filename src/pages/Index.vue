@@ -1,9 +1,13 @@
 <template>
 	<div class="swiper-container">
 		<div class="sound">
-			<audio id="music" loop="loop">
+			<audio id="music" loop="loop" preload="auto">
 				<source src="../../static/valentin-loop.mp3" type="audio/mpeg">
 			</audio>
+		</div>
+		<div class="musicBtn" @click="toggleMusic">
+			<div v-if="!isPlayingMusic" class="icon-start-music"></div>
+			<div v-else class="icon-stop-music"></div>
 		</div>
 		<div class="swiper-wrapper">
 			<cover></cover>
@@ -91,6 +95,13 @@
         audio.currentTime = 0;
         this.isPlayingMusic = false;
       },
+      toggleMusic() {
+        if (this.isPlayingMusic) {
+          this.stopMusic();
+        } else {
+          this.startMusic();
+        }
+      },
     },
   };
 </script>
@@ -106,5 +117,32 @@
 
 	.swiper-slide {
 		overflow: hidden;
+	}
+
+	.musicBtn {
+		position: fixed;
+		top: 0;
+		right: 0;
+		z-index: 2;
+		padding: 10px;
+	}
+
+	@keyframes rotate {
+		25% {
+			transform: rotate(90deg);
+		}
+		50% {
+			transform: rotate(180deg);
+		}
+		75% {
+			transform: rotate(270deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
+	.icon-stop-music {
+		animation: rotate 8.0s infinite linear;
 	}
 </style>
