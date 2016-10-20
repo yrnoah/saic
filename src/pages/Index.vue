@@ -6,8 +6,8 @@
 			</audio>
 		</div>
 		<div class="musicBtn" @click="toggleMusic">
-			<div v-if="!isPlayingMusic" class="icon-start-music"></div>
-			<div v-else class="icon-stop-music"></div>
+			<div v-else class="icon-start-music"></div>
+			<div v-if="!isPlayingMusic" class="icon-stop-music"></div>
 		</div>
 		<div class="swiper-wrapper">
 			<cover></cover>
@@ -142,7 +142,7 @@
 		}
 	}
 
-	.icon-stop-music {
+	.icon-start-music {
 		animation: rotate 8.0s infinite linear;
 	}
 </style>

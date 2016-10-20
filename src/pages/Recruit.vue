@@ -6,8 +6,8 @@
 			</audio>
 		</div>
 		<div class="musicBtn" @click="toggleMusic">
-			<div v-if="!isPlayingMusic" class="icon-start-music"></div>
-			<div v-else class="icon-stop-music"></div>
+			<div v-else class="icon-start-music"></div>
+			<div v-if="!isPlayingMusic" class="icon-stop-music"></div>
 		</div>
 		<div class="swiper-wrapper">
 			<year-animation></year-animation>
@@ -75,7 +75,7 @@
           }
           if (swiper.activeIndex === 2 && !this.hasTo2016) {
             this.hasTo2016 = true;
-            recruitSwiper.slideTo(0);
+            recruitSwiper.slideTo(0, 1000);
             this.$broadcast('return2016');
           }
         },
@@ -83,6 +83,11 @@
           const shouldReturn = (swiper.height - swiper.touches.currentY) < 500;
           if (swiper.activeIndex === 1 && shouldReturn) {
             recruitSwiper.lockSwipeToPrev();
+            // recruitSwiper.shortSwipes = false;
+            // recruitSwiper.longSwipes = false;
+            // recruitSwiper.touchRatio = 0.1;
+            // console.log(recruitSwiper.shortSwipes);
+            // recruitSwiper.slideTo(0, 1000);
           }
         },
         onTouchEnd: (swiper) => {
@@ -126,7 +131,7 @@
       'slideTo2'() {
         if (recruitSwiper.activeIndex === 0) {
           // recruitSwiper.unlockSwipeToNext();
-          recruitSwiper.slideTo(2, 0);
+          recruitSwiper.slideTo(2, 300);
         }
       },
       'goBackYears'() {
@@ -173,7 +178,7 @@
 		}
 	}
 
-	.icon-stop-music {
+	.icon-start-music {
 		animation: rotate 8.0s infinite linear;
 	}
 </style>
