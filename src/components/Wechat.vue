@@ -1,6 +1,6 @@
 <template>
 	<div class="swiper-slide wx-circles">
-    <div class="topTagArea"></div>
+		<div class="topTagArea"></div>
 		<div class="top-container swiper-no-swiping">
 			<div class="icon-2022"></div>
 			<img v-if="user.avatar" :src='user.avatar' class="avatar-user">
@@ -57,13 +57,18 @@
 				</div>
 			</div>
 		</div>
-		<div class="tagArea"></div>
+		<div class="tagArea">
+      <div class="swiper-slide"></div>
+      <div class="swiper-slide"></div>
+    </div>
 	</div>
 </template>
 
 <script>
+  import Swiper from '../utils/swiper-3.3.1.min.js';
   import messageData from '../utils/mock-data.js';
   import { $, User } from '../utils/utils.js';
+  let forReturnSwiper;
   export default {
     data() {
       return {
@@ -95,11 +100,18 @@
         const input = $('input');
         const exculdeEl = [actionBtn, ...btn, ...input, ...actionIcon, ...actionBtnDiv];
         const shouldExculde = exculdeEl.find(x => x === e.target);
-        if (e.target.alt === '详情6' || e.target === $('.tagArea')[0]) {
-          this.slideBackYears(); // 因安卓失效改用swiper touch事件监听
-        }
         if (shouldExculde || !this.isWxCircles) return;
         this.hideAction();
+      });
+      forReturnSwiper = new Swiper('.tagArea', {
+        onTouchStart: (swiper) => {
+          console.log(swiper, forReturnSwiper);
+          this.$dispatch('lockSlideNext');
+        },
+        onTouchEnd: (swiper) => {
+          console.log(swiper, forReturnSwiper);
+          this.$dispatch('slidePrev');
+        },
       });
     },
     methods: {
@@ -143,9 +155,6 @@
         this.isWrittingComment = false;
         this.activeBtnId = null;
         this.commentInput = null;
-      },
-      slideBackYears() {
-        // this.$dispatch('goBackYears');
       },
     },
   };
@@ -398,9 +407,9 @@
 	}
 
 	.tagArea {
-		height: 300px;
+		height: 150px;
 		width: 85%;
-		margin-top: -300px;
+		margin-top: -250px;
 		position: relative;
 		background-color: transparent;
 		z-index: 1;
@@ -416,5 +425,3 @@
 		z-index: 1;
 	}
 </style>
-
-<!--<input type="text" :class="{ activeInput: avoideHideBtn, commentInput: !avoideHideBtn }" v-model="commentInput" @keyup.enter="submit">-->
