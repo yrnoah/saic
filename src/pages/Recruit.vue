@@ -1,5 +1,10 @@
 <template>
 	<div class="swiper-container">
+		<div class="sound">
+			<audio id="music" loop="loop">
+				<source src="../../static/valentin-loop.mp3" type="audio/mpeg">
+			</audio>
+		</div>
 		<div class="swiper-wrapper">
 			<year-animation></year-animation>
 			<wechat></wechat>
@@ -28,11 +33,13 @@
   import Email from '../components/Email';
   import YearAnimation from '../components/YearAnimation';
   import Wechat from '../components/Wechat';
+  import { $ } from '../utils/utils.js';
 
   export default {
     data() {
       return {
         hasTo2016: false,
+        isPlayingMusic: false,
       };
     },
     components: {
@@ -46,6 +53,7 @@
       Wechat,
     },
     ready() {
+      this.startMusic();
       this.hasTo2016 = false;
       recruitSwiper = new Swiper('.swiper-container', {
         noSwiping: true,
@@ -81,6 +89,21 @@
         direction: 'vertical',
         loop: false,
       });
+    },
+    methods: {
+      startMusic() {
+        const audio = $('#music')[0];
+        if (!this.isPlayingMusic) {
+          audio.play();
+          this.isPlayingMusic = true;
+        }
+      },
+      stopMusic() {
+        const audio = $('#music')[0];
+        audio.pause();
+        audio.currentTime = 0;
+        this.isPlayingMusic = false;
+      },
     },
     events: {
       'slideNext'() {
