@@ -19,7 +19,8 @@
     "request": "^2.74.0",
     "vue": "^1.0.21",
     "vue-resource": "^0.9.3",
-    "vue-router": "^0.7.13"
+    "vue-router": "^0.7.13",
+    "wechat": "^2.0.3"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
