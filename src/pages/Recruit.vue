@@ -30,6 +30,11 @@
   import Wechat from '../components/Wechat';
 
   export default {
+    data() {
+      return {
+        hasTo2016: false,
+      };
+    },
     components: {
       Start,
       Recruit,
@@ -41,6 +46,7 @@
       Wechat,
     },
     ready() {
+      this.hasTo2016 = false;
       recruitSwiper = new Swiper('.swiper-container', {
         noSwiping: true,
         onInit: (swiper) => {
@@ -49,28 +55,27 @@
         },
         onSlideChangeEnd: (swiper) => {
           swiperAnimate(swiper);
-          if (swiper.activeIndex === 1) {
-            recruitSwiper.lockSwipeToNext();
-          } else {
-            recruitSwiper.unlockSwipeToNext();
-          }
-          if (swiper.activeIndex === 2) {
-            recruitSwiper.lockSwipeToPrev();
-          } else {
-            recruitSwiper.unlockSwipeToPrev();
-          }
           if (swiper.activeIndex === 5) {
             this.$broadcast('startMoveMan');
           }
           if (swiper.activeIndex !== 5) {
             this.$broadcast('hideMan');
           }
+          if (swiper.activeIndex === 2 && !this.hasTo2016) {
+            this.hasTo2016 = true;
+            recruitSwiper.slideTo(0);
+            this.$broadcast('return2016');
+          }
         },
-        onTouchEnd: (swiper) => {
+        onTouchStart: (swiper) => {
           const shouldReturn = (swiper.height - swiper.touches.currentY) < 500;
           if (swiper.activeIndex === 1 && shouldReturn) {
-            recruitSwiper.slidePrev();
-            this.$broadcast('return2016');
+            recruitSwiper.lockSwipeToPrev();
+          }
+        },
+        onTouchEnd: (swiper) => {
+          if (swiper.activeIndex === 1) {
+            recruitSwiper.unlockSwipeToPrev();
           }
         },
         direction: 'vertical',
@@ -86,7 +91,7 @@
       },
       'slideTo2'() {
         if (recruitSwiper.activeIndex === 0) {
-          recruitSwiper.unlockSwipeToNext();
+          // recruitSwiper.unlockSwipeToNext();
           recruitSwiper.slideTo(2, 0);
         }
       },
@@ -118,3 +123,13 @@
               clearTimeout(goWxCircles);
             }, 3000);
           }-->
+<!--if (swiper.activeIndex === 1) {
+            recruitSwiper.lockSwipeToNext();
+          } else {
+            recruitSwiper.unlockSwipeToNext();
+          }
+          if (swiper.activeIndex === 2) {
+            recruitSwiper.lockSwipeToPrev();
+          } else {
+            recruitSwiper.unlockSwipeToPrev();
+          }

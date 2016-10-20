@@ -99,7 +99,6 @@
     events: {
       'return2016'() {
         this.return2016 = true;
-
         const animationReturn = setTimeout(() => {
           this.$dispatch('slideTo2');
           this.finished = false;

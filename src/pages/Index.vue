@@ -1,7 +1,7 @@
 <template>
 	<div class="swiper-container">
 		<div class="sound">
-			<audio id="music" autoplay="autoplay" loop="loop">
+			<audio id="music" loop="loop">
 				<source src="../../static/valentin-loop.mp3" type="audio/mpeg">
 			</audio>
 		</div>
