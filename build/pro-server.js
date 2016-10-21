@@ -5,7 +5,7 @@ const proxyMiddleware = require('http-proxy-middleware')
 const proxyTable = config.dev.proxyTable
 const wechat = require('wechat');
 
-const [token, appid, EncodingAESKey] = ['xjbtoken2333', 'wx144dae9c46a5f240', 'Vggyp5zaDlGoBSW3PDY7QYRDW5MoUPS4lqeFRZlgUpS'];
+const [token, appid, EncodingAESKey] = ['xjbtoken2333', 'wx144dae9c46a5f240', 'LDqN5YsfauAMlbEyqKMntyz8UfgHWa2HqaQUdSDowLZ'];
 
 
 const wechatConfig = {
