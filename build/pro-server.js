@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const config = require('../config')
 const proxyMiddleware = require('http-proxy-middleware')
-const proxyTable = config.dev.proxyTable
+const proxyTable = config.prod.proxyTable
 const wechat = require('wechat');
 
 const [token, appid, EncodingAESKey] = ['xjbtoken2333', 'wx144dae9c46a5f240', 'LDqN5YsfauAMlbEyqKMntyz8UfgHWa2HqaQUdSDowLZ'];
