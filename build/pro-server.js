@@ -21,12 +21,28 @@ app.use(express.static('dist/'));
 app.use(express.query());
 
 app.use('/wechat', wechat(wechatConfig, (req, res, next) => {
-  
+
 }));
 
-app.get('/wechat_api', (req, res, next) => {
-  console.log(api)
-  res.send(api);
+app.use((req, res, next) => {
+  //使用wechat-api获取JSconfig  
+  var param = {
+    debug: false,
+    jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'],
+    url: req.body.url
+  };
+  /*api.getTicket(function(err,result){ 
+          console.log(err); 
+          console.log(result); 
+  });*/
+  api.getJsConfig(param, function (err, result) {
+    res.send(result);
+  });
+})
+
+app.use('/wechat_api', (req, res, next) => {
+  console.log(api);
+  res.send({ api, wechat, protypes:api.proptypes });
   next();
 });
 
