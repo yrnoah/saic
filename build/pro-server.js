@@ -4,9 +4,12 @@ const config = require('../config')
 const proxyMiddleware = require('http-proxy-middleware')
 const proxyTable = config.prod.proxyTable
 const wechat = require('wechat');
+const WechatApi = require('wechat-api');
 
-const [token, appid, EncodingAESKey] = ['xjbtoken2333', 'wx144dae9c46a5f240', 'LDqN5YsfauAMlbEyqKMntyz8UfgHWa2HqaQUdSDowLZ'];
 
+
+const [token, appid, EncodingAESKey, appsecret] = ['xjbtoken2333', 'wx818254b4c2b5bb7e', '49a35f5b9483e8f0011cf568b69c0d66', '49a35f5b9483e8f0011cf568b69c0d66'];
+const api = new WechatApi(token, appsecret);
 
 const wechatConfig = {
   token,
@@ -18,8 +21,14 @@ app.use(express.static('dist/'));
 app.use(express.query());
 
 app.use('/wechat', wechat(wechatConfig, (req, res, next) => {
-  console.log('wechatconfig');
+  
 }));
+
+app.get('/wechat_api', (req, res, next) => {
+  console.log(api)
+  res.send(api);
+  next();
+});
 
 Object.keys(proxyTable).forEach(function (context) {
   var options = proxyTable[context]
