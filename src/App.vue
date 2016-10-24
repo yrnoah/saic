@@ -33,5 +33,6 @@
 		width: 100%;
 		align-items: center;
 		justify-content: center;
+    overflow-y: scroll;
 	}
 </style>
