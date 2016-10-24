@@ -2,10 +2,10 @@
 	<div class="swiper-container">
 		<img src="../images/00.jpg">
 		<img src="../images/01.jpg">
+    <img src="../images/05.jpg">
 		<img src="../images/02.jpg">
 		<img src="../images/03.jpg">
 		<img src="../images/04.jpg">
-		<img src="../images/05.jpg">
 		<img src="../images/06.jpg">
 		<img src="../images/07.jpg">
 		<img src="../images/08.jpg">
@@ -14,8 +14,8 @@
 		<img src="../images/11.jpg">
 		<img src="../images/12.jpg">
 		<img src="../images/13.jpg">
+    <img src="../images/15.jpg">
 		<img src="../images/14.jpg">
-		<img src="../images/15.jpg">
 		<img src="../images/16.jpg">
 		<img src="../images/17.jpg">
 		<img src="../images/18.jpg">
