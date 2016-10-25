@@ -4,6 +4,8 @@ const config = require('../config')
 const proxyMiddleware = require('http-proxy-middleware')
 const proxyTable = config.prod.proxyTable
 const wechat = require('wechat');
+const bodyParser = require('body-parser');
+
 const WechatApi = require('wechat-api');
 
 
@@ -20,6 +22,9 @@ const wechatConfig = {
 app.use(express.static('dist/'));
 app.use(express.query());
 
+app.use(bodyParser.urlencoded({extended: false}));  
+app.use(bodyParser.json());
+
 app.use('/wechat', wechat(wechatConfig, (req, res, next) => {
 
 }));
@@ -29,14 +34,17 @@ app.use((req, res, next) => {
   var param = {
     debug: false,
     jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'],
-    url: req.body.url
+    url: 'http://srkfytl.gofriend.me/',
   };
   /*api.getTicket(function(err,result){ 
           console.log(err); 
           console.log(result); 
   });*/
   api.getJsConfig(param, function (err, result) {
-    res.send(result);
+    if(err) {
+      console.log(err);
+    }
+    console.log(result);
   });
 })
 
