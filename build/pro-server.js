@@ -22,9 +22,28 @@ app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
 app.set('view cache', false);
 const serverApi = express.Router();
+let wechat_api;
+app.use((req, res, next) => {
+  //使用wechat-api获取JSconfig  
+  var param = {
+    debug: false,
+    jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'],
+    url: 'http://srkfytl.gofriend.me/',
+  };
+  /*api.getTicket(function(err,result){ 
+          console.log(err); 
+          console.log(result); 
+  });*/
+  api.getJsConfig(param, function (err, result) {
+    if(err) {
+      // console.log(err);
+    }
+    // console.log(result);
+    wechat_api = result;
+  });
+})
 
 serverApi.get('/wechat_api', (req, res) => {
-  console.log('api')
   res.send({ wechat_api });
 });
 
@@ -77,30 +96,6 @@ function renderError(sendErrorObj) {
     });
   });
 }
-
-let wechat_api;
-app.use((req, res, next) => {
-  //使用wechat-api获取JSconfig  
-  var param = {
-    debug: false,
-    jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'],
-    url: 'http://srkfytl.gofriend.me/',
-  };
-  /*api.getTicket(function(err,result){ 
-          console.log(err); 
-          console.log(result); 
-  });*/
-  api.getJsConfig(param, function (err, result) {
-    if(err) {
-      // console.log(err);
-    }
-    // console.log(result);
-    wechat_api = result;
-  });
-})
-
-
-
 
 
 // app.use('/wechat_api', (req, res, next) => {
