@@ -7,12 +7,211 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="format-detection" content="telephone=no,email=no,adress=no">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="preload" href="./static/valentin-loop.mp3" as="media">
+  <link rel="preload" href="./static/lovely-pop-loop.mp3" as="media">
 	<title>SAIC International</title>
 </head>
 
 <body>
-	<div id="app"></div>
+	<div id="app">
+		<div class="default-loading">
+			<div class="floater"></div>
+			<div class="spinner">
+				<div class="line-full">
+					<div class="dot animate-spinner"></div>
+				</div>
+				<div class="line-middle-top">
+					<div class="dot dot-left animate-spinner8"></div>
+					<div class="dot dot-right animate-spinner2"></div>
+				</div>
+				<div class="line-full">
+					<div class="dot dot-left animate-spinner7"></div>
+					<div class="dot dot-right animate-spinner3"></div>
+				</div>
+				<div class="line-middle-bottom">
+					<div class="dot dot-left animate-spinner6"></div>
+					<div class="dot dot-right animate-spinner4"></div>
+				</div>
+				<div class="line-full">
+					<div class="dot animate-spinner5"></div>
+				</div>
+			</div>
+			<p class="percent-value"><span id="loading-value">100</span>%</p>
+		</div>
+	</div>
 	<!-- built files will be auto injected -->
+	<style>
+		html {
+			height: 100%;
+			min-height: 480px;
+			max-width: 750px;
+			margin: 0;
+		}
+
+		body {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			font-family: 'HanHei SC', 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'Microsoft Yahei', 'Arial', sans-serif;
+			font-size: 12px;
+			margin: 0;
+		}
+
+    div {
+      margin: 0;
+			padding: 0;
+    }
+
+		#app {
+			width: 100%;
+			height: 100%;
+		}
+
+    .default-loading {
+			height: 100%;
+      background-color: #042D7C;
+      text-align: center;
+			overflow: hidden;
+    }
+
+		.floater {
+			height: 50%;
+			float: left;
+			margin-bottom: -20px;
+		}
+
+		.spinner {
+			width: 40px;
+			height: 40px;
+			margin: 0 auto;
+			clear: both;
+		}
+
+		.dot {
+			width: 8px;
+			height: 8px;
+			border-radius: 4px;
+			background-color: #FFF;
+			margin: 0 auto;
+		}
+
+		.line-full {
+			width: 100%;
+			overflow: hidden;
+			height: 20%;
+		}
+
+		.line-middle-top,
+		.line-middle-bottom {
+			width: 75%;
+			overflow: hidden;
+			height: 20%;
+			margin: 0 auto;
+		}
+
+		.line-middle-top {
+			position: relative;
+			top: -3px;
+		}
+
+		.line-middle-bottom {
+			position: relative;
+			bottom: -3px;
+		}
+
+		.dot-left {
+			float: left;
+			display: inline-block;
+		}
+
+		.dot-right {
+			float: right;
+			display: inline-block;
+		}
+
+		@keyframes spinner-color {
+			0 {
+				background-color: rgba(255, 255, 255, 0);
+			}
+			13% {
+				background-color: rgba(255, 255, 255, .13);
+			}
+			25% {
+				background-color: rgba(255, 255, 255, .25);
+			}
+			50% {
+				background-color: rgba(255, 255, 255, .5);
+			}
+			63% {
+				background-color: rgba(255, 255, 255, .63);
+			}
+			75% {
+				background-color: rgba(255, 255, 255, .75);
+			}
+			88% {
+				background-color: rgba(255, 255, 255, .88);
+			}
+			100% {
+				background-color: rgba(255, 255, 255, 1);
+			}
+		}
+
+		.animate-spinner {
+			animation: spinner-color 0.8s linear infinite;
+		}
+
+		.animate-spinner2 {
+			animation: spinner-color 0.8s linear infinite;
+			animation-delay: 0.1s;
+		}
+
+		.animate-spinner3 {
+			animation: spinner-color .8s linear infinite;
+			animation-delay: 0.2s;
+		}
+
+		.animate-spinner4 {
+			animation: spinner-color 0.8s linear infinite;
+			animation-delay: 0.3s;
+		}
+
+		.animate-spinner5 {
+			animation: spinner-color 0.8s linear infinite;
+			animation-delay: 0.4s;
+		}
+
+		.animate-spinner6 {
+			animation: spinner-color 0.8s linear infinite;
+			animation-delay: 0.5s;
+		}
+
+		.animate-spinner7 {
+			animation: spinner-color 0.8s linear infinite;
+			animation-delay: 0.6s;
+		}
+
+		.animate-spinner8 {
+			animation: spinner-color 0.8s linear infinite;
+			animation-delay: 0.7s;
+		}
+
+		.percent-value {
+			color: #FFF;
+		}
+	</style>
+	<script>
+    let valueEl = document.querySelector('#loading-value');
+    let value = 1;
+    let increaseValue = setInterval(() => {
+      valueEl.innerHTML = value;
+      value = value + 1;
+      if (value === 100) {
+        clearInterval(increaseValue);
+        return;
+      }
+    }, 10);
+  </script>
 </body>
 
 </html>

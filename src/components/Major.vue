@@ -1,7 +1,7 @@
 <template>
 	<div class="swiper-slide major">
 		<div class="major-container">
-			<h3 class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">我们提供以下<br> 四大类职业发展方向：</h3>
+			<h3>我们提供以下<br> 四大类职业发展方向：</h3>
 			<list></list>
 		</div>
 	</div>

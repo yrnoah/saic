@@ -4,7 +4,6 @@ import VueResource from 'vue-resource';
 
 import App from './App';
 import Index from './pages/Index';
-// import Recruit from './pages/Recruit';
 
 Vue.use(VueRouter);
 Vue.use(VueResource);

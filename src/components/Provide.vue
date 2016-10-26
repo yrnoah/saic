@@ -1,12 +1,12 @@
 <template>
 	<div class="swiper-slide provide">
-		<img src="../images/bg-page9.png" class="provide-bg-img ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s"
+		<img src="../images/bg-page9.png" class="provide-bg-img" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s"
 			swiper-animate-delay="0.3s">
-		<img src="../images/people.png" class="people ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
+		<img src="../images/people.png" class="people" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
 		<img src="../images/man-page9.png" class="man" :class="{ 'moveMan': startMove, 'showMan': showMan }">
 		<div class="container">
-			<h3 class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2s">如果你最终成为我们的一员</h3>
-			<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="2.5s">我们能提供给你的，<br>不仅是<span>具有市场竞争力的薪酬</span>，更有…</p>
+			<h3 swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2s">如果你最终成为我们的一员</h3>
+			<p swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="2.5s">我们能提供给你的，<br>不仅是<span>具有市场竞争力的薪酬</span>，更有…</p>
 		</div>
 	</div>
 </template>

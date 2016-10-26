@@ -7,6 +7,7 @@ class CurrentUser {
     this.name = '五年后的我';
     this.avatar = null;
     this.setUser = this.setUser.bind(this);
+    this.indexLoaded = false;
   }
   setUser(name, avatar) {
     this.name = name;
@@ -15,7 +16,12 @@ class CurrentUser {
   init() {
     this.name = '五年后的我';
     this.avatar = null;
+    this.indexLoaded = false;
+  }
+  load() {
+    this.indexLoaded = true;
   }
 }
 
 export const User = new CurrentUser();
+

@@ -1,66 +1,67 @@
 <template>
-	<div class="swiper-slide wx-circles">
-		<div class="topTagArea"></div>
-		<div class="top-container swiper-no-swiping">
-			<div class="icon-2022"></div>
-			<img v-if="user.avatar" :src='user.avatar' class="avatar-user">
-			<img v-else src='../images/avatar-user.png' class="avatar-user">
-			<p class="username">{{ user.name }}</p>
-		</div>
-		<div class="message swiper-no-swiping" v-for="message in messages" track-by="$index">
-			<img v-if="message.index === 1" class="friend-avatar" src='../images/avatar-1.png'>
-			<img v-if="message.index === 2" class="friend-avatar" src='../images/avatar-2.png'>
-			<img v-if="message.index === 3" class="friend-avatar" src='../images/avatar-3.png'>
-			<img v-if="message.index === 4" class="friend-avatar" src='../images/avatar-4.png'>
-			<img v-if="message.index === 5" class="friend-avatar" src='../images/avatar-5.png'>
-			<img v-if="message.index === 6" class="friend-avatar" src='../images/avatar-6.png'>
-			<div class="message-detail">
-				<span class="friend-name">{{ message.username }}</span>
-				<p class="message-content">{{ message.content }}</p>
-				<img v-if="message.index === 1" src="../images/pic-1.png" alt="详情1" class="detail-img">
-				<img v-if="message.index === 2" src="../images/pic-2.png" alt="详情2" class="detail-img">
-				<img v-if="message.index === 3" src="../images/pic-3.png" alt="详情3" class="detail-img">
-				<img v-if="message.index === 4" src="../images/pic-4.png" alt="详情4" class="detail-img">
-				<img v-if="message.index === 5" src="../images/pic-5.png" alt="详情5" class="detail-img">
-				<img v-if="message.index === 6" src="../images/pic-6.png" alt="详情6" class="detail-img">
-				<p class="pic-location">{{ message.location }}</p>
-				<div class="action-container">
-					<p class="message-time">{{ message.time }}</p>
-					<div class="icon-button-action" @click="showBtns($index)">
-						<div class="action-btns" v-bind:style="visible($index)" v-if="!isWrittingComment">
-							<button @click="follow($index)"><div class="icon-heart-white btn-icon"></div>赞</button>
-							<button @click="writeComment()">
+	<div class="swiper-slide">
+		<div class="wechatSwiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" v-for="message in messages" track-by="$index">
+					<div class="top-container" v-if="message.index === activeBannerIndex">
+						<div class="icon-2022"></div>
+						<img v-if="user.avatar" :src='user.avatar' class="avatar-user">
+						<img v-else src='../images/avatar-user.png' class="avatar-user">
+						<p class="username">{{ user.name }}</p>
+					</div>
+					<div class="message">
+						<img v-if="message.index === 1" class="friend-avatar" src='../images/avatar-1.png'>
+						<img v-if="message.index === 2" class="friend-avatar" src='../images/avatar-2.png'>
+						<img v-if="message.index === 3" class="friend-avatar" src='../images/avatar-3.png'>
+						<img v-if="message.index === 4" class="friend-avatar" src='../images/avatar-4.png'>
+						<img v-if="message.index === 5" class="friend-avatar" src='../images/avatar-5.png'>
+						<img v-if="message.index === 6" class="friend-avatar" src='../images/avatar-6.png'>
+						<div class="message-detail">
+							<span class="friend-name">{{ message.username }}</span>
+							<p class="message-content">{{ message.content }}</p>
+							<img v-if="message.index === 1" src="../images/pic-1.png" alt="详情1" class="detail-img">
+							<img v-if="message.index === 2" src="../images/pic-2.png" alt="详情2" class="detail-img">
+							<img v-if="message.index === 3" src="../images/pic-3.png" alt="详情3" class="detail-img">
+							<img v-if="message.index === 4" src="../images/pic-4.png" alt="详情4" class="detail-img">
+							<img v-if="message.index === 5" src="../images/pic-5.png" alt="详情5" class="detail-img">
+							<img v-if="message.index === 6" src="../images/pic-6.png" alt="详情6" class="detail-img">
+							<p class="pic-location">{{ message.location }}</p>
+							<div class="action-container">
+								<p class="message-time">{{ message.time }}</p>
+								<div class="icon-button-action" @click="showBtns($index)">
+									<div class="action-btns" v-bind:style="visible($index)" v-if="!isWrittingComment">
+										<button @click="follow($index)"><div class="icon-heart-white btn-icon"></div>赞</button>
+										<button @click="writeComment()">
                 <div class="icon-comment btn-icon"></div>评论
               </button>
+									</div>
+								</div>
+							</div>
+							<div class="comment-container">
+								<div class="follows">
+									<div class="icon-heart"></div>
+									<p>
+										<span v-for='follow in message.follows'>{{ follow }}，</span>
+									</p>
+								</div>
+								<div class="comments" v-if='message.comments.length > 0'>
+									<p v-for='comment in message.comments'>
+										<span>{{ comment.user }}</span>
+										<span v-if='comment.replyTo' class="normal-text">回复</span>
+										<span>{{ comment.replyTo }}</span>: {{ comment.detail }}
+									</p>
+								</div>
+							</div>
+							<div :class="{ inputContainer: isWrittingComment, hideInput: !isWrittingComment }" v-if="activeBtnId === $index">
+								<input type="text" :class="{ activeInput: isWrittingComment, hideInput: !isWrittingComment }" v-model="commentInput" @keyup.enter="submit"
+									id="bottomInput" placeholder="请输入需要发表评论">
+								<button :class="{ activeSubmitBtn: isWrittingComment, hideInput: !isWrittingComment }" @click="submit()">发送</button>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="comment-container">
-					<div class="follows">
-						<div class="icon-heart"></div>
-						<p>
-							<span v-for='follow in message.follows'>{{ follow }}，</span>
-						</p>
-					</div>
-					<div class="comments" v-if='message.comments.length > 0'>
-						<p v-for='comment in message.comments'>
-							<span>{{ comment.user }}</span>
-							<span v-if='comment.replyTo' class="normal-text">回复</span>
-							<span>{{ comment.replyTo }}</span>: {{ comment.detail }}
-						</p>
-					</div>
-				</div>
-				<div :class="{ inputContainer: isWrittingComment, hideInput: !isWrittingComment }" v-if="activeBtnId === $index">
-					<input type="text" :class="{ activeInput: isWrittingComment, hideInput: !isWrittingComment }" v-model="commentInput" @keyup.enter="submit"
-						id="bottomInput" placeholder="请输入需要发表评论">
-					<button :class="{ activeSubmitBtn: isWrittingComment, hideInput: !isWrittingComment }" @click="submit()">发送</button>
-				</div>
 			</div>
 		</div>
-		<div class="tagArea">
-      <div class="swiper-slide"></div>
-      <div class="swiper-slide"></div>
-    </div>
 	</div>
 </template>
 
@@ -68,22 +69,70 @@
   import Swiper from '../utils/swiper-3.3.1.min.js';
   import messageData from '../utils/mock-data.js';
   import { $, User } from '../utils/utils.js';
-  let forReturnSwiper;
+  let wechatSwiper;
   export default {
     data() {
       return {
         user: { name: User.name, avatar: User.avatar },
-        messages: [],
+        messages: messageData,
         activeBtnId: null,
         commentInput: null,
         shouldHideBtn: false,
         isWxCircles: true,
         isWrittingComment: false,
+        hasReturned: false,
+        moveStartY: 0,
+        hasSlideNext: false,
+        hasSlidePrev: false,
+        activeBannerIndex: 1,
       };
     },
     ready() {
-      this.messages = messageData;
       this.isWxCircles = true;
+      wechatSwiper = new Swiper('.wechatSwiper', {
+        direction: 'vertical',
+        freeMode: true,
+        autoHeight: true,
+        slidesPerView: 'auto',
+        autoplay: 1,
+        autoplayDisableOnInteraction: true,
+        speed: 5000,
+        loop: false,
+        autoplayStopOnLast: true,
+        onReachBeginning: (swiper) => {
+          if (swiper.activeIndex === 0) {
+            this.$dispatch('slidePrev');
+          }
+        },
+        onTouchStart: (swiper, event) => {
+          if (swiper.activeIndex === 4 || swiper.activeIndex === 0) {
+            this.moveStartY = event.changedTouches[0].pageY;
+          }
+        },
+        onSliderMove: (swiper, event) => {
+          // console.log(swiper.activeIndex);
+          this.activeBannerIndex = 1;
+          if (swiper.activeIndex === 4) {
+            const moveDistance = this.moveStartY - event.changedTouches[0].pageY;
+            console.log(this.moveStartY, moveDistance, this.hasSlideNext);
+            if (moveDistance > 20 && !this.hasSlideNext && this.moveStartY !== 0) {
+              this.$dispatch('slideNext');
+              this.hasSlideNext = true;
+              this.moveStartY = 0;
+            }
+          }
+          if (swiper.activeIndex === 0) {
+            const moveDistance = event.changedTouches[0].pageY - this.moveStartY;
+            // console.log(this.moveStartY, event.changedTouches[0].pageY, moveDistance);
+            if (moveDistance > 200 && !this.hasSlidePrev && this.moveStartY !== 0) {
+              this.$dispatch('slidePrev');
+              this.hasSlidePrev = true;
+              this.moveStartY = 0;
+            }
+          }
+        },
+      });
+      wechatSwiper.stopAutoplay();
       window.addEventListener('click', () => {
         if (!this.shouldHideBtn) return;
         const clearActionBtn = setTimeout(() => {
@@ -103,16 +152,20 @@
         if (shouldExculde || !this.isWxCircles) return;
         this.hideAction();
       });
-      forReturnSwiper = new Swiper('.tagArea', {
-        onTouchStart: (swiper) => {
-          console.log(swiper, forReturnSwiper);
-          this.$dispatch('lockSlideNext');
-        },
-        onTouchEnd: (swiper) => {
-          console.log(swiper, forReturnSwiper);
-          this.$dispatch('slidePrev');
-        },
-      });
+    },
+    events: {
+      'startAutoPlay'() {
+        const startAnimation = setTimeout(() => {
+          wechatSwiper.startAutoplay();
+          clearTimeout(startAnimation);
+        }, 500);
+      },
+      'initHasSlideNext'() {
+        this.hasSlideNext = false;
+      },
+      'initHasSlidePrev'() {
+        this.hasSlidePrev = false;
+      },
     },
     methods: {
       showBtns(index) {
@@ -161,6 +214,19 @@
 </script>
 
 <style scoped>
+	.wechatSwiper {
+		width: 100%;
+		height: 100%;
+	}
+
+	.wechatSwiper .swiper-wrapper {
+		width: 100%;
+	}
+
+	.wechatSwiper .swiper-slide {
+		width: 100%;
+	}
+
 	.wx-circles {
 		position: relative;
 		overflow-y: scroll;
@@ -258,7 +324,7 @@
 		position: absolute;
 		display: inline-block;
 		top: 0;
-		right: -20px;
+		right: -10px;
 		overflow: visible;
 	}
 
@@ -404,24 +470,5 @@
 		border-right: 6px solid transparent;
 		border-left: 6px solid transparent;
 		border-bottom: 8px solid #F3F3F5;
-	}
-
-	.tagArea {
-		height: 150px;
-		width: 85%;
-		margin-top: -250px;
-		position: relative;
-		background-color: transparent;
-		z-index: 1;
-	}
-
-	.topTagArea {
-		height: 100px;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		background-color: transparent;
-		z-index: 1;
 	}
 </style>
