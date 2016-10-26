@@ -28,6 +28,24 @@ const wechatConfig = {
   EncodingAESKey,
 }
 
+// Error Handlers
+if (app.get('env') === 'development') {
+  // development error handler, will print stacktrace
+  renderError(true);
+} else {
+  // production error handler, no stacktrace leaked to user
+  renderError(false);
+}
+function renderError(sendErrorObj) {
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: sendErrorObj ? err : {}
+    });
+  });
+}
+
 app.use(express.static('dist/'));
 // app.use(express.query());
 
@@ -47,7 +65,7 @@ app.set('view cache', false);
 
 const serverApi = express.Router();
 let wechat_api;
-app.use((req, res, next) => {
+app.use('/', (req, res, next) => {
   //使用wechat-api获取JSconfig  
   var param = {
     debug: true,
@@ -60,7 +78,8 @@ app.use((req, res, next) => {
   });*/
   api.getJsConfig(param, function (err, result) {
     if(err) {
-      return console.log(err);
+      console.log(err);
+      next();
     }
     console.log(result);
     wechat_api = result;
@@ -68,6 +87,7 @@ app.use((req, res, next) => {
 })
 
 serverApi.get('/wechat_api', (req, res) => {
+  console.log('==============api===============');
   res.send({ wechat_api });
 });
 
@@ -89,23 +109,6 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-// Error Handlers
-if (app.get('env') === 'development') {
-  // development error handler, will print stacktrace
-  renderError(true);
-} else {
-  // production error handler, no stacktrace leaked to user
-  renderError(false);
-}
-function renderError(sendErrorObj) {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: sendErrorObj ? err : {}
-    });
-  });
-}
 
 
 // app.use('/wechat_api', (req, res, next) => {
