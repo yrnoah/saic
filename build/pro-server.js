@@ -50,7 +50,7 @@ let wechat_api;
 app.use((req, res, next) => {
   //使用wechat-api获取JSconfig  
   var param = {
-    debug: false,
+    debug: true,
     jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'],
     url: 'http://srkfytl.gofriend.me/',
   };
@@ -60,9 +60,9 @@ app.use((req, res, next) => {
   });*/
   api.getJsConfig(param, function (err, result) {
     if(err) {
-      // console.log(err);
+      return console.log(err);
     }
-    // console.log(result);
+    console.log(result);
     wechat_api = result;
   });
 })
@@ -70,6 +70,10 @@ app.use((req, res, next) => {
 serverApi.get('/wechat_api', (req, res) => {
   res.send({ wechat_api });
 });
+
+serverApi.get('test', (req, res) => {
+  res.send('hahaha')
+})
 
 serverApi.get('/wechat_oauth', (req, res) => {
   res.send(url);
