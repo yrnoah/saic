@@ -1,3 +1,4 @@
+require("babel-register");
 const express = require('express');
 const app = express();
 const config = require('../config')
@@ -7,11 +8,16 @@ const wechat = require('wechat');
 const bodyParser = require('body-parser');
 
 const WechatApi = require('wechat-api');
+const WechatOauth = require('wechat-oauth');
 
+const router = express.Router();
 
-
-const [token, appid, EncodingAESKey, appsecret] = ['xjbtoken2333', 'wx818254b4c2b5bb7e', '49a35f5b9483e8f0011cf568b69c0d66', '49a35f5b9483e8f0011cf568b69c0d66'];
+const [token, appid, EncodingAESKey, appsecret] =
+      ['xjbtoken2333', 'wx818254b4c2b5bb7e', '49a35f5b9483e8f0011cf568b69c0d66', '49a35f5b9483e8f0011cf568b69c0d66'];
 const api = new WechatApi(token, appsecret);
+const client = new WechatOauth(appid, appsecret);
+
+const url = client.getAuthorizeURL('/', '123', 'snsapi_userinfo');
 
 const wechatConfig = {
   token,
@@ -25,10 +31,11 @@ app.use(express.query());
 app.use(bodyParser.urlencoded({extended: false}));  
 app.use(bodyParser.json());
 
-app.use('/wechat', wechat(wechatConfig, (req, res, next) => {
+app.use('/wechat', wechat(wechatConfig, (req, res, next) => {}));
 
-}));
 
+
+let wechat_api;
 app.use((req, res, next) => {
   //使用wechat-api获取JSconfig  
   var param = {
@@ -44,15 +51,25 @@ app.use((req, res, next) => {
     if(err) {
       console.log(err);
     }
-    console.log(result);
+    // console.log(result);
+    wechat_api = result;
   });
 })
 
-app.use('/wechat_api', (req, res, next) => {
-  console.log(api);
-  res.send({ api, wechat, protypes:api.proptypes });
-  next();
+
+router.get('/wechat_api', (req, res) => {
+  res.send({ wechat_api });
 });
+
+router.get('/wechat_oauth', (req, res) => {
+  res.send(url);
+});
+
+// app.use('/wechat_api', (req, res, next) => {
+//   console.log(api);
+//   res.send({ api, wechat, protypes:api.proptypes });
+//   next();
+// });
 
 Object.keys(proxyTable).forEach(function (context) {
   var options = proxyTable[context]
