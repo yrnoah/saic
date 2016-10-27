@@ -2,7 +2,7 @@
 	<div class="swiper-slide">
 		<div class="wechatSwiper">
 			<div class="swiper-wrapper">
-				<div class="swiper-slide" v-for="message in messages" track-by="$index">
+				<div class="swiper-slide" v-for="message in messages" track-by="$index" :id=`slide${message.index}`>
 					<div class="top-container" v-if="message.index === activeBannerIndex">
 						<div class="icon-2022"></div>
 						<img v-if="user.avatar" :src='user.avatar' class="avatar-user">
@@ -100,6 +100,7 @@
         speed: 5000,
         loop: false,
         autoplayStopOnLast: true,
+        hashnav: true,
         onReachBeginning: (swiper) => {
           if (swiper.activeIndex === 0) {
             this.$dispatch('slidePrev');
@@ -110,9 +111,13 @@
             this.moveStartY = event.changedTouches[0].pageY;
           }
         },
+        onTouchEnd: () => {
+          if (this.activeBannerIndex !== 1) {
+            this.activeBannerIndex = 1;
+          }
+        },
         onSliderMove: (swiper, event) => {
           // console.log(swiper.activeIndex);
-          this.activeBannerIndex = 1;
           if (swiper.activeIndex === 5) {
             const moveDistance = this.moveStartY - event.changedTouches[0].pageY;
             // console.log(this.moveStartY, moveDistance, this.hasSlideNext);
@@ -166,6 +171,12 @@
       },
       'initHasSlidePrev'() {
         this.hasSlidePrev = false;
+      },
+      'setMajorRelativePosition'(index) {
+        wechatSwiper.stopAutoplay();
+        this.activeBannerIndex = index;
+        wechatSwiper.slideTo((index - 1), 0);
+        wechatSwiper.setWrapperTranslate(wechatSwiper.getWrapperTranslate() + 256);
       },
     },
     methods: {

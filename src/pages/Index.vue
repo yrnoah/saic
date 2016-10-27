@@ -2,7 +2,7 @@
 	<div class="swiper-container">
 		<div class="sound">
 			<audio id="music" loop="loop" preload="auto">
-				<!--<source src="../../static/valentin-loop.mp3" type="audio/mpeg">-->
+				<source src="../../static/valentin-loop.mp3" type="audio/mpeg">
 			</audio>
 		</div>
 		<div class="musicBtn" @click="toggleMusic">
@@ -15,16 +15,12 @@
 			<introduction></introduction>
 			<horizontal-pages2></horizontal-pages2>
 			<year-animation></year-animation>
-			<div class="swiper-slide">
-				<h3 class="demoTit">就职方向</h3>
-				<p class="demoText">向下滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
+      <major-btns></major-btns>
 			<wechat></wechat>
 			<year-animation2></year-animation2>
 			<major></major>
 			<requirement></requirement>
 			<horizontal-pages3></horizontal-pages3>
-			<div class="swiper-slide"></div>
-			<div class="swiper-slide"></div>
 		</div>
 	</div>
 </template>
@@ -46,6 +42,7 @@
   import Wechat from '../components/Wechat';
   import Email from '../components/Email';
   import Major from '../components/Major';
+  import MajorBtns from '../components/MajorBtns';
   import Requirement from '../components/Requirement';
   import Provide from '../components/Provide';
 
@@ -56,6 +53,8 @@
       return {
         isPlayingMusic: false,
         moveStartY: 0,
+        preventWechatAutoplay: false,
+        relativeMajorIndex: null,
       };
     },
     components: {
@@ -71,6 +70,7 @@
       Major,
       Requirement,
       Provide,
+      MajorBtns,
     },
     ready() {
       this.startMusic();
@@ -124,7 +124,12 @@
             this.$broadcast('initHasSlidePrev');
           }
           if (swiper.activeIndex === 6) {
-            this.$broadcast('startAutoPlay');
+            // appSwiper.lockSwipes();
+            if (!this.preventWechatAutoplay) {
+              this.$broadcast('startAutoPlay');
+            } else if (this.relativeMajorIndex && this.preventWechatAutoplay) {
+              this.$broadcast('setMajorRelativePosition', this.relativeMajorIndex);
+            }
             // this.$broadcast('initYearAnimation');
           }
           if (swiper.activeIndex === 7) {
@@ -136,13 +141,16 @@
     },
     events: {
       'slideNext'() {
-        // appSwiper.unlockSwipeToNext();
+        appSwiper.unlockSwipes();
         appSwiper.slideNext();
+        this.preventWechatAutoplay = false;
         this.$broadcast('initHasSlideNext');
         this.$broadcast('startYearAnimation2');
       },
       'slidePrev'() {
+        appSwiper.unlockSwipes();
         appSwiper.slidePrev();
+        this.preventWechatAutoplay = false;
         this.$broadcast('initHasSlidePrev');
       },
       'lockSlidePrev'() {
@@ -156,6 +164,13 @@
       },
       'unlockSlideNext'() {
         appSwiper.unlockSwipeToNext();
+      },
+      'goWechatMajor'(index) {
+        console.log(index);
+        this.preventWechatAutoplay = true;
+        this.relativeMajorIndex = index;
+        // this.$broadcast('setMajorRelativePosition', index);
+        appSwiper.slideNext();
       },
     },
     methods: {
