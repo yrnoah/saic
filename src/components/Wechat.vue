@@ -91,6 +91,7 @@
       this.isWxCircles = true;
       wechatSwiper = new Swiper('.wechatSwiper', {
         direction: 'vertical',
+        nested: true,
         freeMode: true,
         autoHeight: true,
         slidesPerView: 'auto',
@@ -112,9 +113,9 @@
         onSliderMove: (swiper, event) => {
           // console.log(swiper.activeIndex);
           this.activeBannerIndex = 1;
-          if (swiper.activeIndex === 4) {
+          if (swiper.activeIndex === 5) {
             const moveDistance = this.moveStartY - event.changedTouches[0].pageY;
-            console.log(this.moveStartY, moveDistance, this.hasSlideNext);
+            // console.log(this.moveStartY, moveDistance, this.hasSlideNext);
             if (moveDistance > 20 && !this.hasSlideNext && this.moveStartY !== 0) {
               this.$dispatch('slideNext');
               this.hasSlideNext = true;

@@ -1,5 +1,5 @@
 <template>
-	<div class="horizontal-pages">
+	<div class="swiper-slide horizontal-pages3">
 		<div class="swiper-wrapper">
       <provide></provide>
 			<div class="swiper-slide"><h3 class="demoTit">福利1</h3><p class="demoText">向右滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
@@ -17,7 +17,7 @@
   } from '../utils/swiper.animate.min.js';
   import Provide from './Provide';
   import Email from './Email';
-  let horizontalPagesSwiper;
+  let horizontal3Swiper;
 
   export default {
     data() {
@@ -30,7 +30,7 @@
       Provide,
     },
     ready() {
-      horizontalPagesSwiper = new Swiper('.horizontal-pages', {
+      horizontal3Swiper = new Swiper('.horizontal-pages3', {
         onInit: (swiper) => {
           swiperAnimateCache(swiper);
           swiperAnimate(swiper);
@@ -58,7 +58,7 @@
     },
     events: {
       'startPageAnimation'() {
-        swiperAnimate(horizontalPagesSwiper);
+        swiperAnimate(horizontal3Swiper);
       },
     },
   };
@@ -68,17 +68,17 @@
 	@import '../assets/swiper-3.3.1.min.css';
 	@import '../assets/sprite-saic.css';
 	@import '../assets/animate.min.css';
-	.horizontal-pages {
+	.horizontal-pages3 {
 		height: 100%;
 		width: 100%;
 	}
 
-  .swiper-wrapper {
+  .horizontal-pages3 .swiper-wrapper {
     height: 100%;
 		width: 100%;
   }
 
-	.swiper-slide {
+	.horizontal-pages3 .swiper-slide {
 		overflow: hidden;
     height: 100%;
     width: 100%;

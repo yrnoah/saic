@@ -1,5 +1,5 @@
 <template>
-	<div class="horizontal-pages2">
+	<div class="swiper-slide horizontal-pages2">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide"><h3 class="demoTit">报告1</h3><p class="demoText">向右滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
       <div class="swiper-slide"><h3 class="demoTit">报告2</h3><p class="demoText">向右滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
@@ -73,12 +73,12 @@
 		width: 100%;
 	}
 
-  .swiper-wrapper {
+  .horizontal-pages2 .swiper-wrapper {
     height: 100%;
 		width: 100%;
   }
 
-	.swiper-slide {
+	.horizontal-pages2 .swiper-slide {
 		overflow: hidden;
     height: 100%;
     width: 100%;

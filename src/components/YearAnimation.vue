@@ -60,7 +60,7 @@
         const animationForward = setTimeout(() => {
           this.forwardFinished = true;
           clearTimeout(animationForward);
-        }, 2000);
+        }, 1900);
       },
       'initYearAnimation'() {
         this.startForward = false;

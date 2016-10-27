@@ -20,12 +20,11 @@
 				<p class="demoText">向下滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
 			<wechat></wechat>
 			<year-animation2></year-animation2>
-      <major></major>
-      <requirement></requirement>
-      <horizontal-pages3></horizontal-pages3>
-      <provide></provide>
-			<year-animation2></year-animation2>
-			<email></email>
+			<major></major>
+			<requirement></requirement>
+			<horizontal-pages3></horizontal-pages3>
+			<div class="swiper-slide"></div>
+			<div class="swiper-slide"></div>
 		</div>
 	</div>
 </template>
@@ -76,6 +75,10 @@
     ready() {
       this.startMusic();
       appSwiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        slidesPerView: 'auto',
+        slidesPerViewFit: true,
+        calculateHeight: true,
         onInit: (swiper) => {
           swiperAnimateCache(swiper);
           swiperAnimate(swiper);
@@ -129,17 +132,18 @@
             this.$broadcast('startYearAnimation2');
           }
         },
-        direction: 'vertical',
-        loop: false,
       });
     },
     events: {
       'slideNext'() {
         // appSwiper.unlockSwipeToNext();
         appSwiper.slideNext();
+        this.$broadcast('initHasSlideNext');
+        this.$broadcast('startYearAnimation2');
       },
       'slidePrev'() {
         appSwiper.slidePrev();
+        this.$broadcast('initHasSlidePrev');
       },
       'lockSlidePrev'() {
         appSwiper.lockSwipeToPrev();
