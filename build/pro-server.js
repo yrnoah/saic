@@ -66,7 +66,6 @@ function renderError(sendErrorObj) {
 
 
 
-
 const serverApi = express.Router();
 let wechat_api;
 
@@ -99,12 +98,18 @@ app.get('/', (req, res, next) => {
 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 app.get('/home', (req, res, next) => {
   console.log(req.query);
   res.render('index');
 })
 =======
 >>>>>>> add wechat
+=======
+app.get('/home', (req, res, next) => {
+  res.render('index');
+})
+>>>>>>> add home
 
 serverApi.get('/wechat_api', (req, res) => {
   res.send({ wechat_api });
