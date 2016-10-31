@@ -100,6 +100,7 @@ app.get('/', (req, res, next) => {
 
 app.get('/home', (req, res, next) => {
   console.log(req.query);
+  res.render('index');
 })
 
 serverApi.get('/wechat_api', (req, res) => {
