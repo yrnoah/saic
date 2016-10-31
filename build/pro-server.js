@@ -98,10 +98,13 @@ app.get('/', (req, res, next) => {
   next();
 });
 
+<<<<<<< HEAD
 app.get('/home', (req, res, next) => {
   console.log(req.query);
   res.render('index');
 })
+=======
+>>>>>>> add wechat
 
 serverApi.get('/wechat_api', (req, res) => {
   res.send({ wechat_api });
