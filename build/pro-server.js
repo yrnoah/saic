@@ -96,6 +96,10 @@ app.get('/', (req, res, next) => {
   url = client.getAuthorizeURL('http://srkfytl.gofriend.me/home', '123', 'snsapi_userinfo');
   req.redirect(url);
   next();
+});
+
+app.get('/home', (req, res, next) => {
+  console.log(req.query);
 })
 
 serverApi.get('/wechat_api', (req, res) => {
