@@ -30,6 +30,7 @@ report1-contentreport1-content<template>
 		background-color: #4EDEFD;
 		height: 100%;
     position: relative;
+    overflow: hidden;
 	}
   .report-content {
     width: 226px;

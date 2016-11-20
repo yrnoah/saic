@@ -1,11 +1,11 @@
 <template>
 	<div class="swiper-slide vertical-pages">
 		<div class="swiper-wrapper">
-      <div class="swiper-slide"><h3 class="demoTit">滑页1</h3><p class="demoText">向上滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
 			<div class="swiper-slide"><h3 class="demoTit">滑页2</h3><p class="demoText">向上滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
       <div class="swiper-slide"><h3 class="demoTit">滑页3</h3><p class="demoText">向上滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
       <div class="swiper-slide"><h3 class="demoTit">滑页4</h3><p class="demoText">向上滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
-      <div class="swiper-slide"><h3 class="demoTit">滑页5</h3><p class="demoText">向上滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
+      <logo></logo>
+      <slogan></slogan>
 		</div>
 	</div>
 </template>
@@ -16,7 +16,8 @@
     swiperAnimateCache,
     swiperAnimate,
   } from '../utils/swiper.animate.min.js';
-  // import Slogan from './Slogan';
+  import Slogan from './vertical/Slogan';
+  import Logo from './vertical/Logo';
   let verticalTopSwiper;
 
   export default {
@@ -27,7 +28,8 @@
       };
     },
     components: {
-      // Slogan,
+      Slogan,
+      Logo,
     },
     ready() {
       verticalTopSwiper = new Swiper('.vertical-pages', {
