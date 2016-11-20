@@ -13,10 +13,11 @@
 			<home></home>
 			<horizontal-pages></horizontal-pages>
       <wechat></wechat>
-      <div class="swiper-slide"><h3 class="demoTit">滑页1</h3><p class="demoText">向下滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
-      <div class="swiper-slide"><h3 class="demoTit">滑页2</h3><p class="demoText">向下滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
-      <div class="swiper-slide"><h3 class="demoTit">滑页3</h3><p class="demoText">向下滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
-      <div class="swiper-slide"><h3 class="demoTit">滑页4</h3><p class="demoText">向下滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
+      <major></major>
+      <requirement></requirement>
+      <provide1></provide1>
+      <provide2></provide2>
+      <email></email>
 		</div>
 	</div>
 </template>
@@ -31,6 +32,11 @@
   import Home from '../components/Home';
   import HorizontalPages from '../components/HorizontalPages';
   import Wechat from '../components/Wechat';
+  import Major from '../components/Major';
+  import Requirement from '../components/Requirement';
+  import Provide1 from '../components/Provide1';
+  import Provide2 from '../components/Provide2';
+  import Email from '../components/Email';
 
   import { $ } from '../utils/utils.js';
 
@@ -47,6 +53,11 @@
       Home,
       HorizontalPages,
       Wechat,
+      Major,
+      Requirement,
+      Provide1,
+      Provide2,
+      Email,
     },
     ready() {
       // this.startMusic();

@@ -49,7 +49,7 @@
   }
   .angel-animation {
     position: absolute;
-    bottom: 60px;
+    bottom: 30px;
     width: 100%;
     animation: bounce-down 1s linear infinite;
   }
@@ -72,7 +72,7 @@
 
   .bottom {
     position: absolute;
-    bottom: -900px;
+    bottom: -950px;
   }
   .earth {
     display: block;
@@ -86,7 +86,7 @@
   }
   .car-position {
     position: absolute;
-    bottom: 155px;
+    bottom: 110px;
     width: 100%;
   }
 </style>

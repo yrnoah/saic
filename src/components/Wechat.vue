@@ -4,7 +4,7 @@
 			<div class="swiper-wrapper">
 				<div class="swiper-slide" v-for="message in messages" track-by="$index" :id=`slide${message.index}`>
 					<div class="top-container" v-if="message.index === activeBannerIndex">
-						<div class="icon-2022"></div>
+						<img src="../images/wechat-top.png" class="wechat-topbg">
 						<img v-if="user.avatar" :src='user.avatar' class="avatar-user">
 						<img v-else src='../images/avatar-user.png' class="avatar-user">
 						<p class="username">{{ user.name }}</p>
@@ -245,15 +245,23 @@
 	}
 
 	.top-container {
-		background: url('../images/bg-wx-circles.png') no-repeat 100% 100%;
-		background-size: cover;
-		width: 100%;
-		height: 256px;
+		/*background: url('../images/bg-wx-circles.png') no-repeat 100% 100%;
+		background-size: cover;*/
+    background-color: #021844;
+		/*width: 100%;
+		height: 256px;*/
 		position: relative;
 		overflow: visible;
 		text-align: center;
 		margin-bottom: 30px;
 	}
+
+  .wechat-topbg {
+    width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: top;
+  }
 
 	.icon-2022 {
 		margin: 0 auto;

@@ -44,7 +44,7 @@
   }
   .angel-animation {
     position: absolute;
-    bottom: 60px;
+    bottom: 25px;
     width: 100%;
     animation: bounce-down 1s linear infinite;
   }

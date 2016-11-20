@@ -58,6 +58,8 @@ report1-contentreport1-content<template>
   .cover-title {
     height: 174px;
     background-color: #FFF;
+    position: relative;
+    z-index: 2;
   }
 
   .report4-content {
@@ -76,13 +78,15 @@ report1-contentreport1-content<template>
     width: 169px;
     height: 68px;
     position: absolute;
-    bottom: -68px;
+    bottom: -67px;
+    z-index: 1;
     right: 0;
+    vertical-align: top;
   }
 
   .angel-animation {
     position: absolute;
-    right: -50px;
+    right: -40px;
     top: 115px;
     animation: bounce-right 1s linear infinite;
   }
@@ -104,7 +108,7 @@ report1-contentreport1-content<template>
 
   .bottom {
     position: absolute;
-    bottom: -900px;
+    bottom: -950px;
   }
   .earth {
     display: block;
@@ -118,7 +122,7 @@ report1-contentreport1-content<template>
   }
   .car-position {
     position: absolute;
-    bottom: 155px;
+    bottom: 110px;
     width: 100%;
   }
 </style>

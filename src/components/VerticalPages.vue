@@ -1,9 +1,8 @@
 <template>
 	<div class="swiper-slide vertical-pages">
 		<div class="swiper-wrapper">
-			<div class="swiper-slide"><h3 class="demoTit">滑页2</h3><p class="demoText">向上滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
-      <div class="swiper-slide"><h3 class="demoTit">滑页3</h3><p class="demoText">向上滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
-      <div class="swiper-slide"><h3 class="demoTit">滑页4</h3><p class="demoText">向上滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
+			<space></space>
+      <runway></runway>
       <logo></logo>
       <slogan></slogan>
 		</div>
@@ -18,6 +17,8 @@
   } from '../utils/swiper.animate.min.js';
   import Slogan from './vertical/Slogan';
   import Logo from './vertical/Logo';
+  import Runway from './vertical/Runway';
+  import Space from './vertical/Space';
   let verticalTopSwiper;
 
   export default {
@@ -30,6 +31,8 @@
     components: {
       Slogan,
       Logo,
+      Runway,
+      Space,
     },
     ready() {
       verticalTopSwiper = new Swiper('.vertical-pages', {
@@ -39,30 +42,13 @@
         onInit: (swiper) => {
           swiperAnimateCache(swiper);
           swiperAnimate(swiper);
-          // console.log(verticalTopSwiper);
         },
-        onSlideChangeEnd: (swiper) => {
-          // swiperAnimate(swiper);
-          if (swiper.activeIndex === 0) {
-            console.log(swiper.activeIndex);
-            // this.$dispatch('unlockSlideNext');
-            // this.$dispatch('lockSlidePrev');
-          }
-          // if (swiper.activeIndex === 1) {
-          //   this.$dispatch('lockSlidePrev');
-          // }
-          // if (swiper.activeIndex === 5) {
-          //   this.$dispatch('unlockSlideNext');
-          // }
-          // if (swiper.activeIndex === 4 && swiper.previousIndex === 5) {
-          //   this.$dispatch('lockSlideNext');
-          // }
-        },
+        onSlideChangeEnd: () => {},
         onTouchStart: (swiper, event) => {
           if (swiper.activeIndex === 0) {
             this.moveStartY = event.changedTouches[0].pageY;
           }
-          if (swiper.activeIndex === 4) {
+          if (swiper.activeIndex === 3) {
             this.moveStartX = event.changedTouches[0].pageX;
             this.moveStartY = event.changedTouches[0].pageY;
           }
@@ -76,7 +62,7 @@
               return;
             }
           }
-          if (swiper.activeIndex === 4) {
+          if (swiper.activeIndex === 3) {
             const moveDistanceX = event.changedTouches[0].pageX - this.moveStartX;
             const moveDistanceY = event.changedTouches[0].pageY - this.moveStartY;
             if (moveDistanceX > 100 && moveDistanceY < 100) {
