@@ -1,22 +1,23 @@
 <template>
 	<div class="swiper-slide horizontal-pages">
 		<div class="swiper-wrapper">
+      <div class="swiper-slide"><h3 class="demoTit">报告</h3><p class="demoText">向右滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
 			<div class="swiper-slide"><h3 class="demoTit">报告1</h3><p class="demoText">向右滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
       <div class="swiper-slide"><h3 class="demoTit">报告2</h3><p class="demoText">向右滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
       <div class="swiper-slide"><h3 class="demoTit">报告3</h3><p class="demoText">向右滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
       <div class="swiper-slide"><h3 class="demoTit">报告4</h3><p class="demoText">向右滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
-      <slogan></slogan>
+      <vertical-pages></vertical-pages>
 		</div>
 	</div>
 </template>
 
 <script>
-  import Swiper from '../utils/swiper-3.3.1.min.js';
+  import Swiper from '../../static/swiper.js';
   import {
     swiperAnimateCache,
     swiperAnimate,
   } from '../utils/swiper.animate.min.js';
-  import Slogan from './Slogan';
+  import VerticalPages from './VerticalPages';
   let horizontalPagesSwiper;
 
   export default {
@@ -26,7 +27,7 @@
       };
     },
     components: {
-      Slogan,
+      VerticalPages,
     },
     ready() {
       horizontalPagesSwiper = new Swiper('.horizontal-pages', {
@@ -44,11 +45,11 @@
           if (swiper.activeIndex === 1) {
             this.$dispatch('lockSlidePrev');
           }
-          if (swiper.activeIndex === 4) {
-            this.$dispatch('unlockSlideNext');
+          if (swiper.activeIndex === 5) {
+            // this.$dispatch('unlockSlideNext');
           }
-          if (swiper.activeIndex === 3 && swiper.previousIndex === 4) {
-            this.$dispatch('lockSlideNext');
+          if (swiper.activeIndex === 4 && swiper.previousIndex === 5) {
+            // this.$dispatch('lockSlideNext');
           }
         },
         direction: 'horizontal',
@@ -59,13 +60,17 @@
       'startPageAnimation'() {
         swiperAnimate(horizontalPagesSwiper);
       },
+      'verticalToHorizen'() {
+        // appSwiper.unlockSwipes();
+        horizontalPagesSwiper.slideTo(4);
+        console.log('verticalToHorizen');
+      },
     },
   };
 </script>
 
 <style scoped>
 	@import '../assets/swiper-3.3.1.min.css';
-	@import '../assets/sprite-saic.css';
 	@import '../assets/animate.min.css';
 	.horizontal-pages {
 		height: 100%;

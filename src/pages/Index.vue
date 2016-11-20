@@ -1,6 +1,6 @@
 <template>
 	<div class="swiper-container">
-		<div class="sound">
+		<!--<div class="sound">
 			<audio id="music" loop="loop" preload="auto">
 				<source src="../../static/valentin-loop.mp3" type="audio/mpeg">
 			</audio>
@@ -8,43 +8,29 @@
 		<div class="musicBtn" @click="toggleMusic">
 			<div v-if="!isPlayingMusic" class="icon-stop-music"></div>
 			<div v-else class="icon-start-music"></div>
-		</div>
+		</div>-->
 		<div class="swiper-wrapper">
-			<cover></cover>
+			<home></home>
 			<horizontal-pages></horizontal-pages>
-			<introduction></introduction>
-			<horizontal-pages2></horizontal-pages2>
-			<year-animation></year-animation>
-      <major-btns></major-btns>
-			<wechat></wechat>
-			<year-animation2></year-animation2>
-			<major></major>
-			<requirement></requirement>
-			<horizontal-pages3></horizontal-pages3>
+      <wechat></wechat>
+      <div class="swiper-slide"><h3 class="demoTit">滑页1</h3><p class="demoText">向下滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
+      <div class="swiper-slide"><h3 class="demoTit">滑页2</h3><p class="demoText">向下滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
+      <div class="swiper-slide"><h3 class="demoTit">滑页3</h3><p class="demoText">向下滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
+      <div class="swiper-slide"><h3 class="demoTit">滑页4</h3><p class="demoText">向下滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
 		</div>
 	</div>
 </template>
 
 <script>
-  import Swiper from '../utils/swiper-3.3.1.min.js';
+  import Swiper from '../../static/swiper.js';
   import {
     swiperAnimateCache,
     swiperAnimate,
   } from '../utils/swiper.animate.min.js';
   let appSwiper;
-  import Cover from '../components/Cover';
+  import Home from '../components/Home';
   import HorizontalPages from '../components/HorizontalPages';
-  import HorizontalPages2 from '../components/HorizontalPages2';
-  import HorizontalPages3 from '../components/HorizontalPages3';
-  import Introduction from '../components/Introduction';
-  import YearAnimation from '../components/YearAnimation';
-  import YearAnimation2 from '../components/YearAnimation2';
   import Wechat from '../components/Wechat';
-  import Email from '../components/Email';
-  import Major from '../components/Major';
-  import MajorBtns from '../components/MajorBtns';
-  import Requirement from '../components/Requirement';
-  import Provide from '../components/Provide';
 
   import { $ } from '../utils/utils.js';
 
@@ -58,22 +44,12 @@
       };
     },
     components: {
-      Cover,
+      Home,
       HorizontalPages,
-      HorizontalPages2,
-      HorizontalPages3,
-      Introduction,
-      YearAnimation,
-      YearAnimation2,
       Wechat,
-      Email,
-      Major,
-      Requirement,
-      Provide,
-      MajorBtns,
     },
     ready() {
-      this.startMusic();
+      // this.startMusic();
       appSwiper = new Swiper('.swiper-container', {
         direction: 'vertical',
         slidesPerView: 'auto',
@@ -97,33 +73,33 @@
             appSwiper.unlockSwipeToNext();
             // this.$broadcast('startPageAnimation');
           }
-          if (swiper.activeIndex === 3 && swiper.previousIndex === 2) {
-            appSwiper.lockSwipeToNext();
-            // this.$broadcast('startPageAnimation');
-          }
-          if (swiper.activeIndex === 3 && swiper.previousIndex === 4) {
-            appSwiper.lockSwipeToPrev();
-            appSwiper.unlockSwipeToNext();
-            // this.$broadcast('initYearAnimation');
-            // this.$broadcast('startPageAnimation');
-          }
-          if (swiper.activeIndex === 10 && swiper.previousIndex === 9) {
-            appSwiper.lockSwipeToNext();
-            // this.$broadcast('startPageAnimation');
-          }
-          if (swiper.activeIndex === 10 && swiper.previousIndex === 11) {
-            appSwiper.lockSwipeToPrev();
-            appSwiper.unlockSwipeToNext();
-            // this.$broadcast('initYearAnimation');
-            // this.$broadcast('startPageAnimation');
-          }
-          if (swiper.activeIndex === 4) {
-            this.$broadcast('startYearAnimation');
-          }
-          if (swiper.activeIndex === 5) {
-            this.$broadcast('initHasSlidePrev');
-          }
-          if (swiper.activeIndex === 6) {
+          // if (swiper.activeIndex === 3 && swiper.previousIndex === 2) {
+          //   appSwiper.lockSwipeToNext();
+          //   // this.$broadcast('startPageAnimation');
+          // }
+          // if (swiper.activeIndex === 3 && swiper.previousIndex === 4) {
+          //   appSwiper.lockSwipeToPrev();
+          //   appSwiper.unlockSwipeToNext();
+          //   // this.$broadcast('initYearAnimation');
+          //   // this.$broadcast('startPageAnimation');
+          // }
+          // if (swiper.activeIndex === 10 && swiper.previousIndex === 9) {
+          //   appSwiper.lockSwipeToNext();
+          //   // this.$broadcast('startPageAnimation');
+          // }
+          // if (swiper.activeIndex === 10 && swiper.previousIndex === 11) {
+          //   appSwiper.lockSwipeToPrev();
+          //   appSwiper.unlockSwipeToNext();
+          //   // this.$broadcast('initYearAnimation');
+          //   // this.$broadcast('startPageAnimation');
+          // }
+          // if (swiper.activeIndex === 4) {
+          //   this.$broadcast('startYearAnimation');
+          // }
+          // if (swiper.activeIndex === 5) {
+          //   this.$broadcast('initHasSlidePrev');
+          // }
+          if (swiper.activeIndex === 3) {
             // appSwiper.lockSwipes();
             if (!this.preventWechatAutoplay) {
               this.$broadcast('startAutoPlay');
@@ -132,9 +108,9 @@
             }
             // this.$broadcast('initYearAnimation');
           }
-          if (swiper.activeIndex === 7) {
+          if (swiper.activeIndex === 4) {
             this.$broadcast('initHasSlideNext');
-            this.$broadcast('startYearAnimation2');
+            // this.$broadcast('startYearAnimation2');
           }
         },
       });
@@ -172,6 +148,11 @@
         // this.$broadcast('setMajorRelativePosition', index);
         appSwiper.slideNext();
       },
+      'goWechat'() {
+        appSwiper.unlockSwipes();
+        appSwiper.slideTo(2);
+        console.log('goWechat');
+      },
     },
     methods: {
       startMusic() {
@@ -200,8 +181,9 @@
 
 <style>
 	@import '../assets/swiper-3.3.1.min.css';
-	@import '../assets/sprite-saic.css';
+	@import '../../static/sprite-saic.css';
 	@import '../assets/animate.min.css';
+  @import '../assets/saic-animate.css';
 	.swiper-container {
 		height: 100%;
 		width: 100%;

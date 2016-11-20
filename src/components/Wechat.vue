@@ -66,7 +66,7 @@
 </template>
 
 <script>
-  import Swiper from '../utils/swiper-3.3.1.min.js';
+  import Swiper from '../../static/swiper.js';
   import messageData from '../utils/mock-data.js';
   import { $, User } from '../utils/utils.js';
   let wechatSwiper;

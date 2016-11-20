@@ -10,6 +10,7 @@
 		min-height: 480px;
 		max-width: 750px;
 		margin: 0;
+    background-color: #4EDEFD;
 	}
 
 	body {

@@ -1,0 +1,510 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-car-big {
+  background-image: url(sprite-saic.png);
+  background-position: -460px -2804px;
+  width: 275px;
+  height: 109px;
+}
+.icon-car-small {
+  background-image: url(sprite-saic.png);
+  background-position: -3366px -1407px;
+  width: 144px;
+  height: 86px;
+}
+.icon-earth {
+  background-image: url(sprite-saic.png);
+  background-position: 0px 0px;
+  width: 1577px;
+  height: 1886px;
+}
+.icon-earth2 {
+  background-image: url(sprite-saic.png);
+  background-position: -1577px 0px;
+  width: 1358px;
+  height: 1359px;
+}
+.icon-future-car {
+  background-image: url(sprite-saic.png);
+  background-position: -3079px -2356px;
+  width: 141px;
+  height: 261px;
+}
+.icon-future-cartail {
+  background-image: url(sprite-saic.png);
+  background-position: -3482px -261px;
+  width: 55px;
+  height: 69px;
+}
+.icon-future-major {
+  background-image: url(sprite-saic.png);
+  background-position: -2482px -2267px;
+  width: 335px;
+  height: 64px;
+}
+.icon-future-major1 {
+  background-image: url(sprite-saic.png);
+  background-position: -2152px -2338px;
+  width: 262px;
+  height: 57px;
+}
+.icon-future-major2 {
+  background-image: url(sprite-saic.png);
+  background-position: -2414px -2338px;
+  width: 259px;
+  height: 57px;
+}
+.icon-future-major3 {
+  background-image: url(sprite-saic.png);
+  background-position: -2673px -2338px;
+  width: 261px;
+  height: 56px;
+}
+.icon-future-major4 {
+  background-image: url(sprite-saic.png);
+  background-position: -3366px -1700px;
+  width: 155px;
+  height: 57px;
+}
+.icon-future-polygan1 {
+  background-image: url(sprite-saic.png);
+  background-position: 0px -2915px;
+  width: 343px;
+  height: 343px;
+}
+.icon-future-polygan2 {
+  background-image: url(sprite-saic.png);
+  background-position: -2762px -1359px;
+  width: 163px;
+  height: 164px;
+}
+.icon-future-polygan3 {
+  background-image: url(sprite-saic.png);
+  background-position: -3366px -1102px;
+  width: 118px;
+  height: 118px;
+}
+.icon-future-polygan4 {
+  background-image: url(sprite-saic.png);
+  background-position: -3366px -1596px;
+  width: 103px;
+  height: 104px;
+}
+.icon-future-polygan5 {
+  background-image: url(sprite-saic.png);
+  background-position: -3456px -435px;
+  width: 91px;
+  height: 89px;
+}
+.icon-future-polygan6 {
+  background-image: url(sprite-saic.png);
+  background-position: -2935px -2139px;
+  width: 218px;
+  height: 217px;
+}
+.icon-future-polygan7 {
+  background-image: url(sprite-saic.png);
+  background-position: -3456px -524px;
+  width: 88px;
+  height: 87px;
+}
+.icon-future-title1 {
+  background-image: url(sprite-saic.png);
+  background-position: -2482px -1886px;
+  width: 431px;
+  height: 381px;
+}
+.icon-future-title2 {
+  background-image: url(sprite-saic.png);
+  background-position: -1577px -1359px;
+  width: 532px;
+  height: 440px;
+}
+.icon-future-title3 {
+  background-image: url(sprite-saic.png);
+  background-position: -2014px -1886px;
+  width: 468px;
+  height: 446px;
+}
+.icon-future-title4 {
+  background-image: url(sprite-saic.png);
+  background-position: -1506px -1886px;
+  width: 508px;
+  height: 452px;
+}
+.icon-future-title5 {
+  background-image: url(sprite-saic.png);
+  background-position: 0px -2484px;
+  width: 460px;
+  height: 431px;
+}
+.icon-future-title6 {
+  background-image: url(sprite-saic.png);
+  background-position: -2109px -1359px;
+  width: 532px;
+  height: 433px;
+}
+.icon-home-bike {
+  background-image: url(sprite-saic.png);
+  background-position: -3483px -766px;
+  width: 44px;
+  height: 59px;
+}
+.icon-home-bridge1 {
+  background-image: url(sprite-saic.png);
+  background-position: -343px -2915px;
+  width: 405px;
+  height: 231px;
+}
+.icon-home-bridge2 {
+  background-image: url(sprite-saic.png);
+  background-position: -2037px -2484px;
+  width: 405px;
+  height: 202px;
+}
+.icon-home-build1 {
+  background-image: url(sprite-saic.png);
+  background-position: -2935px -2673px;
+  width: 180px;
+  height: 201px;
+}
+.icon-home-build10 {
+  background-image: url(sprite-saic.png);
+  background-position: -2641px -1359px;
+  width: 121px;
+  height: 297px;
+}
+.icon-home-build11 {
+  background-image: url(sprite-saic.png);
+  background-position: -3366px -989px;
+  width: 125px;
+  height: 113px;
+}
+.icon-home-build12 {
+  background-image: url(sprite-saic.png);
+  background-position: -3366px -123px;
+  width: 153px;
+  height: 138px;
+}
+.icon-home-build2 {
+  background-image: url(sprite-saic.png);
+  background-position: -3366px -435px;
+  width: 90px;
+  height: 215px;
+}
+.icon-home-build3 {
+  background-image: url(sprite-saic.png);
+  background-position: -3366px -766px;
+  width: 117px;
+  height: 131px;
+}
+.icon-home-build4 {
+  background-image: url(sprite-saic.png);
+  background-position: -3366px -261px;
+  width: 116px;
+  height: 174px;
+}
+.icon-home-build5 {
+  background-image: url(sprite-saic.png);
+  background-position: -3483px -825px;
+  width: 46px;
+  height: 47px;
+}
+.icon-home-build6 {
+  background-image: url(sprite-saic.png);
+  background-position: -3276px 0px;
+  width: 90px;
+  height: 337px;
+}
+.icon-home-build7 {
+  background-image: url(sprite-saic.png);
+  background-position: -2935px -2356px;
+  width: 144px;
+  height: 317px;
+}
+.icon-home-build8 {
+  background-image: url(sprite-saic.png);
+  background-position: -2935px -653px;
+  width: 296px;
+  height: 287px;
+}
+.icon-home-build9 {
+  background-image: url(sprite-saic.png);
+  background-position: -3366px 0px;
+  width: 189px;
+  height: 123px;
+}
+.icon-home-car {
+  background-image: url(sprite-saic.png);
+  background-position: -3366px -650px;
+  width: 151px;
+  height: 116px;
+}
+.icon-home-cars {
+  background-image: url(sprite-saic.png);
+  background-position: -3366px -897px;
+  width: 163px;
+  height: 92px;
+}
+.icon-home-mans {
+  background-image: url(sprite-saic.png);
+  background-position: -3366px -1315px;
+  width: 139px;
+  height: 92px;
+}
+.icon-home-rainbow {
+  background-image: url(sprite-saic.png);
+  background-position: -3366px -1493px;
+  width: 110px;
+  height: 103px;
+}
+.icon-home-title {
+  background-image: url(sprite-saic.png);
+  background-position: -460px -2484px;
+  width: 481px;
+  height: 320px;
+}
+.icon-home-windmill {
+  background-image: url(sprite-saic.png);
+  background-position: -3153px -2139px;
+  width: 116px;
+  height: 209px;
+}
+.icon-homg-slogan {
+  background-image: url(sprite-saic.png);
+  background-position: -2935px -1570px;
+  width: 297px;
+  height: 185px;
+}
+.icon-logo {
+  background-image: url(sprite-saic.png);
+  background-position: -1086px -1886px;
+  width: 420px;
+  height: 583px;
+}
+.icon-major-icon1 {
+  background-image: url(sprite-saic.png);
+  background-position: -3491px -989px;
+  width: 51px;
+  height: 41px;
+}
+.icon-major-icon2 {
+  background-image: url(sprite-saic.png);
+  background-position: -3482px -330px;
+  width: 54px;
+  height: 54px;
+}
+.icon-major-icon3 {
+  background-image: url(sprite-saic.png);
+  background-position: -3482px -384px;
+  width: 58px;
+  height: 38px;
+}
+.icon-major-icon4 {
+  background-image: url(sprite-saic.png);
+  background-position: -3491px -1030px;
+  width: 44px;
+  height: 47px;
+}
+.icon-name {
+  background-image: url(sprite-saic.png);
+  background-position: -2442px -2484px;
+  width: 451px;
+  height: 146px;
+}
+.icon-report-cloud {
+  background-image: url(sprite-saic.png);
+  background-position: -941px -2484px;
+  width: 605px;
+  height: 236px;
+}
+.icon-report-mobile {
+  background-image: url(sprite-saic.png);
+  background-position: -3366px -1220px;
+  width: 137px;
+  height: 95px;
+}
+.icon-report-polygon {
+  background-image: url(sprite-saic.png);
+  background-position: -735px -2804px;
+  width: 256px;
+  height: 103px;
+}
+.icon-report-title {
+  background-image: url(sprite-saic.png);
+  background-position: -2935px -1951px;
+  width: 278px;
+  height: 188px;
+}
+.icon-report1-content {
+  background-image: url(sprite-saic.png);
+  background-position: -2935px -1755px;
+  width: 272px;
+  height: 196px;
+}
+.icon-report1-title {
+  background-image: url(sprite-saic.png);
+  background-position: -1016px -2915px;
+  width: 263px;
+  height: 119px;
+}
+.icon-report2-content {
+  background-image: url(sprite-saic.png);
+  background-position: -2935px -1162px;
+  width: 307px;
+  height: 204px;
+}
+.icon-report2-title {
+  background-image: url(sprite-saic.png);
+  background-position: -1279px -2915px;
+  width: 263px;
+  height: 119px;
+}
+.icon-report3-content {
+  background-image: url(sprite-saic.png);
+  background-position: -2935px -940px;
+  width: 292px;
+  height: 222px;
+}
+.icon-report3-title {
+  background-image: url(sprite-saic.png);
+  background-position: -2641px -1656px;
+  width: 268px;
+  height: 119px;
+}
+.icon-report4-content {
+  background-image: url(sprite-saic.png);
+  background-position: -2935px -1366px;
+  width: 303px;
+  height: 204px;
+}
+.icon-report4-title {
+  background-image: url(sprite-saic.png);
+  background-position: -748px -2915px;
+  width: 268px;
+  height: 119px;
+}
+.icon-slogan-tip {
+  background-image: url(sprite-saic.png);
+  background-position: -1867px -2338px;
+  width: 285px;
+  height: 98px;
+}
+.icon-slogan-title {
+  background-image: url(sprite-saic.png);
+  background-position: -1546px -2484px;
+  width: 491px;
+  height: 230px;
+}
+.icon-wechat-bgboard {
+  background-image: url(sprite-saic.png);
+  background-position: -558px -1886px;
+  width: 528px;
+  height: 587px;
+}
+.icon-wechat-bgpolygan {
+  background-image: url(sprite-saic.png);
+  background-position: 0px -1886px;
+  width: 558px;
+  height: 598px;
+}
+.icon-wechat-major1 {
+  background-image: url(sprite-saic.png);
+  background-position: -2074px -1843px;
+  width: 199px;
+  height: 41px;
+}
+.icon-wechat-major2 {
+  background-image: url(sprite-saic.png);
+  background-position: -3079px -2617px;
+  width: 197px;
+  height: 42px;
+}
+.icon-wechat-major3 {
+  background-image: url(sprite-saic.png);
+  background-position: -2273px -1843px;
+  width: 199px;
+  height: 41px;
+}
+.icon-wechat-major4 {
+  background-image: url(sprite-saic.png);
+  background-position: -3366px -1757px;
+  width: 118px;
+  height: 40px;
+}
+.icon-wechat-man1 {
+  background-image: url(sprite-saic.png);
+  background-position: -2935px 0px;
+  width: 341px;
+  height: 354px;
+}
+.icon-wechat-man2 {
+  background-image: url(sprite-saic.png);
+  background-position: -2935px -354px;
+  width: 336px;
+  height: 299px;
+}
+.icon-wechat-provide1 {
+  background-image: url(sprite-saic.png);
+  background-position: -2575px -1799px;
+  width: 238px;
+  height: 41px;
+}
+.icon-wechat-provide2 {
+  background-image: url(sprite-saic.png);
+  background-position: -2935px -2874px;
+  width: 239px;
+  height: 41px;
+}
+.icon-wechat-require {
+  background-image: url(sprite-saic.png);
+  background-position: -1506px -2338px;
+  width: 361px;
+  height: 108px;
+}
+.icon-wechat-right {
+  background-image: url(sprite-saic.png);
+  background-position: -3519px -123px;
+  width: 31px;
+  height: 29px;
+}
+.icon-wechat-title1 {
+  background-image: url(sprite-saic.png);
+  background-position: -1577px -1799px;
+  width: 497px;
+  height: 86px;
+}
+.icon-wechat-title2 {
+  background-image: url(sprite-saic.png);
+  background-position: -2074px -1799px;
+  width: 501px;
+  height: 44px;
+}
+.icon-wheel-big {
+  background-image: url(sprite-saic.png);
+  background-position: -3484px -1102px;
+  width: 45px;
+  height: 45px;
+}
+.icon-wheel.small {
+  background-image: url(sprite-saic.png);
+  background-position: -3519px -152px;
+  width: 21px;
+  height: 22px;
+}

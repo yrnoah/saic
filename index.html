@@ -9,6 +9,11 @@
 	<meta name="apple-mobile-web-app-capable" content="yes" />
   <link rel="preload" href="./static/valentin-loop.mp3" as="media">
   <link rel="preload" href="./static/lovely-pop-loop.mp3" as="media">
+  <link rel="preload" href="./static/sprite-saic.png" as="image">
+  <link rel="preload" href="./static/sprite-saic.css" as="style">
+  <link rel="preload" href="./static/swiper.js" as="script">
+  <link rel="preload" href="./static/car-big.png" as="image">
+  <link rel="preload" href="./static/wheel.big.png" as="image">
 	<title>SAIC International</title>
 </head>
 
@@ -16,36 +21,24 @@
 	<div id="app">
 		<div class="default-loading">
 			<div class="floater"></div>
-			<div class="spinner">
-				<div class="line-full">
-					<div class="dot animate-spinner"></div>
-				</div>
-				<div class="line-middle-top">
-					<div class="dot dot-left animate-spinner8"></div>
-					<div class="dot dot-right animate-spinner2"></div>
-				</div>
-				<div class="line-full">
-					<div class="dot dot-left animate-spinner7"></div>
-					<div class="dot dot-right animate-spinner3"></div>
-				</div>
-				<div class="line-middle-bottom">
-					<div class="dot dot-left animate-spinner6"></div>
-					<div class="dot dot-right animate-spinner4"></div>
-				</div>
-				<div class="line-full">
-					<div class="dot animate-spinner5"></div>
-				</div>
-			</div>
+      <div class="icon-car-big">
+        <div class="wheel">
+          <div class="icon-wheel-big left"></div>
+          <div class="icon-wheel-big right"></div>
+          <div class="dot small-dot"></div>
+          <div class="dot bid-dot"></div>
+        </div>
+      </div>
 			<p class="percent-value"><span id="loading-value">99</span>%</p>
 		</div>
 	</div>
-	<!-- built files will be auto injected -->
 	<style>
 		html {
 			height: 100%;
 			min-height: 480px;
 			max-width: 750px;
 			margin: 0;
+      background-color: #FFF;
 		}
 
 		body {
@@ -70,135 +63,89 @@
 
     .default-loading {
 			height: 100%;
-      background-color: #042D7C;
       text-align: center;
 			overflow: hidden;
+      background-color: #4EDEFD;
     }
 
 		.floater {
 			height: 50%;
-			float: left;
-			margin-bottom: -20px;
-		}
-
-		.spinner {
-			width: 40px;
-			height: 40px;
-			margin: 0 auto;
-			clear: both;
-		}
-
-		.dot {
-			width: 8px;
-			height: 8px;
-			border-radius: 4px;
-			background-color: #FFF;
-			margin: 0 auto;
-		}
-
-		.line-full {
-			width: 100%;
-			overflow: hidden;
-			height: 20%;
-		}
-
-		.line-middle-top,
-		.line-middle-bottom {
-			width: 75%;
-			overflow: hidden;
-			height: 20%;
-			margin: 0 auto;
-		}
-
-		.line-middle-top {
-			position: relative;
-			top: -3px;
-		}
-
-		.line-middle-bottom {
-			position: relative;
-			bottom: -3px;
-		}
-
-		.dot-left {
-			float: left;
-			display: inline-block;
-		}
-
-		.dot-right {
-			float: right;
-			display: inline-block;
-		}
-
-		@keyframes spinner-color {
-			0 {
-				background-color: rgba(255, 255, 255, 0);
-			}
-			13% {
-				background-color: rgba(255, 255, 255, .13);
-			}
-			25% {
-				background-color: rgba(255, 255, 255, .25);
-			}
-			50% {
-				background-color: rgba(255, 255, 255, .5);
-			}
-			63% {
-				background-color: rgba(255, 255, 255, .63);
-			}
-			75% {
-				background-color: rgba(255, 255, 255, .75);
-			}
-			88% {
-				background-color: rgba(255, 255, 255, .88);
-			}
-			100% {
-				background-color: rgba(255, 255, 255, 1);
-			}
-		}
-
-		.animate-spinner {
-			animation: spinner-color 0.8s linear infinite;
-		}
-
-		.animate-spinner2 {
-			animation: spinner-color 0.8s linear infinite;
-			animation-delay: 0.1s;
-		}
-
-		.animate-spinner3 {
-			animation: spinner-color .8s linear infinite;
-			animation-delay: 0.2s;
-		}
-
-		.animate-spinner4 {
-			animation: spinner-color 0.8s linear infinite;
-			animation-delay: 0.3s;
-		}
-
-		.animate-spinner5 {
-			animation: spinner-color 0.8s linear infinite;
-			animation-delay: 0.4s;
-		}
-
-		.animate-spinner6 {
-			animation: spinner-color 0.8s linear infinite;
-			animation-delay: 0.5s;
-		}
-
-		.animate-spinner7 {
-			animation: spinner-color 0.8s linear infinite;
-			animation-delay: 0.6s;
-		}
-
-		.animate-spinner8 {
-			animation: spinner-color 0.8s linear infinite;
-			animation-delay: 0.7s;
+			/*float: left;*/
+			margin-bottom: -60px;
 		}
 
 		.percent-value {
 			color: #FFF;
+      font-size: 40px;
+      padding: 0;
+      margin: 0;
 		}
+
+  /*.icon-car-big {
+    margin: 0 auto;
+    position: relative;
+    animation: little-bounce 1s linear infinite;
+  }
+
+  .icon-wheel-big {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    animation: rotate 1.0s infinite linear;
+  }*/
+
+  .icon-car-big {
+    margin: 0 auto;
+    position: relative;
+    animation: little-bounce 1s linear infinite;
+    background: url(./static/car-big.png) no-repeat;
+    background-size: contain;
+    width: 275px;
+    height: 109px;
+  }
+
+  .icon-wheel-big {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    animation: rotate 1.0s infinite linear;
+    background: url(./static/wheel-big.png) no-repeat;
+    background-size: contain;
+    width: 45px;
+    height: 45px;
+  }
+
+  .wheel .left {
+    left: 28px;
+  }
+
+  .wheel .right {
+    right: 30px;
+  }
+
+  .dot {
+    position: absolute;
+    background-color: #FFF;
+  }
+
+  .small-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    left: -25px;
+    top: 60px;
+    animation: spinner-fade 0.8s linear infinite;
+  }
+
+  .bid-dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    top: 50px;
+    left: -75px;
+    animation: spinner-fade 0.8s linear infinite;
+		animation-delay: 0.1s;
+  }
 	</style>
 	<script>
     let valueEl = document.querySelector('#loading-value');
