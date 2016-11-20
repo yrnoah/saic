@@ -1,8 +1,8 @@
 <template>
-	<div class="icon-car-big">
+	<div class="car-big">
     <div class="wheel">
-      <div class="icon-wheel-big left"></div>
-      <div class="icon-wheel-big right"></div>
+      <div class="wheel-big left"></div>
+      <div class="wheel-big right"></div>
       <div class="dot small-dot"></div>
       <div class="dot bid-dot"></div>
     </div>
@@ -10,25 +10,33 @@
 </template>
 
 <style scoped>
-  .icon-car-big {
+  .car-big {
     margin: 0 auto;
     position: relative;
     animation: little-bounce 1s linear infinite;
+    background: url(../images/elements/car-big.png) no-repeat;
+    background-size: contain;
+    width: 181.5px;
+    height: 72px;
   }
 
-  .icon-wheel-big {
+  .wheel-big {
     display: inline-block;
     position: absolute;
     bottom: 0;
     animation: rotate 1.0s infinite linear;
+    background: url(../images/elements/wheel-big.png) no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
   }
 
   .wheel .left {
-    left: 28px;
+    left: 18px;
   }
 
   .wheel .right {
-    right: 30px;
+    right: 20px;
   }
 
   .dot {
@@ -37,21 +45,21 @@
   }
 
   .small-dot {
-    width: 18px;
-    height: 18px;
-    border-radius: 9px;
-    left: -25px;
-    top: 60px;
-    animation: spinner-color 0.8s linear infinite;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    left: -20px;
+    top: 40px;
+    animation: spinner-fade 0.8s linear infinite;
   }
 
   .bid-dot {
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    top: 50px;
-    left: -75px;
-    animation: spinner-color 0.8s linear infinite;
+    width: 26px;
+    height: 26px;
+    border-radius: 13px;
+    top: 32px;
+    left: -55px;
+    animation: spinner-fade 0.8s linear infinite;
 		animation-delay: 0.1s;
   }
 </style>

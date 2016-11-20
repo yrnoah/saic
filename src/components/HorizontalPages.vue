@@ -1,11 +1,11 @@
 <template>
 	<div class="swiper-slide horizontal-pages">
 		<div class="swiper-wrapper">
-      <div class="swiper-slide"><h3 class="demoTit">报告</h3><p class="demoText">向右滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
-			<div class="swiper-slide"><h3 class="demoTit">报告1</h3><p class="demoText">向右滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
-      <div class="swiper-slide"><h3 class="demoTit">报告2</h3><p class="demoText">向右滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
-      <div class="swiper-slide"><h3 class="demoTit">报告3</h3><p class="demoText">向右滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
-      <div class="swiper-slide"><h3 class="demoTit">报告4</h3><p class="demoText">向右滑</p><img src="../images/bg-navy.png" class="demoBg"></div>
+      <report-cover></report-cover>
+			<report1></report1>
+      <report2></report2>
+      <report3></report3>
+      <report4></report4>
       <vertical-pages></vertical-pages>
 		</div>
 	</div>
@@ -18,6 +18,11 @@
     swiperAnimate,
   } from '../utils/swiper.animate.min.js';
   import VerticalPages from './VerticalPages';
+  import ReportCover from './report/Cover';
+  import Report1 from './report/Report1';
+  import Report2 from './report/Report2';
+  import Report3 from './report/Report3';
+  import Report4 from './report/Report4';
   let horizontalPagesSwiper;
 
   export default {
@@ -27,6 +32,11 @@
       };
     },
     components: {
+      ReportCover,
+      Report1,
+      Report2,
+      Report3,
+      Report4,
       VerticalPages,
     },
     ready() {

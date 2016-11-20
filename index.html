@@ -13,7 +13,7 @@
   <link rel="preload" href="./static/sprite-saic.css" as="style">
   <link rel="preload" href="./static/swiper.js" as="script">
   <link rel="preload" href="./static/car-big.png" as="image">
-  <link rel="preload" href="./static/wheel.big.png" as="image">
+  <link rel="preload" href="./static/wheel-big.png" as="image">
 	<title>SAIC International</title>
 </head>
 
@@ -21,10 +21,10 @@
 	<div id="app">
 		<div class="default-loading">
 			<div class="floater"></div>
-      <div class="icon-car-big">
+      <div class="car-big">
         <div class="wheel">
-          <div class="icon-wheel-big left"></div>
-          <div class="icon-wheel-big right"></div>
+          <div class="wheel-big left"></div>
+          <div class="wheel-big right"></div>
           <div class="dot small-dot"></div>
           <div class="dot bid-dot"></div>
         </div>
@@ -78,74 +78,60 @@
 			color: #FFF;
       font-size: 40px;
       padding: 0;
-      margin: 0;
+      margin: 5px auto;
 		}
+    .car-big {
+      margin: 0 auto;
+      position: relative;
+      animation: little-bounce 1s linear infinite;
+      background: url(./static/car-big.png) no-repeat;
+      background-size: contain;
+      width: 181.5px;
+      height: 72px;
+    }
 
-  /*.icon-car-big {
-    margin: 0 auto;
-    position: relative;
-    animation: little-bounce 1s linear infinite;
-  }
+    .wheel-big {
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      animation: rotate 1.0s infinite linear;
+      background: url(./static/wheel-big.png) no-repeat;
+      background-size: contain;
+      width: 30px;
+      height: 30px;
+    }
 
-  .icon-wheel-big {
-    display: inline-block;
-    position: absolute;
-    bottom: 0;
-    animation: rotate 1.0s infinite linear;
-  }*/
+    .wheel .left {
+      left: 18px;
+    }
 
-  .icon-car-big {
-    margin: 0 auto;
-    position: relative;
-    animation: little-bounce 1s linear infinite;
-    background: url(./static/car-big.png) no-repeat;
-    background-size: contain;
-    width: 275px;
-    height: 109px;
-  }
+    .wheel .right {
+      right: 20px;
+    }
 
-  .icon-wheel-big {
-    display: inline-block;
-    position: absolute;
-    bottom: 0;
-    animation: rotate 1.0s infinite linear;
-    background: url(./static/wheel-big.png) no-repeat;
-    background-size: contain;
-    width: 45px;
-    height: 45px;
-  }
+    .dot {
+      position: absolute;
+      background-color: #FFF;
+    }
 
-  .wheel .left {
-    left: 28px;
-  }
+    .small-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+      left: -20px;
+      top: 40px;
+      animation: spinner-fade 0.8s linear infinite;
+    }
 
-  .wheel .right {
-    right: 30px;
-  }
-
-  .dot {
-    position: absolute;
-    background-color: #FFF;
-  }
-
-  .small-dot {
-    width: 18px;
-    height: 18px;
-    border-radius: 9px;
-    left: -25px;
-    top: 60px;
-    animation: spinner-fade 0.8s linear infinite;
-  }
-
-  .bid-dot {
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    top: 50px;
-    left: -75px;
-    animation: spinner-fade 0.8s linear infinite;
-		animation-delay: 0.1s;
-  }
+    .bid-dot {
+      width: 26px;
+      height: 26px;
+      border-radius: 13px;
+      top: 32px;
+      left: -55px;
+      animation: spinner-fade 0.8s linear infinite;
+      animation-delay: 0.1s;
+    }
 	</style>
 	<script>
     let valueEl = document.querySelector('#loading-value');

@@ -13,6 +13,21 @@
 	}
 }
 
+@keyframes rotate-left {
+	25% {
+		transform: rotate(-90deg);
+	}
+	50% {
+		transform: rotate(-180deg);
+	}
+	75% {
+		transform: rotate(-270deg);
+	}
+	100% {
+		transform: rotate(-360deg);
+	}
+}
+
 @keyframes little-bounce {
 	25% {
 		transform: translateY(-2px);
@@ -36,6 +51,19 @@
 	}
 	75% {
 		transform: translateY(10px);
+	}
+}
+
+@keyframes bounce-right {
+	25% {
+		transform: translateX(-5px);
+	}
+	50%,
+	100% {
+		transform: translateX(0);
+	}
+	75% {
+		transform: translateX(5px);
 	}
 }
 
