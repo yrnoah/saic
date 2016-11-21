@@ -42,8 +42,15 @@
         onInit: (swiper) => {
           swiperAnimateCache(swiper);
           swiperAnimate(swiper);
+          // this.$broadcast('startAnimation');
+        },
+        onSlideChangeStart: () => {
+          this.$broadcast('initAnimation');
         },
         onSlideChangeEnd: (swiper) => {
+          if (swiper.activeIndex === 0) {
+            this.$broadcast('startCarAnimation');
+          }
           if (swiper.activeIndex === 2) {
             this.$broadcast('setToBottom');
           }

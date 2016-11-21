@@ -32,6 +32,10 @@
 
 <script>
   import Swiper from '../../../static/swiper.js';
+  import {
+    swiperAnimateCache,
+    swiperAnimate,
+  } from '../../utils/swiper.animate.min.js';
   let runwaySwiper;
   export default {
     data() {
@@ -54,8 +58,20 @@
         slidesPerView: 'auto',
         loop: false,
         hashnav: true,
+        onInit: (swiper) => {
+          swiperAnimateCache(swiper);
+          swiperAnimate(swiper);
+          this.$broadcast('startAnimation');
+        },
+        onSlideChangeStart: () => {
+          this.$broadcast('initAnimation');
+        },
+        onSlideChangeEnd: (swiper) => {
+          console.log(swiper.activeIndex);
+          this.$broadcast('startAnimation');
+        },
       });
-      console.log(runwaySwiper.activeIndex, runwaySwiper, 'runwaySwiper');
+      // console.log(runwaySwiper.activeIndex, runwaySwiper, 'runwaySwiper');
     },
     events: {
       setToBottom() {

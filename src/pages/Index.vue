@@ -69,6 +69,10 @@
         onInit: (swiper) => {
           swiperAnimateCache(swiper);
           swiperAnimate(swiper);
+          this.$broadcast('startAnimation');
+        },
+        onSlideChangeStart: () => {
+          this.$broadcast('initAnimation');
         },
         onSlideChangeEnd: (swiper) => {
           swiperAnimate(appSwiper);
@@ -84,6 +88,9 @@
             appSwiper.unlockSwipeToNext();
             // this.$broadcast('startPageAnimation');
           }
+          // if (swiper.activeIndex === 4) {
+          //   this.$broadcast('startYearAnimation');
+          // }
           // if (swiper.activeIndex === 3 && swiper.previousIndex === 2) {
           //   appSwiper.lockSwipeToNext();
           //   // this.$broadcast('startPageAnimation');
@@ -104,13 +111,10 @@
           //   // this.$broadcast('initYearAnimation');
           //   // this.$broadcast('startPageAnimation');
           // }
-          // if (swiper.activeIndex === 4) {
-          //   this.$broadcast('startYearAnimation');
-          // }
-          // if (swiper.activeIndex === 5) {
-          //   this.$broadcast('initHasSlidePrev');
-          // }
-          if (swiper.activeIndex === 3) {
+          if (swiper.activeIndex === 1) {
+            this.$broadcast('initHasSlidePrev');
+          }
+          if (swiper.activeIndex === 2) {
             // appSwiper.lockSwipes();
             if (!this.preventWechatAutoplay) {
               this.$broadcast('startAutoPlay');
@@ -119,7 +123,7 @@
             }
             // this.$broadcast('initYearAnimation');
           }
-          if (swiper.activeIndex === 4) {
+          if (swiper.activeIndex === 3) {
             this.$broadcast('initHasSlideNext');
             // this.$broadcast('startYearAnimation2');
           }
@@ -153,16 +157,15 @@
         appSwiper.unlockSwipeToNext();
       },
       'goWechatMajor'(index) {
-        console.log(index);
         this.preventWechatAutoplay = true;
         this.relativeMajorIndex = index;
-        // this.$broadcast('setMajorRelativePosition', index);
-        appSwiper.slideNext();
+        this.$broadcast('setMajorRelativePosition', index);
+        appSwiper.slideTo(2);
       },
       'goWechat'() {
         appSwiper.unlockSwipes();
         appSwiper.slideTo(2);
-        console.log('goWechat');
+        this.$broadcast('startAutoPlay');
       },
     },
     methods: {
