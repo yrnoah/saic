@@ -1,34 +1,34 @@
 <template>
 	<div class="swiper-slide provide1">
-    <div class="topbg-container">
+    <div class="topbg-container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
       <img src="../images/elements/wechat-bgpolygan.png" class="privide-topbg">
       <div class="content-container">
         <div class="content">
-          <img src="../images/elements/wechat-provide1.png" class="content-tit">
-          <div class="detail-container padding5px">
+          <img src="../images/elements/wechat-provide1.png" class="content-tit ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+          <div class="detail-container padding5px ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
             <span>五险一金</span>
             <img src="../images/elements/wechat-right.png" class="privide-icon icon-margin">
             <span>年休假</span>
             <img src="../images/elements/wechat-right.png" class="privide-icon">
           </div>
-          <img src="../images/elements/wechat-provide2.png" class="content-tit marginTit">
-          <div class="detail-container">
+          <img src="../images/elements/wechat-provide2.png" class="content-tit marginTit ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
+          <div class="detail-container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
             <span>补充公积金</span>
             <img src="../images/elements/wechat-right.png" class="privide-icon">
           </div>
-          <div class="detail-container">
+          <div class="detail-container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
             <span>补充医疗</span>
             <img src="../images/elements/wechat-right.png" class="privide-icon icon-margin">
             <span>VIP体检</span>
             <img src="../images/elements/wechat-right.png" class="privide-icon">
           </div>
-          <div class="detail-container">
+          <div class="detail-container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">
             <span>国际保险</span>
             <img src="../images/elements/wechat-right.png" class="privide-icon icon-margin">
             <span>海外津贴</span>
             <img src="../images/elements/wechat-right.png" class="privide-icon">
           </div>
-          <div class="detail-container">
+          <div class="detail-container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">
             <span>家属津贴</span>
             <img src="../images/elements/wechat-right.png" class="privide-icon">
           </div>

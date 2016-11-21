@@ -19,10 +19,21 @@
             </div>
           </div>
           <div class="runway-container">
+            <div class="car-container">
+              <div class="car-position" :class="{ carAnimation: startAnimation, hide: animationFinished }">
+                <img src="../../images/elements/future-car.png" class="space-car">
+              </div>
+            </div>
             <img class="cloud-top" src="../../images/future-cloud.png">
             <img src="../../images/elements/future-topbuilding.png" class="future-topbuilding">
             <img src="../../images/future-longbg.jpg" class="runway-bg">
             <img class="cloud-bottom" src="../../images/bg-cloud-1.png">
+            <img src="../../images/elements/banner1.png" class="banner">
+            <img src="../../images/elements/banner2.png" class="banner">
+            <img src="../../images/elements/banner3.png" class="banner">
+            <img src="../../images/elements/banner4.png" class="banner">
+            <img src="../../images/elements/banner5.png" class="banner">
+            <img src="../../images/elements/banner6.png" class="banner">
           </div>
 				</div>
 			</div>
@@ -32,11 +43,8 @@
 
 <script>
   import Swiper from '../../../static/swiper.js';
-  import {
-    swiperAnimateCache,
-    swiperAnimate,
-  } from '../../utils/swiper.animate.min.js';
   let runwaySwiper;
+  let runwayCarTimeout;
   export default {
     data() {
       return {
@@ -46,6 +54,8 @@
         hasSlideNext: false,
         hasSlidePrev: false,
         virtualSize: null,
+        startAnimation: false,
+        animationFinished: false,
       };
     },
     ready() {
@@ -58,25 +68,25 @@
         slidesPerView: 'auto',
         loop: false,
         hashnav: true,
-        onInit: (swiper) => {
-          swiperAnimateCache(swiper);
-          swiperAnimate(swiper);
-          this.$broadcast('startAnimation');
-        },
-        onSlideChangeStart: () => {
-          this.$broadcast('initAnimation');
-        },
-        onSlideChangeEnd: (swiper) => {
-          console.log(swiper.activeIndex);
-          this.$broadcast('startAnimation');
-        },
       });
-      // console.log(runwaySwiper.activeIndex, runwaySwiper, 'runwaySwiper');
     },
     events: {
-      setToBottom() {
+      'setToBottom'() {
         this.virtualSize = runwaySwiper.virtualSize;
         runwaySwiper.setWrapperTranslate(-this.virtualSize + runwaySwiper.size);
+      },
+      'initAnimation'() {
+        this.startAnimation = false;
+        this.animationFinished = false;
+        clearTimeout(runwayCarTimeout);
+      },
+      'startRunwayCarAnimation'() {
+        this.startAnimation = true;
+        runwayCarTimeout = setTimeout(() => {
+          this.animationFinished = true;
+          this.startAnimation = false;
+          clearTimeout(runwayCarTimeout);
+        }, 40000);
       },
     },
   };
@@ -109,7 +119,7 @@
     position: absolute;
     bottom: -350px;
     left: 0;
-    z-index: 2;
+    z-index: 4;
   }
   .cloud-top {
     position: absolute;
@@ -117,7 +127,7 @@
     left: 0;
     width: 100%;
     height: auto;
-    z-index: 2;
+    z-index: 4;
   }
   .future-topbuilding {
     position: absolute;
@@ -125,7 +135,7 @@
     left: 0;
     width: 100%;
     height: auto;
-    z-index: 2;
+    z-index: 4;
   }
   .major {
     background-color: #FFF;
@@ -175,5 +185,48 @@
     width: 102px;
     height: 38px;
     margin: 0 auto;
+  }
+  .banner {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    z-index: 4;
+  }
+  .car-container {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    overflow: hidden;
+  }
+  .space-car {
+    width: 12%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+  }
+  @keyframes drive {
+    0% { transform: translateY(-120px); }
+    100% { transform: translateY(-5000px); }
+  }
+  @-webkit-keyframes drive {
+    0% { -webkit-transform: translateY(-120px); }
+    100% { -webkit-transform: translateY(-5000px); }
+  }
+  .car-position {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -120px;
+  }
+  .carAnimation {
+    animation: drive 40.0s linear;
+  }
+  .hide {
+    display: none;
   }
 </style>

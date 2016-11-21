@@ -4,8 +4,8 @@
     <div class="angel-animation">
       <div class="up-angel"></div>
     </div>
-    <img src="../../images/elements/logo.png" class="logo">
-    <img src="../../images/elements/name.png" class="name">
+    <img src="../../images/elements/logo.png" class="logo ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+    <img src="../../images/elements/name.png" class="name ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
 	</div>
 </template>
 <script>
@@ -60,6 +60,7 @@
     height: auto;
     top: 272px;
     left: 0;
+    animation: infinite-fade 2.0s linear infinite;
   }
 
   .bottom {

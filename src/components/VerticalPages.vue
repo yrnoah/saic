@@ -48,11 +48,15 @@
           this.$broadcast('initAnimation');
         },
         onSlideChangeEnd: (swiper) => {
+          swiperAnimate(swiper);
           if (swiper.activeIndex === 0) {
             this.$broadcast('startCarAnimation');
           }
           if (swiper.activeIndex === 2) {
             this.$broadcast('setToBottom');
+          }
+          if (swiper.activeIndex === 1) {
+            this.$broadcast('startRunwayCarAnimation');
           }
         },
         onTouchStart: (swiper, event) => {
@@ -88,6 +92,9 @@
     },
     events: {
       'startPageAnimation'() {
+        swiperAnimate(verticalTopSwiper);
+      },
+      'startCarAnimation'() {
         swiperAnimate(verticalTopSwiper);
       },
     },

@@ -7,9 +7,9 @@ report1-contentreport1-content<template>
     <div class="car-position">
       <car-animation></car-animation>
     </div>
-    <div class="report-content">
-      <div class="cover-year"><div class="report4-title"></div></div>
-      <div class="cover-title"><div class="report4-content"></div></div>
+    <div class="report-content ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+      <div class="cover-year"><div class="report4-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div></div>
+      <div class="cover-title"><div class="report4-content ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s"></div></div>
       <div class="polygon"></div>
       <div class="angel-animation">
         <div class="right-angel"></div>
@@ -105,6 +105,7 @@ report1-contentreport1-content<template>
     height: auto;
     top: 139px;
     left: 0;
+    animation: infinite-fade 2.0s linear infinite;
   }
 
   .bottom {

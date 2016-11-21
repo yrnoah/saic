@@ -41,10 +41,11 @@
     },
     ready() {
       horizontalPagesSwiper = new Swiper('.horizontal-pages', {
+        direction: 'horizontal',
+        loop: false,
         onInit: (swiper) => {
           swiperAnimateCache(swiper);
           swiperAnimate(swiper);
-          // console.log(horizontalPagesSwiper);
         },
         onSlideChangeEnd: (swiper) => {
           swiperAnimate(swiper);
@@ -62,18 +63,15 @@
             // this.$dispatch('lockSlideNext');
           }
         },
-        direction: 'horizontal',
-        loop: false,
       });
     },
     events: {
-      'startPageAnimation'() {
+      'startAnimation'() {
         swiperAnimate(horizontalPagesSwiper);
       },
       'verticalToHorizen'() {
         // appSwiper.unlockSwipes();
         horizontalPagesSwiper.slideTo(4);
-        console.log('verticalToHorizen');
       },
     },
   };

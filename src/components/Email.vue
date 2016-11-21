@@ -1,6 +1,6 @@
 <template>
 	<div class="swiper-slide requirement">
-    <div class="shareMask" @click="hideMask" v-show="showMask">
+    <div class="shareMask ani" @click="hideMask" v-show="showMask" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
       <img src="../images/elements/share-txt.png" class="shareTxt">
     </div>
     <img src="../images/elements/logo.png" class="logo">

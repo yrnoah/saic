@@ -1,11 +1,11 @@
 <template>
 	<div class="swiper-slide requirement">
-    <div class="main-container">
-      <img src="../images/elements/wechat-require.png" class="major-title">
+    <div class="main-container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+      <img src="../images/elements/wechat-require.png" class="major-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
       <div class="board-container">
         <img src="../images/elements/wechat-bgboard.png" class="major-board">
         <div class="content">
-          <div class="content-container first-margin">
+          <div class="content-container first-margin ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
             <div class="icon-container">
               <h3>A.</h3>
             </div>
@@ -14,7 +14,7 @@
               <p class="detail">企业文化，愿意奔赴<span>海外工作</span></p>
             </div>
           </div>
-          <div class="content-container">
+          <div class="content-container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
             <div class="icon-container">
               <h3>B.</h3>
             </div>
@@ -23,7 +23,7 @@
               <p class="detail"><span>执行能力强</span></p>
             </div>
           </div>
-          <div class="content-container">
+          <div class="content-container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">
             <div class="icon-container">
               <h3>C.</h3>
             </div>
@@ -31,7 +31,7 @@
               <p class="detail">良好的<span>英语听说读写能力</span></p>
             </div>
           </div>
-          <div class="content-container">
+          <div class="content-container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">
             <div class="icon-container">
               <h3>D.</h3>
             </div>

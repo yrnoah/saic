@@ -10,8 +10,8 @@
     <div class="angel-animation">
       <div class="up-angel"></div>
     </div>
-    <img src="../../images/elements/slogan-title.png" class="slogan-title">
-    <img src="../../images/elements/slogan-tip.png" class="slogan-tip">
+    <img src="../../images/elements/slogan-title.png" class="slogan-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+    <img src="../../images/elements/slogan-tip.png" class="slogan-tip ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
 	</div>
 </template>
 <script>
@@ -65,6 +65,7 @@
     height: auto;
     top: 156px;
     left: 0;
+    animation: infinite-fade 2.0s linear infinite;
   }
 
   .bottom {

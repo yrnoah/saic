@@ -7,14 +7,14 @@
     <img src="../../images/elements/future-polygan5.png" class="spcae-item spcae-item5">
     <img src="../../images/elements/future-polygan7.png" class="spcae-item spcae-item7">
     <div class="years-container">
-      <img src="../../images/elements/years-2021.png" class="years year-2021">
-      <img src="../../images/elements/years-2020.png" class="years year-2020">
-      <img src="../../images/elements/years-2019.png" class="years year-2019">
+      <img src="../../images/elements/years-2021.png" class="years year-2021 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
+      <img src="../../images/elements/years-2020.png" class="years year-2020 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
+      <img src="../../images/elements/years-2019.png" class="years year-2019 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
     </div>
     <div class="car-container">
       <div class="car-position" :class="{ carAnimation: startAnimation, hide: animationFinished }">
         <img src="../../images/elements/future-car.png" class="space-car">
-        <div class="wing-container">
+        <div class="wing-container" :class="{ wingfade: startAnimation }">
           <img src="../../images/elements/future-carwing.png" class="space-carwing">
           <img src="../../images/elements/future-cartail.png" class="space-cartail">
         </div>
@@ -24,6 +24,7 @@
 </template>
 <script>
   // import CarAnimation from '../CarAnimation';
+  let hideCarTimeout;
   export default {
     // components: {
     //   CarAnimation,
@@ -38,13 +39,14 @@
       'initAnimation'() {
         this.startAnimation = false;
         this.animationFinished = false;
+        clearTimeout(hideCarTimeout);
       },
       'startCarAnimation'() {
         this.startAnimation = true;
-        const hideCar = setTimeout(() => {
+        hideCarTimeout = setTimeout(() => {
           this.animationFinished = true;
           this.startAnimation = false;
-          clearTimeout(hideCar);
+          clearTimeout(hideCarTimeout);
         }, 4999);
       },
     },
@@ -124,6 +126,9 @@
     position: absolute;
     left: 0;
     bottom: -38px;
+  }
+  .wingfade {
+    animation: opacity-fade 1.0s linear;
   }
   .spcae-item {
     position: absolute;

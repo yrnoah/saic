@@ -1,6 +1,6 @@
 <template>
 	<div class="swiper-container">
-		<!--<div class="sound">
+		<div class="sound">
 			<audio id="music" loop="loop" preload="auto">
 				<source src="../../static/valentin-loop.mp3" type="audio/mpeg">
 			</audio>
@@ -8,7 +8,7 @@
 		<div class="musicBtn" @click="toggleMusic">
 			<div v-if="!isPlayingMusic" class="icon-stop-music"></div>
 			<div v-else class="icon-start-music"></div>
-		</div>-->
+		</div>
 		<div class="swiper-wrapper">
 			<home></home>
 			<horizontal-pages></horizontal-pages>
@@ -60,7 +60,7 @@
       Email,
     },
     ready() {
-      // this.startMusic();
+      this.startMusic();
       appSwiper = new Swiper('.swiper-container', {
         direction: 'vertical',
         slidesPerView: 'auto',
@@ -69,7 +69,6 @@
         onInit: (swiper) => {
           swiperAnimateCache(swiper);
           swiperAnimate(swiper);
-          this.$broadcast('startAnimation');
         },
         onSlideChangeStart: () => {
           this.$broadcast('initAnimation');
@@ -88,30 +87,8 @@
             appSwiper.unlockSwipeToNext();
             // this.$broadcast('startPageAnimation');
           }
-          // if (swiper.activeIndex === 4) {
-          //   this.$broadcast('startYearAnimation');
-          // }
-          // if (swiper.activeIndex === 3 && swiper.previousIndex === 2) {
-          //   appSwiper.lockSwipeToNext();
-          //   // this.$broadcast('startPageAnimation');
-          // }
-          // if (swiper.activeIndex === 3 && swiper.previousIndex === 4) {
-          //   appSwiper.lockSwipeToPrev();
-          //   appSwiper.unlockSwipeToNext();
-          //   // this.$broadcast('initYearAnimation');
-          //   // this.$broadcast('startPageAnimation');
-          // }
-          // if (swiper.activeIndex === 10 && swiper.previousIndex === 9) {
-          //   appSwiper.lockSwipeToNext();
-          //   // this.$broadcast('startPageAnimation');
-          // }
-          // if (swiper.activeIndex === 10 && swiper.previousIndex === 11) {
-          //   appSwiper.lockSwipeToPrev();
-          //   appSwiper.unlockSwipeToNext();
-          //   // this.$broadcast('initYearAnimation');
-          //   // this.$broadcast('startPageAnimation');
-          // }
           if (swiper.activeIndex === 1) {
+            this.$broadcast('startAnimation');
             this.$broadcast('initHasSlidePrev');
           }
           if (swiper.activeIndex === 2) {
@@ -121,11 +98,9 @@
             } else if (this.relativeMajorIndex && this.preventWechatAutoplay) {
               this.$broadcast('setMajorRelativePosition', this.relativeMajorIndex);
             }
-            // this.$broadcast('initYearAnimation');
           }
           if (swiper.activeIndex === 3) {
             this.$broadcast('initHasSlideNext');
-            // this.$broadcast('startYearAnimation2');
           }
         },
       });
@@ -136,13 +111,14 @@
         appSwiper.slideNext();
         this.preventWechatAutoplay = false;
         this.$broadcast('initHasSlideNext');
-        this.$broadcast('startYearAnimation2');
+        swiperAnimate(appSwiper);
       },
       'slidePrev'() {
         appSwiper.unlockSwipes();
         appSwiper.slidePrev();
         this.preventWechatAutoplay = false;
         this.$broadcast('initHasSlidePrev');
+        this.$broadcast('startCarAnimation');
       },
       'lockSlidePrev'() {
         appSwiper.lockSwipeToPrev();
@@ -211,7 +187,7 @@
 		position: fixed;
 		top: 0;
 		right: 0;
-		z-index: 2;
+		z-index: 5;
 		padding: 10px;
 	}
 
