@@ -60,6 +60,7 @@
     border: 2px solid #FFF;
     border-width: 2px 2px 0 0;
     transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
     margin: 0 auto;
   }
   .bg-cloud {

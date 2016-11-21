@@ -1,8 +1,32 @@
 <template>
 	<div class="swiper-slide requirement">
-    <img src="../images/wechat-gradient.png" class="gradient">
+    <div class="shareMask" @click="hideMask" v-show="showMask">
+      <img src="../images/elements/share-txt.png" class="shareTxt">
+    </div>
+    <img src="../images/elements/logo.png" class="logo">
+    <img src="../images/elements/email-title.png" class="email-title">
+    <img src="../images/elements/icon-letter.png" class="icon-letter">
+    <div>
+      <p class="emailTxt">recruitment@saicservice.com</p>
+    </div>
+    <p class="tipTxt">长按可复制</p>
 	</div>
 </template>
+
+<script>
+  export default {
+    data() {
+      return {
+        showMask: true,
+      };
+    },
+    methods: {
+      hideMask() {
+        this.showMask = false;
+      },
+    },
+  };
+</script>
 
 <style scoped>
 	.requirement {
@@ -10,11 +34,54 @@
 		height: 100%;
     position: relative;
     overflow: hidden;
+    text-align: center;
 	}
   .gradient {
     width: 100%;
     height: auto;
     position: relative;
     top: 0;
+  }
+  .shareMask {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .shareTxt {
+    width: 73%;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+  }
+  .logo {
+    margin: 7% auto 10px auto;
+    width: 33%;
+    height: auto;
+  }
+  .email-title {
+    width: 65%;
+    margin: 0 auto;
+  }
+  .icon-letter {
+    width: 31%;
+    margin: 20px auto;
+  }
+  .emailTxt {
+    padding: 15px 10px;
+    background-color: #fffe00;
+    color: #51504e;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  .tipTxt {
+    color: #0084c5;
+    margin-top: 5px;
   }
 </style>

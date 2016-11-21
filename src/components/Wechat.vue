@@ -31,9 +31,7 @@
 								<div class="icon-button-action" @click="showBtns($index)">
 									<div class="action-btns" v-bind:style="visible($index)" v-if="!isWrittingComment">
 										<button @click="follow($index)"><div class="icon-heart-white btn-icon"></div>赞</button>
-										<button @click="writeComment()">
-                <div class="icon-comment btn-icon"></div>评论
-              </button>
+										<button @click="writeComment()"><div class="icon-comment btn-icon"></div>评论</button>
 									</div>
 								</div>
 							</div>

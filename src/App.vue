@@ -27,4 +27,9 @@
 	div {
 		margin: 0;
 	}
+
+  img {
+    display: block;
+    vertical-align: top;
+  }
 </style>

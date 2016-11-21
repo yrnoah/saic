@@ -212,21 +212,6 @@
 		padding: 10px;
 	}
 
-	@keyframes rotate {
-		25% {
-			transform: rotate(90deg);
-		}
-		50% {
-			transform: rotate(180deg);
-		}
-		75% {
-			transform: rotate(270deg);
-		}
-		100% {
-			transform: rotate(360deg);
-		}
-	}
-
 	.icon-start-music {
 		animation: rotate 8.0s infinite linear;
 	}
