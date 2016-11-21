@@ -43,7 +43,11 @@
           swiperAnimateCache(swiper);
           swiperAnimate(swiper);
         },
-        onSlideChangeEnd: () => {},
+        onSlideChangeEnd: (swiper) => {
+          if (swiper.activeIndex === 2) {
+            this.$broadcast('setToBottom');
+          }
+        },
         onTouchStart: (swiper, event) => {
           if (swiper.activeIndex === 0) {
             this.moveStartY = event.changedTouches[0].pageY;

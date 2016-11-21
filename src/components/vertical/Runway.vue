@@ -41,6 +41,7 @@
         moveStartY: 0,
         hasSlideNext: false,
         hasSlidePrev: false,
+        virtualSize: null,
       };
     },
     ready() {
@@ -54,9 +55,14 @@
         loop: false,
         hashnav: true,
       });
-      console.log(runwaySwiper.activeIndex);
+      console.log(runwaySwiper.activeIndex, runwaySwiper, 'runwaySwiper');
     },
-    events: {},
+    events: {
+      setToBottom() {
+        this.virtualSize = runwaySwiper.virtualSize;
+        runwaySwiper.setWrapperTranslate(-this.virtualSize + runwaySwiper.size);
+      },
+    },
   };
 </script>
 

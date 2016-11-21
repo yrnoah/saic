@@ -4,8 +4,8 @@
     <div class="angel-animation">
       <div class="up-angel"></div>
     </div>
-    <div class="logo"></div>
-    <div class="name"></div>
+    <img src="../../images/elements/logo.png" class="logo">
+    <img src="../../images/elements/name.png" class="name">
 	</div>
 </template>
 <script>
@@ -24,20 +24,16 @@
     overflow: hidden;
 	}
   .logo {
-    background: url(../../images/elements/logo.png) no-repeat;
-    background-size: contain;
-    width: 277px;
-    height: 385px;
+    width: 66%;
+    height: auto;
     margin: 0 auto;
     position: relative;
     z-index: 1;
     /*margin: 86px auto 26px auto;*/
   }
   .name {
-    background: url(../../images/elements/name.png) no-repeat;
-    background-size: contain;
-    width: 297px;
-    height: 96px;
+    width: 64%;
+    height: auto;
     margin: 0 auto;
     position: relative;
     z-index: 1;

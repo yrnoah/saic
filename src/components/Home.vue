@@ -1,7 +1,7 @@
 <template>
 	<div class="swiper-slide home">
-		<div class="home-title"></div>
-    <div class="home-slogan"></div>
+    <img src="../images/elements/home-title.png" class="home-title">
+    <img src="../images/elements/home-slogan.png" class="home-slogan">
     <div class="bottom">
       <img src="../images/elements/home-bgs.png">
     </div>
@@ -18,23 +18,19 @@
     position: relative;
 	}
   .home-title {
-    background: url(../images/elements/home-title.png) no-repeat;
-    background-size: contain;
-    width: 317px;
-    height: 211px;
+    width: 75%;
+    height: auto;
     margin: 43px auto 0 auto;
     position: relative;
     left: 20px;
     z-index: 3;
   }
   .home-slogan {
-    background: url(../images/elements/home-slogan.png) no-repeat;
-    background-size: contain;
-    width: 196px;
-    height: 122px;
+    width: 46%;
+    height: auto;
     position: relative;
-    top: -112px;
-    left: 6px;
+    top: -14%;
+    left: 15px;
     z-index: 3;
   }
   .bottom {

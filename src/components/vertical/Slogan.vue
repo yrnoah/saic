@@ -10,8 +10,8 @@
     <div class="angel-animation">
       <div class="up-angel"></div>
     </div>
-    <div class="slogan-title"></div>
-    <div class="slogan-tip"></div>
+    <img src="../../images/elements/slogan-title.png" class="slogan-title">
+    <img src="../../images/elements/slogan-tip.png" class="slogan-tip">
 	</div>
 </template>
 <script>
@@ -30,19 +30,15 @@
     overflow: hidden;
 	}
   .slogan-title {
-    background: url(../../images/elements/slogan-title.png) no-repeat;
-    background-size: contain;
-    width: 324px;
-    height: 152px;
+    width: 77%;
+    height: auto;
     margin: 86px auto 26px auto;
     position: relative;
     z-index: 1;
   }
   .slogan-tip {
-    background: url(../../images/elements/slogan-tip.png) no-repeat;
-    background-size: contain;
-    width: 188px;
-    height: 65px;
+    width: 44%;
+    height: auto;
     margin: 0 auto;
     position: relative;
     z-index: 1;
