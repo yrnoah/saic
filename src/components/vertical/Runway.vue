@@ -26,7 +26,7 @@
             </div>
             <img class="cloud-top" src="../../images/future-cloud.png">
             <img src="../../images/elements/future-topbuilding.png" class="future-topbuilding">
-            <img src="../../images/future-longbg.jpg" class="runway-bg">
+            <img src="../../../static/future-longbg.jpg" class="runway-bg">
             <img class="cloud-bottom" src="../../images/bg-cloud-1.png">
             <img src="../../images/elements/banner1.png" class="banner">
             <img src="../../images/elements/banner2.png" class="banner">

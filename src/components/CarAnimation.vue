@@ -14,7 +14,7 @@
     margin: 0 auto;
     position: relative;
     animation: little-bounce 1s linear infinite;
-    background: url(../images/elements/car-big.png) no-repeat;
+    background: url(../../static/car-big.png) no-repeat;
     background-size: contain;
     width: 181.5px;
     height: 72px;
@@ -25,7 +25,7 @@
     position: absolute;
     bottom: 0;
     animation: rotate 1.0s infinite linear;
-    background: url(../images/elements/wheel-big.png) no-repeat;
+    background: url(../../static/wheel-big.png) no-repeat;
     background-size: contain;
     width: 30px;
     height: 30px;

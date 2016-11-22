@@ -2,7 +2,7 @@
 	<div class="swiper-slide slogan">
     <img src="../../images/elements/report-cloud.png" class="bg-cloud">
     <div class="bottom">
-      <img src="../../images/earth.png" class="earth">
+      <img src="../../../static/earth.png" class="earth">
     </div>
     <div class="car-position">
       <car-animation></car-animation>

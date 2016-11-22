@@ -1,12 +1,12 @@
 <template>
 	<div class="swiper-slide home">
-    <img src="../images/elements/home-title.png" class="home-title ani" swiper-animate-effect="swing" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s">
-    <img src="../images/elements/home-slogan.png" class="home-slogan ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s">
+    <img src="../../static/home-title.png" class="home-title ani" swiper-animate-effect="swing" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s">
+    <img src="../../static/home-slogan.png" class="home-slogan ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s">
     <div class="bottom">
-      <img src="../images/elements/home-bgs.png" class="building-img" :class="{ buildingsfade: startAnimation }">
+      <img src="../../static/home-bgs.png" class="building-img" :class="{ buildingsfade: startAnimation }">
     </div>
     <div class="bottom buildings">
-      <img src="../images/elements/buildings2.png" class="building-img" :class="{ buildingsrise: startAnimation }">
+      <img src="../../static/buildings2.png" class="building-img" :class="{ buildingsrise: startAnimation }">
     </div>
 	</div>
 </template>

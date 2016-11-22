@@ -2,7 +2,7 @@ report1-contentreport1-content<template>
 	<div class="swiper-slide report-cover">
     <img src="../../images/elements/report-cloud.png" class="bg-cloud">
     <div class="bottom">
-      <img src="../../images/earth.png" class="earth">
+      <img src="../../../static/earth.png" class="earth">
     </div>
     <div class="car-position">
       <car-animation></car-animation>
@@ -34,7 +34,7 @@ report1-contentreport1-content<template>
 	}
   .report-content {
     width: 226px;
-    margin: 64px auto 0 auto;
+    margin: 50px auto 0 auto;
     background-color: #c067ff;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
@@ -110,7 +110,7 @@ report1-contentreport1-content<template>
 
   .bottom {
     position: absolute;
-    bottom: -950px;
+    bottom: -990px;
   }
   .earth {
     display: block;
@@ -118,13 +118,13 @@ report1-contentreport1-content<template>
     width: 1270.5px;
     height: 1270.5px;
     position: relative;
-    left: -432px;
+    left: -440px;
     margin: 0;
     animation: rotate-left 40.0s infinite linear;
   }
   .car-position {
     position: absolute;
-    bottom: 110px;
+    bottom: 70px;
     width: 100%;
   }
 </style>

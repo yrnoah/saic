@@ -46,8 +46,9 @@
         hideCarTimeout = setTimeout(() => {
           this.animationFinished = true;
           this.startAnimation = false;
+          this.$dispatch('goWechat');
           clearTimeout(hideCarTimeout);
-        }, 4999);
+        }, 4000);
       },
     },
   };
@@ -116,7 +117,7 @@
     bottom: -40px;
   }
   .carAnimation {
-    animation: fly-out 5.0s ease-in;
+    animation: fly-out 4.0s ease-in;
   }
   .hide {
     display: none;
