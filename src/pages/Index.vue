@@ -139,6 +139,7 @@
         appSwiper.slideTo(2);
       },
       'goWechat'() {
+        this.$broadcast('initAnimation');
         appSwiper.unlockSwipes();
         appSwiper.slideTo(2);
         this.$broadcast('startAutoPlay');

@@ -11,22 +11,10 @@
 					</div>
 					<div class="message">
 						<img class="friend-avatar" :src='message.avatar'>
-						<!--<img v-if="message.index === 1" class="friend-avatar" src='../../static/avatar-1.png'>
-						<img v-if="message.index === 2" class="friend-avatar" src='../../static/avatar-2.png'>
-						<img v-if="message.index === 3" class="friend-avatar" src='../../static/avatar-3.png'>
-						<img v-if="message.index === 4" class="friend-avatar" src='../../static/avatar-4.png'>
-						<img v-if="message.index === 5" class="friend-avatar" src='../../static/avatar-5.png'>
-						<img v-if="message.index === 6" class="friend-avatar" src='../../static/avatar-6.png'>-->
 						<div class="message-detail">
 							<span class="friend-name">{{ message.username }}</span>
 							<p class="message-content">{{ message.content }}</p>
               <img :src='message.img' class="detail-img">
-							<!--<img v-if="message.index === 1" src="../../static/pic-1.png" alt="详情1" class="detail-img">
-							<img v-if="message.index === 2" src="../../static/pic-2.png" alt="详情2" class="detail-img">
-							<img v-if="message.index === 3" src="../../static/pic-3.png" alt="详情3" class="detail-img">
-							<img v-if="message.index === 4" src="../../static/pic-4.png" alt="详情4" class="detail-img">
-							<img v-if="message.index === 5" src="../../static/pic-5.png" alt="详情5" class="detail-img">
-							<img v-if="message.index === 6" src="../../static/pic-6.png" alt="详情6" class="detail-img">-->
 							<p class="pic-location">{{ message.location }}</p>
 							<div class="action-container">
 								<p class="message-time">{{ message.time }}</p>

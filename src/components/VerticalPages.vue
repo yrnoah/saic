@@ -71,7 +71,7 @@
         onTouchMove: (swiper, event) => {
           if (swiper.activeIndex === 0) {
             const moveDistance = event.changedTouches[0].pageY - this.moveStartY;
-            if (moveDistance > 300) {
+            if (moveDistance > 100) {
               this.$dispatch('goWechat');
               this.moveStartY = 0;
               return;
@@ -96,6 +96,7 @@
       },
       'startCarAnimation'() {
         swiperAnimate(verticalTopSwiper);
+        this.$broadcast('startCarAnimation');
       },
     },
   };

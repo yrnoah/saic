@@ -223,7 +223,7 @@
 	</style>
 	<script>
     let valueEl = document.querySelector('#loading-value');
-    let value = 70;
+    let value = (Math.random() * 10 + 70);
     let increaseValue = setInterval(() => {
       valueEl.innerHTML = value;
       value = value + 1;
@@ -231,7 +231,7 @@
         clearInterval(increaseValue);
         return;
       }
-    }, 10);
+    }, 500);
   </script>
 </body>
 
