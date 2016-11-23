@@ -1,22 +1,22 @@
 <template>
 	<div class="swiper-slide space">
-    <img src="../../images/future-topbg.png" class="future-topbg">
-    <img src="../../images/elements/future-polygan2.png" class="spcae-item spcae-item2">
-    <img src="../../images/elements/future-polygan3.png" class="spcae-item spcae-item3">
-    <img src="../../images/elements/future-polygan4.png" class="spcae-item spcae-item4">
-    <img src="../../images/elements/future-polygan5.png" class="spcae-item spcae-item5">
-    <img src="../../images/elements/future-polygan7.png" class="spcae-item spcae-item7">
+    <img src="../../../static/future-topbg.png" class="future-topbg">
+    <img src="../../../static/future-polygan2.png" class="spcae-item spcae-item2">
+    <img src="../../../static/future-polygan3.png" class="spcae-item spcae-item3">
+    <img src="../../../static/future-polygan4.png" class="spcae-item spcae-item4">
+    <img src="../../../static/future-polygan5.png" class="spcae-item spcae-item5">
+    <img src="../../../static/future-polygan7.png" class="spcae-item spcae-item7">
     <div class="years-container">
-      <img src="../../images/elements/years-2021.png" class="years year-2021 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
-      <img src="../../images/elements/years-2020.png" class="years year-2020 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
-      <img src="../../images/elements/years-2019.png" class="years year-2019 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+      <img src="../../../static/years-2021.png" class="years year-2021 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
+      <img src="../../../static/years-2020.png" class="years year-2020 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
+      <img src="../../../static/years-2019.png" class="years year-2019 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
     </div>
     <div class="car-container">
       <div class="car-position" :class="{ carAnimation: startAnimation, hide: animationFinished }">
-        <img src="../../images/elements/future-car.png" class="space-car">
+        <img src="../../../static/future-car.png" class="space-car">
         <div class="wing-container" :class="{ wingfade: startAnimation }">
-          <img src="../../images/elements/future-carwing.png" class="space-carwing">
-          <img src="../../images/elements/future-cartail.png" class="space-cartail">
+          <img src="../../../static/future-carwing.png" class="space-carwing">
+          <img src="../../../static/future-cartail.png" class="space-cartail">
         </div>
       </div>
     </div>

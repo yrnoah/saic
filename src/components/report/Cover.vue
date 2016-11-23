@@ -1,6 +1,6 @@
 <template>
 	<div class="swiper-slide report-cover">
-    <img src="../../images/elements/report-cloud.png" class="bg-cloud">
+    <img src="../../../static/report-cloud.png" class="bg-cloud">
     <div class="bottom">
       <img src="../../../static/earth.png" class="earth">
     </div>
@@ -46,7 +46,7 @@
     height: 104px;
   }
   .report-year {
-    background: url(../../images/elements/report-year.png) no-repeat;
+    background: url(../../../static/report-year.png) no-repeat;
     background-size: contain;
     width: 127px;
     height: 64px;
@@ -63,7 +63,7 @@
   }
 
   .report-title {
-    background: url(../../images/elements/report-title.png) no-repeat;
+    background: url(../../../static/report-title.png) no-repeat;
     background-size: contain;
     margin: 0 auto;
     position: relative;
@@ -73,7 +73,7 @@
   }
 
   .polygon {
-    background: url(../../images/elements/report-polygon.png) no-repeat;
+    background: url(../../../static/report-polygon.png) no-repeat;
     background-size: contain;
     width: 169px;
     height: 68px;

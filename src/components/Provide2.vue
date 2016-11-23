@@ -1,43 +1,43 @@
 <template>
 	<div class="swiper-slide provide1">
     <div class="topbg-container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
-      <img src="../images/elements/wechat-bgpolygan2.png" class="privide-topbg">
+      <img src="../../static/wechat-bgpolygan2.png" class="privide-topbg">
       <div class="content-container">
         <div class="content">
-          <img src="../images/elements/wechat-provide4.png" class="content-tit ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+          <img src="../../static/wechat-provide4.png" class="content-tit ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
           <div class="detail-container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
             <span>网红餐厅“阿桂厨房”</span>
-            <img src="../images/elements/wechat-right.png" class="privide-icon width10">
+            <img src="../../static/wechat-right.png" class="privide-icon width10">
           </div>
           <div class="detail-container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
             <span>健身中心</span>
-            <img src="../images/elements/wechat-right.png" class="privide-icon width10">
+            <img src="../../static/wechat-right.png" class="privide-icon width10">
           </div>
-          <img src="../images/elements/wechat-provide3.png" class="content-tit provide3Tit ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
+          <img src="../../static/wechat-provide3.png" class="content-tit provide3Tit ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
           <div class="detail-container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">
             <div>
               <span>潜力人才</span>
-              <img src="../images/elements/wechat-right.png" class="privide-icon">
+              <img src="../../static/wechat-right.png" class="privide-icon">
             </div>
             <div>
               <span>专业人才</span>
-              <img src="../images/elements/wechat-right.png" class="privide-icon">
+              <img src="../../static/wechat-right.png" class="privide-icon">
             </div>
           </div>
           <div class="detail-container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">
             <div>
               <span>管理人才</span>
-              <img src="../images/elements/wechat-right.png" class="privide-icon">
+              <img src="../../static/wechat-right.png" class="privide-icon">
             </div>
             <div>
               <span>国际人才</span>
-              <img src="../images/elements/wechat-right.png" class="privide-icon">
+              <img src="../../static/wechat-right.png" class="privide-icon">
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="bottom"><img src="../images/wechat-bottom2.png" class="provide-bg"></div>
+    <div class="bottom"><img src="../../static/wechat-bottom2.png" class="provide-bg"></div>
 	</div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
 	<div class="swiper-slide slogan">
-    <img src="../../images/elements/report-cloud.png" class="bg-cloud">
+    <img src="../../../static/report-cloud.png" class="bg-cloud">
     <div class="bottom">
       <img src="../../../static/earth.png" class="earth">
     </div>
@@ -10,8 +10,8 @@
     <div class="angel-animation">
       <div class="up-angel"></div>
     </div>
-    <img src="../../images/elements/slogan-title.png" class="slogan-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
-    <img src="../../images/elements/slogan-tip.png" class="slogan-tip ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
+    <img src="../../../static/slogan-title.png" class="slogan-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+    <img src="../../../static/slogan-tip.png" class="slogan-tip ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
 	</div>
 </template>
 <script>

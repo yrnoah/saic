@@ -1,50 +1,50 @@
 <template>
 	<div class="swiper-slide major">
-    <img src="../images/wechat-gradient.png" class="gradient">
+    <img src="../../static/wechat-gradient.png" class="gradient">
     <div class="main-container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
-      <img src="../images/elements/wechat-title1.png" class="major-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+      <img src="../../static/wechat-title1.png" class="major-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
       <div class="board-container">
-        <img src="../images/elements/wechat-bgboard.png" class="major-board">
+        <img src="../../static/wechat-bgboard.png" class="major-board">
         <div class="content">
           <div class="content-container first-margin">
             <div class="icon-container">
-              <img src="../images/elements/major-icon1.png" class="major-icon1 ani" swiper-animate-effect="flip" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
+              <img src="../../static/major-icon1.png" class="major-icon1 ani" swiper-animate-effect="flip" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
             </div>
             <div class="txt-container">
-              <img src="../images/elements/wechat-major1.png" class="text1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
+              <img src="../../static/wechat-major1.png" class="text1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
               <p class="detail ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">市场营销、品牌宣传、销售管理</p>
             </div>
           </div>
           <div class="content-container">
             <div class="icon-container">
-              <img src="../images/elements/major-icon2.png" class="major-icon1 ani" swiper-animate-effect="flip" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
+              <img src="../../static/major-icon2.png" class="major-icon1 ani" swiper-animate-effect="flip" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
             </div>
             <div class="txt-container">
-              <img src="../images/elements/wechat-major2.png" class="text1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
+              <img src="../../static/wechat-major2.png" class="text1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
               <p class="detail ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">产品规划、售后市场调研</p>
             </div>
           </div>
           <div class="content-container">
             <div class="icon-container">
-              <img src="../images/elements/major-icon3.png" class="major-icon1 ani" swiper-animate-effect="flip" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">
+              <img src="../../static/major-icon3.png" class="major-icon1 ani" swiper-animate-effect="flip" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">
             </div>
             <div class="txt-container">
-              <img src="../images/elements/wechat-major3.png" class="text1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">
+              <img src="../../static/wechat-major3.png" class="text1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">
               <p class="detail ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">财务管理、金融分析、商务投资</p>
             </div>
           </div>
           <div class="content-container">
             <div class="icon-container">
-              <img src="../images/elements/major-icon4.png" class="major-icon1 ani" swiper-animate-effect="flip" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">
+              <img src="../../static/major-icon4.png" class="major-icon1 ani" swiper-animate-effect="flip" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">
             </div>
             <div class="txt-container">
-              <img src="../images/elements/wechat-major4.png" class="text1 major4-txt ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">
+              <img src="../../static/wechat-major4.png" class="text1 major4-txt ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">
               <p class="detail ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">法务</p>
             </div>
           </div>
         </div>
       </div>
-      <img src="../images/elements/wechat-man2.png" class="wechat-man2">
+      <img src="../../static/wechat-man2.png" class="wechat-man2">
     </div>
 	</div>
 </template>

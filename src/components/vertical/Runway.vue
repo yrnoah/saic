@@ -21,19 +21,19 @@
           <div class="runway-container">
             <div class="car-container">
               <div class="car-position" :class="{ carAnimation: startAnimation, hide: animationFinished }">
-                <img src="../../images/elements/future-car.png" class="space-car">
+                <img src="../../../static/future-car.png" class="space-car">
               </div>
             </div>
-            <img class="cloud-top" src="../../images/future-cloud.png">
-            <img src="../../images/elements/future-topbuilding.png" class="future-topbuilding">
+            <img class="cloud-top" src="../../../static/future-cloud.png">
+            <img src="../../../static/future-topbuilding.png" class="future-topbuilding">
             <img src="../../../static/future-longbg.jpg" class="runway-bg">
-            <img class="cloud-bottom" src="../../images/bg-cloud-1.png">
-            <img src="../../images/elements/banner1.png" class="banner">
-            <img src="../../images/elements/banner2.png" class="banner">
-            <img src="../../images/elements/banner3.png" class="banner">
-            <img src="../../images/elements/banner4.png" class="banner">
-            <img src="../../images/elements/banner5.png" class="banner">
-            <img src="../../images/elements/banner6.png" class="banner">
+            <img class="cloud-bottom" src="../../../static/bg-cloud-1.png">
+            <img src="../../../static/banner1.png" class="banner">
+            <img src="../../../static/banner2.png" class="banner">
+            <img src="../../../static/banner3.png" class="banner">
+            <img src="../../../static/banner4.png" class="banner">
+            <img src="../../../static/banner5.png" class="banner">
+            <img src="../../../static/banner6.png" class="banner">
           </div>
 				</div>
 			</div>
@@ -142,7 +142,7 @@
     padding-bottom: 100px;
   }
   .major-title {
-    background: url(../../images/elements/future-major.png) no-repeat;
+    background: url(../../../static/future-major.png) no-repeat;
     background-size: contain;
     width: 221px;
     height: 42px;
@@ -159,28 +159,28 @@
     border-radius: 36px;
   }
   .major1 {
-    background: url(../../images/elements/future-major1.png) no-repeat;
+    background: url(../../../static/future-major1.png) no-repeat;
     background-size: contain;
     width: 173px;
     height: 38px;
     margin: 0 auto;
   }
   .major2 {
-    background: url(../../images/elements/future-major2.png) no-repeat;
+    background: url(../../../static/future-major2.png) no-repeat;
     background-size: contain;
     width: 171px;
     height: 38px;
     margin: 0 auto;
   }
   .major3 {
-    background: url(../../images/elements/future-major3.png) no-repeat;
+    background: url(../../../static/future-major3.png) no-repeat;
     background-size: contain;
     width: 172px;
     height: 38px;
     margin: 0 auto;
   }
   .major4 {
-    background: url(../../images/elements/future-major4.png) no-repeat;
+    background: url(../../../static/future-major4.png) no-repeat;
     background-size: contain;
     width: 102px;
     height: 38px;

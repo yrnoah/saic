@@ -1,9 +1,9 @@
 <template>
 	<div class="swiper-slide requirement">
     <div class="main-container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
-      <img src="../images/elements/wechat-require.png" class="major-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+      <img src="../../static/wechat-require.png" class="major-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
       <div class="board-container">
-        <img src="../images/elements/wechat-bgboard.png" class="major-board">
+        <img src="../../static/wechat-bgboard.png" class="major-board">
         <div class="content">
           <div class="content-container first-margin ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
             <div class="icon-container">
@@ -41,7 +41,7 @@
           </div>
         </div>
       </div>
-      <img src="../images/elements/wechat-man1.png" class="wechat-man2">
+      <img src="../../static/wechat-man1.png" class="wechat-man2">
     </div>
 	</div>
 </template>

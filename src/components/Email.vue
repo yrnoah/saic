@@ -1,11 +1,11 @@
 <template>
 	<div class="swiper-slide requirement">
     <div class="shareMask ani" @click="hideMask" v-show="showMask" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
-      <img src="../images/elements/share-txt.png" class="shareTxt">
+      <img src="../../static/share-txt.png" class="shareTxt">
     </div>
-    <img src="../images/elements/logo.png" class="logo">
-    <img src="../images/elements/email-title.png" class="email-title">
-    <img src="../images/elements/icon-letter.png" class="icon-letter">
+    <img src="../../static/logo.png" class="logo">
+    <img src="../../static/email-title.png" class="email-title">
+    <img src="../../static/icon-letter.png" class="icon-letter">
     <div>
       <p class="emailTxt">recruitment@saicservice.com</p>
     </div>

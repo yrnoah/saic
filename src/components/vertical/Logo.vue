@@ -1,11 +1,11 @@
 <template>
 	<div class="swiper-slide logo-page">
-    <img src="../../images/elements/report-cloud.png" class="bg-cloud">
+    <img src="../../../static/report-cloud.png" class="bg-cloud">
     <div class="angel-animation">
       <div class="up-angel"></div>
     </div>
-    <img src="../../images/elements/logo.png" class="logo ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
-    <img src="../../images/elements/name.png" class="name ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
+    <img src="../../../static/logo.png" class="logo ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+    <img src="../../../static/name.png" class="name ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
 	</div>
 </template>
 <script>
