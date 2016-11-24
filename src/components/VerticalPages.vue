@@ -26,6 +26,7 @@
       return {
         moveStartY: 0,
         moveStartX: 0,
+        selectedMajor: 1,
       };
     },
     components: {
@@ -50,12 +51,15 @@
         onSlideChangeEnd: (swiper) => {
           swiperAnimate(swiper);
           if (swiper.activeIndex === 0) {
-            this.$broadcast('startCarAnimation');
+            verticalTopSwiper.unlockSwipeToPrev();
+            this.$broadcast('startCarAnimation', this.selectedMajor);
           }
           if (swiper.activeIndex === 2) {
+            verticalTopSwiper.unlockSwipeToPrev();
             this.$broadcast('setToBottom');
           }
           if (swiper.activeIndex === 1) {
+            verticalTopSwiper.lockSwipeToPrev();
             this.$broadcast('startRunwayCarAnimation');
           }
         },
@@ -72,7 +76,7 @@
           if (swiper.activeIndex === 0) {
             const moveDistance = event.changedTouches[0].pageY - this.moveStartY;
             if (moveDistance > 100) {
-              this.$dispatch('goWechat');
+              this.$dispatch('goWechatMajor', this.selectedMajor);
               this.moveStartY = 0;
               return;
             }
@@ -96,7 +100,15 @@
       },
       'startCarAnimation'() {
         swiperAnimate(verticalTopSwiper);
-        this.$broadcast('startCarAnimation');
+        this.$broadcast('startCarAnimation', this.selectedMajor);
+      },
+      'slideToSpace'(index) {
+        verticalTopSwiper.unlockSwipeToPrev();
+        this.selectedMajor = index;
+        verticalTopSwiper.slideTo(0);
+      },
+      'goSelectMajorPage'() {
+        verticalTopSwiper.slideTo(1, 0);
       },
     },
   };

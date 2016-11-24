@@ -4,6 +4,13 @@
     <div class="angel-animation">
       <div class="up-angel"></div>
     </div>
+    <div class="carContainer ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
+      <img src="../../../static/car-big.png" class="car">
+      <div class="wheels">
+        <img src="../../../static/wheel-big.png" class="wheel left-wheel">
+        <img src="../../../static/wheel-big.png" class="wheel right-wheel">
+      </div>
+    </div>
     <img src="../../../static/logo.png" class="logo ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
     <img src="../../../static/name.png" class="name ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
 	</div>
@@ -26,8 +33,9 @@
   .logo {
     width: 66%;
     height: auto;
-    margin: 0 auto;
+    margin: 0 auto 25px auto;
     position: relative;
+    top: -10px;
     z-index: 1;
     /*margin: 86px auto 26px auto;*/
   }
@@ -67,19 +75,40 @@
     position: absolute;
     bottom: -900px;
   }
-  .earth {
-    display: block;
-    vertical-align: top;
-    width: 1270.5px;
-    height: 1270.5px;
+  .carContainer {
+    margin: 15% auto 0 auto;
+    width: 85px;
     position: relative;
-    left: -432px;
-    margin: 0;
-    animation: rotate-left 40.0s infinite linear;
+    z-index: 2;
+
   }
-  .car-position {
-    position: absolute;
-    bottom: 155px;
+  .car {
     width: 100%;
+    height: auto;
+    animation: little-bounce2 1s linear infinite;
+    -webkit-animation: little-bounce2 1s linear infinite;
+  }
+  .wheels {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  .wheel {
+    display: inline-block;
+    width: 16%;
+    height: auto;
+    position: relative;
+    animation: rotate 1.0s infinite linear;
+    -webkit-animation: rotate 1.0s infinite linear;
+  }
+  .left-wheel {
+    float: left;
+    left: 10px;
+  }
+  .right-wheel {
+    float: right;
+    right: 10px;
   }
 </style>

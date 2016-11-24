@@ -41,14 +41,15 @@
         this.animationFinished = false;
         clearTimeout(hideCarTimeout);
       },
-      'startCarAnimation'() {
+      'startCarAnimation'(index) {
         this.startAnimation = true;
         hideCarTimeout = setTimeout(() => {
           this.animationFinished = true;
           this.startAnimation = false;
-          this.$dispatch('goWechat');
+          const majorIndex = index || 1;
+          this.$dispatch('goWechatMajor', majorIndex);
           clearTimeout(hideCarTimeout);
-        }, 4000);
+        }, 3000);
       },
     },
   };

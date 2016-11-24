@@ -2,15 +2,15 @@ report1-contentreport1-content<template>
 	<div class="swiper-slide report-cover">
     <img src="../../../static/report-cloud.png" class="bg-cloud">
     <div class="bottom">
-      <img src="../../../static/earth.png" class="earth">
+      <img src="../../../static/earth.png" class="earth" :class="{ rotateEarth: rotateEarth }">
     </div>
     <div class="car-position">
       <car-animation></car-animation>
     </div>
     <div class="report-content ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
       <div class="cover-year"><div class="report2-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div></div>
-      <div class="cover-title"><div class="report2-content ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s"></div></div>
-      <div class="polygon"></div>
+      <div class="cover-title ani" swiper-animate-effect="flipInX" swiper-animate-duration="1.5s" swiper-animate-delay="0.8s"><div class="report2-content"></div></div>
+      <div class="polygon ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s"></div>
       <div class="angel-animation">
         <div class="right-angel"></div>
       </div>
@@ -22,6 +22,19 @@ report1-contentreport1-content<template>
   export default {
     components: {
       CarAnimation,
+    },
+    data() {
+      return {
+        rotateEarth: false,
+      };
+    },
+    events: {
+      'startCarRotation2'() {
+        if (!this.rotateEarth) this.rotateEarth = true;
+      },
+      'stopCarRotation'() {
+        if (this.rotateEarth) this.rotateEarth = false;
+      },
     },
   };
 </script>
@@ -35,7 +48,6 @@ report1-contentreport1-content<template>
   .report-content {
     width: 226px;
     margin: 50px auto 0 auto;
-    background-color: #f0561b;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     position: relative;
@@ -44,6 +56,7 @@ report1-contentreport1-content<template>
   }
   .cover-year {
     height: 104px;
+    background-color: #f0561b;
   }
   .report2-title {
     background: url(../../../static/report2-title.png) no-repeat;
@@ -119,7 +132,44 @@ report1-contentreport1-content<template>
     position: relative;
     left: -440px;
     margin: 0;
-    animation: rotate-left 40.0s infinite linear;
+    transform: rotate(-96deg);
+  }
+  @keyframes rotate-page2 {
+    0% {
+       transform: rotate(-96deg);
+    }
+    25% {
+      transform: rotate(-186deg);
+    }
+    50% {
+      transform: rotate(-276deg);
+    }
+    75% {
+      transform: rotate(-366deg);
+    }
+    100% {
+      transform: rotate(-456deg);
+    }
+  }
+  @-webkit-keyframes rotate-page2 {
+    0% {
+       -webkit-transform: rotate(-96deg);
+    }
+    25% {
+      -webkit-transform: rotate(-186deg);
+    }
+    50% {
+      -webkit-transform: rotate(-276deg);
+    }
+    75% {
+      -webkit-transform: rotate(-366deg);
+    }
+    100% {
+      -webkit-transform: rotate(-456deg);
+    }
+  }
+  .rotateEarth {
+    animation: rotate-page2 40.0s infinite linear;
   }
   .car-position {
     position: absolute;

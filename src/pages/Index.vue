@@ -1,6 +1,6 @@
 <template>
 	<div class="swiper-container">
-		<div class="sound">
+		<!--<div class="sound">
 			<audio id="music" loop="loop" preload="auto">
 				<source src="../../static/valentin-loop.mp3" type="audio/mpeg">
 			</audio>
@@ -8,7 +8,7 @@
 		<div class="musicBtn" @click="toggleMusic">
 			<div v-if="!isPlayingMusic" class="icon-stop-music"></div>
 			<div v-else class="icon-start-music"></div>
-		</div>
+		</div>-->
 		<div class="swiper-wrapper">
 			<home></home>
 			<horizontal-pages></horizontal-pages>
@@ -60,7 +60,7 @@
       Email,
     },
     ready() {
-      this.startMusic();
+      // this.startMusic();
       appSwiper = new Swiper('.swiper-container', {
         direction: 'vertical',
         slidesPerView: 'auto',
@@ -83,6 +83,8 @@
             // this.$broadcast('startPageAnimation');
           }
           if (swiper.activeIndex === 1 && swiper.previousIndex === 2) {
+            console.log('slideToMajor');
+            this.$broadcast('goSelectMajorPage');
             appSwiper.lockSwipeToPrev();
             appSwiper.unlockSwipeToNext();
             // this.$broadcast('startPageAnimation');
@@ -93,11 +95,12 @@
           }
           if (swiper.activeIndex === 2) {
             // appSwiper.lockSwipes();
-            if (!this.preventWechatAutoplay) {
-              this.$broadcast('startAutoPlay');
-            } else if (this.relativeMajorIndex && this.preventWechatAutoplay) {
-              this.$broadcast('setMajorRelativePosition', this.relativeMajorIndex);
-            }
+            this.$broadcast('setMajorRelativePosition', this.relativeMajorIndex);
+            // if (!this.preventWechatAutoplay) {
+            //   this.$broadcast('startAutoPlay');
+            // } else if (this.relativeMajorIndex && this.preventWechatAutoplay) {
+            //   this.$broadcast('setMajorRelativePosition', this.relativeMajorIndex);
+            // }
           }
           if (swiper.activeIndex === 3) {
             this.$broadcast('initHasSlideNext');
@@ -118,7 +121,13 @@
         appSwiper.slidePrev();
         this.preventWechatAutoplay = false;
         this.$broadcast('initHasSlidePrev');
-        this.$broadcast('startCarAnimation');
+        // this.$broadcast('startCarAnimation');
+      },
+      'slideMajor'() {
+        this.$broadcast('goSelectMajorPage');
+        appSwiper.unlockSwipes();
+        appSwiper.slidePrev();
+        this.preventWechatAutoplay = false;
       },
       'lockSlidePrev'() {
         appSwiper.lockSwipeToPrev();
@@ -133,16 +142,12 @@
         appSwiper.unlockSwipeToNext();
       },
       'goWechatMajor'(index) {
-        this.preventWechatAutoplay = true;
+        appSwiper.unlockSwipes();
+        this.preventWechatAutoplay = false;
         this.relativeMajorIndex = index;
         this.$broadcast('setMajorRelativePosition', index);
         appSwiper.slideTo(2);
-      },
-      'goWechat'() {
-        this.$broadcast('initAnimation');
-        appSwiper.unlockSwipes();
-        appSwiper.slideTo(2);
-        this.$broadcast('startAutoPlay');
+        appSwiper.lockSwipes();
       },
     },
     methods: {

@@ -5,22 +5,22 @@
 				<div class="swiper-slide">
           <div class="major">
             <div class="major-title"></div>
-            <div class="future-major">
+            <div class="future-major" @click="selectMajor(2)">
               <div class="major1"></div>
             </div>
-            <div class="future-major">
+            <div class="future-major" @click="selectMajor(4)">
               <div class="major2"></div>
             </div>
-            <div class="future-major">
+            <div class="future-major" @click="selectMajor(1)">
               <div class="major3"></div>
             </div>
-            <div class="future-major">
+            <div class="future-major" @click="selectMajor(3)">
               <div class="major4"></div>
             </div>
           </div>
           <div class="runway-container">
             <div class="car-container">
-              <div class="car-position" :class="{ carAnimation: startAnimation, hide: animationFinished }">
+              <div class="car-position" :style="{ transform: `translateY(${carTransleteY}px)` }">
                 <img src="../../../static/future-car.png" class="space-car">
               </div>
             </div>
@@ -45,6 +45,8 @@
   import Swiper from '../../../static/swiper.js';
   let runwaySwiper;
   let runwayCarTimeout;
+  let viewTransition;
+  let carMoveInterval;
   export default {
     data() {
       return {
@@ -56,6 +58,9 @@
         virtualSize: null,
         startAnimation: false,
         animationFinished: false,
+        transSize: 0,
+        carTransleteY: 0,
+        carMoveTime: 0,
       };
     },
     ready() {
@@ -68,7 +73,64 @@
         slidesPerView: 'auto',
         loop: false,
         hashnav: true,
+        onTouchStart: () => {
+          this.stopAnimation();
+        },
+        // onTouchEnd: () => {
+        //   this.startPageAnimation();
+        // },
       });
+    },
+    methods: {
+      selectMajor(index) {
+        this.$dispatch('slideToSpace', index);
+      },
+      startPageAnimation() {
+        if (runwaySwiper.getWrapperTranslate('y') >= 0) {
+          runwaySwiper.enableTouchControl();
+          clearInterval(viewTransition);
+          return;
+        }
+        // runwaySwiper.disableTouchControl();
+        viewTransition = setInterval(() => {
+          if (runwaySwiper.getWrapperTranslate('y') >= 0) {
+            clearInterval(viewTransition);
+            return;
+          }
+          const trans = (runwaySwiper.getWrapperTranslate('y') + 1);
+          runwaySwiper.setWrapperTranslate(trans);
+          this.transSize += 1;
+        }, 1);
+      },
+      moveCar() {
+        if (this.carTransleteY === (runwaySwiper.virtualSize - runwaySwiper.size)) {
+          this.stopCarMove();
+          return;
+        }
+        carMoveInterval = setInterval(() => {
+          if (this.carTransleteY === (-runwaySwiper.virtualSize)) {
+            this.stopCarMove();
+            return;
+          }
+          if (this.carMoveTime < 400) {
+            this.carTransleteY -= 2;
+            this.carMoveTime += 1;
+          } else {
+            this.carTransleteY -= 1;
+            this.carMoveTime += 1;
+          }
+        }, 1);
+      },
+      stopAnimation() {
+        // runwaySwiper.enableTouchControl();
+        clearInterval(viewTransition);
+        clearTimeout(runwayCarTimeout);
+      },
+      stopCarMove() {
+        this.carTransleteY = 0;
+        this.carMoveTime = 0;
+        clearInterval(carMoveInterval);
+      },
     },
     events: {
       'setToBottom'() {
@@ -79,14 +141,13 @@
         this.startAnimation = false;
         this.animationFinished = false;
         clearTimeout(runwayCarTimeout);
+        clearInterval(viewTransition);
+        this.stopCarMove();
+        // runwaySwiper.enableTouchControl();
       },
       'startRunwayCarAnimation'() {
-        this.startAnimation = true;
-        runwayCarTimeout = setTimeout(() => {
-          this.animationFinished = true;
-          this.startAnimation = false;
-          clearTimeout(runwayCarTimeout);
-        }, 40000);
+        this.moveCar();
+        this.startPageAnimation();
       },
     },
   };
@@ -224,7 +285,7 @@
     bottom: -120px;
   }
   .carAnimation {
-    animation: drive 40.0s linear;
+    animation: drive 20.0s linear;
   }
   .hide {
     display: none;

@@ -3,7 +3,7 @@
 		<div class="wechatSwiper">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide" v-for="message in messages" track-by="$index" :id=`slide${message.index}`>
-					<div class="top-container" v-if="message.index === activeBannerIndex">
+					<div class="top-container" v-if="$index === 0">
 						<img src="../../static/wechat-top.png" class="wechat-topbg">
 						<img v-if="user.avatar" :src='user.avatar' class="avatar-user">
 						<img v-else src='../../static/avatar-user.png' class="avatar-user">
@@ -77,55 +77,7 @@
     },
     ready() {
       this.isWxCircles = true;
-      wechatSwiper = new Swiper('.wechatSwiper', {
-        direction: 'vertical',
-        nested: true,
-        freeMode: true,
-        autoHeight: true,
-        slidesPerView: 'auto',
-        autoplay: 1,
-        autoplayDisableOnInteraction: true,
-        speed: 5000,
-        loop: false,
-        autoplayStopOnLast: true,
-        hashnav: true,
-        onReachBeginning: (swiper) => {
-          if (swiper.activeIndex === 0) {
-            this.$dispatch('slidePrev');
-          }
-        },
-        onTouchStart: (swiper, event) => {
-          if (swiper.activeIndex === 4 || swiper.activeIndex === 0) {
-            this.moveStartY = event.changedTouches[0].pageY;
-          }
-        },
-        onTouchEnd: () => {
-          if (this.activeBannerIndex !== 1) {
-            this.activeBannerIndex = 1;
-          }
-        },
-        onSliderMove: (swiper, event) => {
-          // console.log(swiper.activeIndex);
-          if (swiper.activeIndex === 5) {
-            const moveDistance = this.moveStartY - event.changedTouches[0].pageY;
-            // console.log(this.moveStartY, moveDistance, this.hasSlideNext);
-            if (moveDistance > 20 && !this.hasSlideNext && this.moveStartY !== 0) {
-              this.$dispatch('slideNext');
-              this.hasSlideNext = true;
-              this.moveStartY = 0;
-            }
-          }
-          if (swiper.activeIndex === 0) {
-            const moveDistance = event.changedTouches[0].pageY - this.moveStartY;
-            // console.log(this.moveStartY, event.changedTouches[0].pageY, moveDistance);
-            if (moveDistance > 200 && !this.hasSlidePrev && this.moveStartY !== 0) {
-              this.$dispatch('slidePrev');
-              this.hasSlidePrev = true;
-              this.moveStartY = 0;
-            }
-          }
-        },
-      });
+      this.initSwiper();
       wechatSwiper.stopAutoplay();
       window.addEventListener('click', () => {
         if (!this.shouldHideBtn) return;
@@ -148,12 +100,6 @@
       });
     },
     events: {
-      'startAutoPlay'() {
-        const startAnimation = setTimeout(() => {
-          wechatSwiper.startAutoplay();
-          clearTimeout(startAnimation);
-        }, 500);
-      },
       'initHasSlideNext'() {
         this.hasSlideNext = false;
       },
@@ -163,8 +109,15 @@
       'setMajorRelativePosition'(index) {
         wechatSwiper.stopAutoplay();
         this.activeBannerIndex = index;
-        wechatSwiper.slideTo((index - 1), 0);
-        wechatSwiper.setWrapperTranslate(wechatSwiper.getWrapperTranslate() + 256);
+        const newMessageData = messageData.filter((data) => data.index !== index);
+        this.messages = [messageData[index - 1], ...newMessageData];
+        const startPlayTimeout = setTimeout(() => {
+          wechatSwiper.startAutoplay();
+          clearTimeout(startPlayTimeout);
+        }, 2000);
+        // wechatSwiper.slideTo((index - 1), 0);
+        // if (index !== 1)
+        // wechatSwiper.setWrapperTranslate(wechatSwiper.getWrapperTranslate() + 256);
       },
     },
     methods: {
@@ -208,6 +161,56 @@
         this.isWrittingComment = false;
         this.activeBtnId = null;
         this.commentInput = null;
+      },
+      initSwiper() {
+        wechatSwiper = new Swiper('.wechatSwiper', {
+          direction: 'vertical',
+          nested: true,
+          freeMode: true,
+          autoHeight: true,
+          slidesPerView: 'auto',
+          autoplay: 1,
+          autoplayDisableOnInteraction: true,
+          speed: 5000,
+          loop: false,
+          autoplayStopOnLast: true,
+          hashnav: true,
+          onReachBeginning: (swiper) => {
+            if (swiper.activeIndex === 0) {
+              this.$dispatch('slidePrev');
+            }
+          },
+          onTouchStart: (swiper, event) => {
+            if (swiper.activeIndex === 4 || swiper.activeIndex === 0) {
+              this.moveStartY = event.changedTouches[0].pageY;
+            }
+          },
+          onTouchEnd: () => {
+            if (this.activeBannerIndex !== 1) {
+              this.activeBannerIndex = 1;
+            }
+          },
+          onSliderMove: (swiper, event) => {
+            if (swiper.activeIndex === 5) {
+              const moveDistance = this.moveStartY - event.changedTouches[0].pageY;
+              // console.log(this.moveStartY, moveDistance, this.hasSlideNext);
+              if (moveDistance > 20 && !this.hasSlideNext && this.moveStartY !== 0) {
+                this.$dispatch('slideNext');
+                this.hasSlideNext = true;
+                this.moveStartY = 0;
+              }
+            }
+            if (swiper.activeIndex === 0) {
+              const moveDistance = event.changedTouches[0].pageY - this.moveStartY;
+              // console.log(this.moveStartY, event.changedTouches[0].pageY, moveDistance);
+              if (moveDistance > 200 && !this.hasSlidePrev && this.moveStartY !== 0) {
+                this.$dispatch('slideMajor');
+                this.hasSlidePrev = true;
+                this.moveStartY = 0;
+              }
+            }
+          },
+        });
       },
     },
   };

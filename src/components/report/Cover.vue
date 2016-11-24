@@ -2,15 +2,15 @@
 	<div class="swiper-slide report-cover">
     <img src="../../../static/report-cloud.png" class="bg-cloud">
     <div class="bottom">
-      <img src="../../../static/earth.png" class="earth">
+      <img src="../../../static/earth.png" class="earth" :class="{ rotateEarth: rotateEarth }">
     </div>
     <div class="car-position">
       <car-animation></car-animation>
     </div>
     <div class="report-content ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
       <div class="cover-year"><div class="report-year ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div></div>
-      <div class="cover-title"><div class="report-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s"></div></div>
-      <div class="polygon"></div>
+      <div class="cover-title ani" swiper-animate-effect="flipInX" swiper-animate-duration="1.5s" swiper-animate-delay="0.8s"><div class="report-title"></div></div>
+      <div class="polygon ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s"></div>
       <div class="angel-animation">
         <div class="right-angel"></div>
       </div>
@@ -22,6 +22,19 @@
   export default {
     components: {
       CarAnimation,
+    },
+    data() {
+      return {
+        rotateEarth: true,
+      };
+    },
+    events: {
+      'startCarRotation0'() {
+        if (!this.rotateEarth) this.rotateEarth = true;
+      },
+      'stopCarRotation'() {
+        if (this.rotateEarth) this.rotateEarth = false;
+      },
     },
   };
 </script>
@@ -35,7 +48,7 @@
   .report-content {
     width: 226px;
     margin: 50px auto 0 auto;
-    background-color: #FFF;
+    /*background-color: #FFF;*/
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     position: relative;
@@ -44,6 +57,7 @@
   }
   .cover-year {
     height: 104px;
+    background: #FFF;
   }
   .report-year {
     background: url(../../../static/report-year.png) no-repeat;
@@ -120,6 +134,8 @@
     position: relative;
     left: -440px;
     margin: 0;
+  }
+  .rotateEarth {
     animation: rotate-left 40.0s infinite linear;
   }
   .car-position {

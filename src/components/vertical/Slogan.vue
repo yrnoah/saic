@@ -2,7 +2,7 @@
 	<div class="swiper-slide slogan">
     <img src="../../../static/report-cloud.png" class="bg-cloud">
     <div class="bottom">
-      <img src="../../../static/earth.png" class="earth">
+      <img src="../../../static/earth.png" class="earth" :class="{ rotateEarth: rotateEarth }">
     </div>
     <div class="car-position">
       <car-animation></car-animation>
@@ -10,8 +10,8 @@
     <div class="angel-animation">
       <div class="up-angel"></div>
     </div>
-    <img src="../../../static/slogan-title.png" class="slogan-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
-    <img src="../../../static/slogan-tip.png" class="slogan-tip ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
+    <img src="../../../static/slogan-title.png" class="slogan-title ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+    <img src="../../../static/slogan-tip.png" class="slogan-tip ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
 	</div>
 </template>
 <script>
@@ -19,6 +19,16 @@
   export default {
     components: {
       CarAnimation,
+    },
+    data() {
+      return {
+        rotateEarth: false,
+      };
+    },
+    events: {
+      'startCarRotation5'() {
+        if (!this.rotateEarth) this.rotateEarth = true;
+      },
     },
   };
 </script>
@@ -45,7 +55,7 @@
   }
   .angel-animation {
     position: absolute;
-    bottom: 30px;
+    bottom: 10px;
     width: 100%;
     animation: bounce-down 1s linear infinite;
   }
@@ -70,7 +80,7 @@
 
   .bottom {
     position: absolute;
-    bottom: -950px;
+    bottom: -990px;
   }
   .earth {
     display: block;
@@ -78,13 +88,15 @@
     width: 1270.5px;
     height: 1270.5px;
     position: relative;
-    left: -432px;
+    left: -440px;
     margin: 0;
+  }
+  .rotateEarth {
     animation: rotate-left 40.0s infinite linear;
   }
   .car-position {
     position: absolute;
-    bottom: 110px;
+    bottom: 70px;
     width: 100%;
   }
 </style>
