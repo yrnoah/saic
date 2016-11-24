@@ -177,8 +177,11 @@
           hashnav: true,
           onReachBeginning: (swiper) => {
             if (swiper.activeIndex === 0) {
-              this.$dispatch('slidePrev');
+              this.$dispatch('slideMajor');
             }
+          },
+          onReachEnd: () => {
+            this.$dispatch('slideNext');
           },
           onTouchStart: (swiper, event) => {
             if (swiper.activeIndex === 4 || swiper.activeIndex === 0) {

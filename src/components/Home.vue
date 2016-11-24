@@ -8,8 +8,11 @@
     <div class="bottom buildings">
       <img src="../../static/buildings2.png" class="building-img" :class="{ buildingsrise: startAnimation }">
     </div>-->
-    <img src="../../static/home-title.png" class="home-title ani" swiper-animate-effect="swing" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s">
-    <img src="../../static/home-slogan.png" class="home-top-item ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s">
+    <img src="../../static/home-slogan.png" class="home-top-item ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">
+    <img src="../../static/home-text1.png" class="home-top-item ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+    <img src="../../static/home-text2.png" class="home-top-item ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
+    <img src="../../static/home-text3.png" class="home-top-item ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">
+    <img src="../../static/home-text4.png" class="home-top-item ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
     <img src="../../static/home-bottom.png" class="building-img" :class="{ buildingsfade: startAnimation }">
     <img src="../../static/home-buildings.png" class="building-img" :class="{ buildingsrise: startAnimation }">
     <img src="../../static/home-cloud.png" class="building-img home-cloud">
@@ -47,6 +50,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 3;
   }
   .home-title {
     width: 75%;
