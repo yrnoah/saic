@@ -119,7 +119,7 @@
           <div class="dot bid-dot"></div>
         </div>
       </div>
-			<p class="percent-value"><span id="loading-value">99</span>%</p>
+			<p class="percent-value"><span id="loading-value">20</span>%</p>
 		</div>
 	</div>
 	<style>
@@ -211,6 +211,7 @@
       left: -20px;
       top: 40px;
       animation: spinner-fade 0.8s linear infinite;
+      -webkit-animation: spinner-fade 0.8s linear infinite;
     }
 
     .bid-dot {
@@ -220,19 +221,22 @@
       top: 32px;
       left: -55px;
       animation: spinner-fade 0.8s linear infinite;
+      -webkit-animation: spinner-fade 0.8s linear infinite;
       animation-delay: 0.1s;
+      -webkit-animation-delay: 0.1s;
     }
 	</style>
 	<script>
     let valueEl = document.querySelector('#loading-value');
-    let value = (Math.random() * 10 + 70);
+    let value = Math.floor((Math.random() * 10 + 70));
     let increaseValue = setInterval(() => {
-      valueEl.innerHTML = value;
-      value = value + 1;
-      if (value === 100) {
+      if (value >= 99) {
         clearInterval(increaseValue);
+        valueEl.innerHTML = 99;
         return;
       }
+      valueEl.innerHTML = value;
+      value = value + 1;
     }, 500);
   </script>
 </body>

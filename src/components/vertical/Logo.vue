@@ -51,6 +51,7 @@
     bottom: 25px;
     width: 100%;
     animation: bounce-down 1s linear infinite;
+    -webkit-animation: bounce-down 1s linear infinite;
   }
 
   .up-angel {
@@ -69,6 +70,7 @@
     top: 272px;
     left: 0;
     animation: infinite-fade 2.0s linear infinite;
+    -webkit-animation: infinite-fade 2.0s linear infinite;
   }
 
   .bottom {
