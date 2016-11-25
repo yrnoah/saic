@@ -1,46 +1,19 @@
 <template>
 	<div class="swiper-slide report-cover">
-    <img src="../../../static/report-cloud.png" class="bg-cloud">
-    <div class="bottom">
-      <img src="../../../static/earth.png" class="earth" :class="{ rotateEarth: rotateEarth }">
-    </div>
-    <div class="car-position">
-      <car-animation></car-animation>
-    </div>
-    <div class="report-content ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+    <div class="report-content ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
       <div class="cover-year"><div class="report1-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div></div>
       <div class="cover-title ani" swiper-animate-effect="flipInX" swiper-animate-duration="1.5s" swiper-animate-delay="0.8s"><div class="report1-content"></div></div>
-      <div class="polygon ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s"></div>
-      <div class="angel-animation">
-        <div class="right-angel"></div>
+      <div class="polygon ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="1s"></div>
+      <div class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.2s">
+        <div class="angel-animation"><div class="right-angel"></div></div>
       </div>
     </div>
 	</div>
 </template>
-<script>
-  import CarAnimation from '../CarAnimation';
-  export default {
-    components: {
-      CarAnimation,
-    },
-    data() {
-      return {
-        rotateEarth: false,
-      };
-    },
-    events: {
-      'startCarRotation1'() {
-        if (!this.rotateEarth) this.rotateEarth = true;
-      },
-      'stopCarRotation'() {
-        if (this.rotateEarth) this.rotateEarth = false;
-      },
-    },
-  };
-</script>
+
 <style scoped>
 	.report-cover {
-		background-color: #4EDEFD;
+		background-color: transparent;
 		height: 100%;
     position: relative;
     overflow: hidden;
@@ -111,19 +84,7 @@
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
   }
-  .bg-cloud {
-    position: absolute;
-    width: 100%;
-    height: auto;
-    top: 139px;
-    left: 0;
-    animation: infinite-fade 2.0s linear infinite;
-  }
-
-  .bottom {
-    position: absolute;
-    bottom: -990px;
-  }
+/*
   .earth {
     display: block;
     vertical-align: top;
@@ -175,5 +136,5 @@
     position: absolute;
     bottom: 70px;
     width: 100%;
-  }
+  }*/
 </style>

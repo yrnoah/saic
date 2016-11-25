@@ -1,5 +1,12 @@
 <template>
 	<div class="swiper-slide horizontal-pages">
+    <img src="../../static/report-cloud.png" class="bg-cloud">
+    <div class="bottom">
+      <img src="../../static/earth.png" class="earth">
+    </div>
+    <div class="car-position">
+      <car-animation></car-animation>
+    </div>
 		<div class="swiper-wrapper">
       <report-cover></report-cover>
 			<report1></report1>
@@ -13,6 +20,7 @@
 
 <script>
   import Swiper from '../../static/swiper.js';
+  import CarAnimation from './CarAnimation';
   import {
     swiperAnimateCache,
     swiperAnimate,
@@ -38,6 +46,7 @@
       Report3,
       Report4,
       VerticalPages,
+      CarAnimation,
     },
     ready() {
       horizontalPagesSwiper = new Swiper('.horizontal-pages', {
@@ -47,18 +56,18 @@
           swiperAnimateCache(swiper);
           swiperAnimate(swiper);
         },
-        onTouchStart: () => {
-          this.$broadcast('stopCarRotation');
-        },
-        onTouchEnd: (swiper) => {
-          this.$broadcast(`startCarRotation${swiper.activeIndex}`);
-        },
-        onSlideChangeStart: () => {
-          this.$broadcast('stopCarRotation');
-        },
+        // onTouchStart: () => {
+        //   this.$broadcast('stopCarRotation');
+        // },
+        // onTouchEnd: (swiper) => {
+        //   this.$broadcast(`startCarRotation${swiper.activeIndex}`);
+        // },
+        // onSlideChangeStart: () => {
+        //   this.$broadcast('stopCarRotation');
+        // },
         onSlideChangeEnd: (swiper) => {
           swiperAnimate(swiper);
-          this.$broadcast(`startCarRotation${swiper.activeIndex}`);
+          // this.$broadcast(`startCarRotation${swiper.activeIndex}`);
           if (swiper.activeIndex === 0) {
             this.$dispatch('lockSlideNext');
             this.$dispatch('unlockSlidePrev');
@@ -69,7 +78,8 @@
           // if (swiper.activeIndex === 5) {
           //   // this.$dispatch('unlockSlideNext');
           // }
-          // if (swiper.activeIndex === 4 && swiper.previousIndex === 5) {
+          // if (swiper.activeIndex === 4) {
+          //   this.$broadcast('startPageAnimation');
           //   // this.$dispatch('lockSlideNext');
           // }
         },
@@ -93,11 +103,15 @@
 	.horizontal-pages {
 		height: 100%;
 		width: 100%;
+    background-color: #4EDEFD;
+    overflow: hidden;
 	}
 
   .horizontal-pages .swiper-wrapper {
     height: 100%;
 		width: 100%;
+    position: relative;
+    z-index: 1;
   }
 
 	.horizontal-pages .swiper-slide {
@@ -107,22 +121,33 @@
     text-align: center;
 	}
 
-  .demoBg {
+  .earth {
+    display: block;
+    vertical-align: top;
+    width: 1270.5px;
+    height: 1270.5px;
+    position: relative;
+    left: -440px;
+    margin: 0;
+    animation: rotate-left 40.0s infinite linear;
+  }
+  .car-position {
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: 70px;
     width: 100%;
-    height: 100%;
-    z-index: -1;
   }
 
-  .demoText, .demoTit {
-    font-size: 20px;
-    color: #FFF;
+  .bottom {
+    position: absolute;
+    bottom: -990px;
   }
 
-  .demoTit {
-    margin-top: 50%;
+   .bg-cloud {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 139px;
+    left: 0;
+    animation: infinite-fade 2.0s linear infinite;
   }
-
 </style>

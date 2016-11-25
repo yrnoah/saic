@@ -1,20 +1,20 @@
 <template>
 	<div class="swiper-slide slogan">
-    <img src="../../../static/report-cloud.png" class="bg-cloud">
+    <!--<img src="../../../static/report-cloud.png" class="bg-cloud">
     <div class="bottom">
       <img src="../../../static/earth.png" class="earth" :class="{ rotateEarth: rotateEarth }">
     </div>
     <div class="car-position">
       <car-animation></car-animation>
-    </div>
-    <div class="angel-animation">
-      <div class="up-angel"></div>
+    </div>-->
+    <div class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
+      <div class="angel-animation"><div class="up-angel"></div></div>
     </div>
     <img src="../../../static/slogan-title.png" class="slogan-title ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
     <img src="../../../static/slogan-tip.png" class="slogan-tip ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
 	</div>
 </template>
-<script>
+<!--<script>
   import CarAnimation from '../CarAnimation';
   export default {
     components: {
@@ -31,10 +31,10 @@
       },
     },
   };
-</script>
+</script>-->
 <style scoped>
 	.slogan {
-		background-color: #4EDEFD;
+		background-color: transparent;
 		height: 100%;
     position: relative;
     overflow: hidden;

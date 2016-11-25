@@ -55,6 +55,8 @@
             this.$broadcast('startCarAnimation', this.selectedMajor);
           }
           if (swiper.activeIndex === 2) {
+            // console.log(swiper.activeIndex);
+            swiperAnimate(swiper);
             verticalTopSwiper.unlockSwipeToPrev();
             this.$broadcast('setToBottom');
           }
@@ -96,6 +98,7 @@
     },
     events: {
       'startPageAnimation'() {
+        console.log('vertical ani');
         swiperAnimate(verticalTopSwiper);
       },
       'startCarAnimation'() {
