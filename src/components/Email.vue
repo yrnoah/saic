@@ -18,6 +18,9 @@
       <p class="emailTxt">recruitment@saicservice.com</p>
     </div>
     <p class="tipTxt">长按可复制</p>
+    <div @click="showMask" class="shareIconContainer">
+      <img src="../../static/share.png" class="shareIcon" >
+    </div>
 	</div>
 </template>
 
@@ -34,6 +37,10 @@
       hideMask() {
         this.showMask = false;
         // this.startLetterRotate();
+      },
+      showMask() {
+        console.log(this.showMask);
+        this.showMask = true;
       },
       startLetterRotate() {
         this.letterRotate = true;
@@ -189,5 +196,15 @@
   .tipTxt {
     color: #0084c5;
     margin-top: 5px;
+  }
+  .shareIconContainer {
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    z-index: 3;
+  }
+  .shareIcon {
+    width: 40px;
+    height: 40px;
   }
 </style>

@@ -9,7 +9,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes" />
   <script type="text/javascript">
     function load() {
-      let loadingItem = document.querySelector('.default-loading');
+      var loadingItem = document.querySelector('.default-loading');
       loadingItem.setAttribute("style", "display: none");
     }
     window.onload = load;
@@ -351,6 +351,8 @@
   <link rel="preload" href="./static/provide-building.png" as="image">
   <link rel="preload" href="./static/provide-car.png" as="image">
   <link rel="preload" href="./static/provide.png" as="image">
+  <link rel="preload" href="./static/share.png" as="image">
+  <link rel="preload" href="./static/music.png" as="image">
 </head>
 
 <body>
@@ -479,9 +481,9 @@
 	<div id="app">
 	</div>
   <script type="text/javascript">
-    let increaseValue;
-    let valueEl = document.querySelector('#loading-value');
-    let value = Math.floor((Math.random() * 10 + 20));
+    var increaseValue;
+    var valueEl = document.querySelector('#loading-value');
+    var value = Math.floor((Math.random() * 10 + 20));
       valueEl.innerHTML = value;
       increaseValue = setInterval(() => {
         if (value >= 99) {

@@ -1,14 +1,18 @@
 <template>
 	<div class="swiper-container main-layout">
-		<!--<div class="sound">
+		<div class="sound">
 			<audio id="music" loop="loop" preload="auto">
 				<source src="../../static/valentin-loop.mp3" type="audio/mpeg">
 			</audio>
 		</div>
 		<div class="musicBtn" @click="toggleMusic">
-			<div v-if="!isPlayingMusic" class="icon-stop-music"></div>
-			<div v-else class="icon-start-music"></div>
-		</div>-->
+			<div v-if="!isPlayingMusic" class="music-icon-container">
+        <img src="../../static/music.png" class="musicIcon">
+      </div>
+			<div v-else class="music-icon-container">
+        <img src="../../static/music.png" class="musicIcon playing-music">
+      </div>
+		</div>
 		<div class="swiper-wrapper">
 			<home></home>
 			<horizontal-pages></horizontal-pages>
@@ -64,7 +68,7 @@
       Email,
     },
     ready() {
-      // this.startMusic();
+      this.startMusic();
       appSwiper = new Swiper('.swiper-container', {
         direction: 'vertical',
         slidesPerView: 'auto',
@@ -210,7 +214,11 @@
 		padding: 10px;
 	}
 
-	.icon-start-music {
+  .musicIcon {
+    width: 40px;
+    height: 40px;
+  }
+	.playing-music {
 		animation: rotate 8.0s infinite linear;
 	}
   .main-layout {
