@@ -10,7 +10,7 @@
     <img src="../../static/home-cloud.png" class="building-img home-cloud">
     <img src="../../static/home-logo.png" class="building-img home-logo">
     <img src="../../static/home-car.png" class="building-img">
-    <img src="../../static/home-bike.png" class="building-img">
+    <img src="../../static/home-bike.png" class="building-img bike">
     <div class="windmill-container building-img">
       <img src="../../static/home-windmill-range.png" class="windmill-range">
       <img src="../../static/home-windmill-leaves.png" class="windmill-leave">
@@ -50,6 +50,9 @@
     margin: 43px auto 0 auto;
     position: relative;
     left: 20px;
+    z-index: 3;
+  }
+  .bike {
     z-index: 3;
   }
   /*.home-slogan {
@@ -92,6 +95,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 3;
   }
   .animation-container {
     width: 100%;
@@ -148,5 +152,6 @@
   .home-logo {
     animation: logo-fade 3.0s linear infinite;
     -webkit-animation: logo-fade 3.0s linear infinite;
+    z-index: 3;
   }
 </style>
