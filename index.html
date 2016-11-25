@@ -22,7 +22,116 @@
   <link rel="preload" href="./static/earth.png" as="image">
   <link rel="preload" href="./static/future-longbg.jpg" as="image">
 	<title>SAIC International</title>
-  <script>
+  <style type="text/css">
+		html {
+			height: 100%;
+			min-height: 480px;
+			max-width: 750px;
+			margin: 0;
+      background-color: #FFF;
+		}
+
+		body {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			font-family: 'HanHei SC', 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'Microsoft Yahei', 'Arial', sans-serif;
+			font-size: 12px;
+			margin: 0;
+		}
+
+    div {
+      margin: 0;
+			padding: 0;
+    }
+
+		#app {
+			width: 100%;
+			height: 100%;
+		}
+
+    .default-loading {
+			height: 100%;
+      width: 100%;
+      text-align: center;
+			overflow: hidden;
+      background-color: #4EDEFD;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+    }
+
+		.floater {
+			height: 50%;
+			/*float: left;*/
+			margin-bottom: -60px;
+		}
+
+		.percent-value {
+			color: #FFF;
+      font-size: 40px;
+      padding: 0;
+      margin: 5px auto;
+		}
+    .car-big {
+      margin: 0 auto;
+      position: relative;
+      animation: little-bounce 1s linear infinite;
+      background: url(./static/car-big.png) no-repeat;
+      background-size: contain;
+      width: 181.5px;
+      height: 72px;
+    }
+
+    .wheel-big {
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      animation: rotate 1.0s infinite linear;
+      background: url(./static/wheel-big.png) no-repeat;
+      background-size: contain;
+      width: 30px;
+      height: 30px;
+    }
+
+    .wheel .left {
+      left: 18px;
+    }
+
+    .wheel .right {
+      right: 20px;
+    }
+
+    .dot {
+      position: absolute;
+      background-color: #FFF;
+    }
+
+    .small-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+      left: -20px;
+      top: 40px;
+      animation: spinner-fade 0.8s linear infinite;
+      -webkit-animation: spinner-fade 0.8s linear infinite;
+    }
+
+    .bid-dot {
+      width: 26px;
+      height: 26px;
+      border-radius: 13px;
+      top: 32px;
+      left: -55px;
+      animation: spinner-fade 0.8s linear infinite;
+      -webkit-animation: spinner-fade 0.8s linear infinite;
+      animation-delay: 0.1s;
+      -webkit-animation-delay: 0.1s;
+    }
+	</style>
+  <script type="text/javascript">
     let increaseValue;
     window.onload = function() {
       let valueEl = document.querySelector('#loading-value');
@@ -181,115 +290,6 @@
   </div>
 	<div id="app">
 	</div>
-	<style>
-		html {
-			height: 100%;
-			min-height: 480px;
-			max-width: 750px;
-			margin: 0;
-      background-color: #FFF;
-		}
-
-		body {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			height: 100%;
-			font-family: 'HanHei SC', 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'Microsoft Yahei', 'Arial', sans-serif;
-			font-size: 12px;
-			margin: 0;
-		}
-
-    div {
-      margin: 0;
-			padding: 0;
-    }
-
-		#app {
-			width: 100%;
-			height: 100%;
-		}
-
-    .default-loading {
-			height: 100%;
-      width: 100%;
-      text-align: center;
-			overflow: hidden;
-      background-color: #4EDEFD;
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-    }
-
-		.floater {
-			height: 50%;
-			/*float: left;*/
-			margin-bottom: -60px;
-		}
-
-		.percent-value {
-			color: #FFF;
-      font-size: 40px;
-      padding: 0;
-      margin: 5px auto;
-		}
-    .car-big {
-      margin: 0 auto;
-      position: relative;
-      animation: little-bounce 1s linear infinite;
-      background: url(./static/car-big.png) no-repeat;
-      background-size: contain;
-      width: 181.5px;
-      height: 72px;
-    }
-
-    .wheel-big {
-      display: inline-block;
-      position: absolute;
-      bottom: 0;
-      animation: rotate 1.0s infinite linear;
-      background: url(./static/wheel-big.png) no-repeat;
-      background-size: contain;
-      width: 30px;
-      height: 30px;
-    }
-
-    .wheel .left {
-      left: 18px;
-    }
-
-    .wheel .right {
-      right: 20px;
-    }
-
-    .dot {
-      position: absolute;
-      background-color: #FFF;
-    }
-
-    .small-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 6px;
-      left: -20px;
-      top: 40px;
-      animation: spinner-fade 0.8s linear infinite;
-      -webkit-animation: spinner-fade 0.8s linear infinite;
-    }
-
-    .bid-dot {
-      width: 26px;
-      height: 26px;
-      border-radius: 13px;
-      top: 32px;
-      left: -55px;
-      animation: spinner-fade 0.8s linear infinite;
-      -webkit-animation: spinner-fade 0.8s linear infinite;
-      animation-delay: 0.1s;
-      -webkit-animation-delay: 0.1s;
-    }
-	</style>
 </body>
 
 </html>

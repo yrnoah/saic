@@ -2,14 +2,33 @@
 	<div class="swiper-slide report-cover">
     <div class="report-content ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
       <div class="cover-year"><div class="report4-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div></div>
-      <div class="cover-title ani" swiper-animate-effect="flipInX" swiper-animate-duration="1.5s" swiper-animate-delay="0.8s"><div class="report4-content"></div></div>
-      <div class="polygon ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s"></div>
+      <div class="cover-title ani" swiper-animate-effect="flipInX" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s"><div class="report4-content"></div></div>
       <div class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.2s">
         <div class="angel-animation"><div class="right-angel"></div></div>
+      </div>
+      <div class="polygon-position">
+        <div class="polygon" v-if="isActive" :class="{ transtionHeight: isActive }"></div>
       </div>
     </div>
 	</div>
 </template>
+<script>
+  export default {
+    data() {
+      return {
+        isActive: false,
+      };
+    },
+    events: {
+      'startReportAnimation'() {
+        this.isActive = true;
+      },
+      'initAnimation'() {
+        this.isActive = false;
+      },
+    },
+  };
+</script>
 
 <style scoped>
 	.report-cover {
@@ -58,16 +77,24 @@
     height: 130px;
   }
 
+  .polygon-position {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+  }
   .polygon {
     background: url(../../../static/report-polygon.png) no-repeat;
     background-size: contain;
     width: 169px;
     height: 68px;
-    position: absolute;
-    bottom: -67px;
-    z-index: 1;
-    right: 0;
     vertical-align: top;
+    float: right;
+  }
+  .transtionHeight {
+    animation: increase-height 1s ease;
+    -webkit-animation: increase-height 1s ease;
+    transform-origin: right top;
   }
 
   .angel-animation {

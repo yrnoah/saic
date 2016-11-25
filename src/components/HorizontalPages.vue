@@ -56,18 +56,12 @@
           swiperAnimateCache(swiper);
           swiperAnimate(swiper);
         },
-        // onTouchStart: () => {
-        //   this.$broadcast('stopCarRotation');
-        // },
-        // onTouchEnd: (swiper) => {
-        //   this.$broadcast(`startCarRotation${swiper.activeIndex}`);
-        // },
-        // onSlideChangeStart: () => {
-        //   this.$broadcast('stopCarRotation');
-        // },
+        onSlideChangeStart: () => {
+          this.$broadcast('initAnimation');
+        },
         onSlideChangeEnd: (swiper) => {
           swiperAnimate(swiper);
-          // this.$broadcast(`startCarRotation${swiper.activeIndex}`);
+          this.$broadcast('startReportAnimation');
           if (swiper.activeIndex === 0) {
             this.$dispatch('lockSlideNext');
             this.$dispatch('unlockSlidePrev');
@@ -75,13 +69,6 @@
           if (swiper.activeIndex === 1) {
             this.$dispatch('lockSlidePrev');
           }
-          // if (swiper.activeIndex === 5) {
-          //   // this.$dispatch('unlockSlideNext');
-          // }
-          // if (swiper.activeIndex === 4) {
-          //   this.$broadcast('startPageAnimation');
-          //   // this.$dispatch('lockSlideNext');
-          // }
         },
       });
     },
