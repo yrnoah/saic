@@ -59,10 +59,15 @@
             verticalTopSwiper.unlockSwipeToPrev();
             this.$broadcast('setToBottom');
             this.$broadcast('fadeInLogo');
+            this.$dispatch('changeEarth');
           }
           if (swiper.activeIndex === 1) {
             verticalTopSwiper.lockSwipeToPrev();
             this.$broadcast('startRunwayCarAnimation');
+            this.$dispatch('showEarth');
+          }
+          if (swiper.activeIndex === 3) {
+            this.$dispatch('showEarth');
           }
         },
         onTouchStart: (swiper, event) => {

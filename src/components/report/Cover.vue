@@ -22,7 +22,6 @@
     events: {
       'startReportAnimation'() {
         this.isActive = true;
-        console.log(this.isActive, 'startAnimation', 'cover');
       },
       'initAnimation'() {
         this.isActive = false;

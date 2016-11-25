@@ -2,9 +2,9 @@
 	<div class="swiper-slide horizontal-pages">
     <img src="../../static/report-cloud.png" class="bg-cloud">
     <div class="bottom">
-      <img src="../../static/earth.png" class="earth">
+      <img src="../../static/earth.png" class="earth" v-if="!hideTheEarth" transition="hide-earth">
     </div>
-    <div class="car-position">
+    <div class="car-position" v-if="!hideTheEarth" transition="move-car">
       <car-animation></car-animation>
     </div>
 		<div class="swiper-wrapper">
@@ -37,6 +37,7 @@
     data() {
       return {
         moveStartY: 0,
+        hideTheEarth: false,
       };
     },
     components: {
@@ -79,6 +80,13 @@
       'verticalToHorizen'() {
         // appSwiper.unlockSwipes();
         horizontalPagesSwiper.slideTo(4);
+      },
+      'changeEarth'() {
+        console.log();
+        this.hideTheEarth = true;
+      },
+      'showEarth'() {
+        this.hideTheEarth = false;
       },
     },
   };
@@ -136,5 +144,23 @@
     top: 139px;
     left: 0;
     animation: cloud-float-horizen 2.0s linear infinite;
+  }
+  .hide-earth-transition {
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    overflow: hidden;
+    opacity: 1;
+  }
+  .hide-earth-enter, .hide-earth-leave {
+    opacity: 0;
+  }
+  .move-car-transition {
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    overflow: hidden;
+    opacity: 1;
+  }
+  .move-car-enter, .move-car-leave {
+    opacity: 0;
   }
 </style>
