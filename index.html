@@ -9,7 +9,6 @@
 	<meta name="apple-mobile-web-app-capable" content="yes" />
   <script type="text/javascript">
     function load() {
-      valueEl.innerHTML = 99;
       let loadingItem = document.querySelector('.default-loading');
       loadingItem.setAttribute("style", "display: none");
     }
@@ -237,6 +236,9 @@
       animation-delay: 0.1s;
       -webkit-animation-delay: 0.1s;
     }
+    .hide {
+      display: none;
+    }
 	</style>
   <link rel="preload" href="./static/valentin-loop.mp3" as="media">
   <!--<link rel="preload" href="./static/lovely-pop-loop.mp3" as="media">-->
@@ -363,6 +365,116 @@
       </div>
     </div>
 		<p class="percent-value"><span id="loading-value">20</span>%</p>
+    <!--<div class="hide predload-img">
+      <img src="./static/car-big.png">
+      <img src="./static/wheel-big.png">
+      <img src="./static/home-slogan.png">
+      <img src="./static/home-bottom.png">
+      <img src="./static/home-buildings.png">
+      <img src="./static/home-text1.png">
+      <img src="./static/home-text2.png">
+      <img src="./static/home-text3.png">
+      <img src="./static/home-text4.png">
+      <img src="./static/earth.png">
+      <img src="./static/future-longbg.jpg">
+      <img src="./static/home-bgs.png">
+      <img src="./static/home-title.png">
+      <img src="./static/report-cloud.png">
+      <img src="./static/report-year.png">
+      <img src="./static/report-title.png">
+      <img src="./static/report-polygon.png">
+      <img src="./static/report1-title.png">
+      <img src="./static/report1-content.png">
+      <img src="./static/report2-title.png">
+      <img src="./static/report2-content.png">
+      <img src="./static/report3-title.png">
+      <img src="./static/report3-content.png">
+      <img src="./static/report4-title.png">
+      <img src="./static/report4-content.png">
+      <img src="./static/wechat-require.png">
+      <img src="./static/wechat-bgboard.png">
+      <img src="./static/wechat-man1.png">
+      <img src="./static/logo.png">
+      <img src="./static/name.png">
+      <img src="./static/slogan-title.png">
+      <img src="./static/slogan-tip.png">
+      <img src="./static/share-txt.png">
+      <img src="./static/email-title.png">
+      <img src="./static/wechat-gradient.png">
+      <img src="./static/wechat-title1.png">
+      <img src="./static/wechat-bgboard.png">
+      <img src="./static/major-icon1.png">
+      <img src="./static/wechat-major1.png">
+      <img src="./static/major-icon2.png">
+      <img src="./static/wechat-major2.png">
+      <img src="./static/major-icon3.png">
+      <img src="./static/wechat-major3.png">
+      <img src="./static/major-icon4.png">
+      <img src="./static/wechat-major4.png">
+      <img src="./static/wechat-man2.png">
+      <img src="./static/wechat-bgpolygan.png">
+      <img src="./static/wechat-provide1.png">
+      <img src="./static/wechat-right.png">
+      <img src="./static/wechat-provide2.png">
+      <img src="./static/wechat-bottom2.png">
+      <img src="./static/wechat-bgpolygan2.png">
+      <img src="./static/wechat-provide4.png">
+      <img src="./static/wechat-provide3.png">
+      <img src="./static/future-car.png">
+      <img src="./static/future-carwing.png">
+      <img src="./static/future-cartail.png">
+      <img src="./static/future-cloud.png">
+      <img src="./static/future-topbuilding.png">
+      <img src="./static/bg-cloud-1.png">
+      <img src="./static/banner1.png">
+      <img src="./static/banner2.png">
+      <img src="./static/banner3.png">
+      <img src="./static/banner4.png">
+      <img src="./static/banner5.png">
+      <img src="./static/banner6.png">
+      <img src="./static/future-major.png">
+      <img src="./static/future-major1.png">
+      <img src="./static/future-major2.png">
+      <img src="./static/future-major3.png">
+      <img src="./static/future-major4.png">
+      <img src="./static/future-topbg.png">
+      <img src="./static/future-polygan2.png">
+      <img src="./static/future-polygan3.png">
+      <img src="./static/future-polygan4.png">
+      <img src="./static/future-polygan5.png">
+      <img src="./static/future-polygan7.png">
+      <img src="./static/years-2021.png">
+      <img src="./static/years-2020.png">
+      <img src="./static/years-2019.png">
+      <img src="./static/wechat-top.png">
+      <img src="./static/avatar-user.png">
+      <img src="./static/avatar-1.png">
+      <img src="./static/pic-1.png">
+      <img src="./static/avatar-2.png">
+      <img src="./static/pic-2.png">
+      <img src="./static/avatar-3.png">
+      <img src="./static/pic-3.png">
+      <img src="./static/avatar-4.png">
+      <img src="./static/pic-4.png">
+      <img src="./static/avatar-5.png">
+      <img src="./static/pic-5.png">
+      <img src="./static/avatar-6.png">
+      <img src="./static/pic-6.png">
+      <img src="./static/sprite-saic.png">
+      <img src="./static/letter-bottom.png">
+      <img src="./static/letter-top.png">
+      <img src="./static/letter-inner.png">
+      <img src="./static/home-bike.png">
+      <img src="./static/home-car.png">
+      <img src="./static/home-cloud.png">
+      <img src="./static/home-logo.png">
+      <img src="./static/home-windmill-leaves.png">
+      <img src="./static/home-windmill-range.png">
+      <img src="./static/home-windmill1.png">
+      <img src="./static/provide-building.png">
+      <img src="./static/provide-car.png">
+      <img src="./static/provide.png">
+    </div>-->
 	</div>
 	<div id="app">
 	</div>
@@ -379,7 +491,7 @@
         }
         if (value < 80) {
           valueEl.innerHTML = value;
-          value = value + 3;
+          value = value + 2;
         } else {
           valueEl.innerHTML = value;
           value = value + 1;
