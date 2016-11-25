@@ -15,6 +15,9 @@
       <img src="../../static/home-windmill-range.png" class="windmill-range">
       <img src="../../static/home-windmill-leaves.png" class="windmill-leave">
     </div>
+    <div class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2s">
+      <div class="angel-animation"><div class="up-angel"></div></div>
+    </div>
 	</div>
 </template>
 <script>
@@ -153,5 +156,22 @@
     animation: logo-fade 3.0s linear infinite;
     -webkit-animation: logo-fade 3.0s linear infinite;
     z-index: 3;
+  }
+  .angel-animation {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    animation: bounce-down 1s linear infinite;
+    z-index: 4;
+  }
+
+  .up-angel {
+    width: 48px;
+    height: 48px;
+    border: 2px solid #4EDEFD;
+    border-width: 2px 2px 0 0;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    margin: 0 auto;
   }
 </style>

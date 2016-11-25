@@ -17,6 +17,7 @@
             <div class="future-major" @click="selectMajor(3)">
               <div class="major4"></div>
             </div>
+            <p class="majorTip">请选择你的就职方向</p>
           </div>
           <div class="runway-container">
             <div class="car-container">
@@ -27,8 +28,8 @@
             <img class="cloud-top" src="../../../static/future-cloud.png">
             <img src="../../../static/future-topbuilding.png" class="future-topbuilding">
             <img src="../../../static/future-longbg.jpg" class="runway-bg">
-            <img src="../../../static/future-cloud2.png" class="cloud-bottom ani" swiper-animate-effect="fadeOutLeft" swiper-animate-duration="2s" swiper-animate-delay="0s">
-            <img src="../../../static/future-cloud.png" class="cloud-bottom ani" swiper-animate-effect="fadeOutRight" swiper-animate-duration="2s" swiper-animate-delay="0s">
+            <img src="../../../static/future-cloud2.png" class="cloud-bottom cloud-bottom1" v-if="!fadeOutCloud" transition="fadeouteLeft">
+            <img src="../../../static/future-cloud.png" class="cloud-bottom cloud-bottom2" v-if="!fadeOutCloud" transition="fadeouteRight">
             <img src="../../../static/banner1.png" class="banner ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="0s">
             <img src="../../../static/banner2.png" class="banner" v-if="showBanner2" :class="{ bannerFadeIn: showBanner2 }">
             <img src="../../../static/banner3.png" class="banner" v-if="showBanner3" :class="{ bannerFadeIn: showBanner3 }">
@@ -67,6 +68,7 @@
         showBanner4: false,
         showBanner5: false,
         showBanner6: false,
+        fadeOutCloud: false,
         carTransform: {
           // transform: `translateY(${carTransleteY}px)`
           transform: 'translateY(0px)',
@@ -97,6 +99,7 @@
         this.$dispatch('slideToSpace', index);
       },
       startPageAnimation() {
+        this.fadeOutCloud = true;
         if (runwaySwiper.getWrapperTranslate('y') >= 0) {
           runwaySwiper.enableTouchControl();
           clearInterval(viewTransition);
@@ -164,6 +167,7 @@
       'setToBottom'() {
         this.virtualSize = runwaySwiper.virtualSize;
         runwaySwiper.setWrapperTranslate(-this.virtualSize + runwaySwiper.size);
+        console.log(runwaySwiper.virtualSize, 'setToBottom');
       },
       'initAnimation'() {
         this.startAnimation = false;
@@ -173,6 +177,7 @@
         this.showBanner4 = false;
         this.showBanner5 = false;
         this.showBanner6 = false;
+        this.fadeOutCloud = false;
         clearTimeout(runwayCarTimeout);
         clearInterval(viewTransition);
         this.stopCarMove();
@@ -211,10 +216,14 @@
     width: 300%;
     height: auto;
     position: absolute;
-    bottom: -50px;
-    left: 0;
+    bottom: -150px;
     z-index: 4;
-    opacity: 0.5;
+  }
+  .cloud-bottom1 {
+    left: -200px;
+  }
+  .cloud-bottom2 {
+    right: -200px;
   }
   .cloud-top {
     position: absolute;
@@ -328,5 +337,30 @@
   .bannerFadeIn {
     animation: opacity-fade 0.5s ease;
     -webkit-animation: opacity-fade 0.5s ease;
+  }
+  .fadeouteLeft-transition {
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    overflow: hidden;
+  }
+  .fadeouteLeft-enter, .fadeouteLeft-leave {
+    opacity: 0;
+    left: -1500px;
+  }
+  .fadeouteRight-transition {
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    overflow: hidden;
+  }
+  .fadeouteRight-enter, .fadeouteRight-leave {
+    opacity: 0;
+    right: -1500px;
+  }
+  .majorTip {
+    font-size: 20px;
+    position: relative;
+    top: 20px;
+    margin: 0;
+    padding: 0;
   }
 </style>

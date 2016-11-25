@@ -1,37 +1,44 @@
 <template>
 	<div class="swiper-slide slogan">
-    <!--<img src="../../../static/report-cloud.png" class="bg-cloud">
-    <div class="bottom">
-      <img src="../../../static/earth.png" class="earth" :class="{ rotateEarth: rotateEarth }">
-    </div>
-    <div class="car-position">
-      <car-animation></car-animation>
-    </div>-->
     <div class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
       <div class="angel-animation"><div class="up-angel"></div></div>
     </div>
-    <img src="../../../static/slogan-title.png" class="slogan-title ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
-    <img src="../../../static/slogan-tip.png" class="slogan-tip ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
+    <img src="../../../static/slogan-title.png" class="slogan-title ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" :class="{ fadeOut: fadeOutSlogan, hide: fadeOutFinished }">
+    <img src="../../../static/slogan-tip.png" class="slogan-tip ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" :class="{ fadeOut: fadeOutSlogan, hide: fadeOutFinished }">
+    <img src="../../../static/logo.png" class="logo ani" swiper-animate-effect="zoomIn" swiper-animate-duration="2.0s" swiper-animate-delay="3s">
+    <img src="../../../static/name.png" class="name ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="3.3s">
 	</div>
 </template>
-<!--<script>
-  import CarAnimation from '../CarAnimation';
+<script>
+  // import CarAnimation from '../CarAnimation';
   export default {
-    components: {
-      CarAnimation,
-    },
+    // components: {
+    //   CarAnimation,
+    // },
     data() {
       return {
-        rotateEarth: false,
+        fadeOutSlogan: false,
+        fadeOutFinished: false,
       };
     },
     events: {
-      'startCarRotation5'() {
-        if (!this.rotateEarth) this.rotateEarth = true;
+      'reAnimateSlogan'() {
+        const reAnimate = setTimeout(() => {
+          this.fadeOutSlogan = true;
+          clearTimeout(reAnimate);
+        }, 2000);
+        const finishedTimeout = setTimeout(() => {
+          this.fadeOutFinished = true;
+          clearTimeout(finishedTimeout);
+        }, 2500);
+      },
+      'initAnimation'() {
+        this.fadeOutSlogan = false;
+        this.fadeOutFinished = false;
       },
     },
   };
-</script>-->
+</script>
 <style scoped>
 	.slogan {
 		background-color: transparent;
@@ -69,34 +76,27 @@
     -webkit-transform: rotate(-45deg);
     margin: 0 auto;
   }
-  .bg-cloud {
-    position: absolute;
-    width: 100%;
+  .fadeOut {
+    animation: fade-out 1s ease;
+    -webkit-animation: fade-out 1s ease;
+  }
+  .hide {
+    display: none;
+  }
+  .logo {
+    width: 66%;
     height: auto;
-    top: 156px;
-    left: 0;
-    animation: infinite-fade 2.0s linear infinite;
-  }
-
-  .bottom {
-    position: absolute;
-    bottom: -990px;
-  }
-  .earth {
-    display: block;
-    vertical-align: top;
-    width: 1270.5px;
-    height: 1270.5px;
+    margin: 0 auto 25px auto;
     position: relative;
-    left: -440px;
-    margin: 0;
+    top: 15%;
+    z-index: 1;
   }
-  .rotateEarth {
-    animation: rotate-left 40.0s infinite linear;
-  }
-  .car-position {
-    position: absolute;
-    bottom: 70px;
-    width: 100%;
+  .name {
+    width: 64%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    top: 18%;
   }
 </style>

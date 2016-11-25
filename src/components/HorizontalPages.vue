@@ -4,7 +4,7 @@
     <div class="bottom">
       <img src="../../static/earth.png" class="earth" v-if="!hideTheEarth" transition="hide-earth">
     </div>
-    <div class="car-position" v-if="!hideTheEarth" transition="move-car">
+    <div class="car-position" :class="{ moveCar: hideTheEarth, carFinishedStyle: carMoveFinished }">
       <car-animation></car-animation>
     </div>
 		<div class="swiper-wrapper">
@@ -38,6 +38,7 @@
       return {
         moveStartY: 0,
         hideTheEarth: false,
+        carMoveFinished: false,
       };
     },
     components: {
@@ -70,6 +71,19 @@
           if (swiper.activeIndex === 1) {
             this.$dispatch('lockSlidePrev');
           }
+          if (swiper.activeIndex === 4) {
+            this.hideTheEarth = false;
+            this.carMoveFinished = false;
+          }
+          if (swiper.activeIndex === 5) {
+            this.$broadcast('setToBottom');
+            this.$broadcast('reAnimateSlogan');
+            this.hideTheEarth = true;
+            const moveCarTime = setTimeout(() => {
+              this.carMoveFinished = true;
+              clearTimeout(moveCarTime);
+            }, 3000);
+          }
         },
       });
     },
@@ -87,6 +101,10 @@
       },
       'showEarth'() {
         this.hideTheEarth = false;
+      },
+      'initAnimation'() {
+        this.hideTheEarth = false;
+        this.carMoveFinished = false;
       },
     },
   };
@@ -154,13 +172,34 @@
   .hide-earth-enter, .hide-earth-leave {
     opacity: 0;
   }
-  .move-car-transition {
-    transition: all 1s ease;
-    -webkit-transition: all 1s ease;
-    overflow: hidden;
-    opacity: 1;
+  @keyframes move-car {
+    0% { bottom: 70px; transform: scale(1, 1); }
+    100% { bottom: 82%; transform: scale(.5, .5); }
   }
-  .move-car-enter, .move-car-leave {
-    opacity: 0;
+  @-webkit-keyframes move-car {
+    0% { bottom: 70px; -webkit-transform: scale(1, 1); }
+    100% { bottom: 82%; -webkit-transform: scale(.5, .5); }
+  }
+  /*@keyframes recover-car {
+    0% { bottom: 82%; transform: scale(.5,.5); }
+    100% { bottom: 70px; transform: scale(1, 1); }
+  }
+  @-webkit-keyframes recover-car {
+    0% { bottom: 82%; -webkit-transform: scale(.5, .5); }
+    100% { bottom: 70px; -webkit-transform: scale(1, 1); }
+  }*/
+
+  .moveCar {
+    animation: move-car 3.0s ease;
+    -webkit-animation: move-car 3.0s ease;
+  }
+  /*.recoverCar {
+    animation: recover 2.0s ease;
+    -webkit-animation: recover 2.0s ease;
+  }*/
+  .carFinishedStyle {
+    transform: scale(.5, .5);
+    -webkit-transform: scale(.5, .5);
+    bottom: 82%;
   }
 </style>

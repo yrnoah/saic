@@ -3,7 +3,6 @@
 		<div class="swiper-wrapper">
 			<space></space>
       <runway></runway>
-      <logo></logo>
       <slogan></slogan>
 		</div>
 	</div>
@@ -16,7 +15,6 @@
     swiperAnimate,
   } from '../utils/swiper.animate.min.js';
   import Slogan from './vertical/Slogan';
-  import Logo from './vertical/Logo';
   import Runway from './vertical/Runway';
   import Space from './vertical/Space';
   let verticalTopSwiper;
@@ -31,19 +29,14 @@
     },
     components: {
       Slogan,
-      Logo,
       Runway,
       Space,
     },
     ready() {
       verticalTopSwiper = new Swiper('.vertical-pages', {
-        initialSlide: 4,
-        direction: 'vertical',
-        loop: false,
         onInit: (swiper) => {
           swiperAnimateCache(swiper);
           this.$broadcast('startAnimation');
-          // swiperAnimate(swiper);
         },
         onSlideChangeStart: () => {
           this.$broadcast('initAnimation');
@@ -54,18 +47,15 @@
             verticalTopSwiper.unlockSwipeToPrev();
             this.$broadcast('startCarAnimation', this.selectedMajor);
           }
-          if (swiper.activeIndex === 2) {
+          if (swiper.activeIndex === 2 && swiper.previousIndex === 1) {
             verticalTopSwiper.unlockSwipeToPrev();
             this.$broadcast('setToBottom');
-            this.$broadcast('fadeInLogo');
             this.$dispatch('changeEarth');
+            this.$broadcast('reAnimateSlogan');
           }
           if (swiper.activeIndex === 1) {
             verticalTopSwiper.lockSwipeToPrev();
             this.$broadcast('startRunwayCarAnimation');
-            this.$dispatch('showEarth');
-          }
-          if (swiper.activeIndex === 3) {
             this.$dispatch('showEarth');
           }
         },
@@ -73,7 +63,7 @@
           if (swiper.activeIndex === 0) {
             this.moveStartY = event.changedTouches[0].pageY;
           }
-          if (swiper.activeIndex === 3) {
+          if (swiper.activeIndex === 2) {
             this.moveStartX = event.changedTouches[0].pageX;
             this.moveStartY = event.changedTouches[0].pageY;
           }
@@ -87,7 +77,7 @@
               return;
             }
           }
-          if (swiper.activeIndex === 3) {
+          if (swiper.activeIndex === 2) {
             const moveDistanceX = event.changedTouches[0].pageX - this.moveStartX;
             const moveDistanceY = event.changedTouches[0].pageY - this.moveStartY;
             if (moveDistanceX > 100 && moveDistanceY < 100) {
@@ -98,6 +88,9 @@
             }
           }
         },
+        initialSlide: 2,
+        direction: 'vertical',
+        loop: false,
       });
     },
     events: {
@@ -122,7 +115,6 @@
 
 <style scoped>
 	@import '../assets/swiper-3.3.1.min.css';
-	/*@import '../assets/sprite-saic.css';*/
 	@import '../assets/animate.min.css';
 	.horizontal-pages {
 		height: 100%;
