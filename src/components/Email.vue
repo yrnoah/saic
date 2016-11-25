@@ -18,7 +18,7 @@
       <p class="emailTxt">recruitment@saicservice.com</p>
     </div>
     <p class="tipTxt">长按可复制</p>
-    <div @click="showMask" class="shareIconContainer">
+    <div @click="showMaskFunc" class="shareIconContainer">
       <img src="../../static/share.png" class="shareIcon" >
     </div>
 	</div>
@@ -38,7 +38,7 @@
         this.showMask = false;
         // this.startLetterRotate();
       },
-      showMask() {
+      showMaskFunc() {
         console.log(this.showMask);
         this.showMask = true;
       },
