@@ -69,7 +69,7 @@ function renderError(sendErrorObj) {
 const serverApi = express.Router();
 let wechat_api;
 
-app.use('/', (req, res, next) => {
+app.use('/wechat-_api', (req, res, next) => {
   //使用wechat-api获取JSconfig
   var param = {
     debug: true,
@@ -91,17 +91,25 @@ app.use('/', (req, res, next) => {
   next();
 })
 
-app.get('/', (req, res, next) => {
+app.get('/wechat_oauth', (req, res, next) => {
   url = client.getAuthorizeURL('http://srkfytl.gofriend.me/home', '123', 'snsapi_userinfo');
-  req.redirect(url);
+  req.redirect('/');
   next();
 });
 
 <<<<<<< HEAD
 <<<<<<< HEAD
 app.get('/home', (req, res, next) => {
+<<<<<<< HEAD
   console.log(req.query);
   res.render('index');
+=======
+  res.render('home');
+})
+
+app.get('index', (req, res, next) => {
+  res.sender('index')
+>>>>>>> intergrate new project
 })
 =======
 >>>>>>> add wechat
@@ -154,5 +162,5 @@ app.use('/api', serverApi);
 //   app.use(proxyMiddleware(context, options))
 // })
 
-const port = 5001;
+const port = 5003;
 app.listen(port, (err) => { console.log("http oppened on " + port) });
