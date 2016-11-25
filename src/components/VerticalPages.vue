@@ -42,8 +42,8 @@
         loop: false,
         onInit: (swiper) => {
           swiperAnimateCache(swiper);
-          swiperAnimate(swiper);
-          // this.$broadcast('startAnimation');
+          this.$broadcast('startAnimation');
+          // swiperAnimate(swiper);
         },
         onSlideChangeStart: () => {
           this.$broadcast('initAnimation');
@@ -55,7 +55,6 @@
             this.$broadcast('startCarAnimation', this.selectedMajor);
           }
           if (swiper.activeIndex === 2) {
-            // console.log(swiper.activeIndex);
             verticalTopSwiper.unlockSwipeToPrev();
             this.$broadcast('setToBottom');
             this.$broadcast('fadeInLogo');

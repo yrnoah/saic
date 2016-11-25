@@ -12,6 +12,7 @@
     </div>
 	</div>
 </template>
+
 <script>
   export default {
     data() {
@@ -112,57 +113,4 @@
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
   }
-/*
-  .earth {
-    display: block;
-    vertical-align: top;
-    width: 1270.5px;
-    height: 1270.5px;
-    position: relative;
-    left: -440px;
-    margin: 0;
-    transform: rotate(-40deg);
-  }
-  @keyframes rotate-page1 {
-    0% {
-       transform: rotate(-40deg);
-    }
-    25% {
-      transform: rotate(-130deg);
-    }
-    50% {
-      transform: rotate(-220deg);
-    }
-    75% {
-      transform: rotate(-310deg);
-    }
-    100% {
-      transform: rotate(-400deg);
-    }
-  }
-  @-webkit-keyframes rotate-page1 {
-    0% {
-       -webkit-transform: rotate(-40deg);
-    }
-    25% {
-      -webkit-transform: rotate(-130deg);
-    }
-    50% {
-      -webkit-transform: rotate(-220deg);
-    }
-    75% {
-      -webkit-transform: rotate(-310deg);
-    }
-    100% {
-      -webkit-transform: rotate(-400deg);
-    }
-  }
-  .rotateEarth {
-    animation: rotate-page1 40.0s infinite linear;
-  }
-  .car-position {
-    position: absolute;
-    bottom: 70px;
-    width: 100%;
-  }*/
 </style>

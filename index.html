@@ -7,22 +7,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="format-detection" content="telephone=no,email=no,adress=no">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
-  <link rel="preload" href="./static/valentin-loop.mp3" as="media">
-  <!--<link rel="preload" href="./static/lovely-pop-loop.mp3" as="media">-->
-  <link rel="preload" href="./static/swiper.js" as="script">
-  <link rel="preload" href="./static/car-big.png" as="image">
-  <link rel="preload" href="./static/wheel-big.png" as="image">
-  <link rel="preload" href="./static/home-slogan.png" as="image">
-  <link rel="preload" href="./static/home-bottom.png" as="image">
-  <link rel="preload" href="./static/home-buildings.png" as="image">
-  <link rel="preload" href="./static/home-text1.png" as="image">
-  <link rel="preload" href="./static/home-text2.png" as="image">
-  <link rel="preload" href="./static/home-text3.png" as="image">
-  <link rel="preload" href="./static/home-text4.png" as="image">
-  <link rel="preload" href="./static/earth.png" as="image">
-  <link rel="preload" href="./static/future-longbg.jpg" as="image">
-	<title>SAIC International</title>
-  <style type="text/css">
+  <title>SAIC International</title>
+   <style type="text/css">
 		html {
 			height: 100%;
 			min-height: 480px;
@@ -75,21 +61,81 @@
       padding: 0;
       margin: 5px auto;
 		}
+  @keyframes little-bounce {
+    25% {
+      transform: translateY(-2px);
+    }
+    50%,
+    100% {
+      transform: translateY(0);
+    }
+    75% {
+      transform: translateY(2px);
+    }
+  }
+
+@-webkit-keyframes little-bounce {
+	25% {
+		-webkit-transform: translateY(-2px);
+	}
+	50%,
+	100% {
+		-webkit-transform: translateY(0);
+	}
+	75% {
+		-webkit-transform: translateY(2px);
+	}
+}
     .car-big {
       margin: 0 auto;
       position: relative;
       animation: little-bounce 1s linear infinite;
+      -webkit-animation: little-bounce 1s linear infinite;
       background: url(./static/car-big.png) no-repeat;
       background-size: contain;
       width: 181.5px;
       height: 72px;
     }
 
+    @keyframes rotate {
+	25% {
+		transform: rotate(90deg);
+	}
+	50% {
+		transform: rotate(180deg);
+	}
+	75% {
+		transform: rotate(270deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@-webkit-keyframes rotate {
+	25% {
+		transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+	}
+	50% {
+		transform: rotate(180deg);
+		-webkit-transform: rotate(180deg);
+	}
+	75% {
+		transform: rotate(270deg);
+		-webkit-transform: rotate(270deg);
+	}
+	100% {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+	}
+}
+
     .wheel-big {
       display: inline-block;
       position: absolute;
       bottom: 0;
       animation: rotate 1.0s infinite linear;
+      -webkit-animation: rotate 1.0s infinite linear;
       background: url(./static/wheel-big.png) no-repeat;
       background-size: contain;
       width: 30px;
@@ -108,6 +154,59 @@
       position: absolute;
       background-color: #FFF;
     }
+
+    @keyframes spinner-fade {
+	0% {
+    background-color: rgba(255, 255, 255, 0);
+	}
+	13% {
+		background-color: rgba(255, 255, 255, .13);
+	}
+	25% {
+		background-color: rgba(255, 255, 255, .25);
+	}
+	50% {
+		background-color: rgba(255, 255, 255, .5);
+	}
+	63% {
+		background-color: rgba(255, 255, 255, .63);
+	}
+	75% {
+		background-color: rgba(255, 255, 255, .75);
+	}
+	88% {
+		background-color: rgba(255, 255, 255, .88);
+	}
+	100% {
+		background-color: rgba(255, 255, 255, 1);
+	}
+}
+@-webkit-keyframes spinner-fade {
+	0% {
+    background-color: rgba(255, 255, 255, 0);
+	}
+	13% {
+		background-color: rgba(255, 255, 255, .13);
+	}
+	25% {
+		background-color: rgba(255, 255, 255, .25);
+	}
+	50% {
+		background-color: rgba(255, 255, 255, .5);
+	}
+	63% {
+		background-color: rgba(255, 255, 255, .63);
+	}
+	75% {
+		background-color: rgba(255, 255, 255, .75);
+	}
+	88% {
+		background-color: rgba(255, 255, 255, .88);
+	}
+	100% {
+		background-color: rgba(255, 255, 255, 1);
+	}
+}
 
     .small-dot {
       width: 12px;
@@ -132,10 +231,145 @@
     }
 	</style>
   <script type="text/javascript">
+    function load() {
+      valueEl.innerHTML = 99;
+      let loadingItem = document.querySelector('.default-loading');
+      loadingItem.setAttribute("style", "display: none");
+    }
+    window.onload = load;
+  </script>
+  <link rel="preload" href="./static/valentin-loop.mp3" as="media">
+  <!--<link rel="preload" href="./static/lovely-pop-loop.mp3" as="media">-->
+  <link rel="preload" href="./static/swiper.js" as="script">
+  <link rel="preload" href="./static/car-big.png" as="image">
+  <link rel="preload" href="./static/wheel-big.png" as="image">
+  <link rel="preload" href="./static/home-slogan.png" as="image">
+  <link rel="preload" href="./static/home-bottom.png" as="image">
+  <link rel="preload" href="./static/home-buildings.png" as="image">
+  <link rel="preload" href="./static/home-text1.png" as="image">
+  <link rel="preload" href="./static/home-text2.png" as="image">
+  <link rel="preload" href="./static/home-text3.png" as="image">
+  <link rel="preload" href="./static/home-text4.png" as="image">
+  <link rel="preload" href="./static/earth.png" as="image">
+  <link rel="preload" href="./static/future-longbg.jpg" as="image">
+  <link rel="preload" href="./static/home-bgs.png" as="image">
+  <link rel="preload" href="./static/home-title.png" as="image">
+  <link rel="preload" href="./static/report-cloud.png" as="image">
+  <link rel="preload" href="./static/report-year.png" as="image">
+  <link rel="preload" href="./static/report-title.png" as="image">
+  <link rel="preload" href="./static/report-polygon.png" as="image">
+  <link rel="preload" href="./static/report1-title.png" as="image">
+  <link rel="preload" href="./static/report1-content.png" as="image">
+  <link rel="preload" href="./static/report2-title.png" as="image">
+  <link rel="preload" href="./static/report2-content.png" as="image">
+  <link rel="preload" href="./static/report3-title.png" as="image">
+  <link rel="preload" href="./static/report3-content.png" as="image">
+  <link rel="preload" href="./static/report4-title.png" as="image">
+  <link rel="preload" href="./static/report4-content.png" as="image">
+  <link rel="preload" href="./static/wechat-require.png" as="image">
+  <link rel="preload" href="./static/wechat-bgboard.png" as="image">
+  <link rel="preload" href="./static/wechat-man1.png" as="image">
+  <link rel="preload" href="./static/logo.png" as="image">
+  <link rel="preload" href="./static/name.png" as="image">
+  <link rel="preload" href="./static/slogan-title.png" as="image">
+  <link rel="preload" href="./static/slogan-tip.png" as="image">
+  <link rel="preload" href="./static/share-txt.png" as="image">
+  <link rel="preload" href="./static/email-title.png" as="image">
+  <link rel="preload" href="./static/wechat-gradient.png" as="image">
+  <link rel="preload" href="./static/wechat-title1.png" as="image">
+  <link rel="preload" href="./static/wechat-bgboard.png" as="image">
+  <link rel="preload" href="./static/major-icon1.png" as="image">
+  <link rel="preload" href="./static/wechat-major1.png" as="image">
+  <link rel="preload" href="./static/major-icon2.png" as="image">
+  <link rel="preload" href="./static/wechat-major2.png" as="image">
+  <link rel="preload" href="./static/major-icon3.png" as="image">
+  <link rel="preload" href="./static/wechat-major3.png" as="image">
+  <link rel="preload" href="./static/major-icon4.png" as="image">
+  <link rel="preload" href="./static/wechat-major4.png" as="image">
+  <link rel="preload" href="./static/wechat-man2.png" as="image">
+  <link rel="preload" href="./static/wechat-bgpolygan.png" as="image">
+  <link rel="preload" href="./static/wechat-provide1.png" as="image">
+  <link rel="preload" href="./static/wechat-right.png" as="image">
+  <link rel="preload" href="./static/wechat-provide2.png" as="image">
+  <link rel="preload" href="./static/wechat-bottom2.png" as="image">
+  <link rel="preload" href="./static/wechat-bgpolygan2.png" as="image">
+  <link rel="preload" href="./static/wechat-provide4.png" as="image">
+  <link rel="preload" href="./static/wechat-provide3.png" as="image">
+  <link rel="preload" href="./static/future-car.png" as="image">
+  <link rel="preload" href="./static/future-carwing.png" as="image">
+  <link rel="preload" href="./static/future-cartail.png" as="image">
+  <link rel="preload" href="./static/future-cloud.png" as="image">
+  <link rel="preload" href="./static/future-topbuilding.png" as="image">
+  <link rel="preload" href="./static/bg-cloud-1.png" as="image">
+  <link rel="preload" href="./static/banner1.png" as="image">
+  <link rel="preload" href="./static/banner2.png" as="image">
+  <link rel="preload" href="./static/banner3.png" as="image">
+  <link rel="preload" href="./static/banner4.png" as="image">
+  <link rel="preload" href="./static/banner5.png" as="image">
+  <link rel="preload" href="./static/banner6.png" as="image">
+  <link rel="preload" href="./static/future-major.png" as="image">
+  <link rel="preload" href="./static/future-major1.png" as="image">
+  <link rel="preload" href="./static/future-major2.png" as="image">
+  <link rel="preload" href="./static/future-major3.png" as="image">
+  <link rel="preload" href="./static/future-major4.png" as="image">
+  <link rel="preload" href="./static/future-topbg.png">
+  <link rel="preload" href="./static/future-polygan2.png" as="image">
+  <link rel="preload" href="./static/future-polygan3.png" as="image">
+  <link rel="preload" href="./static/future-polygan4.png" as="image">
+  <link rel="preload" href="./static/future-polygan5.png" as="image">
+  <link rel="preload" href="./static/future-polygan7.png" as="image">
+  <link rel="preload" href="./static/years-2021.png" as="image">
+  <link rel="preload" href="./static/years-2020.png" as="image">
+  <link rel="preload" href="./static/years-2019.png" as="image">
+  <link rel="preload" href="./static/wechat-top.png" as="image">
+  <link rel="preload" href="./static/avatar-user.png" as="image">
+  <link rel="preload" href="./static/avatar-1.png" as="image">
+  <link rel="preload" href="./static/pic-1.png" as="image">
+  <link rel="preload" href="./static/avatar-2.png" as="image">
+  <link rel="preload" href="./static/pic-2.png" as="image">
+  <link rel="preload" href="./static/avatar-3.png" as="image">
+  <link rel="preload" href="./static/pic-3.png" as="image">
+  <link rel="preload" href="./static/avatar-4.png" as="image">
+  <link rel="preload" href="./static/pic-4.png" as="image">
+  <link rel="preload" href="./static/avatar-5.png" as="image">
+  <link rel="preload" href="./static/pic-5.png" as="image">
+  <link rel="preload" href="./static/avatar-6.png" as="image">
+  <link rel="preload" href="./static/pic-6.png" as="image">
+  <link rel="preload" href="./static/sprite-saic.png" as="image">
+  <link rel="preload" href="./static/letter-bottom.png" as="image">
+  <link rel="preload" href="./static/letter-top.png" as="image">
+  <link rel="preload" href="./static/letter-inner.png" as="image">
+  <link rel="preload" href="./static/home-bike.png" as="image">
+  <link rel="preload" href="./static/home-car.png" as="image">
+  <link rel="preload" href="./static/home-cloud.png" as="image">
+  <link rel="preload" href="./static/home-logo.png" as="image">
+  <link rel="preload" href="./static/home-windmill-leaves.png" as="image">
+  <link rel="preload" href="./static/home-windmill-range.png" as="image">
+  <link rel="preload" href="./static/home-windmill1.png" as="image">
+  <link rel="preload" href="./static/provide-building.png" as="image">
+  <link rel="preload" href="./static/provide-car.png" as="image">
+  <link rel="preload" href="./static/provide.png" as="image">
+</head>
+
+<body>
+  <div class="default-loading">
+		<div class="floater"></div>
+    <div class="car-big">
+      <div class="wheel">
+        <div class="wheel-big left"></div>
+        <div class="wheel-big right"></div>
+        <div class="dot small-dot"></div>
+        <div class="dot bid-dot"></div>
+      </div>
+    </div>
+		<p class="percent-value"><span id="loading-value">20</span>%</p>
+	</div>
+	<div id="app">
+	</div>
+  <script type="text/javascript">
     let increaseValue;
-    window.onload = function() {
-      let valueEl = document.querySelector('#loading-value');
-      let value = Math.floor((Math.random() * 10 + 20));
+    let valueEl = document.querySelector('#loading-value');
+    let value = Math.floor((Math.random() * 10 + 20));
       valueEl.innerHTML = value;
       increaseValue = setInterval(() => {
         if (value >= 99) {
@@ -150,146 +384,7 @@
           valueEl.innerHTML = value;
           value = value + 1;
         }
-      }, 100);
-    }
-    document.onreadystatechange = function(){
-      if(document.readyState === 'complete'){
-        let valueEl = document.querySelector('#loading-value');
-        valueEl.innerHTML = 99;
-        clearInterval(increaseValue);
-        let loadingItem = document.querySelector('.default-loading');
-        loadingItem.setAttribute("style", "display: none");
-      }
-    }
+      }, 500);
   </script>
-</head>
-
-<body>
-  <div class="default-loading">
-			<div class="floater"></div>
-      <div class="car-big">
-        <div class="wheel">
-          <div class="wheel-big left"></div>
-          <div class="wheel-big right"></div>
-          <div class="dot small-dot"></div>
-          <div class="dot bid-dot"></div>
-        </div>
-      </div>
-			<p class="percent-value"><span id="loading-value">20</span>%</p>
-		</div>
-  <div style="display: none">
-    <img src="./static/car-big.png">
-    <img src="./static/wheel-big.png">
-    <img src="./static/earth.png">
-    <img src="./static/home-bgs.png">
-    <img src="./static/home-title.png">
-    <img src="./static/home-slogan.png">
-    <img src="./static/future-longbg.jpg">
-    <img src="./static/report-cloud.png">
-    <img src="./static/report-year.png">
-    <img src="./static/report-title.png">
-    <img src="./static/report-polygon.png">
-    <img src="./static/report1-title.png">
-    <img src="./static/report1-content.png">
-    <img src="./static/report2-title.png">
-    <img src="./static/report2-content.png">
-    <img src="./static/report3-title.png">
-    <img src="./static/report3-content.png">
-    <img src="./static/report4-title.png">
-    <img src="./static/report4-content.png">
-    <img src="./static/wechat-require.png">
-    <img src="./static/wechat-bgboard.png">
-    <img src="./static/wechat-man1.png">
-    <img src="./static/logo.png">
-    <img src="./static/name.png">
-    <img src="./static/slogan-title.png">
-    <img src="./static/slogan-tip.png">
-    <img src="./static/share-txt.png">
-    <img src="./static/email-title.png">
-    <img src="./static/wechat-gradient.png">
-    <img src="./static/wechat-title1.png">
-    <img src="./static/wechat-bgboard.png">
-    <img src="./static/major-icon1.png">
-    <img src="./static/wechat-major1.png">
-    <img src="./static/major-icon2.png">
-    <img src="./static/wechat-major2.png">
-    <img src="./static/major-icon3.png">
-    <img src="./static/wechat-major3.png">
-    <img src="./static/major-icon4.png">
-    <img src="./static/wechat-major4.png">
-    <img src="./static/wechat-man2.png">
-    <img src="./static/wechat-bgpolygan.png">
-    <img src="./static/wechat-provide1.png">
-    <img src="./static/wechat-right.png">
-    <img src="./static/wechat-provide2.png">
-    <img src="./static/wechat-bottom2.png">
-    <img src="./static/wechat-bgpolygan2.png">
-    <img src="./static/wechat-provide4.png">
-    <img src="./static/wechat-provide3.png">
-    <img src="./static/future-car.png">
-    <img src="./static/future-carwing.png">
-    <img src="./static/future-cartail.png">
-    <img src="./static/future-cloud.png">
-    <img src="./static/future-topbuilding.png">
-    <img src="./static/future-longbg.jpg">
-    <img src="./static/bg-cloud-1.png">
-    <img src="./static/banner1.png">
-    <img src="./static/banner2.png">
-    <img src="./static/banner3.png">
-    <img src="./static/banner4.png">
-    <img src="./static/banner5.png">
-    <img src="./static/banner6.png">
-    <img src="./static/future-major.png">
-    <img src="./static/future-major1.png">
-    <img src="./static/future-major2.png">
-    <img src="./static/future-major3.png">
-    <img src="./static/future-major4.png">
-    <img src="./static/future-topbg.png">
-    <img src="./static/future-polygan2.png">
-    <img src="./static/future-polygan3.png">
-    <img src="./static/future-polygan4.png">
-    <img src="./static/future-polygan5.png">
-    <img src="./static/future-polygan7.png">
-    <img src="./static/years-2021.png">
-    <img src="./static/years-2020.png">
-    <img src="./static/years-2019.png">
-    <img src="./static/wechat-top.png">
-    <img src="./static/avatar-user.png">
-    <img src="./static/avatar-1.png">
-    <img src="./static/pic-1.png">
-    <img src="./static/avatar-2.png">
-    <img src="./static/pic-2.png">
-    <img src="./static/avatar-3.png">
-    <img src="./static/pic-3.png">
-    <img src="./static/avatar-4.png">
-    <img src="./static/pic-4.png">
-    <img src="./static/avatar-5.png">
-    <img src="./static/pic-5.png">
-    <img src="./static/avatar-6.png">
-    <img src="./static/pic-6.png">
-    <img src="./static/sprite-saic.png">
-    <img src="./static/letter-bottom.png">
-    <img src="./static/letter-top.png">
-    <img src="./static/letter-inner.png">
-    <img src="./static/home-bike.png">
-    <img src="./static/home-bottom.png">
-    <img src="./static/home-buildings.png">
-    <img src="./static/home-text1.png">
-    <img src="./static/home-text2.png">
-    <img src="./static/home-text3.png">
-    <img src="./static/home-text4.png">
-    <img src="./static/home-car.png">
-    <img src="./static/home-cloud.png">
-    <img src="./static/home-logo.png">
-    <img src="./static/home-windmill-leaves.png">
-    <img src="./static/home-windmill-range.png">
-    <img src="./static/home-windmill1.png">
-    <img src="./static/provide-building.png">
-    <img src="./static/provide-car.png">
-    <img src="./static/provide.png">
-  </div>
-	<div id="app">
-	</div>
 </body>
-
 </html>

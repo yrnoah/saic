@@ -1,17 +1,15 @@
 <template>
 	<div class="swiper-slide logo-page">
-    <div class="angel-animation">
-      <div class="up-angel"></div>
-    </div>
-    <div class="carContainer ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
+    <div class="angel-animation"><div class="up-angel"></div></div>
+    <div class="carContainer" :class="{ carFadeIn: isActive }" v-show="carShowed">
       <img src="../../../static/car-big.png" class="car">
       <div class="wheels">
         <img src="../../../static/wheel-big.png" class="wheel left-wheel">
         <img src="../../../static/wheel-big.png" class="wheel right-wheel">
       </div>
     </div>
-    <img src="../../../static/logo.png" class="logo ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
-    <img src="../../../static/name.png" class="name ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
+    <img src="../../../static/logo.png" class="logo" :class="{ logoFadeIn: isActive }" v-show="logoShowed">
+    <img src="../../../static/name.png" class="name" :class="{ titleFadeIn: isActive }" v-show="nameShowed">
 	</div>
 </template>
 <script>
@@ -19,6 +17,37 @@
   export default {
     components: {
       CarAnimation,
+    },
+    data() {
+      return {
+        isActive: false,
+        logoShowed: false,
+        nameShowed: false,
+        carShowed: false,
+      };
+    },
+    events: {
+      'fadeInLogo'() {
+        this.isActive = true;
+        const logoAni = setTimeout(() => {
+          this.logoShowed = true;
+          clearTimeout(logoAni);
+        }, 500);
+        const nameAni = setTimeout(() => {
+          this.nameShowed = true;
+          clearTimeout(nameAni);
+        }, 800);
+        const carAni = setTimeout(() => {
+          this.carShowed = true;
+          clearTimeout(carAni);
+        }, 500);
+      },
+      'initAnimation'() {
+        this.isActive = false;
+        this.logoShowed = false;
+        this.nameShowed = false;
+        this.carShowed = false;
+      },
     },
   };
 </script>
@@ -29,23 +58,34 @@
     position: relative;
     overflow: hidden;
 	}
+  @keyframes logo-scale {
+    0% { opacity: 0; transform: scale(.5, .5)}
+    100% { opacity: 1; transform: scale(1, 1)}
+  }
+  @-webkit-keyframes logo-scale {
+    0% { opacity: 0; -webkit-transform: scale(.5, .5)}
+    100% { opacity: 1; -webkit-transform: scale(1, 1)}
+  }
   .logoFadeIn {
-    animation: opacity-fade 0.5s ease;
-    -webkit-animation: opacity-fade 0.5s ease;
-    animation-delay: 0.5s;
-    -webkit-animation-delay: 0.5s;
+    animation: logo-scale  0.5s ease;
+    -webkit-animation: logo-scale  0.5s ease;
   }
   .titleFadeIn {
     animation: opacity-fade 0.5s ease;
     -webkit-animation: opacity-fade 0.5s ease;
-    animation-delay: 1s;
-    -webkit-animation-delay: 1s;
   }
   .carFadeIn {
-    animation: opacity-fade 0.5s ease;
-    -webkit-animation: opacity-fade 0.5s ease;
-    animation-delay: 1.2s;
-    -webkit-animation-delay: 1.2s;
+    animation: opacity-fade 1.5s ease;
+    -webkit-animation: opacity-fade 1.5s ease;
+  }
+  .logoShowed {
+    opacity: 1;
+  }
+  .nameShowed {
+    opacity: 1;
+  }
+  .carShowed {
+    opacity: 1;
   }
   .logo {
     width: 66%;
@@ -54,7 +94,6 @@
     position: relative;
     top: -10px;
     z-index: 1;
-    /*margin: 86px auto 26px auto;*/
   }
   .name {
     width: 64%;
@@ -99,6 +138,7 @@
     width: 85px;
     position: relative;
     z-index: 2;
+    /*opacity: 0;*/
   }
   .car {
     width: 100%;
