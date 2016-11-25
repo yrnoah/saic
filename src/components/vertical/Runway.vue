@@ -27,7 +27,8 @@
             <img class="cloud-top" src="../../../static/future-cloud.png">
             <img src="../../../static/future-topbuilding.png" class="future-topbuilding">
             <img src="../../../static/future-longbg.jpg" class="runway-bg">
-            <img class="cloud-bottom" src="../../../static/bg-cloud-1.png">
+            <img src="../../../static/bg-cloud-1.png" class="cloud-bottom ani" swiper-animate-effect="fadeOutLeft" swiper-animate-duration="2s" swiper-animate-delay="0s">
+            <img src="../../../static/bg-cloud-1.png" class="cloud-bottom ani" swiper-animate-effect="fadeOutRight" swiper-animate-duration="2s" swiper-animate-delay="0s">
             <img src="../../../static/banner1.png" class="banner">
             <img src="../../../static/banner2.png" class="banner">
             <img src="../../../static/banner3.png" class="banner">
@@ -201,13 +202,14 @@
   .major {
     background-color: #FFF;
     padding-bottom: 100px;
+    padding-top: 50px;
   }
   .major-title {
     background: url(../../../static/future-major.png) no-repeat;
     background-size: contain;
     width: 221px;
     height: 42px;
-    margin: 50px auto 26px auto;
+    margin: 0 auto 26px auto;
     position: relative;
     z-index: 2;
   }

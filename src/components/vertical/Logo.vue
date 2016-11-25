@@ -4,6 +4,15 @@
     <div class="angel-animation">
       <div class="up-angel"></div>
     </div>
+    <!--<div class="carContainer" :class="{ carFadeIn: logoAnimation, showItem: animationFinished }">
+      <img src="../../../static/car-big.png" class="car">
+      <div class="wheels">
+        <img src="../../../static/wheel-big.png" class="wheel left-wheel">
+        <img src="../../../static/wheel-big.png" class="wheel right-wheel">
+      </div>
+    </div>
+    <img src="../../../static/logo.png" class="logo" :class="{ logoFadeIn: logoAnimation }">
+    <img src="../../../static/name.png" class="name" :class="{ titleFadeIn: logoAnimation }">-->
     <div class="carContainer ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
       <img src="../../../static/car-big.png" class="car">
       <div class="wheels">
@@ -21,6 +30,22 @@
     components: {
       CarAnimation,
     },
+    // data() {
+    //   return {
+    //     logoAnimation: false,
+    //     animationFinished: false,
+    //   };
+    // },
+    // events: {
+    //   'fadeInLogo'() {
+    //     this.logoAnimation = true;
+    //     this.animationFinished = true;
+    //   },
+    //   'initAnimation'() {
+    //     this.logoAnimation = false;
+    //     this.animationFinished = false;
+    //   },
+    // },
   };
 </script>
 <style scoped>
@@ -30,6 +55,24 @@
     position: relative;
     overflow: hidden;
 	}
+  .logoFadeIn {
+    animation: opacity-fade 0.5s ease;
+    -webkit-animation: opacity-fade 0.5s ease;
+    animation-delay: 0.5s;
+    -webkit-animation-delay: 0.5s;
+  }
+  .titleFadeIn {
+    animation: opacity-fade 0.5s ease;
+    -webkit-animation: opacity-fade 0.5s ease;
+    animation-delay: 1s;
+    -webkit-animation-delay: 1s;
+  }
+  .carFadeIn {
+    animation: opacity-fade 0.5s ease;
+    -webkit-animation: opacity-fade 0.5s ease;
+    animation-delay: 1.2s;
+    -webkit-animation-delay: 1.2s;
+  }
   .logo {
     width: 66%;
     height: auto;
@@ -82,7 +125,6 @@
     width: 85px;
     position: relative;
     z-index: 2;
-
   }
   .car {
     width: 100%;
