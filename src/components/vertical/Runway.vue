@@ -29,12 +29,12 @@
             <img src="../../../static/future-longbg.jpg" class="runway-bg">
             <img src="../../../static/bg-cloud-1.png" class="cloud-bottom ani" swiper-animate-effect="fadeOutLeft" swiper-animate-duration="2s" swiper-animate-delay="0s">
             <img src="../../../static/bg-cloud-1.png" class="cloud-bottom ani" swiper-animate-effect="fadeOutRight" swiper-animate-duration="2s" swiper-animate-delay="0s">
-            <img src="../../../static/banner1.png" class="banner">
-            <img src="../../../static/banner2.png" class="banner">
-            <img src="../../../static/banner3.png" class="banner">
-            <img src="../../../static/banner4.png" class="banner">
-            <img src="../../../static/banner5.png" class="banner">
-            <img src="../../../static/banner6.png" class="banner">
+            <img src="../../../static/banner1.png" class="banner ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="0s">
+            <img src="../../../static/banner2.png" class="banner" v-if="showBanner2" :class="{ bannerFadeIn: showBanner2 }">
+            <img src="../../../static/banner3.png" class="banner" v-if="showBanner3" :class="{ bannerFadeIn: showBanner3 }">
+            <img src="../../../static/banner4.png" class="banner" v-if="showBanner4" :class="{ bannerFadeIn: showBanner4 }">
+            <img src="../../../static/banner5.png" class="banner" v-if="showBanner5" :class="{ bannerFadeIn: showBanner5 }">
+            <img src="../../../static/banner6.png" class="banner" v-if="showBanner6" :class="{ bannerFadeIn: showBanner6 }">
           </div>
 				</div>
 			</div>
@@ -62,6 +62,15 @@
         transSize: 0,
         carTransleteY: 0,
         carMoveTime: 0,
+        showBanner2: false,
+        showBanner3: false,
+        showBanner4: false,
+        showBanner5: false,
+        showBanner6: false,
+        carTransform: {
+          // transform: `translateY(${carTransleteY}px)`
+          transform: 'translateY(0px)',
+        },
       };
     },
     ready() {
@@ -104,7 +113,8 @@
         }, 1);
       },
       moveCar() {
-        if (this.carTransleteY === (runwaySwiper.virtualSize - runwaySwiper.size)) {
+        const pageSize = runwaySwiper.virtualSize - runwaySwiper.size;
+        if (this.carTransleteY === pageSize) {
           this.stopCarMove();
           return;
         }
@@ -113,6 +123,16 @@
             this.stopCarMove();
             return;
           }
+          const p2 = Math.floor(pageSize * 0.19) * -1;
+          const p3 = Math.floor(pageSize * 0.30) * -1;
+          const p4 = Math.floor(pageSize * 0.42) * -1;
+          const p5 = Math.floor(pageSize * 0.58) * -1;
+          const p6 = Math.floor(pageSize * 0.72) * -1;
+          if (this.carTransleteY === p2) this.showBanner2 = true;
+          if (this.carTransleteY === p3) this.showBanner3 = true;
+          if (this.carTransleteY === p4) this.showBanner4 = true;
+          if (this.carTransleteY === p5) this.showBanner5 = true;
+          if (this.carTransleteY === p6) this.showBanner6 = true;
           if (this.carMoveTime < 400) {
             this.carTransleteY -= 2;
             this.carMoveTime += 1;
@@ -141,6 +161,11 @@
       'initAnimation'() {
         this.startAnimation = false;
         this.animationFinished = false;
+        this.showBanner2 = false;
+        this.showBanner3 = false;
+        this.showBanner4 = false;
+        this.showBanner5 = false;
+        this.showBanner6 = false;
         clearTimeout(runwayCarTimeout);
         clearInterval(viewTransition);
         this.stopCarMove();
@@ -291,5 +316,9 @@
   }
   .hide {
     display: none;
+  }
+  .bannerFadeIn {
+    animation: opacity-fade 0.5s ease;
+    -webkit-animation: opacity-fade 0.5s ease;
   }
 </style>

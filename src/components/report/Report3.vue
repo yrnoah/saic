@@ -3,7 +3,7 @@
     <div class="report-content ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
       <div class="cover-year"><div class="report3-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div></div>
       <div class="cover-title ani" swiper-animate-effect="flipInX" swiper-animate-duration="1.5s" swiper-animate-delay="0.8s"><div class="report3-content"></div></div>
-      <div class="polygon ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="1s"></div>
+      <div class="polygon ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s"></div>
       <div class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.2s">
         <div class="angel-animation"><div class="right-angel"></div></div>
       </div>
@@ -25,7 +25,8 @@
     border-top-left-radius: 20px;
     position: relative;
     overflow: visible;
-    z-index: 2,
+    z-index: 2;
+    background-color: #FFF;
   }
   .cover-year {
     height: 104px;
@@ -43,7 +44,6 @@
   }
   .cover-title {
     height: 174px;
-    background-color: #FFF;
     position: relative;
     z-index: 2;
   }

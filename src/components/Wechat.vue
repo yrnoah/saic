@@ -58,6 +58,7 @@
   import messageData from '../utils/mock-data.js';
   import { $, User } from '../utils/utils.js';
   let wechatSwiper;
+  let slideNextTimeout;
   export default {
     data() {
       return {
@@ -181,7 +182,10 @@
             }
           },
           onReachEnd: () => {
-            this.$dispatch('slideNext');
+            slideNextTimeout = setTimeout(() => {
+              this.$dispatch('slideNext');
+              clearTimeout(slideNextTimeout);
+            }, 2500);
           },
           onTouchStart: (swiper, event) => {
             if (swiper.activeIndex === 4 || swiper.activeIndex === 0) {

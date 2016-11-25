@@ -3,7 +3,7 @@
     <div class="report-content ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
       <div class="cover-year"><div class="report-year ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div></div>
       <div class="cover-title ani" swiper-animate-effect="flipInX" swiper-animate-duration="1.5s" swiper-animate-delay="0.8s"><div class="report-title"></div></div>
-      <div class="polygon ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="1s"></div>
+      <div class="polygon ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s"></div>
       <div class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.2s">
         <div class="angel-animation"><div class="right-angel"></div></div>
       </div>
@@ -21,12 +21,12 @@
   .report-content {
     width: 226px;
     margin: 50px auto 0 auto;
-    /*background-color: #FFF;*/
+    background-color: #285CE9;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     position: relative;
     overflow: visible;
-    z-index: 2,
+    z-index: 2;
   }
   .cover-year {
     height: 104px;
@@ -44,7 +44,7 @@
   }
   .cover-title {
     height: 174px;
-    background-color: #285CE9;
+    /*background-color: #285CE9;*/
     position: relative;
     z-index: 2;
   }
