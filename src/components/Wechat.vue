@@ -183,7 +183,7 @@
           },
           onReachEnd: () => {
             slideNextTimeout = setTimeout(() => {
-              this.$dispatch('slideNext');
+              this.$dispatch('slideNextMajor');
               clearTimeout(slideNextTimeout);
             }, 2500);
           },
@@ -202,7 +202,7 @@
               const moveDistance = this.moveStartY - event.changedTouches[0].pageY;
               // console.log(this.moveStartY, moveDistance, this.hasSlideNext);
               if (moveDistance > 20 && !this.hasSlideNext && this.moveStartY !== 0) {
-                this.$dispatch('slideNext');
+                this.$dispatch('slideNextMajor');
                 this.hasSlideNext = true;
                 this.moveStartY = 0;
               }
@@ -227,6 +227,7 @@
 	.wechatSwiper {
 		width: 100%;
 		height: 100%;
+    background-color: #FFF;
 	}
 
 	.wechatSwiper .swiper-wrapper {

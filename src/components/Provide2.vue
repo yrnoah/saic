@@ -37,13 +37,12 @@
         </div>
       </div>
     </div>
-    <div class="bottom"><img src="../../static/wechat-bottom2.png" class="provide-bg"></div>
 	</div>
 </template>
 
 <style scoped>
 	.provide1 {
-		background-color: #56dffd;
+		background-color: transparent;
 		height: 100%;
     position: relative;
     overflow: hidden;
@@ -119,11 +118,5 @@
     width: 100%;
     bottom: 0;
     left: 0;
-  }
-  .provide-bg {
-    width: 100%;
-    height: auto;
-    display: block;
-    vertical-align: top;
   }
 </style>

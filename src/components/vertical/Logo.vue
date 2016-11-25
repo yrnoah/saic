@@ -1,18 +1,8 @@
 <template>
 	<div class="swiper-slide logo-page">
-    <img src="../../../static/report-cloud.png" class="bg-cloud">
     <div class="angel-animation">
       <div class="up-angel"></div>
     </div>
-    <!--<div class="carContainer" :class="{ carFadeIn: logoAnimation, showItem: animationFinished }">
-      <img src="../../../static/car-big.png" class="car">
-      <div class="wheels">
-        <img src="../../../static/wheel-big.png" class="wheel left-wheel">
-        <img src="../../../static/wheel-big.png" class="wheel right-wheel">
-      </div>
-    </div>
-    <img src="../../../static/logo.png" class="logo" :class="{ logoFadeIn: logoAnimation }">
-    <img src="../../../static/name.png" class="name" :class="{ titleFadeIn: logoAnimation }">-->
     <div class="carContainer ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
       <img src="../../../static/car-big.png" class="car">
       <div class="wheels">
@@ -30,27 +20,11 @@
     components: {
       CarAnimation,
     },
-    // data() {
-    //   return {
-    //     logoAnimation: false,
-    //     animationFinished: false,
-    //   };
-    // },
-    // events: {
-    //   'fadeInLogo'() {
-    //     this.logoAnimation = true;
-    //     this.animationFinished = true;
-    //   },
-    //   'initAnimation'() {
-    //     this.logoAnimation = false;
-    //     this.animationFinished = false;
-    //   },
-    // },
   };
 </script>
 <style scoped>
 	.logo-page {
-		background-color: #4EDEFD;
+		background-color: transparent;
 		height: 100%;
     position: relative;
     overflow: hidden;

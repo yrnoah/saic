@@ -1,5 +1,5 @@
 <template>
-	<div class="swiper-container">
+	<div class="swiper-container main-layout">
 		<!--<div class="sound">
 			<audio id="music" loop="loop" preload="auto">
 				<source src="../../static/valentin-loop.mp3" type="audio/mpeg">
@@ -19,6 +19,9 @@
       <provide2></provide2>
       <email></email>
 		</div>
+    <div class="bottom" v-if="showBottom" transition="bottom-animation">
+      <img src="../../static/wechat-bottom2.png" class="provide-bg">
+    </div>
 	</div>
 </template>
 
@@ -47,6 +50,7 @@
         moveStartY: 0,
         preventWechatAutoplay: false,
         relativeMajorIndex: null,
+        showBottom: false,
       };
     },
     components: {
@@ -108,13 +112,18 @@
           if (swiper.activeIndex === 7) {
             this.$broadcast('openLetter');
           }
+          if (swiper.activeIndex === 5 || swiper.activeIndex === 6) {
+            this.showBottom = true;
+          } else {
+            this.showBottom = false;
+          }
         },
       });
     },
     events: {
-      'slideNext'() {
+      'slideNextMajor'() {
         appSwiper.unlockSwipes();
-        appSwiper.slideNext();
+        appSwiper.slideTo(3);
         this.preventWechatAutoplay = false;
         this.$broadcast('initHasSlideNext');
         swiperAnimate(appSwiper);
@@ -203,23 +212,27 @@
 	.icon-start-music {
 		animation: rotate 8.0s infinite linear;
 	}
-
-	.demoBg {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-	}
-
-	.demoText,
-	.demoTit {
-		font-size: 20px;
-		color: #FFF;
-	}
-
-	.demoTit {
-		margin-top: 50%;
-	}
+  .main-layout {
+    background-color: #56dffd;
+  }
+  .bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+	.provide-bg {
+    width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: top;
+  }
+  .bottom-animation-transition {
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    overflow: hidden;
+  }
+  .bottom-animation-enter, .bottom-animation-leave {
+    opacity: 0;
+  }
 </style>
