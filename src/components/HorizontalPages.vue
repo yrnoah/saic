@@ -148,6 +148,6 @@
     height: auto;
     top: 139px;
     left: 0;
-    animation: infinite-fade 2.0s linear infinite;
+    animation: cloud-float-horizen 2.0s linear infinite;
   }
 </style>

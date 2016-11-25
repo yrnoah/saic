@@ -1,6 +1,6 @@
 <template>
 	<div class="swiper-slide requirement">
-    <div class="shareMask ani" @click="hideMask" v-show="showMask" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+    <div class="shareMask" @click="hideMask" v-show="showMask">
       <img src="../../static/share-txt.png" class="shareTxt">
     </div>
     <img src="../../static/logo.png" class="logo">
@@ -25,7 +25,7 @@
   export default {
     data() {
       return {
-        showMask: true,
+        showMask: false,
         letterRotate: false,
         animationFinished: false,
       };
@@ -33,21 +33,24 @@
     methods: {
       hideMask() {
         this.showMask = false;
-        this.startLetterRotate();
+        // this.startLetterRotate();
+      },
+      startLetterRotate() {
+        this.letterRotate = true;
         const animationFinished = setTimeout(() => {
           this.animationFinished = true;
           clearTimeout(animationFinished);
         }, 999);
       },
-      startLetterRotate() {
-        this.letterRotate = true;
-      },
     },
     events: {
       'initAnimation'() {
         this.letterRotate = false;
-        this.showMask = true;
+        this.showMask = false;
         this.animationFinished = false;
+      },
+      'openLetter'() {
+        this.startLetterRotate();
       },
     },
   };
@@ -106,27 +109,23 @@
     position: absolute;
   }
   @keyframes up-letter {
-    /*0% { bottom: 0; transform: translateX(0); }
-    100% { bottom: 15px; transform: translateX(15px); }*/
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-15px); }
+    0% { transform: translateY(0); z-index: 2; }
+    100% { transform: translateY(-15px); z-index: 2; }
   }
 
   @-webkit-keyframes up-letter {
-    /*0% { bottom: 0; }
-    100% { bottom: 15px; }*/
-    0% { -webkit-transform: translateY(0); }
-    100% { -webkit-transform: translateY(-15px); }
+    0% { -webkit-transform: translateY(0); z-index: 2; }
+    100% { -webkit-transform: translateY(-15px); z-index: 2; }
   }
   .upLetter {
     /*bottom: 15px;*/
-    z-index: 2;
     animation: up-letter 1s linear;
     -webkit-animation: up-letter 1s linear;
     animation-delay: 1s;
     -webkit-animation-delay: 1s;
   }
   .finishedLetterStyle {
+    z-index: 2;
     transform: translateY(-15px);
     -webkit-transform: translateY(-15px);
   }

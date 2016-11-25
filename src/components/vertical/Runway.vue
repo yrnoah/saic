@@ -20,15 +20,15 @@
           </div>
           <div class="runway-container">
             <div class="car-container">
-              <div class="car-position" :style="{ transform: `translateY(${carTransleteY}px)` }">
+              <div class="car-position" :style="carTransform">
                 <img src="../../../static/future-car.png" class="space-car">
               </div>
             </div>
             <img class="cloud-top" src="../../../static/future-cloud.png">
             <img src="../../../static/future-topbuilding.png" class="future-topbuilding">
             <img src="../../../static/future-longbg.jpg" class="runway-bg">
-            <img src="../../../static/bg-cloud-1.png" class="cloud-bottom ani" swiper-animate-effect="fadeOutLeft" swiper-animate-duration="2s" swiper-animate-delay="0s">
-            <img src="../../../static/bg-cloud-1.png" class="cloud-bottom ani" swiper-animate-effect="fadeOutRight" swiper-animate-duration="2s" swiper-animate-delay="0s">
+            <img src="../../../static/future-cloud2.png" class="cloud-bottom ani" swiper-animate-effect="fadeOutLeft" swiper-animate-duration="2s" swiper-animate-delay="0s">
+            <img src="../../../static/future-cloud.png" class="cloud-bottom ani" swiper-animate-effect="fadeOutRight" swiper-animate-duration="2s" swiper-animate-delay="0s">
             <img src="../../../static/banner1.png" class="banner ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="0s">
             <img src="../../../static/banner2.png" class="banner" v-if="showBanner2" :class="{ bannerFadeIn: showBanner2 }">
             <img src="../../../static/banner3.png" class="banner" v-if="showBanner3" :class="{ bannerFadeIn: showBanner3 }">
@@ -70,6 +70,7 @@
         carTransform: {
           // transform: `translateY(${carTransleteY}px)`
           transform: 'translateY(0px)',
+          // -webkit-transform: 'translateY(0px)',
         },
       };
     },
@@ -135,9 +136,15 @@
           if (this.carTransleteY === p6) this.showBanner6 = true;
           if (this.carMoveTime < 400) {
             this.carTransleteY -= 2;
+            this.$set('carTransform.transform', `translateY(${this.carTransleteY}px)`);
+            // this.$set('carTransform.-webkit-transform', `translateY(${this.carTransleteY}px)`);
+            // console.log(this.carTransform);
             this.carMoveTime += 1;
           } else {
             this.carTransleteY -= 1;
+            this.$set('carTransform.transform', `translateY(${this.carTransleteY}px)`);
+            // this.$set('carTransform.-webkit-transform', `translateY(${this.carTransleteY}px)`);
+            // console.log(this.carTransform);
             this.carMoveTime += 1;
           }
         }, 1);
@@ -201,12 +208,13 @@
     overflow: hidden;
   }
   .cloud-bottom {
-    width: 100%;
+    width: 300%;
     height: auto;
     position: absolute;
-    bottom: -350px;
+    bottom: -50px;
     left: 0;
     z-index: 4;
+    opacity: 0.5;
   }
   .cloud-top {
     position: absolute;

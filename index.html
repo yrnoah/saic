@@ -10,14 +10,67 @@
   <link rel="preload" href="./static/valentin-loop.mp3" as="media">
   <!--<link rel="preload" href="./static/lovely-pop-loop.mp3" as="media">-->
   <link rel="preload" href="./static/swiper.js" as="script">
+  <link rel="preload" href="./static/car-big.png" as="image">
+  <link rel="preload" href="./static/wheel-big.png" as="image">
+  <link rel="preload" href="./static/home-slogan.png" as="image">
+  <link rel="preload" href="./static/home-bottom.png" as="image">
+  <link rel="preload" href="./static/home-buildings.png" as="image">
+  <link rel="preload" href="./static/home-text1.png" as="image">
+  <link rel="preload" href="./static/home-text2.png" as="image">
+  <link rel="preload" href="./static/home-text3.png" as="image">
+  <link rel="preload" href="./static/home-text4.png" as="image">
+  <link rel="preload" href="./static/earth.png" as="image">
+  <link rel="preload" href="./static/future-longbg.jpg" as="image">
 	<title>SAIC International</title>
+  <script>
+    let increaseValue;
+    window.onload = function() {
+      let valueEl = document.querySelector('#loading-value');
+      let value = Math.floor((Math.random() * 10 + 20));
+      valueEl.innerHTML = value;
+      increaseValue = setInterval(() => {
+        if (value >= 99) {
+          clearInterval(increaseValue);
+          valueEl.innerHTML = 99;
+          return;
+        }
+        if (value < 80) {
+          valueEl.innerHTML = value;
+          value = value + 3;
+        } else {
+          valueEl.innerHTML = value;
+          value = value + 1;
+        }
+      }, 100);
+    }
+    document.onreadystatechange = function(){
+      if(document.readyState === 'complete'){
+        let valueEl = document.querySelector('#loading-value');
+        valueEl.innerHTML = 99;
+        clearInterval(increaseValue);
+        let loadingItem = document.querySelector('.default-loading');
+        loadingItem.setAttribute("style", "display: none");
+      }
+    }
+  </script>
 </head>
 
 <body>
+  <div class="default-loading">
+			<div class="floater"></div>
+      <div class="car-big">
+        <div class="wheel">
+          <div class="wheel-big left"></div>
+          <div class="wheel-big right"></div>
+          <div class="dot small-dot"></div>
+          <div class="dot bid-dot"></div>
+        </div>
+      </div>
+			<p class="percent-value"><span id="loading-value">20</span>%</p>
+		</div>
   <div style="display: none">
     <img src="./static/car-big.png">
     <img src="./static/wheel-big.png">
-    <img src="./static/buildings2.png">
     <img src="./static/earth.png">
     <img src="./static/home-bgs.png">
     <img src="./static/home-title.png">
@@ -112,13 +165,13 @@
     <img src="./static/home-bike.png">
     <img src="./static/home-bottom.png">
     <img src="./static/home-buildings.png">
-    <img src="./static/home-car.png">
-    <img src="./static/home-cloud.png">
-    <img src="./static/home-logo.png">
     <img src="./static/home-text1.png">
     <img src="./static/home-text2.png">
     <img src="./static/home-text3.png">
     <img src="./static/home-text4.png">
+    <img src="./static/home-car.png">
+    <img src="./static/home-cloud.png">
+    <img src="./static/home-logo.png">
     <img src="./static/home-windmill-leaves.png">
     <img src="./static/home-windmill-range.png">
     <img src="./static/home-windmill1.png">
@@ -127,18 +180,6 @@
     <img src="./static/provide.png">
   </div>
 	<div id="app">
-		<div class="default-loading">
-			<div class="floater"></div>
-      <div class="car-big">
-        <div class="wheel">
-          <div class="wheel-big left"></div>
-          <div class="wheel-big right"></div>
-          <div class="dot small-dot"></div>
-          <div class="dot bid-dot"></div>
-        </div>
-      </div>
-			<p class="percent-value"><span id="loading-value">20</span>%</p>
-		</div>
 	</div>
 	<style>
 		html {
@@ -171,9 +212,14 @@
 
     .default-loading {
 			height: 100%;
+      width: 100%;
       text-align: center;
 			overflow: hidden;
       background-color: #4EDEFD;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
     }
 
 		.floater {
@@ -244,19 +290,6 @@
       -webkit-animation-delay: 0.1s;
     }
 	</style>
-	<script>
-    let valueEl = document.querySelector('#loading-value');
-    let value = Math.floor((Math.random() * 10 + 70));
-    let increaseValue = setInterval(() => {
-      if (value >= 99) {
-        clearInterval(increaseValue);
-        valueEl.innerHTML = 99;
-        return;
-      }
-      valueEl.innerHTML = value;
-      value = value + 1;
-    }, 500);
-  </script>
 </body>
 
 </html>

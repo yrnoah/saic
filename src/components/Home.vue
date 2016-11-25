@@ -1,20 +1,12 @@
 <template>
 	<div class="swiper-slide home">
-    <!--<img src="../../static/home-title.png" class="home-title ani" swiper-animate-effect="swing" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s">
-    <img src="../../static/home-slogan.png" class="home-slogan ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s">
-    <div class="bottom">
-      <img src="../../static/home-bgs.png" class="building-img" :class="{ buildingsfade: startAnimation }">
-    </div>
-    <div class="bottom buildings">
-      <img src="../../static/buildings2.png" class="building-img" :class="{ buildingsrise: startAnimation }">
-    </div>-->
     <img src="../../static/home-slogan.png" class="home-top-item ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">
     <img src="../../static/home-text1.png" class="home-top-item ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
     <img src="../../static/home-text2.png" class="home-top-item ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
     <img src="../../static/home-text3.png" class="home-top-item ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">
     <img src="../../static/home-text4.png" class="home-top-item ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
     <img src="../../static/home-bottom.png" class="building-img" :class="{ buildingsfade: startAnimation }">
-    <img src="../../static/home-buildings.png" class="building-img" :class="{ buildingsrise: startAnimation }">
+    <img src="../../static/home-buildings.png" class="building-img buildings" :class="{ buildingsrise: startAnimation }">
     <img src="../../static/home-cloud.png" class="building-img home-cloud">
     <img src="../../static/home-logo.png" class="building-img home-logo">
     <img src="../../static/home-car.png" class="building-img">
@@ -88,6 +80,9 @@
     bottom: 0;
     left: 0;
   }
+  .buildings {
+    z-index: 2;
+  }
   .windmill-range {
     width: 100%;
     height: auto;
@@ -136,8 +131,11 @@
     -webkit-animation: opacity-fade 0.5s linear;
   }
   .home-cloud {
-    animation: infinite-fade 2.0s linear infinite;
-    -webkit-animation: infinite-fade 2.0s linear infinite;
+    z-index: 1;
+    left: 150px;
+    bottom: 80px;
+    animation: cloud-float 2.0s linear infinite;
+    -webkit-animation: cloud-float 2.0s linear infinite;
   }
   @keyframes logo-fade {
     0%, 100% { opacity: 0.5 }

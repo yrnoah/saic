@@ -105,6 +105,9 @@
           if (swiper.activeIndex === 3) {
             this.$broadcast('initHasSlideNext');
           }
+          if (swiper.activeIndex === 7) {
+            this.$broadcast('openLetter');
+          }
         },
       });
     },
