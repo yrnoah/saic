@@ -200,7 +200,6 @@
           onSliderMove: (swiper, event) => {
             if (swiper.activeIndex === 5) {
               const moveDistance = this.moveStartY - event.changedTouches[0].pageY;
-              // console.log(this.moveStartY, moveDistance, this.hasSlideNext);
               if (moveDistance > 20 && !this.hasSlideNext && this.moveStartY !== 0) {
                 this.$dispatch('slideNextMajor');
                 this.hasSlideNext = true;
@@ -209,7 +208,6 @@
             }
             if (swiper.activeIndex === 0) {
               const moveDistance = event.changedTouches[0].pageY - this.moveStartY;
-              // console.log(this.moveStartY, event.changedTouches[0].pageY, moveDistance);
               if (moveDistance > 200 && !this.hasSlidePrev && this.moveStartY !== 0) {
                 this.$dispatch('slideMajor');
                 this.hasSlidePrev = true;

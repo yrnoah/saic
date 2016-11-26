@@ -52,6 +52,7 @@
             this.$broadcast('setToBottom');
             this.$dispatch('changeEarth');
             this.$broadcast('reAnimateSlogan');
+            this.$dispatch('playMusic1');
           }
           if (swiper.activeIndex === 1) {
             verticalTopSwiper.lockSwipeToPrev();

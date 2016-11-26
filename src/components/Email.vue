@@ -3,9 +3,10 @@
     <div class="shareMask" @click="hideMask" v-show="showMask">
       <img src="../../static/share-txt.png" class="shareTxt">
     </div>
-    <img src="../../static/logo.png" class="logo">
-    <img src="../../static/email-title.png" class="email-title">
-    <div class="icon-letter">
+    <img src="../../static/logo.png" class="logo ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+    <img src="../../static/name.png" class="name ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+    <img src="../../static/email-title.png" class="email-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s">
+    <div class="icon-letter ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s">
       <div class="inner-position" :class="{ upLetter: letterRotate, finishedLetterStyle: animationFinished }">
         <img src="../../static/letter-inner.png" class="letter-inner">
       </div>
@@ -14,10 +15,10 @@
         <img src="../../static/letter-bottom.png" class="letter-bottom">
       </div>
     </div>
-    <div>
+    <div class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s">
       <p class="emailTxt">recruitment@saicservice.com</p>
     </div>
-    <p class="tipTxt">长按可复制</p>
+    <p class="tipTxt ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s">长按可复制</p>
     <div @click="showMaskFunc" class="shareIconContainer">
       <img src="../../static/share.png" class="shareIcon" >
     </div>
@@ -58,6 +59,9 @@
       'openLetter'() {
         this.startLetterRotate();
       },
+      'showShareMask'() {
+        this.showMask = true;
+      },
     },
   };
 </script>
@@ -95,9 +99,15 @@
     right: 5px;
   }
   .logo {
-    margin: 7% auto 10px auto;
+    margin: 7% auto 5px auto;
     width: 33%;
     height: auto;
+  }
+  .name {
+    width: 32%;
+    height: auto;
+    margin: 0 auto 25px auto;
+    position: relative;
   }
   .email-title {
     width: 65%;

@@ -17,7 +17,11 @@
             <div class="future-major" @click="selectMajor(3)">
               <div class="major4"></div>
             </div>
-            <p class="majorTip">请选择你的就职方向</p>
+            <div class="maskTipContainer" v-if="showMajorTip" transition="tip-opacity">
+              <div class="maskTip">
+                <p class="majorTip">请选择你的就职方向</p>
+              </div>
+            </div>
           </div>
           <div class="runway-container">
             <div class="car-container">
@@ -69,8 +73,8 @@
         showBanner5: false,
         showBanner6: false,
         fadeOutCloud: false,
+        showMajorTip: false,
         carTransform: {
-          // transform: `translateY(${carTransleteY}px)`
           transform: 'translateY(0px)',
           // -webkit-transform: 'translateY(0px)',
         },
@@ -86,12 +90,6 @@
         slidesPerView: 'auto',
         loop: false,
         hashnav: true,
-        // onTouchStart: () => {
-        //   // this.stopAnimation();
-        // },
-        // onTouchEnd: () => {
-        //   this.startPageAnimation();
-        // },
       });
     },
     methods: {
@@ -100,6 +98,7 @@
       },
       startPageAnimation() {
         this.fadeOutCloud = true;
+        this.$dispatch('playMusic2');
         if (runwaySwiper.getWrapperTranslate('y') >= 0) {
           runwaySwiper.enableTouchControl();
           this.$dispatch('unlockRunwayToPrev');
@@ -109,6 +108,8 @@
         runwaySwiper.disableTouchControl();
         viewTransition = setInterval(() => {
           if (runwaySwiper.getWrapperTranslate('y') >= 0) {
+            this.showMajorTipFunc();
+            runwaySwiper.enableTouchControl();
             clearInterval(viewTransition);
             return;
           }
@@ -141,14 +142,10 @@
           if (this.carMoveTime < 400) {
             this.carTransleteY -= 2;
             this.$set('carTransform.transform', `translateY(${this.carTransleteY}px)`);
-            // this.$set('carTransform.-webkit-transform', `translateY(${this.carTransleteY}px)`);
-            // console.log(this.carTransform);
             this.carMoveTime += 1;
           } else {
             this.carTransleteY -= 1;
             this.$set('carTransform.transform', `translateY(${this.carTransleteY}px)`);
-            // this.$set('carTransform.-webkit-transform', `translateY(${this.carTransleteY}px)`);
-            // console.log(this.carTransform);
             this.carMoveTime += 1;
           }
         }, 1);
@@ -166,6 +163,13 @@
         runwaySwiper.enableTouchControl();
         this.$dispatch('unlockRunwayToPrev');
         clearInterval(carMoveInterval);
+      },
+      showMajorTipFunc() {
+        this.showMajorTip = true;
+        const tipTimeout = setTimeout(() => {
+          this.showMajorTip = false;
+          clearTimeout(tipTimeout);
+        }, 2500);
       },
     },
     events: {
@@ -249,6 +253,7 @@
     background-color: #FFF;
     padding-bottom: 100px;
     padding-top: 50px;
+    position: relative;
   }
   .major-title {
     background: url(../../../static/future-major.png) no-repeat;
@@ -360,11 +365,33 @@
     opacity: 0;
     right: -1500px;
   }
+  .maskTipContainer {
+    width: 100%;
+    position: absolute;
+    top: 150px;
+  }
   .majorTip {
     font-size: 20px;
-    position: relative;
-    top: 20px;
     margin: 0;
     padding: 0;
+  }
+  .maskTip {
+    width: 60%;
+    height: 80px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,.7);
+    text-align: center;
+    line-height: 80px;
+    vertical-align: middle;
+    color: #FFF;
+    margin: 0 auto;
+  }
+  .tip-opacity-transition {
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    overflow: hidden;
+  }
+  .tip-opacity-enter, .tip-opacity-leave {
+    opacity: 0;
   }
 </style>

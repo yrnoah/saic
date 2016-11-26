@@ -2,7 +2,10 @@
 	<div class="swiper-container main-layout">
 		<div class="sound">
 			<audio id="music" loop="loop" preload="auto">
-				<source src="../../static/valentin-loop.mp3" type="audio/mpeg">
+				<source src="../../static/music1.mp3" type="audio/mpeg">
+			</audio>
+			<audio id="music2" loop="loop" preload="auto">
+				<source src="../../static/music2.mp3" type="audio/mpeg">
 			</audio>
 		</div>
 		<div class="musicBtn" @click="toggleMusic" v-if="showMusicIcon">
@@ -56,6 +59,8 @@
         relativeMajorIndex: null,
         showBottom: false,
         showMusicIcon: true,
+        playingMusic1: false,
+        moveEmailY: 0,
       };
     },
     components: {
@@ -126,6 +131,21 @@
             this.showBottom = false;
           }
         },
+        onTouchStart: (swiper, event) => {
+          if (swiper.activeIndex === 7) {
+            this.moveEmailY = event.changedTouches[0].pageY;
+          }
+        },
+        onTouchMove: (swiper, event) => {
+          if (swiper.activeIndex === 7) {
+            const moveDistance = this.moveEmailY - event.changedTouches[0].pageY;
+            if (moveDistance > 100) {
+              this.$broadcast('showShareMask');
+              this.moveEmailY = 0;
+              return;
+            }
+          }
+        },
       });
     },
     events: {
@@ -169,26 +189,46 @@
         appSwiper.slideTo(2);
         appSwiper.lockSwipes();
       },
+      'playMusic2'() {
+        this.changeMusic();
+      },
+      'playMusic1'() {
+        this.startMusic();
+      },
     },
     methods: {
       startMusic() {
         const audio = $('#music')[0];
+        this.stopMusic();
         if (!this.isPlayingMusic) {
           audio.play();
           this.isPlayingMusic = true;
+          this.playingMusic1 = true;
         }
       },
       stopMusic() {
         const audio = $('#music')[0];
+        const audio2 = $('#music2')[0];
         audio.pause();
+        audio2.pause();
         audio.currentTime = 0;
+        audio2.currentTime = 0;
         this.isPlayingMusic = false;
+      },
+      changeMusic() {
+        this.stopMusic();
+        const audio2 = $('#music2')[0];
+        audio2.play();
+        this.isPlayingMusic = true;
+        this.playingMusic1 = false;
       },
       toggleMusic() {
         if (this.isPlayingMusic) {
           this.stopMusic();
-        } else {
+        } else if (this.playingMusic1) {
           this.startMusic();
+        } else {
+          this.changeMusic();
         }
       },
     },
