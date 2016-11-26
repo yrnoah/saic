@@ -198,7 +198,7 @@
   }
   .shareIconContainer {
     position: absolute;
-    top: 70px;
+    top: 10px;
     right: 10px;
     z-index: 3;
   }

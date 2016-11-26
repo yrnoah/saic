@@ -58,6 +58,9 @@
             this.$broadcast('startRunwayCarAnimation');
             this.$dispatch('showEarth');
           }
+          if (swiper.activeIndex === 1 && swiper.previousIndex === 2) {
+            verticalTopSwiper.lockSwipeToNext();
+          }
         },
         onTouchStart: (swiper, event) => {
           if (swiper.activeIndex === 0) {
@@ -107,7 +110,10 @@
         verticalTopSwiper.slideTo(0);
       },
       'goSelectMajorPage'() {
-        verticalTopSwiper.slideTo(1, 0);
+        if (verticalTopSwiper) verticalTopSwiper.slideTo(1, 0);
+      },
+      'unlockRunwayToPrev'() {
+        if (verticalTopSwiper) verticalTopSwiper.unlockSwipeToNext();
       },
     },
   };

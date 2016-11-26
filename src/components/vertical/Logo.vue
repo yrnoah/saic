@@ -1,15 +1,15 @@
 <template>
 	<div class="swiper-slide logo-page">
     <div class="angel-animation"><div class="up-angel"></div></div>
-    <div class="carContainer" :class="{ carFadeIn: isActive }" v-show="carShowed">
+    <div class="carContainer" :class="{ carFadeIn: isActive }" v-if="carShowed">
       <img src="../../../static/car-big.png" class="car">
       <div class="wheels">
         <img src="../../../static/wheel-big.png" class="wheel left-wheel">
         <img src="../../../static/wheel-big.png" class="wheel right-wheel">
       </div>
     </div>
-    <img src="../../../static/logo.png" class="logo" :class="{ logoFadeIn: isActive }" v-show="logoShowed">
-    <img src="../../../static/name.png" class="name" :class="{ titleFadeIn: isActive }" v-show="nameShowed">
+    <img src="../../../static/logo.png" class="logo" :class="{ logoFadeIn: isActive }" v-if="logoShowed">
+    <img src="../../../static/name.png" class="name" :class="{ titleFadeIn: isActive }" v-if="nameShowed">
 	</div>
 </template>
 <script>
@@ -67,12 +67,12 @@
     100% { opacity: 1; -webkit-transform: scale(1, 1)}
   }
   .logoFadeIn {
-    animation: logo-scale  0.5s ease;
-    -webkit-animation: logo-scale  0.5s ease;
+    animation: logo-scale  1s ease;
+    -webkit-animation: logo-scale 1s ease;
   }
   .titleFadeIn {
-    animation: opacity-fade 0.5s ease;
-    -webkit-animation: opacity-fade 0.5s ease;
+    animation: opacity-fade 1s ease;
+    -webkit-animation: opacity-fade 1s ease;
   }
   .carFadeIn {
     animation: opacity-fade 1.5s ease;

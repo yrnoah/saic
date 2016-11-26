@@ -5,7 +5,7 @@
 				<source src="../../static/valentin-loop.mp3" type="audio/mpeg">
 			</audio>
 		</div>
-		<div class="musicBtn" @click="toggleMusic">
+		<div class="musicBtn" @click="toggleMusic" v-if="showMusicIcon">
 			<div v-if="!isPlayingMusic" class="music-icon-container">
         <img src="../../static/music.png" class="musicIcon">
       </div>
@@ -55,6 +55,7 @@
         preventWechatAutoplay: false,
         relativeMajorIndex: null,
         showBottom: false,
+        showMusicIcon: true,
       };
     },
     components: {
@@ -83,6 +84,7 @@
         },
         onSlideChangeEnd: (swiper) => {
           swiperAnimate(appSwiper);
+          if (!this.showMusicIcon) this.showMusicIcon = true;
           if (swiper.activeIndex !== 1 && swiper.activeIndex !== 3 && swiper.activeIndex !== 10) {
             appSwiper.unlockSwipes();
           }
@@ -116,6 +118,7 @@
           }
           if (swiper.activeIndex === 7) {
             this.$broadcast('openLetter');
+            this.showMusicIcon = false;
           }
           if (swiper.activeIndex === 5 || swiper.activeIndex === 6) {
             this.showBottom = true;

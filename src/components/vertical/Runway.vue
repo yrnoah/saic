@@ -86,9 +86,9 @@
         slidesPerView: 'auto',
         loop: false,
         hashnav: true,
-        onTouchStart: () => {
-          this.stopAnimation();
-        },
+        // onTouchStart: () => {
+        //   // this.stopAnimation();
+        // },
         // onTouchEnd: () => {
         //   this.startPageAnimation();
         // },
@@ -102,10 +102,11 @@
         this.fadeOutCloud = true;
         if (runwaySwiper.getWrapperTranslate('y') >= 0) {
           runwaySwiper.enableTouchControl();
+          this.$dispatch('unlockRunwayToPrev');
           clearInterval(viewTransition);
           return;
         }
-        // runwaySwiper.disableTouchControl();
+        runwaySwiper.disableTouchControl();
         viewTransition = setInterval(() => {
           if (runwaySwiper.getWrapperTranslate('y') >= 0) {
             clearInterval(viewTransition);
@@ -153,13 +154,17 @@
         }, 1);
       },
       stopAnimation() {
-        // runwaySwiper.enableTouchControl();
+        // return;
+        runwaySwiper.enableTouchControl();
+        this.$dispatch('unlockRunwayToPrev');
         clearInterval(viewTransition);
         clearTimeout(runwayCarTimeout);
       },
       stopCarMove() {
         this.carTransleteY = 0;
         this.carMoveTime = 0;
+        runwaySwiper.enableTouchControl();
+        this.$dispatch('unlockRunwayToPrev');
         clearInterval(carMoveInterval);
       },
     },
@@ -167,7 +172,6 @@
       'setToBottom'() {
         this.virtualSize = runwaySwiper.virtualSize;
         runwaySwiper.setWrapperTranslate(-this.virtualSize + runwaySwiper.size);
-        console.log(runwaySwiper.virtualSize, 'setToBottom');
       },
       'initAnimation'() {
         this.startAnimation = false;
@@ -181,7 +185,7 @@
         clearTimeout(runwayCarTimeout);
         clearInterval(viewTransition);
         this.stopCarMove();
-        // runwaySwiper.enableTouchControl();
+        runwaySwiper.enableTouchControl();
       },
       'startRunwayCarAnimation'() {
         this.moveCar();
@@ -335,8 +339,8 @@
     display: none;
   }
   .bannerFadeIn {
-    animation: opacity-fade 0.5s ease;
-    -webkit-animation: opacity-fade 0.5s ease;
+    animation: opacity-fade 1.2s linear;
+    -webkit-animation: opacity-fade 1.2s linear;
   }
   .fadeouteLeft-transition {
     transition: all 1s ease;
