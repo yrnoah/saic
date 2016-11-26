@@ -176,11 +176,11 @@
           loop: false,
           autoplayStopOnLast: true,
           hashnav: true,
-          onReachBeginning: (swiper) => {
-            if (swiper.activeIndex === 0) {
-              this.$dispatch('slideMajor');
-            }
-          },
+          // onReachBeginning: (swiper) => {
+          //   if (swiper.activeIndex === 0) {
+          //     this.$dispatch('slideMajor');
+          //   }
+          // },
           onReachEnd: () => {
             slideNextTimeout = setTimeout(() => {
               this.$dispatch('slideNextMajor');
@@ -206,14 +206,14 @@
                 this.moveStartY = 0;
               }
             }
-            if (swiper.activeIndex === 0) {
-              const moveDistance = event.changedTouches[0].pageY - this.moveStartY;
-              if (moveDistance > 200 && !this.hasSlidePrev && this.moveStartY !== 0) {
-                this.$dispatch('slideMajor');
-                this.hasSlidePrev = true;
-                this.moveStartY = 0;
-              }
-            }
+            // if (swiper.activeIndex === 0) {
+            //   const moveDistance = event.changedTouches[0].pageY - this.moveStartY;
+            //   if (moveDistance > 200 && !this.hasSlidePrev && this.moveStartY !== 0) {
+            //     this.$dispatch('slideMajor');
+            //     this.hasSlidePrev = true;
+            //     this.moveStartY = 0;
+            //   }
+            // }
           },
         });
       },

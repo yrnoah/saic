@@ -110,7 +110,7 @@
             this.$broadcast('initHasSlidePrev');
           }
           if (swiper.activeIndex === 2) {
-            // appSwiper.lockSwipes();
+            appSwiper.lockSwipeToPrev();
             this.$broadcast('setMajorRelativePosition', this.relativeMajorIndex);
             // if (!this.preventWechatAutoplay) {
             //   this.$broadcast('startAutoPlay');
@@ -119,6 +119,7 @@
             // }
           }
           if (swiper.activeIndex === 3) {
+            appSwiper.unlockSwipeToPrev();
             this.$broadcast('initHasSlideNext');
           }
           if (swiper.activeIndex === 7) {
@@ -163,12 +164,12 @@
         this.$broadcast('initHasSlidePrev');
         // this.$broadcast('startCarAnimation');
       },
-      'slideMajor'() {
-        this.$broadcast('goSelectMajorPage');
-        appSwiper.unlockSwipes();
-        appSwiper.slidePrev();
-        this.preventWechatAutoplay = false;
-      },
+      // 'slideMajor'() {
+        // this.$broadcast('goSelectMajorPage');
+        // appSwiper.unlockSwipes();
+        // appSwiper.slidePrev();
+        // this.preventWechatAutoplay = false;
+      // },
       'lockSlidePrev'() {
         appSwiper.lockSwipeToPrev();
       },
