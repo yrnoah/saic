@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 require("babel-register");
 const express = require('express');
 const app = express();
@@ -164,3 +165,5 @@ app.use('/api', serverApi);
 
 const port = 5003;
 app.listen(port, (err) => { console.log("http oppened on " + port) });
+=======
+>>>>>>> Stashed changes
