@@ -199,7 +199,7 @@
     methods: {
       startMusic() {
         const audio = $('#music')[0];
-        this.stopMusic();
+        if (this.playingMusic2) this.stopMusic();
         if (!this.isPlayingMusic) {
           audio.play();
           this.isPlayingMusic = true;
@@ -209,14 +209,18 @@
       stopMusic() {
         const audio = $('#music')[0];
         const audio2 = $('#music2')[0];
-        audio.pause();
-        audio2.pause();
-        audio.currentTime = 0;
-        audio2.currentTime = 0;
+        if (audio) {
+          audio.pause();
+          audio.currentTime = 0;
+        }
+        if (audio2) {
+          audio2.pause();
+          audio2.currentTime = 0;
+        }
         this.isPlayingMusic = false;
       },
       changeMusic() {
-        this.stopMusic();
+        if (this.playingMusic1) this.stopMusic();
         const audio2 = $('#music2')[0];
         audio2.play();
         this.isPlayingMusic = true;
