@@ -82,7 +82,7 @@
             const moveCarTime = setTimeout(() => {
               this.carMoveFinished = true;
               clearTimeout(moveCarTime);
-            }, 3000);
+            }, 2900);
           }
         },
       });
