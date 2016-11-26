@@ -78,11 +78,12 @@
           if (swiper.activeIndex === 5) {
             this.$broadcast('setToBottom');
             this.$broadcast('reAnimateSlogan');
+            horizontalPagesSwiper.lockSwipeToPrev();
             this.hideTheEarth = true;
             const moveCarTime = setTimeout(() => {
               this.carMoveFinished = true;
               clearTimeout(moveCarTime);
-            }, 2900);
+            }, 2500);
           }
         },
       });
@@ -104,6 +105,7 @@
       },
       'showEarth'() {
         this.hideTheEarth = false;
+        this.carMoveFinished = false;
       },
       'initAnimation'() {
         this.hideTheEarth = false;

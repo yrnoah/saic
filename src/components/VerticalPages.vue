@@ -81,16 +81,16 @@
               return;
             }
           }
-          if (swiper.activeIndex === 2) {
-            const moveDistanceX = event.changedTouches[0].pageX - this.moveStartX;
-            const moveDistanceY = event.changedTouches[0].pageY - this.moveStartY;
-            if (moveDistanceX > 100 && moveDistanceY < 100) {
-              this.$dispatch('verticalToHorizen');
-              this.moveStartX = 0;
-              this.moveStartY = 0;
-              return;
-            }
-          }
+          // if (swiper.activeIndex === 2) {
+          //   const moveDistanceX = event.changedTouches[0].pageX - this.moveStartX;
+          //   const moveDistanceY = event.changedTouches[0].pageY - this.moveStartY;
+          //   if (moveDistanceX > 100 && moveDistanceY < 100) {
+          //     this.$dispatch('verticalToHorizen');
+          //     this.moveStartX = 0;
+          //     this.moveStartY = 0;
+          //     return;
+          //   }
+          // }
         },
         initialSlide: 2,
         direction: 'vertical',
