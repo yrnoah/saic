@@ -96,8 +96,11 @@
         horizontalPagesSwiper.slideTo(4);
       },
       'changeEarth'() {
-        console.log();
         this.hideTheEarth = true;
+        const moveCarTime = setTimeout(() => {
+          this.carMoveFinished = true;
+          clearTimeout(moveCarTime);
+        }, 2900);
       },
       'showEarth'() {
         this.hideTheEarth = false;

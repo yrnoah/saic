@@ -56,11 +56,7 @@
   export default {
     data() {
       return {
-        activeBtnId: null,
-        hasReturned: false,
         moveStartY: 0,
-        hasSlideNext: false,
-        hasSlidePrev: false,
         virtualSize: null,
         startAnimation: false,
         animationFinished: false,
@@ -186,6 +182,11 @@
         this.showBanner5 = false;
         this.showBanner6 = false;
         this.fadeOutCloud = false;
+        this.showMajorTip = false;
+        this.transSize = 0;
+        this.carTransleteY = 0;
+        this.carMoveTime = 0;
+        this.$set('carTransform.transform', 'translateY(0px)');
         clearTimeout(runwayCarTimeout);
         clearInterval(viewTransition);
         this.stopCarMove();
@@ -265,11 +266,34 @@
     z-index: 2;
   }
   .future-major {
-    background-color: #4f7fff;
+    /*background-color: transparent;*/
     padding: 16.5px 0;
     width: 330px;
     margin: 0 auto 16.5px auto;
     display: block;
+    border-radius: 36px;
+    position: relative;
+    background-color: #4f7fff;
+    animation: bg-fade 2.0s linear infinite;
+    -webkit-animation: bg-fade 2.0s linear infinite;
+  }
+  @keyframes bg-fade {
+    0%, 100% { opacity: 0.6 }
+    50% { opacity: 1 }
+  }
+  @-webkit-keyframes bg-fade {
+    0%, 100% { opacity: 0.6 }
+    50% { opacity: 1 }
+  }
+  .animate-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #4f7fff;
+    animation: bg-fade 5.0s linear infinite;
+    -webkit-animation: bg-fade 5.0s linear infinite;
     border-radius: 36px;
   }
   .major1 {
@@ -278,6 +302,8 @@
     width: 173px;
     height: 38px;
     margin: 0 auto;
+    z-index: 1;
+    position: relative;
   }
   .major2 {
     background: url(../../../static/future-major2.png) no-repeat;
@@ -285,6 +311,8 @@
     width: 171px;
     height: 38px;
     margin: 0 auto;
+    z-index: 1;
+    position: relative;
   }
   .major3 {
     background: url(../../../static/future-major3.png) no-repeat;
@@ -292,6 +320,8 @@
     width: 172px;
     height: 38px;
     margin: 0 auto;
+    z-index: 1;
+    position: relative;
   }
   .major4 {
     background: url(../../../static/future-major4.png) no-repeat;
@@ -299,6 +329,8 @@
     width: 102px;
     height: 38px;
     margin: 0 auto;
+    z-index: 1;
+    position: relative;
   }
   .banner {
     position: absolute;
@@ -368,23 +400,31 @@
   .maskTipContainer {
     width: 100%;
     position: absolute;
-    top: 150px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /*top: 150px;*/
   }
   .majorTip {
-    font-size: 20px;
+    font-size: 30px;
     margin: 0;
     padding: 0;
+    position: relative;
+    top: 40%;
   }
   .maskTip {
-    width: 60%;
-    height: 80px;
+    width: 90%;
+    height: 80%;
+    position: relative;
+    margin: 10% auto;
     border-radius: 10px;
     background-color: rgba(0,0,0,.7);
     text-align: center;
     line-height: 80px;
     vertical-align: middle;
     color: #FFF;
-    margin: 0 auto;
+    z-index: 2;
   }
   .tip-opacity-transition {
     transition: all 1s ease;
