@@ -3,8 +3,8 @@
     <div class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
       <div class="angel-animation"><div class="up-angel"></div></div>
     </div>
-    <img src="../../../static/slogan-title.png" class="slogan-title ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" :class="{ fadeOut: fadeOutSlogan, hide: fadeOutFinished }">
-    <img src="../../../static/slogan-tip.png" class="slogan-tip ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" :class="{ fadeOut: fadeOutSlogan, hide: fadeOutFinished }">
+    <img src="../../../static/slogan-title.png" class="slogan-title ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" :class="{ hide: fadeOutFinished, fadeOut: fadeOutSlogan }">
+    <img src="../../../static/slogan-tip.png" class="slogan-tip ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" :class="{ hide: fadeOutFinished, fadeOut: fadeOutSlogan }">
     <img src="../../../static/logo.png" class="logo ani" swiper-animate-effect="zoomIn" swiper-animate-duration="2.0s" swiper-animate-delay="3s">
     <img src="../../../static/name.png" class="name ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="3.3s">
 	</div>

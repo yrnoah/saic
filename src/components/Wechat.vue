@@ -18,10 +18,13 @@
 							<p class="pic-location">{{ message.location }}</p>
 							<div class="action-container">
 								<p class="message-time">{{ message.time }}</p>
-								<div class="icon-button-action" @click="showBtns($index)">
+                <!--@click="showBtns($index)"-->
+								<div class="icon-button-action">
 									<div class="action-btns" v-bind:style="visible($index)" v-if="!isWrittingComment">
-										<button @click="follow($index)"><div class="icon-heart-white btn-icon"></div>赞</button>
-										<button @click="writeComment()"><div class="icon-comment btn-icon"></div>评论</button>
+                    <!--@click="follow($index)"-->
+										<button><div class="icon-heart-white btn-icon"></div>赞</button>
+                    <!--@click="writeComment()"-->
+										<button><div class="icon-comment btn-icon"></div>评论</button>
 									</div>
 								</div>
 							</div>
@@ -43,7 +46,8 @@
 							<div :class="{ inputContainer: isWrittingComment, hideInput: !isWrittingComment }" v-if="activeBtnId === $index">
 								<input type="text" :class="{ activeInput: isWrittingComment, hideInput: !isWrittingComment }" v-model="commentInput" @keyup.enter="submit"
 									id="bottomInput" placeholder="请输入需要发表评论">
-								<button :class="{ activeSubmitBtn: isWrittingComment, hideInput: !isWrittingComment }" @click="submit()">发送</button>
+                  <!--@click="submit()"-->
+								<button :class="{ activeSubmitBtn: isWrittingComment, hideInput: !isWrittingComment }">发送</button>
 							</div>
 						</div>
 					</div>
@@ -74,12 +78,14 @@
         hasSlideNext: false,
         hasSlidePrev: false,
         activeBannerIndex: 1,
+        // simulateTouch: false,
       };
     },
     ready() {
       this.isWxCircles = true;
       this.initSwiper();
       wechatSwiper.stopAutoplay();
+      wechatSwiper.disableTouchControl();
       window.addEventListener('click', () => {
         if (!this.shouldHideBtn) return;
         const clearActionBtn = setTimeout(() => {
@@ -171,8 +177,8 @@
           autoHeight: true,
           slidesPerView: 'auto',
           autoplay: 1,
-          autoplayDisableOnInteraction: true,
-          speed: 5000,
+          autoplayDisableOnInteraction: false,
+          speed: 3000,
           loop: false,
           autoplayStopOnLast: true,
           hashnav: true,
@@ -185,7 +191,7 @@
             slideNextTimeout = setTimeout(() => {
               this.$dispatch('slideNextMajor');
               clearTimeout(slideNextTimeout);
-            }, 2500);
+            }, 3000);
           },
           onTouchStart: (swiper, event) => {
             if (swiper.activeIndex === 4 || swiper.activeIndex === 0) {
