@@ -3,10 +3,16 @@
     <div class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
       <div class="angel-animation"><div class="up-angel"></div></div>
     </div>
-    <img src="../../../static/slogan-title.png" class="slogan-title ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" :class="{ hide: fadeOutFinished, fadeOut: fadeOutSlogan }">
+    <img src="../../../static/slogan-title.png" class="slogan-title" v-if="fadeInSlogan" transition="zoom">
+    <img src="../../../static/slogan-tip.png" class="slogan-tip" v-if="fadeInSlogan" transition="zoom">
+    <div v-if="fadeInLogo" transition="zoom" class="logo-container">
+      <img src="../../../static/logo.png" class="logo">
+      <img src="../../../static/name.png" class="name">
+    </div>
+    <!--<img src="../../../static/slogan-title.png" class="slogan-title ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" :class="{ hide: fadeOutFinished, fadeOut: fadeOutSlogan }">
     <img src="../../../static/slogan-tip.png" class="slogan-tip ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" :class="{ hide: fadeOutFinished, fadeOut: fadeOutSlogan }">
     <img src="../../../static/logo.png" class="logo ani" swiper-animate-effect="zoomIn" swiper-animate-duration="2.0s" swiper-animate-delay="3.0s">
-    <img src="../../../static/name.png" class="name ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1.0s" swiper-animate-delay="3.3s">
+    <img src="../../../static/name.png" class="name ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1.0s" swiper-animate-delay="3.3s">-->
 	</div>
 </template>
 <script>
@@ -17,24 +23,28 @@
     // },
     data() {
       return {
-        fadeOutSlogan: false,
-        fadeOutFinished: false,
+        fadeInSlogan: false,
+        fadeInLogo: false,
       };
     },
     events: {
       'reAnimateSlogan'() {
+        this.fadeInSlogan = true;
         const reAnimate = setTimeout(() => {
-          this.fadeOutSlogan = true;
+          this.fadeInLogo = true;
+          this.fadeInSlogan = false;
           clearTimeout(reAnimate);
-        }, 2000);
-        const finishedTimeout = setTimeout(() => {
-          this.fadeOutFinished = true;
-          clearTimeout(finishedTimeout);
-        }, 2500);
+        }, 3000);
+        // const finishedTimeout = setTimeout(() => {
+        //   this.fadeOutFinished = true;
+        //   clearTimeout(finishedTimeout);
+        // }, 2500);
       },
       'initAnimation'() {
-        this.fadeOutSlogan = false;
-        this.fadeOutFinished = false;
+        // this.fadeOutSlogan = false;
+        // this.fadeOutFinished = false;
+        this.fadeInLogo = false;
+        this.fadeInSlogan = false;
       },
     },
   };
@@ -59,6 +69,12 @@
     margin: 0 auto;
     position: relative;
     z-index: 1;
+  }
+  .logo-container {
+    width: 100%;
+    position: absolute;
+    top: 15%;
+    left: 0;
   }
   .angel-animation {
     position: absolute;
@@ -88,7 +104,7 @@
     height: auto;
     margin: 0 auto 25px auto;
     position: relative;
-    top: 15%;
+    /*top: 15%;*/
     z-index: 1;
   }
   .name {
@@ -97,6 +113,18 @@
     margin: 0 auto;
     position: relative;
     z-index: 1;
-    top: 18%;
+    /*top: 18%;*/
+  }
+  .zoom-transition {
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    overflow: hidden;
+    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+  }
+  .zoom-enter, .zoom-leave {
+    opacity: 0;
+    transform: scale(0, 0);
+    -webkit-transform: scale(0, 0);
   }
 </style>
