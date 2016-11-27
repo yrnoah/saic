@@ -4,9 +4,9 @@
 			<audio id="music" loop="loop" preload="auto">
 				<source src="../../static/music1.mp3" type="audio/mpeg">
 			</audio>
-			<audio id="music2" loop="loop" preload="auto">
+			<!--<audio id="music2" loop="loop" preload="auto">
 				<source src="../../static/music2.mp3" type="audio/mpeg">
-			</audio>
+			</audio>-->
 		</div>
 		<div class="musicBtn" @click="toggleMusic" v-if="showMusicIcon">
 			<div v-if="!isPlayingMusic" class="music-icon-container">
@@ -195,50 +195,48 @@
         appSwiper.slideTo(2);
         appSwiper.lockSwipes();
       },
-      'playMusic2'() {
-        this.changeMusic();
-      },
-      'playMusic1'() {
-        this.startMusic();
-      },
+      // 'playMusic2'() {
+      //   this.changeMusic();
+      // },
+      // 'playMusic1'() {
+      //   this.startMusic();
+      // },
     },
     methods: {
       startMusic() {
         const audio = $('#music')[0];
-        if (this.playingMusic2) this.stopMusic();
+        // if (this.playingMusic2) this.stopMusic();
         if (!this.isPlayingMusic) {
           audio.play();
           this.isPlayingMusic = true;
-          this.playingMusic1 = true;
+          // this.playingMusic1 = true;
         }
       },
       stopMusic() {
         const audio = $('#music')[0];
-        const audio2 = $('#music2')[0];
+        // const audio2 = $('#music2')[0];
         if (audio) {
           audio.pause();
           audio.currentTime = 0;
         }
-        if (audio2) {
-          audio2.pause();
-          audio2.currentTime = 0;
-        }
+        // if (audio2) {
+        //   audio2.pause();
+        //   audio2.currentTime = 0;
+        // }
         this.isPlayingMusic = false;
       },
-      changeMusic() {
-        if (this.playingMusic1) this.stopMusic();
-        const audio2 = $('#music2')[0];
-        audio2.play();
-        this.isPlayingMusic = true;
-        this.playingMusic1 = false;
-      },
+      // changeMusic() {
+      //   if (this.playingMusic1) this.stopMusic();
+      //   const audio2 = $('#music2')[0];
+      //   audio2.play();
+      //   this.isPlayingMusic = true;
+      //   this.playingMusic1 = false;
+      // },
       toggleMusic() {
         if (this.isPlayingMusic) {
           this.stopMusic();
-        } else if (this.playingMusic1) {
-          this.startMusic();
         } else {
-          this.changeMusic();
+          this.startMusic();
         }
       },
     },

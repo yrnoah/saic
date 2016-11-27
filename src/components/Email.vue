@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s">
-      <p class="emailTxt">recruitment@saicservice.com</p>
+      <p class="emailTxt ani" swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="1.5s">recruitment@saicservice.com</p>
     </div>
     <p class="tipTxt ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s">长按可复制</p>
     <div @click="showMaskFunc" class="shareIconContainer">

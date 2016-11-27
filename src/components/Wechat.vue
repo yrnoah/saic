@@ -178,7 +178,7 @@
           slidesPerView: 'auto',
           autoplay: 1,
           autoplayDisableOnInteraction: false,
-          speed: 3000,
+          speed: 6000,
           loop: false,
           autoplayStopOnLast: true,
           hashnav: true,

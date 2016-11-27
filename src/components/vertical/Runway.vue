@@ -94,7 +94,7 @@
       },
       startPageAnimation() {
         this.fadeOutCloud = true;
-        this.$dispatch('playMusic2');
+        // this.$dispatch('playMusic2');
         if (runwaySwiper.getWrapperTranslate('y') >= 0) {
           runwaySwiper.enableTouchControl();
           this.$dispatch('unlockRunwayToPrev');
