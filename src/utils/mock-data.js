@@ -73,13 +73,14 @@ const messageData = [
     location: '上海',
     time: '1小时前',
     follows: ['简晰', '穆青', 'Bob', '郑宴', '林晨', 'Andy', '王达文', 'Judy', 'Alice', '彭小华', '孙彦华', '祝晶晶',
-      '罗小鹏', '刘佳颖', '宋佳', '金纪', '翁玉华', 'Lily', 'Rebecca', '崔爽', '葛文德', '张雅琴', '江志平', 'Joan', 'Adam',
-      'David', 'Henry', '袁琳琳', '高博', '陈于斌'],
+      '罗小鹏', '刘佳颖'],
     comments: [
       { user: '穆青', replyTo: null, detail: '你是明信片，我是冰箱贴' },
       { user: '蒋一宁', replyTo: '穆青', detail: '我也有一整面冰箱贴' },
     ],
   },
+  // '宋佳', '金纪', '翁玉华', 'Lily', 'Rebecca', '崔爽', '葛文德', '张雅琴', '江志平', 'Joan', 'Adam',
+  //     'David', 'Henry', '袁琳琳', '高博', '陈于斌'
   {
     index: 6,
     username: '庄思捷',
@@ -88,9 +89,9 @@ const messageData = [
     img: '../../static/pic-6.png',
     location: '中国 · 上海',
     time: '2小时前',
-    follows: ['简晰', '穆青', 'Bob', '郑宴', '林晨', 'Andy', '祝晶晶', '金纪', '翁玉华', 'Lily', 'Rebecca',
-      '张雅琴', '江志平', 'Joan', 'Adam'],
+    follows: ['简晰', '穆青', 'Bob', '郑宴', '林晨', 'Andy', '祝晶晶', '金纪'],
     comments: [],
   },
+  // '翁玉华', 'Lily', 'Rebecca', '张雅琴', '江志平', 'Joan', 'Adam'
 ];
 export default messageData;

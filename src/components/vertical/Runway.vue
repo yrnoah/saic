@@ -17,14 +17,14 @@
             <div class="future-major" @click="selectMajor(3)">
               <div class="major4"></div>
             </div>
-            <div class="maskTipContainer" v-if="showMajorTip" transition="tip-opacity">
+            <div class="maskTipContainer" v-if="showMajorTip" transition="opacity">
               <div class="maskTip">
                 <p class="majorTip">请选择你的就职方向</p>
               </div>
             </div>
           </div>
           <div class="runway-container">
-            <div class="car-container">
+            <div class="car-container" v-if="showCar" transition="opacity">
               <div class="car-position" :style="carTransform">
                 <img src="../../../static/future-car.png" class="space-car">
               </div>
@@ -64,6 +64,7 @@
         transSize: 0,
         carTransleteY: 0,
         carMoveTime: 0,
+        showCar: false,
         showBanner1: false,
         showBanner2: false,
         showBanner3: false,
@@ -110,9 +111,9 @@
             clearInterval(viewTransition);
             return;
           }
-          const trans = (runwaySwiper.getWrapperTranslate('y') + 2.5);
+          const trans = (runwaySwiper.getWrapperTranslate('y') + 2);
           runwaySwiper.setWrapperTranslate(trans);
-          this.transSize += 2.5;
+          this.transSize += 2;
         }, 1);
       },
       moveCar() {
@@ -130,18 +131,18 @@
           const p3 = Math.floor(pageSize * 0.24) * -1;
           const p4 = Math.floor(pageSize * 0.38) * -1;
           const p5 = Math.floor(pageSize * 0.52) * -1;
-          const p6 = Math.floor(pageSize * 0.63) * -1;
+          const p6 = Math.floor(pageSize * 0.64) * -1;
           if (this.carTransleteY <= p2 && !this.showBanner2) this.showBanner2 = true;
           if (this.carTransleteY <= p3 && !this.showBanner3) this.showBanner3 = true;
           if (this.carTransleteY <= p4 && !this.showBanner4) this.showBanner4 = true;
           if (this.carTransleteY <= p5 && !this.showBanner5) this.showBanner5 = true;
           if (this.carTransleteY <= p6 && !this.showBanner6) this.showBanner6 = true;
-          if (this.carTransleteY > (Math.floor(pageSize * 0.2) * -1)) {
+          if (this.carTransleteY > (Math.floor(pageSize * 0.1) * -1)) {
             this.carTransleteY -= 4;
             this.$set('carTransform.transform', `translateY(${this.carTransleteY}px)`);
             this.carMoveTime += 1;
           } else {
-            this.carTransleteY -= 2.5;
+            this.carTransleteY -= 2;
             this.$set('carTransform.transform', `translateY(${this.carTransleteY}px)`);
             this.carMoveTime += 1;
           }
@@ -178,6 +179,7 @@
       'initAnimation'() {
         this.startAnimation = false;
         this.animationFinished = false;
+        this.showCar = false;
         this.showBanner1 = false;
         this.showBanner2 = false;
         this.showBanner3 = false;
@@ -198,6 +200,10 @@
       'startRunwayCarAnimation'() {
         runwaySwiper.disableTouchControl();
         this.fadeOutCloud = true;
+        const showCarTImeout = setTimeout(() => {
+          this.showCar = true;
+          clearTimeout(showCarTImeout);
+        }, 500);
         const showBanner1Timeout = setTimeout(() => {
           this.showBanner1 = true;
           clearTimeout(showBanner1Timeout);
@@ -378,7 +384,7 @@
     position: absolute;
     width: 100%;
     left: 0;
-    bottom: -120px;
+    bottom: 0px;
   }
   .carAnimation {
     animation: drive 20.0s linear;
@@ -437,12 +443,12 @@
     color: #FFF;
     z-index: 2;
   }
-  .tip-opacity-transition {
+  .opacity-transition {
     transition: all 1s ease;
     -webkit-transition: all 1s ease;
-    overflow: hidden;
+    /*overflow: hidden;*/
   }
-  .tip-opacity-enter, .tip-opacity-leave {
+  .opacity-enter, .opacity-leave {
     opacity: 0;
   }
 </style>
