@@ -79,7 +79,10 @@
             this.$broadcast('setToBottom');
             this.$broadcast('reAnimateSlogan');
             horizontalPagesSwiper.lockSwipeToPrev();
-            this.hideTheEarth = true;
+            const startMove = setTimeout(() => {
+              this.hideTheEarth = true;
+              clearTimeout(startMove);
+            }, 1500);
             const moveCarTime = setTimeout(() => {
               this.carMoveFinished = true;
               clearTimeout(moveCarTime);
@@ -97,11 +100,14 @@
         horizontalPagesSwiper.slideTo(4);
       },
       'changeEarth'() {
-        this.hideTheEarth = true;
+        const startMove = setTimeout(() => {
+          this.hideTheEarth = true;
+          clearTimeout(startMove);
+        }, 1500);
         const moveCarTime = setTimeout(() => {
           this.carMoveFinished = true;
           clearTimeout(moveCarTime);
-        }, 2900);
+        }, 4000);
       },
       'showEarth'() {
         this.hideTheEarth = false;

@@ -54,6 +54,9 @@
 				</div>
 			</div>
 		</div>
+    <div v-if="showAngel" transition="opacity-animation" class="angel-container">
+        <div class="angel-animation"><div class="up-angel"></div></div>
+    </div>
 	</div>
 </template>
 
@@ -62,7 +65,7 @@
   import messageData from '../utils/mock-data.js';
   import { $, User } from '../utils/utils.js';
   let wechatSwiper;
-  let slideNextTimeout;
+  // let slideNextTimeout;
   export default {
     data() {
       return {
@@ -75,9 +78,10 @@
         isWrittingComment: false,
         hasReturned: false,
         moveStartY: 0,
-        hasSlideNext: false,
+        // hasSlideNext: false,
         hasSlidePrev: false,
         activeBannerIndex: 1,
+        showAngel: false,
         // simulateTouch: false,
       };
     },
@@ -85,7 +89,7 @@
       this.isWxCircles = true;
       this.initSwiper();
       wechatSwiper.stopAutoplay();
-      wechatSwiper.disableTouchControl();
+      // wechatSwiper.disableTouchControl();
       window.addEventListener('click', () => {
         if (!this.shouldHideBtn) return;
         const clearActionBtn = setTimeout(() => {
@@ -107,21 +111,21 @@
       });
     },
     events: {
-      'initHasSlideNext'() {
-        this.hasSlideNext = false;
-      },
+      // 'initHasSlideNext'() {
+      //   this.hasSlideNext = false;
+      // },
       'initHasSlidePrev'() {
         this.hasSlidePrev = false;
       },
       'setMajorRelativePosition'(index) {
-        wechatSwiper.stopAutoplay();
+        // wechatSwiper.stopAutoplay();
         this.activeBannerIndex = index;
         const newMessageData = messageData.filter((data) => data.index !== index);
         this.messages = [messageData[index - 1], ...newMessageData];
-        const startPlayTimeout = setTimeout(() => {
-          wechatSwiper.startAutoplay();
-          clearTimeout(startPlayTimeout);
-        }, 2000);
+        // const startPlayTimeout = setTimeout(() => {
+        //   wechatSwiper.startAutoplay();
+        //   clearTimeout(startPlayTimeout);
+        // }, 2000);
         // wechatSwiper.slideTo((index - 1), 0);
         // if (index !== 1)
         // wechatSwiper.setWrapperTranslate(wechatSwiper.getWrapperTranslate() + 256);
@@ -174,13 +178,17 @@
           direction: 'vertical',
           nested: true,
           freeMode: true,
+          freeModeSticky: true,
+          // freeModeMomentum: false,
+          resistance: true,
+          resistanceRatio: 0.9,
           autoHeight: true,
           slidesPerView: 'auto',
-          autoplay: 1,
-          autoplayDisableOnInteraction: false,
-          speed: 6000,
+          // autoplay: 1,
+          // autoplayDisableOnInteraction: false,
+          // speed: 6000,
+          // autoplayStopOnLast: true,
           loop: false,
-          autoplayStopOnLast: true,
           hashnav: true,
           // onReachBeginning: (swiper) => {
           //   if (swiper.activeIndex === 0) {
@@ -188,10 +196,11 @@
           //   }
           // },
           onReachEnd: () => {
-            slideNextTimeout = setTimeout(() => {
-              this.$dispatch('slideNextMajor');
-              clearTimeout(slideNextTimeout);
-            }, 3000);
+            this.showAngel = true;
+            // slideNextTimeout = setTimeout(() => {
+            //   this.$dispatch('slideNextMajor');
+            //   clearTimeout(slideNextTimeout);
+            // }, 3000);
           },
           onTouchStart: (swiper, event) => {
             if (swiper.activeIndex === 4 || swiper.activeIndex === 0) {
@@ -206,9 +215,9 @@
           onSliderMove: (swiper, event) => {
             if (swiper.activeIndex === 5) {
               const moveDistance = this.moveStartY - event.changedTouches[0].pageY;
-              if (moveDistance > 20 && !this.hasSlideNext && this.moveStartY !== 0) {
+              if (moveDistance > 20 && this.moveStartY !== 0) {
                 this.$dispatch('slideNextMajor');
-                this.hasSlideNext = true;
+                // this.hasSlideNext = true;
                 this.moveStartY = 0;
               }
             }
@@ -236,10 +245,12 @@
 
 	.wechatSwiper .swiper-wrapper {
 		width: 100%;
+    position: relative;
 	}
 
 	.wechatSwiper .swiper-slide {
 		width: 100%;
+    position: relative;
 	}
 
 	.wx-circles {
@@ -494,4 +505,30 @@
 		border-left: 6px solid transparent;
 		border-bottom: 8px solid #F3F3F5;
 	}
+  .angel-container {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    z-index: 4;
+  }
+  .angel-animation {
+    animation: bounce-down 1s linear infinite;
+  }
+  .up-angel {
+    width: 48px;
+    height: 48px;
+    border: 2px solid #4EDEFD;
+    border-width: 2px 2px 0 0;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    margin: 0 auto;
+  }
+  .opacity-animation-transition {
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    /*overflow: hidden;*/
+  }
+  .opacity-animation-enter, .opacity-animation-leave {
+    opacity: 0;
+  }
 </style>

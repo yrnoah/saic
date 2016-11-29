@@ -34,7 +34,7 @@
           this.fadeInLogo = true;
           this.fadeInSlogan = false;
           clearTimeout(reAnimate);
-        }, 3000);
+        }, 5000);
         // const finishedTimeout = setTimeout(() => {
         //   this.fadeOutFinished = true;
         //   clearTimeout(finishedTimeout);

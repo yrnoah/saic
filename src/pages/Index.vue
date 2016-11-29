@@ -106,11 +106,12 @@
           if (swiper.activeIndex === 1) {
             this.$broadcast('startAnimation');
             this.$broadcast('startReportAnimation');
-            this.$broadcast('initHasSlidePrev');
+            // this.$broadcast('initHasSlidePrev');
           }
           if (swiper.activeIndex === 2) {
-            appSwiper.lockSwipeToPrev();
-            appSwiper.disableTouchControl();
+            // appSwiper.lockSwipeToPrev();
+            appSwiper.lockSwipes();
+            // appSwiper.disableTouchControl();
             this.$broadcast('setMajorRelativePosition', this.relativeMajorIndex);
             // if (!this.preventWechatAutoplay) {
             //   this.$broadcast('startAutoPlay');
@@ -119,8 +120,9 @@
             // }
           }
           if (swiper.activeIndex === 3) {
-            appSwiper.enableTouchControl();
-            appSwiper.lockSwipeToPrev();
+            // appSwiper.enableTouchControl();
+            // appSwiper.lockSwipeToPrev();
+            appSwiper.unlockSwipes();
             this.$broadcast('initHasSlideNext');
           }
           if (swiper.activeIndex === 4) {
@@ -155,8 +157,9 @@
     },
     events: {
       'slideNextMajor'() {
-        appSwiper.lockSwipeToPrev();
-        appSwiper.unlockSwipeToNext();
+        // appSwiper.lockSwipeToPrev();
+        // appSwiper.unlockSwipeToNext();
+        appSwiper.unlockSwipes();
         appSwiper.slideTo(3, 1000);
         this.preventWechatAutoplay = false;
         this.$broadcast('initHasSlideNext');
@@ -166,7 +169,7 @@
         appSwiper.unlockSwipeToPrev();
         appSwiper.slidePrev();
         this.preventWechatAutoplay = false;
-        this.$broadcast('initHasSlidePrev');
+        // this.$broadcast('initHasSlidePrev');
         // this.$broadcast('startCarAnimation');
       },
       // 'slideMajor'() {
