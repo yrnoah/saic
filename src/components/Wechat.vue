@@ -32,7 +32,7 @@
 								<div class="follows">
 									<div class="icon-heart"></div>
 									<p>
-										<span v-for='follow in message.follows'>{{ follow }}，</span>
+										<span v-for='follow in message.follows'>{{ follow }}</span>
 									</p>
 								</div>
 								<div class="comments" v-if='message.comments.length > 0'>
