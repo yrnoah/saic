@@ -12,7 +12,7 @@
             </div>
             <div class="txt-container">
               <img src="../../static/wechat-major1.png" class="text1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
-              <p class="detail ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">市场营销、品牌宣传、销售管理</p>
+              <p class="detail ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">市场营销、品牌推广、销售管理</p>
             </div>
           </div>
           <div class="content-container">

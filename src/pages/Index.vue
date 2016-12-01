@@ -10,7 +10,7 @@
 		</div>
 		<div class="musicBtn" @click="toggleMusic" v-if="showMusicIcon">
 			<div v-if="!isPlayingMusic" class="music-icon-container">
-        <img src="../../static/music.png" class="musicIcon">
+        <img src="../../static/music-close.png" class="musicIcon">
       </div>
 			<div v-else class="music-icon-container">
         <img src="../../static/music.png" class="musicIcon playing-music">

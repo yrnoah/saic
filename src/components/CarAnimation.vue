@@ -3,8 +3,8 @@
     <div class="wheel">
       <div class="wheel-big left"></div>
       <div class="wheel-big right"></div>
-      <div class="dot small-dot"></div>
-      <div class="dot bid-dot"></div>
+      <!--<div class="dot small-dot"></div>
+      <div class="dot bid-dot"></div>-->
     </div>
   </div>
 </template>

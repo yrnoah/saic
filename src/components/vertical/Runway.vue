@@ -111,9 +111,9 @@
             clearInterval(viewTransition);
             return;
           }
-          const trans = (runwaySwiper.getWrapperTranslate('y') + 2);
+          const trans = (runwaySwiper.getWrapperTranslate('y') + 1.5);
           runwaySwiper.setWrapperTranslate(trans);
-          this.transSize += 2;
+          this.transSize += 1.5;
         }, 1);
       },
       moveCar() {
@@ -137,15 +137,18 @@
           if (this.carTransleteY <= p4 && !this.showBanner4) this.showBanner4 = true;
           if (this.carTransleteY <= p5 && !this.showBanner5) this.showBanner5 = true;
           if (this.carTransleteY <= p6 && !this.showBanner6) this.showBanner6 = true;
-          if (this.carTransleteY > (Math.floor(pageSize * 0.1) * -1)) {
-            this.carTransleteY -= 4;
-            this.$set('carTransform.transform', `translateY(${this.carTransleteY}px)`);
-            this.carMoveTime += 1;
-          } else {
-            this.carTransleteY -= 2;
-            this.$set('carTransform.transform', `translateY(${this.carTransleteY}px)`);
-            this.carMoveTime += 1;
-          }
+          // if (this.carTransleteY > (Math.floor(pageSize * 0.1) * -1)) {
+          //   this.carTransleteY -= 4;
+          //   this.$set('carTransform.transform', `translateY(${this.carTransleteY}px)`);
+          //   this.carMoveTime += 1;
+          // } else {
+          //   this.carTransleteY -= 1.5;
+          //   this.$set('carTransform.transform', `translateY(${this.carTransleteY}px)`);
+          //   this.carMoveTime += 1;
+          // }
+          this.carTransleteY -= 1.5;
+          this.$set('carTransform.transform', `translateY(${this.carTransleteY}px)`);
+          this.carMoveTime += 1;
         }, 1);
       },
       stopAnimation() {
@@ -384,7 +387,7 @@
     position: absolute;
     width: 100%;
     left: 0;
-    bottom: 0px;
+    bottom: 100px;
   }
   .carAnimation {
     animation: drive 20.0s linear;

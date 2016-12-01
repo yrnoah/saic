@@ -8,7 +8,7 @@
     <img src="../../static/home-bottom.png" class="building-img" :class="{ buildingsfade: startAnimation }">
     <img src="../../static/home-buildings.png" class="building-img buildings" :class="{ buildingsrise: startAnimation }">
     <img src="../../static/home-cloud.png" class="building-img home-cloud">
-    <img src="../../static/home-logo.png" class="building-img home-logo">
+    <!--<img src="../../static/home-logo.png" class="building-img home-logo">-->
     <img src="../../static/home-car.png" class="building-img">
     <img src="../../static/home-bike.png" class="building-img bike">
     <div class="windmill-container building-img">

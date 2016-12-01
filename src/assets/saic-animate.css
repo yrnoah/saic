@@ -255,6 +255,17 @@
   100% { opacity: 0 }
 }
 
+@keyframes infinite-fade2 {
+  0% { opacity: 0.5 }
+  50% { opacity: 1 }
+  100% { opacity: 0.5 }
+}
+@-webkit-keyframes infinite-fade2 {
+  0% { opacity: 0.5 }
+  50% { opacity: 1 }
+  100% { opacity: 0.5 }
+}
+
 @keyframes cloud-float {
   0% { opacity: 0; transform: translate(0, 0); }
   50% { opacity: 0.5; transform: translate(-150px, 50px); }

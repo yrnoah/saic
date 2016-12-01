@@ -1,7 +1,10 @@
 <template>
 	<div class="swiper-slide slogan">
-    <div class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
-      <div class="angel-animation"><div class="up-angel"></div></div>
+    <div class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="6.0s">
+      <div class="angel-animation">
+        <!--<div class="up-angel"></div>-->
+        <p class="up-txt">向上滑动</p>
+      </div>
     </div>
     <img src="../../../static/slogan-title.png" class="slogan-title" v-if="fadeInSlogan" transition="zoom">
     <img src="../../../static/slogan-tip.png" class="slogan-tip" v-if="fadeInSlogan" transition="zoom">
@@ -78,11 +81,17 @@
   }
   .angel-animation {
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     width: 100%;
-    animation: bounce-down 1s linear infinite;
+    /*animation: bounce-down 1s linear infinite;*/
   }
-
+  .up-txt {
+    color: #FFF;
+    font-size: 20px;
+    margin: 0 auto;
+    animation: infinite-fade2 2s linear infinite;
+    -webkit-animation: infinite-fade2 2s linear infinite;
+  }
   .up-angel {
     width: 48px;
     height: 48px;

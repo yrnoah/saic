@@ -190,7 +190,7 @@
     height: auto;
   }
   .year-2021 {
-    width: 21%;
+    width: 23%;
     height: auto;
   }
 </style>
