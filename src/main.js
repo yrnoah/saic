@@ -140,9 +140,12 @@ const preloader = () => {
       loadCount++;
       // console.log(loadCount, 'preloader');
       if (loadCount === imgList.length) {
-        const loadingItem = document.querySelector('.default-loading');
-        loadingItem.setAttribute('style', 'display: none');
-        router.start(App, '#app');
+        const loadTimeout = setTimeout(() => {
+          const loadingItem = document.querySelector('.default-loading');
+          loadingItem.setAttribute('style', 'display: none');
+          router.start(App, '#app');
+          clearTimeout(loadTimeout);
+        }, 2000);
       }
     };
   }
