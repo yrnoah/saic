@@ -33,194 +33,6 @@
 			width: 100%;
 			height: 100%;
 		}
-    .default-loading {
-			height: 100%;
-      width: 100%;
-      text-align: center;
-			overflow: hidden;
-      background-color: #4EDEFD;
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      z-index: 2;
-    }
-		.floater {
-			height: 50%;
-			/*float: left;*/
-			margin-bottom: -60px;
-		}
-		.percent-value {
-			color: #FFF;
-      font-size: 25px;
-      padding: 0;
-      margin: 15px auto;
-		}
-    #loading-value{
-      font-size: 32px;
-    }
-    @keyframes little-bounce {
-      25% {
-        transform: translateY(-2px);
-      }
-      50%,
-      100% {
-        transform: translateY(0);
-      }
-      75% {
-        transform: translateY(2px);
-      }
-    }
-    @-webkit-keyframes little-bounce {
-      25% {
-        -webkit-transform: translateY(-2px);
-      }
-      50%,
-      100% {
-        -webkit-transform: translateY(0);
-      }
-      75% {
-        -webkit-transform: translateY(2px);
-      }
-    }
-    .car-big {
-      margin: 0 auto;
-      position: relative;
-      animation: little-bounce 1s linear infinite;
-      -webkit-animation: little-bounce 1s linear infinite;
-      background: url(./static/car-big.png) no-repeat;
-      background-size: contain;
-      width: 181.5px;
-      height: 72px;
-    }
-    @keyframes rotate {
-      25% {
-        transform: rotate(90deg);
-      }
-      50% {
-        transform: rotate(180deg);
-      }
-      75% {
-        transform: rotate(270deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-    @-webkit-keyframes rotate {
-      25% {
-        transform: rotate(90deg);
-        -webkit-transform: rotate(90deg);
-      }
-      50% {
-        transform: rotate(180deg);
-        -webkit-transform: rotate(180deg);
-      }
-      75% {
-        transform: rotate(270deg);
-        -webkit-transform: rotate(270deg);
-      }
-      100% {
-        transform: rotate(360deg);
-        -webkit-transform: rotate(360deg);
-      }
-    }
-    .wheel-big {
-      display: inline-block;
-      position: absolute;
-      bottom: 0;
-      animation: rotate 1.0s infinite linear;
-      -webkit-animation: rotate 1.0s infinite linear;
-      background: url(./static/wheel-big.png) no-repeat;
-      background-size: contain;
-      width: 30px;
-      height: 30px;
-    }
-    .wheel .left {
-      left: 18px;
-    }
-    .wheel .right {
-      right: 20px;
-    }
-    .dot {
-      position: absolute;
-      background-color: #FFF;
-    }
-    @keyframes spinner-fade {
-      0% {
-        background-color: rgba(255, 255, 255, 0);
-      }
-      13% {
-        background-color: rgba(255, 255, 255, .13);
-      }
-      25% {
-        background-color: rgba(255, 255, 255, .25);
-      }
-      50% {
-        background-color: rgba(255, 255, 255, .5);
-      }
-      63% {
-        background-color: rgba(255, 255, 255, .63);
-      }
-      75% {
-        background-color: rgba(255, 255, 255, .75);
-      }
-      88% {
-        background-color: rgba(255, 255, 255, .88);
-      }
-      100% {
-        background-color: rgba(255, 255, 255, 1);
-      }
-    }
-    @-webkit-keyframes spinner-fade {
-      0% {
-        background-color: rgba(255, 255, 255, 0);
-      }
-      13% {
-        background-color: rgba(255, 255, 255, .13);
-      }
-      25% {
-        background-color: rgba(255, 255, 255, .25);
-      }
-      50% {
-        background-color: rgba(255, 255, 255, .5);
-      }
-      63% {
-        background-color: rgba(255, 255, 255, .63);
-      }
-      75% {
-        background-color: rgba(255, 255, 255, .75);
-      }
-      88% {
-        background-color: rgba(255, 255, 255, .88);
-      }
-      100% {
-        background-color: rgba(255, 255, 255, 1);
-      }
-    }
-    .small-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 6px;
-      left: -20px;
-      top: 40px;
-      animation: spinner-fade 0.8s linear infinite;
-      -webkit-animation: spinner-fade 0.8s linear infinite;
-    }
-    .bid-dot {
-      width: 26px;
-      height: 26px;
-      border-radius: 13px;
-      top: 32px;
-      left: -55px;
-      animation: spinner-fade 0.8s linear infinite;
-      -webkit-animation: spinner-fade 0.8s linear infinite;
-      animation-delay: 0.1s;
-      -webkit-animation-delay: 0.1s;
-    }
-    .hide {
-      display: none;
-    }
 	</style>
   <link rel="preload" href="./static/music1.mp3" as="media">
   <link rel="preload" href="./static/swiper.js" as="script">
@@ -237,7 +49,7 @@
   <link rel="preload" href="./static/future-longbg.jpg" as="image">
   <link rel="preload" href="./static/home-bgs.png" as="image">
   <link rel="preload" href="./static/home-title.png" as="image">
-  <link rel="preload" href="./static/report-cloud.png" as="image">
+  <!--<link rel="preload" href="./static/report-cloud.png" as="image">
   <link rel="preload" href="./static/report-year.png" as="image">
   <link rel="preload" href="./static/report-title.png" as="image">
   <link rel="preload" href="./static/report-polygon.png" as="image">
@@ -334,40 +146,10 @@
   <link rel="preload" href="./static/provide.png" as="image">
   <link rel="preload" href="./static/share.png" as="image">
   <link rel="preload" href="./static/music.png" as="image">
-  <link rel="preload" href="./static/music-close.png" as="image">
+  <link rel="preload" href="./static/music-close.png" as="image">-->
 </head>
 
 <body>
-  <div class="default-loading">
-		<div class="floater"></div>
-    <div class="car-big">
-      <div class="wheel">
-        <div class="wheel-big left"></div>
-        <div class="wheel-big right"></div>
-      </div>
-    </div>
-		<p class="percent-value"><span id="loading-value">20</span>%</p>
-	</div>
 	<div id="app"></div>
-  <script type="text/javascript">
-    var increaseValue;
-    var valueEl = document.querySelector('#loading-value');
-    var value = Math.floor((Math.random() * 10 + 20));
-      valueEl.innerHTML = value;
-      increaseValue = setInterval(() => {
-        if (value >= 99) {
-          clearInterval(increaseValue);
-          valueEl.innerHTML = 99;
-          return;
-        }
-        if (value < 80) {
-          valueEl.innerHTML = value;
-          value = value + 2;
-        } else {
-          valueEl.innerHTML = value;
-          value = value + 1;
-        }
-      }, 500);
-  </script>
 </body>
 </html>
