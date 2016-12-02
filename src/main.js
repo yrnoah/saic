@@ -15,4 +15,8 @@ router.map({
     component: Index,
   },
 });
-router.start(App, '#app');
+window.onload = () => {
+  const loadingItem = document.querySelector('.default-loading');
+  loadingItem.setAttribute('style', 'display: none');
+  router.start(App, '#app');
+};
