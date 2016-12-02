@@ -1,10 +1,5 @@
 <template>
 	<div class="swiper-slide home">
-    <!--<img src="../../static/home-slogan.png" class="home-top-item ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">-->
-    <!--<img src="../../static/home-text1.png" class="home-top-item ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
-    <img src="../../static/home-text2.png" class="home-top-item ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
-    <img src="../../static/home-text3.png" class="home-top-item ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">
-    <img src="../../static/home-text4.png" class="home-top-item ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">-->
     <div class="home-top-item">
       <div class="txt-item">
         <img src="../../static/home-text1.png" class="txt txt1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
@@ -23,13 +18,12 @@
         </div>
       </div>
     </div>
-    <img src="../../static/home-bottom.png" class="building-img" :class="{ buildingsfade: startAnimation }">
-    <img src="../../static/home-buildings.png" class="building-img buildings" :class="{ buildingsrise: startAnimation }">
+    <img src="../../static/home-bottom.png" class="building-img ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+    <img src="../../static/home-buildings.png" class="building-img buildings ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s">
     <img src="../../static/home-cloud.png" class="building-img home-cloud">
-    <!--<img src="../../static/home-logo.png" class="building-img home-logo">-->
-    <img src="../../static/home-car.png" class="building-img">
-    <img src="../../static/home-bike.png" class="building-img bike">
-    <div class="windmill-container building-img">
+    <img src="../../static/home-car.png" class="building-img ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s">
+    <img src="../../static/home-bike.png" class="building-img bike ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s">
+    <div class="windmill-container building-img ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s">
       <img src="../../static/home-windmill-range.png" class="windmill-range">
       <img src="../../static/home-windmill-leaves.png" class="windmill-leave">
     </div>
@@ -38,26 +32,6 @@
     </div>
 	</div>
 </template>
-<script>
-  export default {
-    data() {
-      return {
-        startAnimation: false,
-      };
-    },
-    ready() {
-      this.startAnimation = true;
-    },
-    events: {
-      // 'initAnimation'() {
-      //   this.startAnimation = false;
-      // },
-      // 'startHomeAnimation'() {
-      //   this.startAnimation = true;
-      // },
-    },
-  };
-</script>
 
 <style scoped>
 	.home {
