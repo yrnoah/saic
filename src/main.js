@@ -16,7 +16,10 @@ router.map({
   },
 });
 window.onload = () => {
-  const loadingItem = document.querySelector('.default-loading');
-  loadingItem.setAttribute('style', 'display: none');
-  router.start(App, '#app');
+  const loadTimeout = setTimeout(() => {
+    const loadingItem = document.querySelector('.default-loading');
+    loadingItem.setAttribute('style', 'display: none');
+    router.start(App, '#app');
+    clearTimeout(loadTimeout);
+  }, 1500);
 };
