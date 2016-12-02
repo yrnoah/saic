@@ -18,8 +18,10 @@
         </div>
       </div>
     </div>
-    <img src="../../static/home-bottom.png" class="building-img ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
-    <img src="../../static/home-buildings.png" class="building-img buildings ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+    <div class="building-img ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+      <img src="../../static/home-bottom.png" class="bottom-bgs">
+      <img src="../../static/home-buildings.png" class="bottom-bgs home-bottom">
+    </div>
     <img src="../../static/home-cloud.png" class="building-img home-cloud">
     <img src="../../static/home-car.png" class="building-img ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s">
     <img src="../../static/home-bike.png" class="building-img bike ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s">
@@ -184,6 +186,15 @@
   .buildings {
     z-index: 1;
     bottom: 13%;
+  }
+  .bottom-bgs {
+    width: 100%;
+    height: auto;
+  }
+  .home-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
   }
   .building-img {
     display: block;
