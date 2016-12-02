@@ -119,35 +119,22 @@
 <script>
   import { $ } from '../utils/utils.js';
   /* eslint-disable no-loop-func, no-unused-vars */
-  let increaseValue;
   export default {
     data() {
       return {
-        count: 20,
+        count: 0,
         loadCount: 0,
       };
     },
     ready() {
       this.loadImg();
-      this.count = Math.floor((Math.random() * 10 + 20));
-      increaseValue = setInterval(() => {
-        if (this.count >= 99) {
-          clearInterval(increaseValue);
-          this.count = 99;
-          return;
-        }
-        if (this.count < 80) {
-          this.count += 2;
-        } else {
-          this.count += 1;
-        }
-      }, 500);
     },
     methods: {
       loadImg() {
         for (const item of $('.preloadImg')) {
           item.onload = () => {
-            this.loadCount ++;
+            this.loadCount = this.loadCount + 1;
+            this.count = Math.floor((this.loadCount / $('.preloadImg').length) * 100);
             if (this.loadCount === $('.preloadImg').length) this.goHome();
           };
         }
