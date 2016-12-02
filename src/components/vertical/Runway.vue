@@ -111,9 +111,9 @@
             clearInterval(viewTransition);
             return;
           }
-          const trans = (runwaySwiper.getWrapperTranslate('y') + 1.5);
+          const trans = (runwaySwiper.getWrapperTranslate('y') + 1.8);
           runwaySwiper.setWrapperTranslate(trans);
-          this.transSize += 1.5;
+          this.transSize += 1.8;
         }, 1);
       },
       moveCar() {
@@ -146,7 +146,7 @@
           //   this.$set('carTransform.transform', `translateY(${this.carTransleteY}px)`);
           //   this.carMoveTime += 1;
           // }
-          this.carTransleteY -= 1.5;
+          this.carTransleteY -= 1.8;
           this.$set('carTransform.transform', `translateY(${this.carTransleteY}px)`);
           this.carMoveTime += 1;
         }, 1);
