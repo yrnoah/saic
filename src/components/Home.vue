@@ -7,19 +7,19 @@
     <img src="../../static/home-text4.png" class="home-top-item ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">-->
     <div class="home-top-item">
       <div class="txt-item">
-        <img src="../../static/home-text1.png" class="txt txt1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
-        <img src="../../static/home-text2.png" class="txt txt2 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.2s">
-        <img src="../../static/home-text3.png" class="txt txt3 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
-        <img src="../../static/home-text4.png" class="txt txt4 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1.2s">
+        <img src="../../static/home-text1.png" class="txt txt1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
+        <img src="../../static/home-text2.png" class="txt txt2 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
+        <img src="../../static/home-text3.png" class="txt txt3 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
+        <img src="../../static/home-text4.png" class="txt txt4 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
       </div>
       <div class="slogan-container">
-        <div class="home-slogan ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
+        <div class="home-slogan ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.1s">
           <p class="title">上汽国际<span class="title-year">2017</span>年国际化人才</p>
           <p class="content"><span>校园招聘</span>全面开启!</p>
         </div>
         <div class="polygan-container">
-          <div class="bottom-polygan1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.2s"></div>
-          <div class="bottom-polygan2 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s"></div>
+          <div class="bottom-polygan1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s"></div>
+          <div class="bottom-polygan2 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"></div>
         </div>
       </div>
     </div>
@@ -47,6 +47,14 @@
     },
     ready() {
       this.startAnimation = true;
+    },
+    events: {
+      // 'initAnimation'() {
+      //   this.startAnimation = false;
+      // },
+      // 'startHomeAnimation'() {
+      //   this.startAnimation = true;
+      // },
     },
   };
 </script>
