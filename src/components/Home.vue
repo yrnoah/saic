@@ -18,10 +18,11 @@
         </div>
       </div>
     </div>
-    <div class="building-img ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+    <!--<div class="building-img ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
       <img src="../../static/home-bottom.png" class="bottom-bgs">
       <img src="../../static/home-buildings.png" class="bottom-bgs home-bottom">
-    </div>
+    </div>-->
+    <img src="../../static/home-buildings.png" class="building-img">
     <img src="../../static/home-cloud.png" class="building-img home-cloud">
     <img src="../../static/home-car.png" class="building-img ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s">
     <img src="../../static/home-bike.png" class="building-img bike ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s">
