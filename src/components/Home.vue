@@ -26,7 +26,7 @@
     <img src="../../static/home-cloud.png" class="building-img home-cloud">
     <img src="../../static/home-car.png" class="building-img ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s">
     <img src="../../static/home-bike.png" class="building-img bike ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s">
-    <div class="windmill-container building-img ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s">
+    <div class="windmill-container building-img">
       <img src="../../static/home-windmill-range.png" class="windmill-range">
       <img src="../../static/home-windmill-leaves.png" class="windmill-leave">
     </div>
