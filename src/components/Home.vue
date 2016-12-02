@@ -1,10 +1,28 @@
 <template>
 	<div class="swiper-slide home">
-    <img src="../../static/home-slogan.png" class="home-top-item ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">
-    <img src="../../static/home-text1.png" class="home-top-item ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+    <!--<img src="../../static/home-slogan.png" class="home-top-item ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">-->
+    <!--<img src="../../static/home-text1.png" class="home-top-item ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
     <img src="../../static/home-text2.png" class="home-top-item ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
     <img src="../../static/home-text3.png" class="home-top-item ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">
-    <img src="../../static/home-text4.png" class="home-top-item ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
+    <img src="../../static/home-text4.png" class="home-top-item ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">-->
+    <div class="home-top-item">
+      <div class="txt-item">
+        <img src="../../static/home-text1.png" class="txt txt1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
+        <img src="../../static/home-text2.png" class="txt txt2 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.2s">
+        <img src="../../static/home-text3.png" class="txt txt3 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
+        <img src="../../static/home-text4.png" class="txt txt4 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1.2s">
+      </div>
+      <div class="slogan-container">
+        <div class="home-slogan ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
+          <p class="title">上汽国际<span class="title-year">2017</span>年国际化人才</p>
+          <p class="content"><span>校园招聘</span>全面开启!</p>
+        </div>
+        <div class="polygan-container">
+          <div class="bottom-polygan1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.2s"></div>
+          <div class="bottom-polygan2 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s"></div>
+        </div>
+      </div>
+    </div>
     <img src="../../static/home-bottom.png" class="building-img" :class="{ buildingsfade: startAnimation }">
     <img src="../../static/home-buildings.png" class="building-img buildings" :class="{ buildingsrise: startAnimation }">
     <img src="../../static/home-cloud.png" class="building-img home-cloud">
@@ -45,8 +63,116 @@
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    z-index: 3;
+    text-align: center;
+    vertical-align: bottom;
+    /*overflow: hidden;*/
+  }
+  .slogan-container {
+    display: inline-block;
+    position: relative;
+  }
+  .bottom-polygan1 {
+    height: 90px;
+    width: 280px;
+    background-color: #0a3bcf;
+    transform: skewY(-5deg);
+    position: relative;
+    top: -66px;
+    overflow: visible;
+    z-index: 2;
+  }
+  .bottom-polygan2 {
+    position: absolute;
+    right: 50px;
+    top: 84px;
+    height: 90px;
+    width: 160px;
+    background-color: #042f7b;
+    transform: skewY(-24deg);
+    z-index: 1;
+  }
+  .home-slogan {
+    font-size: 26px;
+    color: #FFF;
+    font-weight: bold;
+    background-color: #2d61e5;
+    width: 330px;
+    height: 120px;
+    text-align: center;
+    vertical-align: middle;
+    transform: skewY(-12deg);
+    padding-top: 6px;
+    position: relative;
     z-index: 3;
   }
+  .title-year {
+    font-size: 30px;
+  }
+  .title {
+    margin-top: 6px;
+    transform: scale(0.9, 1.3);
+  }
+  .home-slogan .content {
+    font-size: 27px;
+    text-align: center;
+    position: relative;
+    top: 10px;
+    transform: scale(1.2, 1.8);
+  }
+  @-webkit-keyframes gradient {
+      0%{background-position:0% 100%}
+      50%{background-position:100% 0%}
+      100%{background-position:0% 100%}
+  }
+  @keyframes gradient {
+      0%{background-position:0% 100%}
+      50%{background-position:100% 0%}
+      100%{background-position:0% 100%}
+  }
+  .content span {
+    background: linear-gradient(227deg, #EEE, #333);
+    background-size: 300% 400%;
+    -webkit-animation: gradient 1s ease infinite;
+    animation: gradient 1s ease infinite;
+    text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0;
+    margin: 0;
+  }
+  .txt-item {
+    margin-top: 20px;
+    position: relative;
+  }
+  .txt {
+    display: inline-block;
+    vertical-align: top;
+    opacity: 0.8;
+    vertical-align: bottom;
+  }
+  .txt1 {
+    width: 13%;
+  }
+  .txt2 {
+    width: 16%;
+    margin-right: 10px;
+    position: relative;
+    top: -10px;
+  }
+  .txt3 {
+    width: 12%;
+    position: relative;
+    top: -10px;
+  }
+  .txt4 {
+    width: 17%;
+    position: relative;
+    top: -40px;
+  }
+
   .home-title {
     width: 75%;
     height: auto;
@@ -70,11 +196,11 @@
     position: absolute;
     width: 100%;
     bottom: 0;
-    z-index: 1;
+    /*z-index: 1;*/
     overflow: hidden;
   }
   .buildings {
-    z-index: 2;
+    z-index: 1;
     bottom: 13%;
   }
   .building-img {
@@ -87,7 +213,7 @@
     left: 0;
   }
   .buildings {
-    z-index: 2;
+    z-index: 1;
   }
   .windmill-range {
     width: 100%;
@@ -98,7 +224,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 3;
+    z-index: 2;
   }
   .animation-container {
     width: 100%;

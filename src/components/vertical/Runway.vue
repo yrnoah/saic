@@ -127,11 +127,11 @@
             this.stopCarMove();
             return;
           }
-          const p2 = Math.floor(pageSize * 0.12) * -1;
-          const p3 = Math.floor(pageSize * 0.24) * -1;
-          const p4 = Math.floor(pageSize * 0.38) * -1;
-          const p5 = Math.floor(pageSize * 0.52) * -1;
-          const p6 = Math.floor(pageSize * 0.64) * -1;
+          const p2 = Math.floor(pageSize * 0.08) * -1;
+          const p3 = Math.floor(pageSize * 0.20) * -1;
+          const p4 = Math.floor(pageSize * 0.34) * -1;
+          const p5 = Math.floor(pageSize * 0.48) * -1;
+          const p6 = Math.floor(pageSize * 0.60) * -1;
           if (this.carTransleteY <= p2 && !this.showBanner2) this.showBanner2 = true;
           if (this.carTransleteY <= p3 && !this.showBanner3) this.showBanner3 = true;
           if (this.carTransleteY <= p4 && !this.showBanner4) this.showBanner4 = true;
