@@ -18,10 +18,6 @@
         </div>
       </div>
     </div>
-    <!--<div class="building-img ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
-      <img src="../../static/home-bottom.png" class="bottom-bgs">
-      <img src="../../static/home-buildings.png" class="bottom-bgs home-bottom">
-    </div>-->
     <img src="../../static/home-buildings.png" class="building-img">
     <img src="../../static/home-cloud.png" class="building-img home-cloud">
     <img src="../../static/home-car.png" class="building-img ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s">
@@ -157,26 +153,9 @@
     position: relative;
     top: -40px;
   }
-
-  .home-title {
-    width: 75%;
-    height: auto;
-    margin: 43px auto 0 auto;
-    position: relative;
-    left: 20px;
-    z-index: 3;
-  }
   .bike {
     z-index: 3;
   }
-  /*.home-slogan {
-    width: 46%;
-    height: auto;
-    position: relative;
-    top: -14%;
-    left: 15px;
-    z-index: 3;
-  }*/
   .bottom {
     position: absolute;
     width: 100%;
@@ -264,19 +243,6 @@
     animation: cloud-float 2.0s linear infinite;
     -webkit-animation: cloud-float 2.0s linear infinite;
   }
-  @keyframes logo-fade {
-    0%, 100% { opacity: 0.5 }
-    50% { opacity: 1 }
-  }
-  @-webkit-keyframes logo-fade {
-    0%, 100% { opacity: 0.5 }
-    50% { opacity: 1 }
-  }
-  .home-logo {
-    animation: logo-fade 3.0s linear infinite;
-    -webkit-animation: logo-fade 3.0s linear infinite;
-    z-index: 3;
-  }
   .angel-animation {
     position: absolute;
     bottom: 20px;
@@ -284,7 +250,6 @@
     animation: bounce-down 1s linear infinite;
     z-index: 4;
   }
-
   .up-angel {
     width: 48px;
     height: 48px;

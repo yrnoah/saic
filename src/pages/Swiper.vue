@@ -4,9 +4,6 @@
 			<audio id="music" loop="loop" preload="auto">
 				<source src="../../static/music1.mp3" type="audio/mpeg">
 			</audio>
-			<!--<audio id="music2" loop="loop" preload="auto">
-				<source src="../../static/music2.mp3" type="audio/mpeg">
-			</audio>-->
 		</div>
 		<div class="musicBtn" @click="toggleMusic" v-if="showMusicIcon">
 			<div v-if="!isPlayingMusic" class="music-icon-container">
