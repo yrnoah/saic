@@ -83,148 +83,146 @@
         -webkit-transform: translateY(2px);
       }
     }
-  .car-big {
-    margin: 0 auto;
-    position: relative;
-    animation: little-bounce 1s linear infinite;
-    -webkit-animation: little-bounce 1s linear infinite;
-    background: url(./static/car-big.png) no-repeat;
-    background-size: contain;
-    width: 181.5px;
-    height: 72px;
-  }
-  @keyframes rotate {
-    25% {
-      transform: rotate(90deg);
+    .car-big {
+      margin: 0 auto;
+      position: relative;
+      animation: little-bounce 1s linear infinite;
+      -webkit-animation: little-bounce 1s linear infinite;
+      background: url(./static/car-big.png) no-repeat;
+      background-size: contain;
+      width: 181.5px;
+      height: 72px;
     }
-    50% {
-      transform: rotate(180deg);
+    @keyframes rotate {
+      25% {
+        transform: rotate(90deg);
+      }
+      50% {
+        transform: rotate(180deg);
+      }
+      75% {
+        transform: rotate(270deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
     }
-    75% {
-      transform: rotate(270deg);
+    @-webkit-keyframes rotate {
+      25% {
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+      }
+      50% {
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+      }
+      75% {
+        transform: rotate(270deg);
+        -webkit-transform: rotate(270deg);
+      }
+      100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+      }
     }
-    100% {
-      transform: rotate(360deg);
+    .wheel-big {
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      animation: rotate 1.0s infinite linear;
+      -webkit-animation: rotate 1.0s infinite linear;
+      background: url(./static/wheel-big.png) no-repeat;
+      background-size: contain;
+      width: 30px;
+      height: 30px;
     }
-  }
-  @-webkit-keyframes rotate {
-    25% {
-      transform: rotate(90deg);
-      -webkit-transform: rotate(90deg);
+    .wheel .left {
+      left: 18px;
     }
-    50% {
-      transform: rotate(180deg);
-      -webkit-transform: rotate(180deg);
+    .wheel .right {
+      right: 20px;
     }
-    75% {
-      transform: rotate(270deg);
-      -webkit-transform: rotate(270deg);
+    .dot {
+      position: absolute;
+      background-color: #FFF;
     }
-    100% {
-      transform: rotate(360deg);
-      -webkit-transform: rotate(360deg);
+    @keyframes spinner-fade {
+      0% {
+        background-color: rgba(255, 255, 255, 0);
+      }
+      13% {
+        background-color: rgba(255, 255, 255, .13);
+      }
+      25% {
+        background-color: rgba(255, 255, 255, .25);
+      }
+      50% {
+        background-color: rgba(255, 255, 255, .5);
+      }
+      63% {
+        background-color: rgba(255, 255, 255, .63);
+      }
+      75% {
+        background-color: rgba(255, 255, 255, .75);
+      }
+      88% {
+        background-color: rgba(255, 255, 255, .88);
+      }
+      100% {
+        background-color: rgba(255, 255, 255, 1);
+      }
     }
-  }
-  .wheel-big {
-    display: inline-block;
-    position: absolute;
-    bottom: 0;
-    animation: rotate 1.0s infinite linear;
-    -webkit-animation: rotate 1.0s infinite linear;
-    background: url(./static/wheel-big.png) no-repeat;
-    background-size: contain;
-    width: 30px;
-    height: 30px;
-  }
-  .wheel .left {
-    left: 18px;
-  }
-  .wheel .right {
-    right: 20px;
-  }
-  .dot {
-    position: absolute;
-    background-color: #FFF;
-  }
-  @keyframes spinner-fade {
-    0% {
-      background-color: rgba(255, 255, 255, 0);
+    @-webkit-keyframes spinner-fade {
+      0% {
+        background-color: rgba(255, 255, 255, 0);
+      }
+      13% {
+        background-color: rgba(255, 255, 255, .13);
+      }
+      25% {
+        background-color: rgba(255, 255, 255, .25);
+      }
+      50% {
+        background-color: rgba(255, 255, 255, .5);
+      }
+      63% {
+        background-color: rgba(255, 255, 255, .63);
+      }
+      75% {
+        background-color: rgba(255, 255, 255, .75);
+      }
+      88% {
+        background-color: rgba(255, 255, 255, .88);
+      }
+      100% {
+        background-color: rgba(255, 255, 255, 1);
+      }
     }
-    13% {
-      background-color: rgba(255, 255, 255, .13);
+    .small-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+      left: -20px;
+      top: 40px;
+      animation: spinner-fade 0.8s linear infinite;
+      -webkit-animation: spinner-fade 0.8s linear infinite;
     }
-    25% {
-      background-color: rgba(255, 255, 255, .25);
+    .bid-dot {
+      width: 26px;
+      height: 26px;
+      border-radius: 13px;
+      top: 32px;
+      left: -55px;
+      animation: spinner-fade 0.8s linear infinite;
+      -webkit-animation: spinner-fade 0.8s linear infinite;
+      animation-delay: 0.1s;
+      -webkit-animation-delay: 0.1s;
     }
-    50% {
-      background-color: rgba(255, 255, 255, .5);
+    .hide {
+      display: none;
     }
-    63% {
-      background-color: rgba(255, 255, 255, .63);
-    }
-    75% {
-      background-color: rgba(255, 255, 255, .75);
-    }
-    88% {
-      background-color: rgba(255, 255, 255, .88);
-    }
-    100% {
-      background-color: rgba(255, 255, 255, 1);
-    }
-  }
-  @-webkit-keyframes spinner-fade {
-    0% {
-      background-color: rgba(255, 255, 255, 0);
-    }
-    13% {
-      background-color: rgba(255, 255, 255, .13);
-    }
-    25% {
-      background-color: rgba(255, 255, 255, .25);
-    }
-    50% {
-      background-color: rgba(255, 255, 255, .5);
-    }
-    63% {
-      background-color: rgba(255, 255, 255, .63);
-    }
-    75% {
-      background-color: rgba(255, 255, 255, .75);
-    }
-    88% {
-      background-color: rgba(255, 255, 255, .88);
-    }
-    100% {
-      background-color: rgba(255, 255, 255, 1);
-    }
-  }
-  .small-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 6px;
-    left: -20px;
-    top: 40px;
-    animation: spinner-fade 0.8s linear infinite;
-    -webkit-animation: spinner-fade 0.8s linear infinite;
-  }
-  .bid-dot {
-    width: 26px;
-    height: 26px;
-    border-radius: 13px;
-    top: 32px;
-    left: -55px;
-    animation: spinner-fade 0.8s linear infinite;
-    -webkit-animation: spinner-fade 0.8s linear infinite;
-    animation-delay: 0.1s;
-    -webkit-animation-delay: 0.1s;
-  }
-  .hide {
-    display: none;
-  }
 	</style>
   <link rel="preload" href="./static/music1.mp3" as="media">
-  <!--<link rel="preload" href="./static/music2.mp3" as="media">-->
-  <!--<link rel="preload" href="./static/lovely-pop-loop.mp3" as="media">-->
   <link rel="preload" href="./static/swiper.js" as="script">
   <link rel="preload" href="./static/car-big.png" as="image">
   <link rel="preload" href="./static/wheel-big.png" as="image">
@@ -337,133 +335,6 @@
   <link rel="preload" href="./static/share.png" as="image">
   <link rel="preload" href="./static/music.png" as="image">
   <link rel="preload" href="./static/music-close.png" as="image">
-  <script type="text/javascript">
-    var imgList = [
-      './static/car-big.png',
-      './static/wheel-big.png',
-      './static/home-slogan.png',
-      './static/home-bottom.png',
-      './static/home-buildings.png',
-      './static/home-text1.png',
-      './static/home-text2.png',
-      './static/home-text3.png',
-      './static/home-text4.png',
-      './static/earth.png',
-      './static/music.png',
-      './static/music-close.png',
-      './static/future-longbg.jpg',
-      './static/home-bgs.png',
-      './static/home-title.png',
-      './static/report-cloud.png',
-      './static/report-year.png',
-      './static/report-title.png',
-      './static/report-polygon.png',
-      './static/report1-title.png',
-      './static/report1-content.png',
-      './static/report2-title.png',
-      './static/report2-content.png',
-      './static/report3-title.png',
-      './static/report3-content.png',
-      './static/report4-title.png',
-      './static/report4-content.png',
-      './static/wechat-require.png',
-      './static/wechat-bgboard.png',
-      './static/wechat-man1.png',
-      './static/logo.png',
-      './static/name.png',
-      './static/slogan-title.png',
-      './static/slogan-tip.png',
-      './static/share-txt.png',
-      './static/email-title.png',
-      './static/wechat-gradient.png',
-      './static/wechat-title1.png',
-      './static/wechat-bgboard.png',
-      './static/major-icon1.png',
-      './static/wechat-major1.png',
-      './static/major-icon2.png',
-      './static/wechat-major2.png',
-      './static/major-icon3.png',
-      './static/wechat-major3.png',
-      './static/major-icon4.png',
-      './static/wechat-major4.png',
-      './static/wechat-man2.png',
-      './static/wechat-bgpolygan.png',
-      './static/wechat-provide1.png',
-      './static/wechat-right.png',
-      './static/wechat-provide2.png',
-      './static/wechat-bottom2.png',
-      './static/wechat-bgpolygan2.png',
-      './static/wechat-provide4.png',
-      './static/wechat-provide3.png',
-      './static/future-car.png',
-      './static/future-carwing.png',
-      './static/future-cartail.png',
-      './static/future-cloud.png',
-      './static/future-topbuilding.png',
-      './static/bg-cloud-1.png',
-      './static/banner1.png',
-      './static/banner2.png',
-      './static/banner3.png',
-      './static/banner4.png',
-      './static/banner5.png',
-      './static/banner6.png',
-      './static/future-major.png',
-      './static/future-major1.png',
-      './static/future-major2.png',
-      './static/future-major3.png',
-      './static/future-major4.png',
-      './static/future-topbg.png',
-      './static/future-polygan2.png',
-      './static/future-polygan3.png',
-      './static/future-polygan4.png',
-      './static/future-polygan5.png',
-      './static/future-polygan7.png',
-      './static/years-2021.png',
-      './static/years-2020.png',
-      './static/years-2019.png',
-      './static/wechat-top.png',
-      './static/avatar-user.png',
-      './static/avatar-1.png',
-      './static/pic-1.png',
-      './static/avatar-2.png',
-      './static/pic-2.png',
-      './static/avatar-3.png',
-      './static/pic-3.png',
-      './static/avatar-4.png',
-      './static/pic-4.png',
-      './static/avatar-5.png',
-      './static/pic-5.png',
-      './static/avatar-6.png',
-      './static/pic-6.png',
-      './static/sprite-saic.png',
-      './static/letter-bottom.png',
-      './static/letter-top.png',
-      './static/letter-inner.png',
-      './static/home-bike.png',
-      './static/home-car.png',
-      './static/home-cloud.png',
-      './static/home-logo.png',
-      './static/home-windmill-leaves.png',
-      './static/home-windmill-range.png',
-      './static/home-windmill1.png',
-      './static/provide-building.png',
-      './static/provide-car.png',
-      './static/provide.png',
-    ];
-    var imgItem = [];
-    var loadCount = 0;
-    function preloader() {
-      for (var i = 0; i < imgList.length; i++) {
-        var img = new Image();
-        img.src = imgList[i];
-        imgItem.push(img);
-        img.onload = function () {
-          loadCount++;
-        }
-      }
-    }
-    preloader();
-  </script>
 </head>
 
 <body>
@@ -473,8 +344,6 @@
       <div class="wheel">
         <div class="wheel-big left"></div>
         <div class="wheel-big right"></div>
-        <!--<div class="dot small-dot"></div>
-        <div class="dot bid-dot"></div>-->
       </div>
     </div>
 		<p class="percent-value"><span id="loading-value">20</span>%</p>
