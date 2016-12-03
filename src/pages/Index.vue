@@ -82,6 +82,7 @@
       <img src="../../static/future-polygan4.png" class="preloadImg" >
       <img src="../../static/future-polygan5.png" class="preloadImg" >
       <img src="../../static/future-polygan7.png" class="preloadImg" >
+      <img src="../../static/years-2022.png" class="preloadImg" >
       <img src="../../static/years-2021.png" class="preloadImg" >
       <img src="../../static/years-2020.png" class="preloadImg" >
       <img src="../../static/years-2019.png" class="preloadImg" >

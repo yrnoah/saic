@@ -50,6 +50,8 @@
   .cover-year {
     height: 104px;
     background: #FFF;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
   .report-year {
     background: url(../../../static/report-year.png) no-repeat;

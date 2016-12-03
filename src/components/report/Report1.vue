@@ -1,7 +1,10 @@
 <template>
 	<div class="swiper-slide report-cover">
     <div class="report-content ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
-      <div class="cover-year"><div class="report1-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div></div>
+      <div class="cover-year">
+        <div class="report1-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
+        <div class="bottom-mask"></div>
+      </div>
       <div class="cover-title ani" swiper-animate-effect="flipInX" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s"><div class="report1-content"></div></div>
       <div class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.2s">
         <div class="angel-animation"><div class="right-angel"></div></div>
@@ -48,9 +51,21 @@
     z-index: 2;
     background-color: #FFF;
   }
+  .bottom-mask {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 4px;
+    background-color: rgba(0,0,0,.1);
+  }
   .cover-year {
     height: 104px;
     background-color: #dbe01f;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: relative;
   }
   .report1-title {
     background: url(../../../static/report1-title.png) no-repeat;
@@ -61,6 +76,7 @@
     vertical-align: middle;
     position: relative;
     top: 18px;
+    right: -6px;
   }
   .cover-title {
     height: 174px;

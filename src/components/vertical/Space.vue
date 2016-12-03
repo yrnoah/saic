@@ -7,6 +7,7 @@
     <img src="../../../static/future-polygan5.png" class="spcae-item spcae-item5">
     <img src="../../../static/future-polygan7.png" class="spcae-item spcae-item7">
     <div class="years-container">
+      <img src="../../../static/years-2022.png" class="years year-2022 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">
       <img src="../../../static/years-2021.png" class="years year-2021 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
       <img src="../../../static/years-2020.png" class="years year-2020 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
       <img src="../../../static/years-2019.png" class="years year-2019 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
@@ -190,6 +191,10 @@
     height: auto;
   }
   .year-2021 {
+    width: 22%;
+    height: auto;
+  }
+  .year-2022 {
     width: 23%;
     height: auto;
   }

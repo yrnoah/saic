@@ -10,7 +10,9 @@
       <div class="slogan-container">
         <div class="home-slogan ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.1s">
           <p class="title">上汽国际<span class="title-year">2017</span>年国际化人才</p>
-          <p class="content"><span>校园招聘</span>全面开启!</p>
+          <div class="content">
+            <p class="ani" swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="1.6s"><span class="main">校园招聘</span></p><span>全面开启!</sppan>
+          </div>
         </div>
         <div class="polygan-container">
           <div class="bottom-polygan1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s"></div>
@@ -112,8 +114,11 @@
       50%{background-position:100% 0%}
       100%{background-position:0% 100%}
   }
-  .content span {
-    background: linear-gradient(227deg, #EEE, #333);
+  .content p {
+    display: inline-block;
+  }
+  .content .main {
+    background: linear-gradient(227deg, #FFF, #B2B2B2, #FFF, #B2B2B2);
     background-size: 300% 400%;
     -webkit-animation: gradient 1s ease infinite;
     animation: gradient 1s ease infinite;
