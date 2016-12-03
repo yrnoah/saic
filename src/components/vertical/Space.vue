@@ -176,7 +176,7 @@
     position: absolute;
     width: 100%;
     left: 0;
-    top: 56%;
+    top: 46%;
     z-index: 1;
   }
   .years {
