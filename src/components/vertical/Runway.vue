@@ -99,6 +99,7 @@
       startPageAnimation() {
         // this.fadeOutCloud = true;
         // this.$dispatch('playMusic2');
+        const pageSize = runwaySwiper.virtualSize - runwaySwiper.size;
         if (runwaySwiper.getWrapperTranslate('y') >= 0) {
           runwaySwiper.enableTouchControl();
           this.$dispatch('unlockRunwayToPrev');
