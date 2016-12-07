@@ -1,0 +1,96 @@
+	.report-cover {
+		background-color: transparent;
+		height: 100%;
+    position: relative;
+    overflow: hidden;
+	}
+  .report-content {
+    width: 226px;
+    margin: 50px auto 0 auto;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    position: relative;
+    overflow: visible;
+    z-index: 2;
+    background-color: #FFF;
+  }
+  .bottom-mask {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 4px;
+    background-color: rgba(0,0,0,.1);
+  }
+  .polygon-position {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+  }
+  .polygon {
+    background: url(../../../static/report-polygon.png) no-repeat;
+    background-size: contain;
+    width: 169px;
+    height: 68px;
+    vertical-align: top;
+    float: right;
+    position: relative;
+    top: -1px;
+  }
+  .transtionHeight {
+    animation: increase-height 1s ease;
+    -webkit-animation: increase-height 1s ease;
+    transform-origin: right top;
+  }
+  .angel-animation {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.6));
+    z-index: 4;
+  }
+  .hand-right {
+    margin: 0 auto;
+    display: inline-block;
+    height: 60px;
+    position: relative;
+    transform: rotate3d(1, 1, 0, 180deg);
+    -webkit-transform: rotate3d(1, 1, 0, 180deg);
+  }
+  .hand-right img {
+    display: inline-block;
+  }
+  @keyframes rise-arrow {
+    0% { transform: scaleY(0); opacity: 0; }
+    100% { transform: scaleY(1); opacity: 1;}
+  }
+  @-webkit-keyframes rise-arrow {
+    0% { -webkit-transform: scaleY(0); opacity: 0;}
+    100% { -webkit-transform: scaleY(1); opacity: 1;}
+  }
+  .arrow {
+    width: 18px;
+    height: 56px;
+    vertical-align: bottom;
+    animation: rise-arrow 1.2s linear infinite;
+    -webkit-animation: rise-arrow 1.2s linear infinite;
+    transform-origin: center bottom;
+    -webkit-transform-origin: center bottom;
+  }
+  @keyframes rise {
+    0% { transform: translateY(40px); }
+    100% { transform: translateY(-10); }
+  }
+  @-webkit-keyframes rise {
+    0% {-webkit-transform: translateY(40px);}
+    100% {-webkit-transform: translateY(-10);}
+  }
+  .hand {
+    width: 48px;
+    height: 34px;
+    animation: rise 1.2s linear infinite;
+    -webkit-animation: rise 1.2s linear infinite;
+  }
