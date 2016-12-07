@@ -100,6 +100,8 @@
         // this.fadeOutCloud = true;
         // this.$dispatch('playMusic2');
         const pageSize = runwaySwiper.virtualSize - runwaySwiper.size;
+        const u = navigator.userAgent;
+        const isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
         if (runwaySwiper.getWrapperTranslate('y') >= 0) {
           runwaySwiper.enableTouchControl();
           this.$dispatch('unlockRunwayToPrev');
@@ -114,9 +116,15 @@
             return;
           }
           // page animation
-          const trans = (runwaySwiper.getWrapperTranslate('y') + 2);
+          let trans;
+          if (isAndroid) {
+            trans = (runwaySwiper.getWrapperTranslate('y') + 1);
+            this.transSize += 1;
+          } else {
+            trans = (runwaySwiper.getWrapperTranslate('y') + 2);
+            this.transSize += 2;
+          }
           runwaySwiper.setWrapperTranslate(trans);
-          this.transSize += 2;
           // banner animation
           const p2 = Math.floor(pageSize * 0.08) * -1;
           const p3 = Math.floor(pageSize * 0.20) * -1;
@@ -129,7 +137,11 @@
           if (this.carTransleteY <= p5 && !this.showBanner5) this.showBanner5 = true;
           if (this.carTransleteY <= p6 && !this.showBanner6) this.showBanner6 = true;
           // car animation
-          this.carTransleteY -= 2;
+          if (isAndroid) {
+            this.carTransleteY -= 1;
+          } else {
+            this.carTransleteY -= 2;
+          }
           this.$set('carTransform.transform', `translateY(${this.carTransleteY}px)`);
           this.carMoveTime += 1;
         }, 1);
