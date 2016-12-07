@@ -40,7 +40,7 @@ const messageData = [
     follows: ['潘绍之，', '毛菁雁，', 'Joan，', '正直しんどい，', '钟卢英，', 'Henry，', '袁琳琳，', '高博'],
     // , '陈于斌，', 'David'
     comments: [
-      { user: '路遥', replyTo: null, detail: '贺哥辛苦了，果然是全能市调王啊！' },
+      { user: '路遥', replyTo: null, detail: '毛姐辛苦了，果然是全能市调王啊！' },
       { user: '毛天玲', replyTo: '路遥', detail: '谢谢，知己知彼才能百战百胜☺️' },
       {
         user: 'D-ONE', replyTo: null,
