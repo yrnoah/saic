@@ -261,6 +261,7 @@
 
 	.runwaySwiper .swiper-slide {
 		width: 100%;
+    transform: translate3d(0, 0, 0) / translateZ(0);
 	}
   .runway-bg {
     width: 100%;

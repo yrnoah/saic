@@ -11,7 +11,11 @@
       </div>
     </div>
     <div class="angel-animation ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">
-      <img src="../../../static/hand-right.gif" class="hand-right">
+      <!--<img src="../../../static/hand-right.gif" class="hand-right">-->
+      <div class="hand-right">
+        <img src="../../../static/arrow.png" class="arrow">
+        <img src="../../../static/hand.png" class="hand">
+      </div>
     </div>
 	</div>
 </template>
@@ -108,28 +112,53 @@
     position: absolute;
     bottom: 0;
     width: 100%;
+    padding: 10px 0;
     /*animation: bounce-down 1s linear infinite;*/
     background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.6));
     z-index: 4;
   }
   .hand-right {
     margin: 0 auto;
-    width: 24%;
+    display: inline-block;
+    height: 60px;
+    position: relative;
+    transform: rotate3d(1, 1, 0, 180deg);
+    -webkit-transform: rotate3d(1, 1, 0, 180deg);
   }
-
-  /*.angel-animation {
-    position: absolute;
-    right: -40px;
-    top: 115px;
-    animation: bounce-right 1s linear infinite;
+  .hand-right img {
+    display: inline-block;
   }
-
-  .right-angel {
+  @keyframes rise-arrow {
+    0% { transform: scaleY(0); opacity: 0; }
+    100% { transform: scaleY(1); opacity: 1;}
+  }
+  @-webkit-keyframes rise-arrow {
+    0% { -webkit-transform: scaleY(0); opacity: 0;}
+    100% { -webkit-transform: scaleY(1); opacity: 1;}
+  }
+  .arrow {
+    width: 18px;
+    height: 56px;
+    vertical-align: bottom;
+    animation: rise-arrow 1.2s linear infinite;
+    -webkit-animation: rise-arrow 1.2s linear infinite;
+    /*position: absolute;
+    bottom: 0;*/
+    transform-origin: center bottom;
+    -webkit-transform-origin: center bottom;
+  }
+  @keyframes rise {
+    0% { transform: translateY(40px); }
+    100% { transform: translateY(-10); }
+  }
+  @-webkit-keyframes rise {
+    0% {-webkit-transform: translateY(40px);}
+    100% {-webkit-transform: translateY(-10);}
+  }
+  .hand {
     width: 48px;
-    height: 48px;
-    border: 2px solid #FFF;
-    border-width: 2px 2px 0 0;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-  }*/
+    height: 34px;
+    animation: rise 1.2s linear infinite;
+    -webkit-animation: rise 1.2s linear infinite;
+  }
 </style>

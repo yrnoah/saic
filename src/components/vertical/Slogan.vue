@@ -7,7 +7,10 @@
       <img src="../../../static/name.png" class="name">
     </div>
     <div class="angel-animation" v-if="fadeInLogo" transition="fadeIn">
-      <img src="../../../static/hand-up.gif" class="hand-up">
+      <div class="hand-up">
+        <img src="../../../static/arrow.png" class="arrow">
+        <img src="../../../static/hand.png" class="hand">
+      </div>
     </div>
 	</div>
 </template>
@@ -72,19 +75,6 @@
     top: 15%;
     left: 0;
   }
-  .angel-animation {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.6));
-    /*animation: bounce-down 1s linear infinite;*/
-  }
-  .hand-up {
-    margin: 0 auto;
-    width: 24%;
-    transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-  }
   .fadeOut {
     animation: fade-out 1s ease;
     -webkit-animation: fade-out 1s ease;
@@ -126,5 +116,58 @@
   }
   .fadeIn-enter, .fadeIn-leave {
     opacity: 0;
+  }
+  .angel-animation {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    /*animation: bounce-down 1s linear infinite;*/
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.6));
+    z-index: 4;
+  }
+  .hand-up {
+    margin: 0 auto;
+    display: inline-block;
+    height: 60px;
+    position: relative;
+    transform: rotate3d(1, 0, 0, 180deg);
+    -webkit-transform: rotate3d(1, 0, 0, 180deg);
+  }
+  .hand-up img {
+    display: inline-block;
+  }
+  @keyframes rise-arrow {
+    0% { transform: scaleY(0); opacity: 0; }
+    100% { transform: scaleY(1); opacity: 1;}
+  }
+  @-webkit-keyframes rise-arrow {
+    0% { -webkit-transform: scaleY(0); opacity: 0;}
+    100% { -webkit-transform: scaleY(1); opacity: 1;}
+  }
+  .arrow {
+    width: 18px;
+    height: 56px;
+    vertical-align: bottom;
+    animation: rise-arrow 1.2s linear infinite;
+    -webkit-animation: rise-arrow 1.2s linear infinite;
+    /*position: absolute;
+    bottom: 0;*/
+    transform-origin: center bottom;
+    -webkit-transform-origin: center bottom;
+  }
+  @keyframes rise {
+    0% { transform: translateY(40px); }
+    100% { transform: translateY(-10); }
+  }
+  @-webkit-keyframes rise {
+    0% {-webkit-transform: translateY(40px);}
+    100% {-webkit-transform: translateY(-10);}
+  }
+  .hand {
+    width: 48px;
+    height: 34px;
+    animation: rise 1.2s linear infinite;
+    -webkit-animation: rise 1.2s linear infinite;
   }
 </style>

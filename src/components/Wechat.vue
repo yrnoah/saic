@@ -56,7 +56,10 @@
 		</div>
     <div v-if="showAngel" transition="opacity-animation" class="angel-container">
       <div class="angel-animation">
-        <img src="../../static/hand-up.gif" class="hand-up">
+        <div class="hand-up">
+        <img src="../../static/arrow.png" class="arrow">
+        <img src="../../static/hand.png" class="hand">
+      </div>
       </div>
     </div>
 	</div>
@@ -514,17 +517,53 @@
     z-index: 4;
   }
   .angel-animation {
-    /*animation: bounce-down 1s linear infinite;*/
     background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.6));
-    /*position: absolute;
-    bottom: 0;
-    width: 100%;*/
+    width: 100%;
+    text-align: center;
   }
   .hand-up {
-    margin: 0 auto;
-    width: 24%;
+    margin: 5px auto;
+    display: inline-block;
+    height: 60px;
+    position: relative;
   }
-  /*.up-angel {
+  .hand-up img {
+    display: inline-block;
+  }
+  @keyframes rise-arrow {
+    0% { transform: scaleY(0); opacity: 0; }
+    100% { transform: scaleY(1); opacity: 1;}
+  }
+  @-webkit-keyframes rise-arrow {
+    0% { -webkit-transform: scaleY(0); opacity: 0;}
+    100% { -webkit-transform: scaleY(1); opacity: 1;}
+  }
+  .arrow {
+    width: 18px;
+    height: 56px;
+    vertical-align: bottom;
+    animation: rise-arrow 1.2s linear infinite;
+    -webkit-animation: rise-arrow 1.2s linear infinite;
+    /*position: absolute;
+    bottom: 0;*/
+    transform-origin: center bottom;
+    -webkit-transform-origin: center bottom;
+  }
+  @keyframes rise {
+    0% { transform: translateY(40px); }
+    100% { transform: translateY(-10); }
+  }
+  @-webkit-keyframes rise {
+    0% {-webkit-transform: translateY(40px);}
+    100% {-webkit-transform: translateY(-10);}
+  }
+  .hand {
+    width: 48px;
+    height: 34px;
+    animation: rise 1.2s linear infinite;
+    -webkit-animation: rise 1.2s linear infinite;
+  }
+  .up-angel {
     width: 48px;
     height: 48px;
     border: 2px solid #4EDEFD;
@@ -532,7 +571,7 @@
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
     margin: 0 auto;
-  }*/
+  }
   .opacity-animation-transition {
     transition: all 1s ease;
     -webkit-transition: all 1s ease;

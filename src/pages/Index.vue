@@ -16,8 +16,8 @@
       <img src="../../static/home-text2.png" class="preloadImg" >
       <img src="../../static/home-text3.png" class="preloadImg" >
       <img src="../../static/home-text4.png" class="preloadImg" >
-      <img src="../../static/hand-right.gif" class="preloadImg" >
-      <img src="../../static/hand-up.gif" class="preloadImg" >
+      <img src="../../static/hand.png" class="preloadImg" >
+      <img src="../../static/arrow.png" class="preloadImg" >
       <img src="../../static/earth.png" class="preloadImg" >
       <img src="../../static/future-longbg.jpg" class="preloadImg" >
       <img src="../../static/report-cloud.png" class="preloadImg" >
