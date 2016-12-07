@@ -44,6 +44,8 @@
 				</div>
 			</div>
 		</div>
+    <!--<div class="element-container" v-if="!animationFinished"></div>-->
+    <!--<div class="car-position"><img src="../../../static/future-car.png" class="space-car"></div>-->
 	</div>
 </template>
 
@@ -111,9 +113,9 @@
             clearInterval(viewTransition);
             return;
           }
-          const trans = (runwaySwiper.getWrapperTranslate('y') + 1.8);
+          const trans = (runwaySwiper.getWrapperTranslate('y') + 2);
           runwaySwiper.setWrapperTranslate(trans);
-          this.transSize += 1.8;
+          this.transSize += 2;
         }, 1);
       },
       moveCar() {
@@ -146,7 +148,7 @@
           //   this.$set('carTransform.transform', `translateY(${this.carTransleteY}px)`);
           //   this.carMoveTime += 1;
           // }
-          this.carTransleteY -= 1.8;
+          this.carTransleteY -= 2;
           this.$set('carTransform.transform', `translateY(${this.carTransleteY}px)`);
           this.carMoveTime += 1;
         }, 1);
@@ -225,7 +227,15 @@
 		width: 100%;
 		height: 100%;
 	}
-
+  /*.element-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border: 2px solid red;
+    z-index: 99;
+  }*/
 	.runwaySwiper .swiper-wrapper {
 		width: 100%;
 	}
@@ -389,6 +399,15 @@
     left: 0;
     bottom: 250px;
   }
+  /*.car-position {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 250px;
+    border: 2px solid red;
+    z-index: 5;
+  }*/
   .carAnimation {
     animation: drive 20.0s linear;
   }

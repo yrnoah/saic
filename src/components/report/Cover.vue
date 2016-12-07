@@ -2,7 +2,7 @@
 	<div class="swiper-slide report-cover">
     <div class="report-content ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
       <div class="cover-year"><div class="report-year ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div></div>
-      <div class="cover-title ani" swiper-animate-effect="flipInX" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s"><div class="report-title"></div></div>
+      <div class="cover-title"><div class="report-title ani" swiper-animate-effect="flipInX" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s"></div></div>
       <!--<div class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.2s">
         <div class="angel-animation"><div class="right-angel"></div></div>
       </div>-->
@@ -68,7 +68,7 @@
   }
   .cover-title {
     height: 174px;
-    /*background-color: #285CE9;*/
+    background-color: #285CE9;
     position: relative;
     z-index: 2;
   }
@@ -95,6 +95,8 @@
     height: 68px;
     vertical-align: top;
     float: right;
+    position: relative;
+    top: -1px;
   }
   .transtionHeight {
     animation: increase-height 1s ease;

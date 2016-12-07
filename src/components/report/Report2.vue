@@ -5,7 +5,7 @@
         <div class="report2-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
         <div class="bottom-mask"></div>
       </div>
-      <div class="cover-title ani" swiper-animate-effect="flipInX" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s"><div class="report2-content"></div></div>
+      <div class="cover-title"><div class="report2-content ani" swiper-animate-effect="flipInX" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s"></div></div>
       <!--<div class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.2s">
         <div class="angel-animation"><div class="right-angel"></div></div>
       </div>-->
@@ -85,6 +85,7 @@
     height: 174px;
     position: relative;
     z-index: 2;
+    background-color: #FFF;
   }
 
   .report2-content {
@@ -110,6 +111,8 @@
     height: 68px;
     vertical-align: top;
     float: right;
+    position: relative;
+    top: -1px;
   }
   .transtionHeight {
     animation: increase-height 1s ease;
