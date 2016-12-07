@@ -52,7 +52,6 @@
 <script>
   import Swiper from '../../../static/swiper.js';
   let runwaySwiper;
-  let runwayCarTimeout;
   let viewTransition;
   let carMoveInterval;
   let carMoveTimeout;
@@ -113,22 +112,11 @@
             clearInterval(viewTransition);
             return;
           }
+          // page animation
           const trans = (runwaySwiper.getWrapperTranslate('y') + 2);
           runwaySwiper.setWrapperTranslate(trans);
           this.transSize += 2;
-        }, 1);
-      },
-      moveCar() {
-        const pageSize = runwaySwiper.virtualSize - runwaySwiper.size;
-        if (this.carTransleteY === pageSize) {
-          this.stopCarMove();
-          return;
-        }
-        carMoveInterval = setInterval(() => {
-          if (this.carTransleteY === (-runwaySwiper.virtualSize)) {
-            this.stopCarMove();
-            return;
-          }
+          // banner animation
           const p2 = Math.floor(pageSize * 0.08) * -1;
           const p3 = Math.floor(pageSize * 0.20) * -1;
           const p4 = Math.floor(pageSize * 0.34) * -1;
@@ -139,35 +127,54 @@
           if (this.carTransleteY <= p4 && !this.showBanner4) this.showBanner4 = true;
           if (this.carTransleteY <= p5 && !this.showBanner5) this.showBanner5 = true;
           if (this.carTransleteY <= p6 && !this.showBanner6) this.showBanner6 = true;
-          // if (this.carTransleteY > (Math.floor(pageSize * 0.1) * -1)) {
-          //   this.carTransleteY -= 4;
-          //   this.$set('carTransform.transform', `translateY(${this.carTransleteY}px)`);
-          //   this.carMoveTime += 1;
-          // } else {
-          //   this.carTransleteY -= 1.5;
-          //   this.$set('carTransform.transform', `translateY(${this.carTransleteY}px)`);
-          //   this.carMoveTime += 1;
-          // }
+          // car animation
           this.carTransleteY -= 2;
           this.$set('carTransform.transform', `translateY(${this.carTransleteY}px)`);
           this.carMoveTime += 1;
         }, 1);
       },
+      // moveCar() {
+      //   const pageSize = runwaySwiper.virtualSize - runwaySwiper.size;
+      //   if (this.carTransleteY === pageSize) {
+      //     this.stopCarMove();
+      //     return;
+      //   }
+      //   carMoveInterval = setInterval(() => {
+      //     if (this.carTransleteY === (-runwaySwiper.virtualSize)) {
+      //       this.stopCarMove();
+      //       return;
+      //     }
+      //     const p2 = Math.floor(pageSize * 0.08) * -1;
+      //     const p3 = Math.floor(pageSize * 0.20) * -1;
+      //     const p4 = Math.floor(pageSize * 0.34) * -1;
+      //     const p5 = Math.floor(pageSize * 0.48) * -1;
+      //     const p6 = Math.floor(pageSize * 0.60) * -1;
+      //     if (this.carTransleteY <= p2 && !this.showBanner2) this.showBanner2 = true;
+      //     if (this.carTransleteY <= p3 && !this.showBanner3) this.showBanner3 = true;
+      //     if (this.carTransleteY <= p4 && !this.showBanner4) this.showBanner4 = true;
+      //     if (this.carTransleteY <= p5 && !this.showBanner5) this.showBanner5 = true;
+      //     if (this.carTransleteY <= p6 && !this.showBanner6) this.showBanner6 = true;
+      //     this.carTransleteY -= 2;
+      //     this.$set('carTransform.transform', `translateY(${this.carTransleteY}px)`);
+      //     this.carMoveTime += 1;
+      //   }, 1);
+      // },
       stopAnimation() {
-        // return;
         runwaySwiper.enableTouchControl();
         this.$dispatch('unlockRunwayToPrev');
-        clearInterval(viewTransition);
-        clearTimeout(runwayCarTimeout);
-      },
-      stopCarMove() {
         this.carTransleteY = 0;
         this.carMoveTime = 0;
-        runwaySwiper.enableTouchControl();
-        this.$dispatch('unlockRunwayToPrev');
-        clearInterval(carMoveInterval);
+        clearInterval(viewTransition);
         clearTimeout(carMoveTimeout);
       },
+      // stopCarMove() {
+      //   this.carTransleteY = 0;
+      //   this.carMoveTime = 0;
+      //   runwaySwiper.enableTouchControl();
+      //   this.$dispatch('unlockRunwayToPrev');
+      //   clearInterval(carMoveInterval);
+      //   clearTimeout(carMoveTimeout);
+      // },
       showMajorTipFunc() {
         this.showMajorTip = true;
         const tipTimeout = setTimeout(() => {
@@ -197,9 +204,8 @@
         this.carTransleteY = 0;
         this.carMoveTime = 0;
         this.$set('carTransform.transform', 'translateY(0px)');
-        clearTimeout(runwayCarTimeout);
         clearInterval(viewTransition);
-        this.stopCarMove();
+        // this.stopCarMove();
         runwaySwiper.enableTouchControl();
       },
       'startRunwayCarAnimation'() {
@@ -214,7 +220,7 @@
           clearTimeout(showBanner1Timeout);
         }, 800);
         carMoveTimeout = setTimeout(() => {
-          this.moveCar();
+          // this.moveCar();
           this.startPageAnimation();
         }, 1500);
       },
