@@ -53,7 +53,7 @@
   import Swiper from '../../../static/swiper.js';
   let runwaySwiper;
   let viewTransition;
-  let carMoveInterval;
+  // let carMoveInterval;
   let carMoveTimeout;
   export default {
     data() {
