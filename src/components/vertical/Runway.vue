@@ -387,7 +387,7 @@
     position: absolute;
     width: 100%;
     left: 0;
-    bottom: 100px;
+    bottom: 250px;
   }
   .carAnimation {
     animation: drive 20.0s linear;

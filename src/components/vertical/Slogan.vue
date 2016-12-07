@@ -1,21 +1,14 @@
 <template>
 	<div class="swiper-slide slogan">
-    <div class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="6.0s">
-      <div class="angel-animation">
-        <!--<div class="up-angel"></div>-->
-        <p class="up-txt">向上滑动</p>
-      </div>
-    </div>
     <img src="../../../static/slogan-title.png" class="slogan-title" v-if="fadeInSlogan" transition="zoom">
     <img src="../../../static/slogan-tip.png" class="slogan-tip" v-if="fadeInSlogan" transition="zoom">
     <div v-if="fadeInLogo" transition="zoom" class="logo-container">
       <img src="../../../static/logo.png" class="logo">
       <img src="../../../static/name.png" class="name">
     </div>
-    <!--<img src="../../../static/slogan-title.png" class="slogan-title ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" :class="{ hide: fadeOutFinished, fadeOut: fadeOutSlogan }">
-    <img src="../../../static/slogan-tip.png" class="slogan-tip ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" :class="{ hide: fadeOutFinished, fadeOut: fadeOutSlogan }">
-    <img src="../../../static/logo.png" class="logo ani" swiper-animate-effect="zoomIn" swiper-animate-duration="2.0s" swiper-animate-delay="3.0s">
-    <img src="../../../static/name.png" class="name ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1.0s" swiper-animate-delay="3.3s">-->
+    <div class="angel-animation" v-if="fadeInLogo" transition="fadeIn">
+      <img src="../../../static/hand-up.gif" class="hand-up">
+    </div>
 	</div>
 </template>
 <script>
@@ -81,25 +74,16 @@
   }
   .angel-animation {
     position: absolute;
-    bottom: 20px;
+    bottom: 0;
     width: 100%;
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.6));
     /*animation: bounce-down 1s linear infinite;*/
   }
-  .up-txt {
-    color: #FFF;
-    font-size: 20px;
+  .hand-up {
     margin: 0 auto;
-    animation: infinite-fade2 2s linear infinite;
-    -webkit-animation: infinite-fade2 2s linear infinite;
-  }
-  .up-angel {
-    width: 48px;
-    height: 48px;
-    border: 2px solid #FFF;
-    border-width: 2px 2px 0 0;
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    margin: 0 auto;
+    width: 24%;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
   }
   .fadeOut {
     animation: fade-out 1s ease;
@@ -135,5 +119,12 @@
     opacity: 0;
     transform: scale(0, 0);
     -webkit-transform: scale(0, 0);
+  }
+  .fadeIn-transition {
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+  }
+  .fadeIn-enter, .fadeIn-leave {
+    opacity: 0;
   }
 </style>

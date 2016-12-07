@@ -55,7 +55,9 @@
 			</div>
 		</div>
     <div v-if="showAngel" transition="opacity-animation" class="angel-container">
-        <div class="angel-animation"><div class="up-angel"></div></div>
+      <div class="angel-animation">
+        <img src="../../static/hand-up.gif" class="hand-up">
+      </div>
     </div>
 	</div>
 </template>
@@ -507,14 +509,22 @@
 	}
   .angel-container {
     position: absolute;
-    bottom: 30px;
+    bottom: 0;
     width: 100%;
     z-index: 4;
   }
   .angel-animation {
-    animation: bounce-down 1s linear infinite;
+    /*animation: bounce-down 1s linear infinite;*/
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.6));
+    /*position: absolute;
+    bottom: 0;
+    width: 100%;*/
   }
-  .up-angel {
+  .hand-up {
+    margin: 0 auto;
+    width: 24%;
+  }
+  /*.up-angel {
     width: 48px;
     height: 48px;
     border: 2px solid #4EDEFD;
@@ -522,7 +532,7 @@
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
     margin: 0 auto;
-  }
+  }*/
   .opacity-animation-transition {
     transition: all 1s ease;
     -webkit-transition: all 1s ease;
