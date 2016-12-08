@@ -51,17 +51,18 @@
 							</div>
 						</div>
 					</div>
+          <div v-if="showAngel && $index === 5" transition="opacity-animation" class="angel-container">
+            <div class="angel-animation">
+              <div class="gradientMask" v-if="showGradientMask" transition="opacity-animation"></div>
+              <div class="hand-up">
+              <img src="../../static/arrow.png" class="arrow">
+              <img src="../../static/hand.png" class="hand">
+            </div>
+            </div>
+          </div>
 				</div>
 			</div>
 		</div>
-    <div v-if="showAngel" transition="opacity-animation" class="angel-container">
-      <div class="angel-animation">
-        <div class="hand-up">
-        <img src="../../static/arrow.png" class="arrow">
-        <img src="../../static/hand.png" class="hand">
-      </div>
-      </div>
-    </div>
 	</div>
 </template>
 
@@ -87,6 +88,7 @@
         hasSlidePrev: false,
         activeBannerIndex: 1,
         showAngel: false,
+        showGradientMask: true,
         // simulateTouch: false,
       };
     },
@@ -206,6 +208,10 @@
             //   this.$dispatch('slideNextMajor');
             //   clearTimeout(slideNextTimeout);
             // }, 3000);
+            const hideGradient = setTimeout(() => {
+              this.showGradientMask = false;
+              clearTimeout(hideGradient);
+            }, 2000);
           },
           onTouchStart: (swiper, event) => {
             if (swiper.activeIndex === 4 || swiper.activeIndex === 0) {
@@ -517,9 +523,19 @@
     z-index: 4;
   }
   .angel-animation {
-    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.6));
+    /*background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.6));*/
     width: 100%;
     text-align: center;
+    position: relative;
+  }
+  .gradientMask {
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.6));
+    background: -webkit-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.6));
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
   .hand-up {
     margin: 5px auto;

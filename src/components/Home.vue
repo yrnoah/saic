@@ -23,6 +23,7 @@
     <img src="../../static/home-cloud.png" class="building-img home-cloud">
     <img src="../../static/home-car.png" class="building-img ani home-car" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s">
     <div class="angel-animation ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2s">
+      <div class="gradientMask ani" swiper-animate-effect="fadeOut" swiper-animate-duration="0.5s" swiper-animate-delay="3.5s"></div>
       <div class="hand-up">
         <img src="../../static/arrow.png" class="arrow">
         <img src="../../static/hand.png" class="hand">
@@ -242,8 +243,16 @@
     bottom: 0;
     width: 100%;
     /*animation: bounce-down 1s linear infinite;*/
-    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.6));
     z-index: 4;
+  }
+  .gradientMask {
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.6));
+    background: -webkit-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.6));
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
   .hand-up {
     margin: 5px auto;

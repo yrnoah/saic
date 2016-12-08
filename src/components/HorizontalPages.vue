@@ -78,7 +78,8 @@
           if (swiper.activeIndex === 5) {
             this.$broadcast('setToBottom');
             this.$broadcast('reAnimateSlogan');
-            horizontalPagesSwiper.lockSwipeToPrev();
+            // horizontalPagesSwiper.lockSwipeToPrev();
+            horizontalPagesSwiper.lockSwipes();
             const startMove = setTimeout(() => {
               this.hideTheEarth = true;
               clearTimeout(startMove);

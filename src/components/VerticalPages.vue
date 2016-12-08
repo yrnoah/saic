@@ -1,9 +1,12 @@
 <template>
 	<div class="swiper-slide vertical-pages">
 		<div class="swiper-wrapper">
-			<space></space>
-      <runway></runway>
       <slogan></slogan>
+      <runway></runway>
+			<space></space>
+			<!--<space></space>
+      <runway></runway>
+      <slogan></slogan>-->
 		</div>
 	</div>
 </template>
@@ -43,44 +46,44 @@
         },
         onSlideChangeEnd: (swiper) => {
           swiperAnimate(swiper);
-          if (swiper.activeIndex === 0) {
-            verticalTopSwiper.unlockSwipeToPrev();
+          if (swiper.activeIndex === 2) {
+            // verticalTopSwiper.unlockSwipeToPrev();
             this.$broadcast('startCarAnimation', this.selectedMajor);
           }
-          if (swiper.activeIndex === 2 && swiper.previousIndex === 1) {
-            verticalTopSwiper.unlockSwipeToPrev();
+          if (swiper.activeIndex === 0 && swiper.previousIndex === 1) {
+            // verticalTopSwiper.unlockSwipeToPrev();
             this.$broadcast('setToBottom');
             this.$dispatch('changeEarth');
             this.$broadcast('reAnimateSlogan');
             // this.$dispatch('playMusic1');
           }
           if (swiper.activeIndex === 1) {
-            verticalTopSwiper.lockSwipeToPrev();
+            // verticalTopSwiper.lockSwipeToPrev();
             this.$broadcast('startRunwayCarAnimation');
             this.$dispatch('showEarth');
           }
-          if (swiper.activeIndex === 1 && swiper.previousIndex === 2) {
-            verticalTopSwiper.lockSwipeToNext();
+          if (swiper.activeIndex === 1 && swiper.previousIndex === 0) {
+            verticalTopSwiper.lockSwipes();
           }
         },
-        onTouchStart: (swiper, event) => {
-          if (swiper.activeIndex === 0) {
-            this.moveStartY = event.changedTouches[0].pageY;
-          }
-          if (swiper.activeIndex === 2) {
-            this.moveStartX = event.changedTouches[0].pageX;
-            this.moveStartY = event.changedTouches[0].pageY;
-          }
-        },
-        onTouchMove: (swiper, event) => {
-          if (swiper.activeIndex === 0) {
-            const moveDistance = event.changedTouches[0].pageY - this.moveStartY;
-            if (moveDistance > 100) {
-              this.$dispatch('goWechatMajor', this.selectedMajor);
-              this.moveStartY = 0;
-              return;
-            }
-          }
+        // onTouchStart: (swiper, event) => {
+        //   if (swiper.activeIndex === 2) {
+        //     this.moveStartY = event.changedTouches[0].pageY;
+        //   }
+        //   if (swiper.activeIndex === 0) {
+        //     this.moveStartX = event.changedTouches[0].pageX;
+        //     this.moveStartY = event.changedTouches[0].pageY;
+        //   }
+        // },
+        // onTouchMove: (swiper, event) => {
+          // if (swiper.activeIndex === 2) {
+          //   const moveDistance = event.changedTouches[0].pageY - this.moveStartY;
+          //   if (moveDistance > 100) {
+          //     this.$dispatch('goWechatMajor', this.selectedMajor);
+          //     this.moveStartY = 0;
+          //     return;
+          //   }
+          // }
           // if (swiper.activeIndex === 2) {
           //   const moveDistanceX = event.changedTouches[0].pageX - this.moveStartX;
           //   const moveDistanceY = event.changedTouches[0].pageY - this.moveStartY;
@@ -91,8 +94,8 @@
           //     return;
           //   }
           // }
-        },
-        initialSlide: 2,
+        // },
+        initialSlide: 0,
         direction: 'vertical',
         loop: false,
       });
@@ -106,15 +109,15 @@
         this.$broadcast('startCarAnimation', this.selectedMajor);
       },
       'slideToSpace'(index) {
-        verticalTopSwiper.unlockSwipeToPrev();
+        verticalTopSwiper.unlockSwipeToNext();
         this.selectedMajor = index;
-        verticalTopSwiper.slideTo(0);
+        verticalTopSwiper.slideTo(2);
       },
       'goSelectMajorPage'() {
         if (verticalTopSwiper) verticalTopSwiper.slideTo(1, 0);
       },
       'unlockRunwayToPrev'() {
-        if (verticalTopSwiper) verticalTopSwiper.unlockSwipeToNext();
+        if (verticalTopSwiper) verticalTopSwiper.unlockSwipeToPrev();
       },
     },
   };

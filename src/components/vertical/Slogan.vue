@@ -7,6 +7,7 @@
       <img src="../../../static/name.png" class="name">
     </div>
     <div class="angel-animation" v-if="fadeInLogo" transition="fadeIn">
+      <div class="gradientMask" v-if="!fadeOutMask" transition="fadeIn"></div>
       <div class="hand-up">
         <img src="../../../static/arrow.png" class="arrow">
         <img src="../../../static/hand.png" class="hand">
@@ -15,15 +16,12 @@
 	</div>
 </template>
 <script>
-  // import CarAnimation from '../CarAnimation';
   export default {
-    // components: {
-    //   CarAnimation,
-    // },
     data() {
       return {
         fadeInSlogan: false,
         fadeInLogo: false,
+        fadeOutMask: false,
       };
     },
     events: {
@@ -34,16 +32,15 @@
           this.fadeInSlogan = false;
           clearTimeout(reAnimate);
         }, 5000);
-        // const finishedTimeout = setTimeout(() => {
-        //   this.fadeOutFinished = true;
-        //   clearTimeout(finishedTimeout);
-        // }, 2500);
+        const fadeOutAnimation = setTimeout(() => {
+          this.fadeOutMask = true;
+          clearTimeout(fadeOutAnimation);
+        }, 7000);
       },
       'initAnimation'() {
-        // this.fadeOutSlogan = false;
-        // this.fadeOutFinished = false;
         this.fadeInLogo = false;
         this.fadeInSlogan = false;
+        this.fadeOutMask = false;
       },
     },
   };
@@ -122,17 +119,24 @@
     bottom: 0;
     width: 100%;
     padding: 10px 0;
-    /*animation: bounce-down 1s linear infinite;*/
-    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.6));
     z-index: 4;
+  }
+  .gradientMask {
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.6));
+    background: -webkit-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.6));
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
   .hand-up {
     margin: 0 auto;
     display: inline-block;
     height: 60px;
     position: relative;
-    transform: rotate3d(1, 0, 0, 180deg);
-    -webkit-transform: rotate3d(1, 0, 0, 180deg);
+    /*transform: rotate3d(1, 0, 0, 180deg);
+    -webkit-transform: rotate3d(1, 0, 0, 180deg);*/
   }
   .hand-up img {
     display: inline-block;

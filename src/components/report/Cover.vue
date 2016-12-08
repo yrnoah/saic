@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="angel-animation ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">
-      <!--<img src="../../../static/hand-right.gif" class="hand-right">-->
+      <div class="gradientMask ani" swiper-animate-effect="fadeOut" swiper-animate-duration="0.5s" swiper-animate-delay="3s"></div>
       <div class="hand-right">
         <img src="../../../static/arrow.png" class="arrow">
         <img src="../../../static/hand.png" class="hand">
