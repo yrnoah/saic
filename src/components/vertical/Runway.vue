@@ -105,7 +105,7 @@
           return;
         }
         viewTransition = setInterval(() => {
-          const reachMiddle = this.carTransleteY <= (Math.floor(pageSize * 0.08) * -1);
+          const reachMiddle = this.carTransleteY <= (runwaySwiper.size * -0.5 - 20);
           const reachLastBanner = this.carTransleteY <= (Math.floor(pageSize * 0.8) * -1);
 
           if (runwaySwiper.getWrapperTranslate('y') >= 0) {
