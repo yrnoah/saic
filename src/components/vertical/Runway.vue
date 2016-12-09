@@ -128,9 +128,9 @@
           let trans;
           if (isAndroid) {
             if (reachLastBanner) {
-              this.carTransleteY -= 1;
-              trans = (runwaySwiper.getWrapperTranslate('y') + 1);
-              this.transSize += 1;
+              this.carTransleteY -= 0.5;
+              trans = (runwaySwiper.getWrapperTranslate('y') + 0.5);
+              this.transSize += 0.5;
             } else if (reachMiddle) {
               this.carTransleteY -= 0.5;
               trans = (runwaySwiper.getWrapperTranslate('y') + 0.5);
@@ -142,13 +142,13 @@
             }
           } else {
             if (reachLastBanner) {
-              this.carTransleteY -= 2;
-              trans = (runwaySwiper.getWrapperTranslate('y') + 2);
-              this.transSize += 2;
-            } else if (reachMiddle) {
               this.carTransleteY -= 1;
               trans = (runwaySwiper.getWrapperTranslate('y') + 1);
               this.transSize += 1;
+            } else if (reachMiddle) {
+              this.carTransleteY -= 0.8;
+              trans = (runwaySwiper.getWrapperTranslate('y') + 0.8);
+              this.transSize += 0.8;
             } else {
               this.carTransleteY -= 3;
               trans = (runwaySwiper.getWrapperTranslate('y') + 1);
