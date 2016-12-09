@@ -22,6 +22,7 @@
                 <p class="majorTip">请选择你的就职方向</p>
               </div>
             </div>
+            <img class="cloud-top" src="../../../static/future-cloud.png">
           </div>
           <div class="runway-container">
             <div class="car-container" v-if="showCar" transition="opacity">
@@ -29,7 +30,6 @@
                 <img src="../../../static/future-car.png" class="space-car">
               </div>
             </div>
-            <img class="cloud-top" src="../../../static/future-cloud.png">
             <img src="../../../static/future-topbuilding.png" class="future-topbuilding">
             <img src="../../../static/future-longbg.jpg" class="runway-bg">
             <img src="../../../static/future-cloud2.png" class="cloud-bottom cloud-bottom1" v-if="!fadeOutCloud" transition="fadeouteLeft">
@@ -264,9 +264,9 @@
   }
   .cloud-top {
     position: absolute;
-    top: -132px;
-    left: 0;
-    width: 100%;
+    bottom: -150px;
+    left: -5%;
+    width: 120%;
     height: auto;
     z-index: 4;
   }
@@ -429,6 +429,7 @@
     left: 0;
     bottom: 0;
     right: 0;
+    z-index: 5;
     /*top: 150px;*/
   }
   .majorTip {
