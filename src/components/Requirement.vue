@@ -43,9 +43,17 @@
       </div>
       <img src="../../static/wechat-man1.png" class="wechat-man2">
     </div>
+    <handup></handup>
 	</div>
 </template>
-
+<script>
+  import Handup from './common/Handup';
+  export default {
+    components: {
+      Handup,
+    },
+  };
+</script>
 <style scoped>
 	.requirement {
 		background-color: #56dffd;

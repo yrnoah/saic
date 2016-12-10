@@ -1,14 +1,11 @@
 <template>
 	<div class="swiper-slide home">
-    <!--<div class="home-top-item"></div>-->
      <div class="txt-item">
         <img src="../../static/home-text1.png" class="txt txt1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
         <img src="../../static/home-text2.png" class="txt txt2 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
         <img src="../../static/home-text3.png" class="txt txt3 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
         <img src="../../static/home-text4.png" class="txt txt4 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
       </div>
-      <!--<div class="slogan-container">-->
-      <!--</div>-->
     <div class="home-slogan ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.1s">
       <p class="title">上汽国际<span class="title-year">2017</span>年国际化人才</p>
       <div class="content">
@@ -22,15 +19,17 @@
     <img src="../../static/home-buildings.png" class="building-img buildings">
     <img src="../../static/home-cloud.png" class="building-img home-cloud">
     <img src="../../static/home-car.png" class="building-img ani home-car" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s">
-    <div class="angel-animation ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2s">
-      <div class="gradientMask ani" swiper-animate-effect="fadeOut" swiper-animate-duration="0.5s" swiper-animate-delay="3.5s"></div>
-      <div class="hand-up">
-        <img src="../../static/arrow.png" class="arrow">
-        <img src="../../static/hand.png" class="hand">
-      </div>
-    </div>
+    <handup></handup>
 	</div>
 </template>
+<script>
+  import Handup from './common/Handup';
+  export default {
+    components: {
+      Handup,
+    },
+  };
+</script>
 
 <style scoped>
 	.home {
@@ -237,72 +236,5 @@
     bottom: 80px;
     animation: cloud-float 2.0s linear infinite;
     -webkit-animation: cloud-float 2.0s linear infinite;
-  }
-  .angel-animation {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /*animation: bounce-down 1s linear infinite;*/
-    z-index: 4;
-  }
-  .gradientMask {
-    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.6));
-    background: -webkit-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.6));
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-  .hand-up {
-    margin: 5px auto;
-    display: inline-block;
-    height: 60px;
-    position: relative;
-  }
-  .hand-up img {
-    display: inline-block;
-  }
-  @keyframes rise-arrow {
-    0% { transform: scaleY(0); opacity: 0; }
-    100% { transform: scaleY(1); opacity: 1;}
-  }
-  @-webkit-keyframes rise-arrow {
-    0% { -webkit-transform: scaleY(0); opacity: 0;}
-    100% { -webkit-transform: scaleY(1); opacity: 1;}
-  }
-  .arrow {
-    width: 18px;
-    height: 56px;
-    vertical-align: bottom;
-    animation: rise-arrow 1.2s linear infinite;
-    -webkit-animation: rise-arrow 1.2s linear infinite;
-    /*position: absolute;
-    bottom: 0;*/
-    transform-origin: center bottom;
-    -webkit-transform-origin: center bottom;
-  }
-  @keyframes rise {
-    0% { transform: translateY(40px); }
-    100% { transform: translateY(-10); }
-  }
-  @-webkit-keyframes rise {
-    0% {-webkit-transform: translateY(40px);}
-    100% {-webkit-transform: translateY(-10);}
-  }
-  .hand {
-    width: 48px;
-    height: 34px;
-    animation: rise 1.2s linear infinite;
-    -webkit-animation: rise 1.2s linear infinite;
-  }
-  .up-angel {
-    width: 48px;
-    height: 48px;
-    border: 2px solid #4EDEFD;
-    border-width: 2px 2px 0 0;
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    margin: 0 auto;
   }
 </style>

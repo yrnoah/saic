@@ -35,8 +35,17 @@
         </div>
       </div>
     </div>
+    <handup></handup>
 	</div>
 </template>
+<script>
+  import Handup from './common/Handup';
+  export default {
+    components: {
+      Handup,
+    },
+  };
+</script>
 
 <style scoped>
 	.provide1 {

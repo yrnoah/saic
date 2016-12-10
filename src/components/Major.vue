@@ -46,8 +46,17 @@
       </div>
       <img src="../../static/wechat-man2.png" class="wechat-man2">
     </div>
+    <handup></handup>
 	</div>
 </template>
+<script>
+  import Handup from './common/Handup';
+  export default {
+    components: {
+      Handup,
+    },
+  };
+</script>
 
 <style scoped>
 	.major {
