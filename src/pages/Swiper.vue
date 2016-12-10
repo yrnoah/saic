@@ -101,23 +101,16 @@
             // this.$broadcast('startPageAnimation');
           }
           if (swiper.activeIndex === 1) {
+            appSwiper.lockSwipes();
             this.$broadcast('startAnimation');
             this.$broadcast('startReportAnimation');
-            // this.$broadcast('initHasSlidePrev');
           }
           if (swiper.activeIndex === 2) {
             // appSwiper.lockSwipeToPrev();
             appSwiper.lockSwipes();
-            // appSwiper.disableTouchControl();
             this.$broadcast('setMajorRelativePosition', this.relativeMajorIndex);
-            // if (!this.preventWechatAutoplay) {
-            //   this.$broadcast('startAutoPlay');
-            // } else if (this.relativeMajorIndex && this.preventWechatAutoplay) {
-            //   this.$broadcast('setMajorRelativePosition', this.relativeMajorIndex);
-            // }
           }
           if (swiper.activeIndex === 3) {
-            // appSwiper.enableTouchControl();
             // appSwiper.lockSwipeToPrev();
             appSwiper.unlockSwipes();
             this.$broadcast('initHasSlideNext');

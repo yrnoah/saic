@@ -76,6 +76,7 @@
             this.carMoveFinished = false;
           }
           if (swiper.activeIndex === 5) {
+            horizontalPagesSwiper.lockSwipes();
             this.$broadcast('setToBottom');
             this.$broadcast('reAnimateSlogan');
             // horizontalPagesSwiper.lockSwipeToPrev();
@@ -129,7 +130,8 @@
 		height: 100%;
 		width: 100%;
     background-color: #4EDEFD;
-    overflow: hidden;
+    /*overflow: hidden;*/
+    overflow-y: scroll;
 	}
 
   .horizontal-pages .swiper-wrapper {

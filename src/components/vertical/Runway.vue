@@ -25,24 +25,26 @@
             <img class="cloud-top" src="../../../static/future-cloud.png">
           </div>
           <div class="runway-container">
-            <div class="car-container" v-if="showCar" transition="opacity">
-              <div class="car-position" :style="carTransform">
-                <img src="../../../static/future-car.png" class="space-car">
-              </div>
-            </div>
-            <img src="../../../static/future-topbuilding.png" class="future-topbuilding">
             <img src="../../../static/future-longbg.jpg" class="runway-bg">
             <img src="../../../static/future-cloud2.png" class="cloud-bottom cloud-bottom1" v-if="!fadeOutCloud" transition="fadeouteLeft">
             <img src="../../../static/future-cloud.png" class="cloud-bottom cloud-bottom2" v-if="!fadeOutCloud" transition="fadeouteRight">
-            <img src="../../../static/banner1.png" class="banner" v-if="showBanner1" :class="{ bannerFadeIn: showBanner1 }">
-            <img src="../../../static/banner2.png" class="banner" v-if="showBanner2" :class="{ bannerFadeIn: showBanner2 }">
-            <img src="../../../static/banner3.png" class="banner" v-if="showBanner3" :class="{ bannerFadeIn: showBanner3 }">
-            <img src="../../../static/banner4.png" class="banner" v-if="showBanner4" :class="{ bannerFadeIn: showBanner4 }">
-            <img src="../../../static/banner5.png" class="banner" v-if="showBanner5" :class="{ bannerFadeIn: showBanner5 }">
-            <img src="../../../static/banner6.png" class="banner" v-if="showBanner6" :class="{ bannerFadeIn: showBanner6 }">
           </div>
 				</div>
 			</div>
+      <!--<img src="../../../static/future-topbuilding.png" class="future-topbuilding">-->
+      <img src="../../../static/banner1.png" class="banner" v-if="showBanner1" :class="{ bannerFadeIn: showBanner1 }">
+      <div class="bannerContainer" v-if="showBanner2 || showBanner3 || showBanner4 || showBanner5 || showBanner6">
+        <img src="../../../static/banner2.png" class="banner2" v-if="showBanner2" :class="{ bannerFadeIn: showBanner2 }">
+        <img src="../../../static/banner3.png" class="banner2" v-if="showBanner3" :class="{ bannerFadeIn: showBanner3 }">
+        <img src="../../../static/banner4.png" class="banner2" v-if="showBanner4" :class="{ bannerFadeIn: showBanner4 }">
+        <img src="../../../static/banner5.png" class="banner2" v-if="showBanner5" :class="{ bannerFadeIn: showBanner5 }">
+        <img src="../../../static/banner6.png" class="banner2" v-if="showBanner6" :class="{ bannerFadeIn: showBanner6 }">
+      </div>
+      <div class="car-container" v-if="showCar" transition="opacity">
+        <div class="car-position" :style="carTransform">
+          <img src="../../../static/future-car.png" class="space-car">
+        </div>
+      </div>
 		</div>
 	</div>
 </template>
@@ -52,6 +54,7 @@
   let runwaySwiper;
   let viewTransition;
   let carMoveTimeout;
+  console.log(window);
   export default {
     data() {
       return {
@@ -83,10 +86,40 @@
         direction: 'vertical',
         nested: true,
         freeMode: true,
+        freeModeMomentumRatio: 1,
         autoHeight: true,
         slidesPerView: 'auto',
         loop: false,
         hashnav: true,
+        onSetTranslate: (s, t) => {
+          if (runwaySwiper) {
+            const pageSize = runwaySwiper.virtualSize - runwaySwiper.size;
+            // const currentPosition = s.getWrapperTranslate('y');
+            const bottom = pageSize * -1;
+            const p2 = Math.floor(pageSize * 0.87) * -1;
+            const p3 = Math.floor(pageSize * 0.74) * -1;
+            const p4 = Math.floor(pageSize * 0.60) * -1;
+            const p5 = Math.floor(pageSize * 0.46) * -1;
+            const p6 = Math.floor(pageSize * 0.34) * -1;
+            const disMissCar = pageSize * -0.19;
+
+            if (t > bottom && this.showBanner1) this.showBanner1 = false;
+            if (t <= bottom && !this.showBanner1) this.showBanner1 = true;
+            if ((t <= (p2 - 200) || t >= (p2 + 200)) && this.showBanner2) this.showBanner2 = false;
+            if (t > (p2 - 200) && t < (p2 + 200) && !this.showBanner2) this.showBanner2 = true;
+            if ((t <= (p3 - 200) || t >= (p3 + 200)) && this.showBanner3) this.showBanner3 = false;
+            if (t > (p3 - 200) && t < (p3 + 200) && !this.showBanner3) this.showBanner3 = true;
+            if ((t <= (p4 - 200) || t >= (p4 + 200)) && this.showBanner4) this.showBanner4 = false;
+            if (t > (p4 - 200) && t < (p4 + 200) && !this.showBanner4) this.showBanner4 = true;
+            if ((t <= (p5 - 200) || t >= (p5 + 200)) && this.showBanner5) this.showBanner5 = false;
+            if (t > (p5 - 200) && t < (p5 + 200) && !this.showBanner5) this.showBanner5 = true;
+            if ((t <= (p6 - 200) || t >= (p6 + 200)) && this.showBanner6) this.showBanner6 = false;
+            if (t > (p6 - 200) && t < (p6 + 200) && !this.showBanner6) this.showBanner6 = true;
+            if (t > disMissCar && this.showCar) this.showCar = false;
+            if (t < disMissCar && !this.showCar) this.showCar = true;
+            if (t === 0 && !this.showMajorTip) this.showMajorTipFunc();
+          }
+        },
       });
     },
     methods: {
@@ -94,10 +127,6 @@
         this.$dispatch('slideToSpace', index);
       },
       startPageAnimation() {
-        const pageSize = runwaySwiper.virtualSize - runwaySwiper.size;
-        const u = navigator.userAgent;
-        const isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
-
         if (runwaySwiper.getWrapperTranslate('y') >= 0) {
           runwaySwiper.enableTouchControl();
           this.$dispatch('unlockRunwayToPrev');
@@ -106,58 +135,14 @@
         }
         viewTransition = setInterval(() => {
           const reachMiddle = this.carTransleteY <= (runwaySwiper.size * -0.5 - 20);
-          const reachLastBanner = this.carTransleteY <= (Math.floor(pageSize * 0.8) * -1);
-
-          if (runwaySwiper.getWrapperTranslate('y') >= 0) {
-            this.showMajorTipFunc();
+          if (reachMiddle) {
             runwaySwiper.enableTouchControl();
             clearInterval(viewTransition);
             return;
           }
-          const p2 = Math.floor(pageSize * 0.13) * -1;
-          const p3 = Math.floor(pageSize * 0.26) * -1;
-          const p4 = Math.floor(pageSize * 0.40) * -1;
-          const p5 = Math.floor(pageSize * 0.54) * -1;
-          const p6 = Math.floor(pageSize * 0.66) * -1;
-          if (this.carTransleteY <= p2 && !this.showBanner2) this.showBanner2 = true;
-          if (this.carTransleteY <= p3 && !this.showBanner3) this.showBanner3 = true;
-          if (this.carTransleteY <= p4 && !this.showBanner4) this.showBanner4 = true;
-          if (this.carTransleteY <= p5 && !this.showBanner5) this.showBanner5 = true;
-          if (this.carTransleteY <= p6 && !this.showBanner6) this.showBanner6 = true;
           // car animation
-          let trans;
-          if (isAndroid) {
-            if (reachLastBanner) {
-              this.carTransleteY -= 0.5;
-              trans = (runwaySwiper.getWrapperTranslate('y') + 0.5);
-              this.transSize += 0.5;
-            } else if (reachMiddle) {
-              this.carTransleteY -= 0.5;
-              trans = (runwaySwiper.getWrapperTranslate('y') + 0.5);
-              this.transSize += 0.5;
-            } else {
-              this.carTransleteY -= 1.5;
-              trans = (runwaySwiper.getWrapperTranslate('y') + 0.5);
-              this.transSize += 0.5;
-            }
-          } else {
-            if (reachLastBanner) {
-              this.carTransleteY -= 1;
-              trans = (runwaySwiper.getWrapperTranslate('y') + 1);
-              this.transSize += 1;
-            } else if (reachMiddle) {
-              this.carTransleteY -= 0.8;
-              trans = (runwaySwiper.getWrapperTranslate('y') + 0.8);
-              this.transSize += 0.8;
-            } else {
-              this.carTransleteY -= 3;
-              trans = (runwaySwiper.getWrapperTranslate('y') + 1);
-              this.transSize += 1;
-            }
-          }
-          runwaySwiper.setWrapperTranslate(trans);
+          this.carTransleteY -= 3;
           this.$set('carTransform.transform', `translateY(${this.carTransleteY}px)`);
-          this.carMoveTime += 1;
         }, 1);
       },
       stopAnimation() {
@@ -173,7 +158,7 @@
         const tipTimeout = setTimeout(() => {
           this.showMajorTip = false;
           clearTimeout(tipTimeout);
-        }, 2500);
+        }, 1500);
       },
     },
     events: {
@@ -367,6 +352,21 @@
     left: 0;
     z-index: 4;
   }
+  .bannerContainer {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 4;
+  }
+  .banner2 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /*top: 20%;*/
+  }
   .car-container {
     position: absolute;
     width: 100%;
@@ -453,8 +453,8 @@
     z-index: 2;
   }
   .opacity-transition {
-    transition: all 1s ease;
-    -webkit-transition: all 1s ease;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
     /*overflow: hidden;*/
   }
   .opacity-enter, .opacity-leave {

@@ -4,9 +4,6 @@
       <slogan></slogan>
       <runway></runway>
 			<space></space>
-			<!--<space></space>
-      <runway></runway>
-      <slogan></slogan>-->
 		</div>
 	</div>
 </template>
@@ -59,11 +56,9 @@
           }
           if (swiper.activeIndex === 1) {
             // verticalTopSwiper.lockSwipeToPrev();
+            verticalTopSwiper.lockSwipes();
             this.$broadcast('startRunwayCarAnimation');
             this.$dispatch('showEarth');
-          }
-          if (swiper.activeIndex === 1 && swiper.previousIndex === 0) {
-            verticalTopSwiper.lockSwipes();
           }
         },
         // onTouchStart: (swiper, event) => {
@@ -98,6 +93,8 @@
         initialSlide: 0,
         direction: 'vertical',
         loop: false,
+        autoHeight: true,
+        hashnav: true,
       });
     },
     events: {
