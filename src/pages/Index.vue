@@ -67,6 +67,7 @@
       <img src="../../static/future-cloud.png" class="preloadImg" >
       <img src="../../static/future-topbuilding.png" class="preloadImg" >
       <img src="../../static/bg-cloud-1.png" class="preloadImg" >
+      <img src="../../static/banners.png" class="preloadImg" >
       <img src="../../static/banner1.png" class="preloadImg" >
       <img src="../../static/banner2.png" class="preloadImg" >
       <img src="../../static/banner3.png" class="preloadImg" >
