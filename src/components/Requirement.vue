@@ -107,7 +107,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
+    top: -12px;
     left: 0;
   }
   .content-container {
@@ -170,7 +170,7 @@
     width: 50%;
     height: auto;
     position: absolute;
-    bottom: -90px;
+    bottom: -95px;
     left: 25px;
   }
 </style>
