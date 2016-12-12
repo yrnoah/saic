@@ -12,7 +12,7 @@
             </div>
             <div class="txt-container">
               <img src="../../static/wechat-major1.png" class="text1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">
-              <p class="detail ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">市场营销、品牌推广、销售管理、小语种</p>
+              <p class="detail ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">市场营销、新闻传播、小语种</p>
             </div>
           </div>
           <div class="content-container">
@@ -21,7 +21,7 @@
             </div>
             <div class="txt-container">
               <img src="../../static/wechat-major2.png" class="text1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
-              <p class="detail ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">产品规划、售后市场调研</p>
+              <p class="detail ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">交通运输、车辆工程、机械制造及其自动化等专业</p>
             </div>
           </div>
           <div class="content-container">
@@ -30,7 +30,7 @@
             </div>
             <div class="txt-container">
               <img src="../../static/wechat-major3.png" class="text1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">
-              <p class="detail ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">财务管理、金融分析、商务投资</p>
+              <p class="detail ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">经济学、金融学、国际经济与贸易、会计学及其他</p>
             </div>
           </div>
           <div class="content-container">
@@ -39,7 +39,7 @@
             </div>
             <div class="txt-container">
               <img src="../../static/wechat-major4.png" class="text1 major4-txt ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">
-              <p class="detail ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">法务</p>
+              <p class="detail ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">法律类相关专业</p>
             </div>
           </div>
         </div>
@@ -154,12 +154,13 @@
   .detail {
     color: #595757;
     font-size: 14px;
+    margin-top: 5px;
   }
   .wechat-man2 {
     width: 50%;
     height: auto;
     position: absolute;
     bottom: -45px;
-    right: 5px;
+    right: -5px;
   }
 </style>

@@ -19,16 +19,17 @@
               <h3>B.</h3>
             </div>
             <div class="txt-container">
-              <p class="detail"><span>专业基础</span>扎实，逻辑、沟通和</p>
-              <p class="detail"><span>执行能力强</span></p>
+              <p class="detail">拥有较强的<span>持续学习</span>能力,</p>
+              <p class="detail"><span>创新意识</span>和自我成长的<span>内驱力</span></p>
             </div>
           </div>
           <div class="content-container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">
             <div class="icon-container">
               <h3>C.</h3>
             </div>
-            <div class="txt-container vertical-middle">
-              <p class="detail">良好的<span>英语听说读写能力</span></p>
+            <div class="txt-container">
+              <p class="detail">独立思考、善于分析、对待工作积极</p>
+              <p class="detail">主动并能<span>有效推进、高效执行</span></p>
             </div>
           </div>
           <div class="content-container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">
@@ -36,7 +37,7 @@
               <h3>D.</h3>
             </div>
             <div class="txt-container vertical-middle">
-              <p class="detail"><span>熟练操作</span>各种办公软件</p>
+              <p class="detail">良好的<span>英语听说读写能力</span></p>
             </div>
           </div>
         </div>
@@ -169,7 +170,7 @@
     width: 50%;
     height: auto;
     position: absolute;
-    bottom: -85px;
+    bottom: -90px;
     left: 25px;
   }
 </style>
