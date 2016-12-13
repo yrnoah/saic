@@ -19,7 +19,7 @@
               <h3>B.</h3>
             </div>
             <div class="txt-container">
-              <p class="detail">拥有较强的<span>持续学习</span>能力,</p>
+              <p class="detail">具有较强的<span>持续学习</span>能力,</p>
               <p class="detail"><span>创新意识</span>和自我成长的<span>内驱力</span></p>
             </div>
           </div>
@@ -28,8 +28,8 @@
               <h3>C.</h3>
             </div>
             <div class="txt-container">
-              <p class="detail">独立思考、善于分析、对待工作积极</p>
-              <p class="detail">主动并能<span>有效推进、高效执行</span></p>
+              <p class="detail">善于<span>沟通</span>协调，团队<span>合作，</span></p>
+              <p class="detail">高效<span>执行</span></p>
             </div>
           </div>
           <div class="content-container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s">

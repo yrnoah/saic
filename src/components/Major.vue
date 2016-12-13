@@ -21,7 +21,7 @@
             </div>
             <div class="txt-container">
               <img src="../../static/wechat-major2.png" class="text1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
-              <p class="detail ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">交通运输、车辆工程、机械制造及其自动化等专业</p>
+              <p class="detail ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">交通运输、车辆工程、机械制造及其自动化</p>
             </div>
           </div>
           <div class="content-container">
@@ -30,7 +30,7 @@
             </div>
             <div class="txt-container">
               <img src="../../static/wechat-major3.png" class="text1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">
-              <p class="detail ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">经济学、金融学、国际经济与贸易、会计学及其他</p>
+              <p class="detail ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s">经济学、金融学、国际经济与贸易、会计学、财务管理</p>
             </div>
           </div>
           <div class="content-container">
