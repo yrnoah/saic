@@ -75,7 +75,7 @@ const messageData = [
     // , '蒋小晨，', '赵晨栋，', '祝晶晶，', '毛果果' , 'April，', 'Eva'
     comments: [
       // { user: '徐燕雯', replyTo: null, detail: '你是明信片，我是冰箱贴' },
-      { user: '彭去非', replyTo: null, detail: '你是明信片，我是冰箱贴' },
+      { user: '彭去非', replyTo: null, detail: '你的是明信片，我的是冰箱贴' },
     ],
   },
   // '宋佳', '潘绍之', '毛菁雁', 'Lily Mao', 'Badboy', '黄禕', '徐晟宇', '张雅琴', '江志平', 'Joan', '正直しんどい',

@@ -28,7 +28,7 @@
               <h3>C.</h3>
             </div>
             <div class="txt-container">
-              <p class="detail">善于<span>沟通</span>协调，团队<span>合作，</span></p>
+              <p class="detail">善于<span>沟通</span>协调，团队<span>合作</span>，</p>
               <p class="detail">高效<span>执行</span></p>
             </div>
           </div>
