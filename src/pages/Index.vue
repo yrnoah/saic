@@ -68,6 +68,11 @@
       Provide2,
       Email,
     },
+    created() {
+      this.$http.get('/api/jsconfig').then(resp => {
+        console.log(resp);
+      });
+    },
     ready() {
       this.startMusic();
       appSwiper = new Swiper('.swiper-container', {
