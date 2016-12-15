@@ -72,36 +72,37 @@
       /* eslint-disable */
       this.$http.get('/api/jsconfig').then(resp => {
         const { jsconfig } = resp.json();
+        console.log(jsconfig);
         wx.config(jsconfig);
-      });
-      const title = '上汽国际2017年校园招聘全面开启！';
-      const desc = '驭未来 创世界';
-      const link = 'http://srkfytl.gofriend.me/internal';
-      const image = 'http://img5.imgtn.bdimg.com/it/u=4155302816,1201715785&fm=21&gp=0.jpg';
-      wx.ready(function() {
-        wx.onMenuShareTimeline({
-          title: `${title}`, // 分享标题
-          link: `${link}`, // 分享链接
-          imgUrl: `${image}`, // 分享图标
-          success: function () {
-              // 用户确认分享后执行的回调函数
-          },
-          cancel: function () { 
-              // 用户取消分享后执行的回调函数
-          }
+        const title = '上汽国际2017年校园招聘全面开启！';
+        const desc = '驭未来 创世界';
+        const link = 'http://srkfytl.gofriend.me/internal';
+        const image = 'http://img5.imgtn.bdimg.com/it/u=4155302816,1201715785&fm=21&gp=0.jpg';
+        wx.ready(function() {
+          wx.onMenuShareTimeline({
+            title: `${title}`, // 分享标题
+            link: `${link}`, // 分享链接
+            imgUrl: `${image}`, // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () { 
+                // 用户取消分享后执行的回调函数
+            }
+          });
+          wx.onMenuShareAppMessage({
+            title: `${title}`, // 分享标题
+            desc: `${desc}`, // 分享描述
+            link: `${link}`, // 分享链接
+            imgUrl: `${image}`, // 分享图标
+            success: function () { 
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () { 
+                // 用户取消分享后执行的回调函数
+            }
+          });
         });
-        wx.onMenuShareAppMessage({
-          title: `${title}`, // 分享标题
-          desc: `${desc}`, // 分享描述
-          link: `${link}`, // 分享链接
-          imgUrl: `${image}`, // 分享图标
-          success: function () { 
-              // 用户确认分享后执行的回调函数
-          },
-          cancel: function () { 
-              // 用户取消分享后执行的回调函数
-          }
-        });        
       });
       
     },
