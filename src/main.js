@@ -15,7 +15,7 @@ router.map({
     name: 'index',
     component: Index,
   },
-  '/Swiper': {
+  '/swiper': {
     name: 'swiper',
     component: Swiper,
   },

@@ -7,11 +7,11 @@ const messageData = [
     img: '../../static/pic-1.png',
     location: 'SAIC MOTOR Middle East FZE',
     time: '3分钟前',
-    follows: ['潘绍之，', '毛菁雁，', 'Lily Mao，', 'Badboy，', '机灵小不懂，', '黄禕文'],
+    follows: ['潘绍之，', '毛菁雁，', 'Lily Mao，', 'Badboy，', '机灵小不懂，'],
     // '徐晟宇，', '张雅琴'
     comments: [
       { user: '机灵小不懂', detail: '恭喜！阿联酋最大的经销商都被你们拿下了！' },
-      { user: '蒋晨', detail: '干得漂亮!' },
+      { user: '蒋晨', detail: '干得漂亮👏' },
     ],
   },
   {
@@ -30,7 +30,7 @@ const messageData = [
   },
   {
     index: 3,
-    username: '毛毛',
+    username: 'Henry',
     avatar: '../../static/avatar-3.png',
     content: 'Travel around Australia from south to north to get the first hand data.' +
     'The annual market analysis is always the most exciting part in the marketing section.',
@@ -40,7 +40,7 @@ const messageData = [
     follows: ['潘绍之，', '毛菁雁，', 'Joan，', '正直しんどい，', '钟卢英，', 'Henry，', '高博'],
     // , '陈于斌，', 'David' '袁琳琳，'
     comments: [
-      { user: '路遥', replyTo: null, detail: '毛姐辛苦了，果然是全能市调王啊！' },
+      { user: '路遥', replyTo: null, detail: 'henry辛苦了，果然是全能市调王啊！' },
       {
         user: 'D-ONE', replyTo: null,
         detail: 'Compared with Chile, yours is just called ‘short haul’😜😜',

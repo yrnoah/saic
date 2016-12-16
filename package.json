@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
-    "build": "node build/build.js && node build/server.js",
+    "build": "node build/build.js && node build/pro-server.js",
     "unit": "karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
@@ -26,7 +26,8 @@
     "vue-router": "^0.7.13",
     "wechat": "^2.0.3",
     "wechat-api": "^1.32.0",
-    "wechat-oauth": "^1.1.1"
+    "wechat-oauth": "^1.1.1",
+    "weixin-js-sdk": "^1.0.7"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
