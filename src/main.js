@@ -4,7 +4,7 @@ import VueResource from 'vue-resource';
 
 import App from './App';
 import Index from './pages/Index';
-import Swiper from './pages/Swiper';
+// import Swiper from './pages/Swiper';
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
@@ -15,11 +15,10 @@ router.map({
     name: 'index',
     component: Index,
   },
-  '/swiper': {
-    name: 'swiper',
-    component: Swiper,
-  },
+  // '/swiper': {
+  //  name: 'swiper',
+  //  component: Swiper,
+  // },
 });
 
 router.start(App, '#app');
-

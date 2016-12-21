@@ -32,7 +32,6 @@ app.use(cookieParser());
 app.engine('html', swig.renderFile);
 app.use(express.static('dist', {'extensions': ['html']}));
 app.use(express.query());
-app.set('trust proxy', true);
 const wechatConfig = {
   token,
   appid,
@@ -59,39 +58,30 @@ function renderError(sendErrorObj) {
 
 let wechat_api;
 
-app.use('/wechat', wechat('xjbtoken2333', (req, res, next) => {
+//app.use('/wechat', wechat('xjbtoken2333', (req, res, next) => {
+//  next();
+//}))
+
+app.use('/wechat', wechat({
+  token: 'xjbtoken2333',
+  appid: appid,
+}, (req, res, next)=> {
   next();
 }))
 
-url = client.getAuthorizeURL('http://srkfytl.gofriend.me/internal', 'momo233', 'snsapi_base');
+url = client.getAuthorizeURL('http://srkfytl.gofriend.me/internal', 'momo233', 'snsapi_userinfo');
 app.get('/oauth', (req, res, next) => {
-  console.log('oauth');
   res.redirect(url);
 });
 
 
 let jsconfig, userInfo;
 app.get('/internal', (req, res, next) => {
-  // client.getAccessToken(req.query.code, (err, resault) => {
-  //  if(err) {
-  //    console.log(err);
-  //    next();
-  //  }
-  //  const openid = resault.data.openid;
-  //  client.getUser(openid, (err, resault) => {
-  //    if (err) {
-  //      console.log(err);
-  //      next();
-  //   }
-  //    userInfo = resault;
-  //  });
-  //  res.redirect('http://srkfytl.gofriend.me/?openid='+openid);
-  //})
-  res.redirect('http://srkfytl.gofriend.me/')
+	console.log(req);
   let param = {
     debug: false,
     jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'],
-    url: 'https://srkfytl.gofriend.me/oauth'
+    url: 'http://srkfytl.gofriend.me/'
   };
   api.getJsConfig(param, (err, resault)=> {
     if(err) {
@@ -100,11 +90,11 @@ app.get('/internal', (req, res, next) => {
     }
     jsconfig = resault;
   });
+  res.redirect('http://srkfytl.gofriend.me');
 });
 
 app.get('/api/jsconfig', (req, res, next) => {
-  // res.send({jsconfig, userInfo});
-  res.send({jsconfig});
+  res.send(jsconfig);
   next();
 })
 

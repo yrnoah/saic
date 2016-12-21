@@ -1,145 +1,156 @@
 <template>
-	<div class="default-loading">
-		<div class="floater"></div>
-    <div class="car-big">
-      <div class="wheel">
-        <div class="wheel-big left"></div>
-        <div class="wheel-big right"></div>
+	<div class="main-layout">
+    <div class="default-loading" v-if="!start">
+      <div class="floater"></div>
+      <div class="car-big">
+        <div class="wheel">
+          <div class="wheel-big left"></div>
+          <div class="wheel-big right"></div>
+        </div>
+      </div>
+      <p class="percent-value"><span id="loading-value">{{ count }}</span>%</p>
+      <div class="hide">
+        <img src="../../static/share.png" class="preloadImg">
+        <img src="../../static/car-big.png" class="preloadImg" >
+        <img src="../../static/wheel-big.png" class="preloadImg" >
+        <img src="../../static/home-buildings.png" class="preloadImg" >
+        <img src="../../static/home-text1.png" class="preloadImg" >
+        <img src="../../static/home-text2.png" class="preloadImg" >
+        <img src="../../static/home-text3.png" class="preloadImg" >
+        <img src="../../static/home-text4.png" class="preloadImg" >
+        <img src="../../static/hand.png" class="preloadImg" >
+        <img src="../../static/arrow.png" class="preloadImg" >
+        <img src="../../static/earth.png" class="preloadImg" >
+        <img src="../../static/future-longbg.jpg" class="preloadImg" >
+        <img src="../../static/report-cloud.png" class="preloadImg" >
+        <img src="../../static/report-year.png" class="preloadImg" >
+        <img src="../../static/report-title.png" class="preloadImg" >
+        <img src="../../static/report-polygon.png" class="preloadImg" >
+        <img src="../../static/report1-title.png" class="preloadImg" >
+        <img src="../../static/report1-content.png" class="preloadImg" >
+        <img src="../../static/report2-title.png" class="preloadImg" >
+        <img src="../../static/report2-content.png" class="preloadImg" >
+        <img src="../../static/report3-title.png" class="preloadImg" >
+        <img src="../../static/report3-content.png" class="preloadImg" >
+        <img src="../../static/report4-title.png" class="preloadImg" >
+        <img src="../../static/report4-content.png" class="preloadImg" >
+        <img src="../../static/wechat-require.png" class="preloadImg" >
+        <img src="../../static/wechat-bgboard.png" class="preloadImg" >
+        <img src="../../static/wechat-man1.png" class="preloadImg" >
+        <img src="../../static/logo.png" class="preloadImg" >
+        <img src="../../static/name.png" class="preloadImg" >
+        <img src="../../static/slogan-title.png" class="preloadImg" >
+        <img src="../../static/slogan-tip.png" class="preloadImg" >
+        <img src="../../static/share-txt.png" class="preloadImg" >
+        <img src="../../static/email-title.png" class="preloadImg" >
+        <img src="../../static/wechat-gradient.png" class="preloadImg" >
+        <img src="../../static/wechat-title1.png" class="preloadImg" >
+        <img src="../../static/wechat-bgboard.png" class="preloadImg" >
+        <img src="../../static/major-icon1.png" class="preloadImg" >
+        <img src="../../static/wechat-major1.png" class="preloadImg" >
+        <img src="../../static/major-icon2.png" class="preloadImg" >
+        <img src="../../static/wechat-major2.png" class="preloadImg" >
+        <img src="../../static/major-icon3.png" class="preloadImg" >
+        <img src="../../static/wechat-major3.png" class="preloadImg" >
+        <img src="../../static/major-icon4.png" class="preloadImg" >
+        <img src="../../static/wechat-major4.png" class="preloadImg" >
+        <img src="../../static/wechat-man2.png" class="preloadImg" >
+        <img src="../../static/wechat-bgpolygan.png" class="preloadImg" >
+        <img src="../../static/wechat-provide1.png" class="preloadImg" >
+        <img src="../../static/wechat-right.png" class="preloadImg" >
+        <img src="../../static/wechat-provide2.png" class="preloadImg" >
+        <img src="../../static/wechat-bottom2.png" class="preloadImg" >
+        <img src="../../static/wechat-bgpolygan2.png" class="preloadImg" >
+        <img src="../../static/wechat-provide4.png" class="preloadImg" >
+        <img src="../../static/wechat-provide3.png" class="preloadImg" >
+        <img src="../../static/future-car.png" class="preloadImg" >
+        <img src="../../static/future-carwing.png" class="preloadImg" >
+        <img src="../../static/future-cartail.png" class="preloadImg" >
+        <img src="../../static/future-cloud.png" class="preloadImg" >
+        <img src="../../static/future-topbuilding.png" class="preloadImg" >
+        <img src="../../static/bg-cloud-1.png" class="preloadImg" >
+        <img src="../../static/banners.png" class="preloadImg" >
+        <img src="../../static/banner1.png" class="preloadImg" >
+        <img src="../../static/banner2.png" class="preloadImg" >
+        <img src="../../static/banner3.png" class="preloadImg" >
+        <img src="../../static/banner4.png" class="preloadImg" >
+        <img src="../../static/banner5.png" class="preloadImg" >
+        <img src="../../static/banner6.png" class="preloadImg" >
+        <img src="../../static/future-major.png" class="preloadImg" >
+        <img src="../../static/future-major1.png" class="preloadImg" >
+        <img src="../../static/future-major2.png" class="preloadImg" >
+        <img src="../../static/future-major3.png" class="preloadImg" >
+        <img src="../../static/future-major4.png" class="preloadImg" >
+        <img src="../../static/future-topbg.png">
+        <img src="../../static/future-polygan2.png" class="preloadImg" >
+        <img src="../../static/future-polygan3.png" class="preloadImg" >
+        <img src="../../static/future-polygan4.png" class="preloadImg" >
+        <img src="../../static/future-polygan5.png" class="preloadImg" >
+        <img src="../../static/future-polygan7.png" class="preloadImg" >
+        <img src="../../static/years-2022.png" class="preloadImg" >
+        <img src="../../static/years-2021.png" class="preloadImg" >
+        <img src="../../static/years-2020.png" class="preloadImg" >
+        <img src="../../static/years-2019.png" class="preloadImg" >
+        <img src="../../static/wechat-top.png" class="preloadImg" >
+        <img src="../../static/avatar-user.png" class="preloadImg" >
+        <img src="../../static/avatar-1.png" class="preloadImg" >
+        <img src="../../static/pic-1.png" class="preloadImg" >
+        <img src="../../static/avatar-2.png" class="preloadImg" >
+        <img src="../../static/pic-2.png" class="preloadImg" >
+        <img src="../../static/avatar-3.png" class="preloadImg" >
+        <img src="../../static/pic-3.png" class="preloadImg" >
+        <img src="../../static/avatar-4.png" class="preloadImg" >
+        <img src="../../static/pic-4.png" class="preloadImg" >
+        <img src="../../static/avatar-5.png" class="preloadImg" >
+        <img src="../../static/pic-5.png" class="preloadImg" >
+        <img src="../../static/avatar-6.png" class="preloadImg" >
+        <img src="../../static/pic-6.png" class="preloadImg" >
+        <img src="../../static/sprite-saic.png" class="preloadImg" >
+        <img src="../../static/letter-bottom.png" class="preloadImg" >
+        <img src="../../static/letter-top.png" class="preloadImg" >
+        <img src="../../static/letter-inner.png" class="preloadImg" >
+        <img src="../../static/home-bike.png" class="preloadImg" >
+        <img src="../../static/home-car.png" class="preloadImg" >
+        <img src="../../static/home-cloud.png" class="preloadImg" >
+        <img src="../../static/home-windmill-leaves.png" class="preloadImg" >
+        <img src="../../static/home-windmill-range.png" class="preloadImg" >
+        <img src="../../static/provide-car.png" class="preloadImg" >
+        <img src="../../static/share.png" class="preloadImg" >
+        <img src="../../static/music.png" class="preloadImg" >
+        <img src="../../static/music-close.png" class="preloadImg" >
       </div>
     </div>
-		<p class="percent-value"><span id="loading-value">{{ count }}</span>%</p>
-    <div class="hide">
-      <img src="../../static/car-big.png" class="preloadImg" >
-      <img src="../../static/wheel-big.png" class="preloadImg" >
-      <img src="../../static/home-buildings.png" class="preloadImg" >
-      <img src="../../static/home-text1.png" class="preloadImg" >
-      <img src="../../static/home-text2.png" class="preloadImg" >
-      <img src="../../static/home-text3.png" class="preloadImg" >
-      <img src="../../static/home-text4.png" class="preloadImg" >
-      <img src="../../static/hand.png" class="preloadImg" >
-      <img src="../../static/arrow.png" class="preloadImg" >
-      <img src="../../static/earth.png" class="preloadImg" >
-      <img src="../../static/future-longbg.jpg" class="preloadImg" >
-      <img src="../../static/report-cloud.png" class="preloadImg" >
-      <img src="../../static/report-year.png" class="preloadImg" >
-      <img src="../../static/report-title.png" class="preloadImg" >
-      <img src="../../static/report-polygon.png" class="preloadImg" >
-      <img src="../../static/report1-title.png" class="preloadImg" >
-      <img src="../../static/report1-content.png" class="preloadImg" >
-      <img src="../../static/report2-title.png" class="preloadImg" >
-      <img src="../../static/report2-content.png" class="preloadImg" >
-      <img src="../../static/report3-title.png" class="preloadImg" >
-      <img src="../../static/report3-content.png" class="preloadImg" >
-      <img src="../../static/report4-title.png" class="preloadImg" >
-      <img src="../../static/report4-content.png" class="preloadImg" >
-      <img src="../../static/wechat-require.png" class="preloadImg" >
-      <img src="../../static/wechat-bgboard.png" class="preloadImg" >
-      <img src="../../static/wechat-man1.png" class="preloadImg" >
-      <img src="../../static/logo.png" class="preloadImg" >
-      <img src="../../static/name.png" class="preloadImg" >
-      <img src="../../static/slogan-title.png" class="preloadImg" >
-      <img src="../../static/slogan-tip.png" class="preloadImg" >
-      <img src="../../static/share-txt.png" class="preloadImg" >
-      <img src="../../static/email-title.png" class="preloadImg" >
-      <img src="../../static/wechat-gradient.png" class="preloadImg" >
-      <img src="../../static/wechat-title1.png" class="preloadImg" >
-      <img src="../../static/wechat-bgboard.png" class="preloadImg" >
-      <img src="../../static/major-icon1.png" class="preloadImg" >
-      <img src="../../static/wechat-major1.png" class="preloadImg" >
-      <img src="../../static/major-icon2.png" class="preloadImg" >
-      <img src="../../static/wechat-major2.png" class="preloadImg" >
-      <img src="../../static/major-icon3.png" class="preloadImg" >
-      <img src="../../static/wechat-major3.png" class="preloadImg" >
-      <img src="../../static/major-icon4.png" class="preloadImg" >
-      <img src="../../static/wechat-major4.png" class="preloadImg" >
-      <img src="../../static/wechat-man2.png" class="preloadImg" >
-      <img src="../../static/wechat-bgpolygan.png" class="preloadImg" >
-      <img src="../../static/wechat-provide1.png" class="preloadImg" >
-      <img src="../../static/wechat-right.png" class="preloadImg" >
-      <img src="../../static/wechat-provide2.png" class="preloadImg" >
-      <img src="../../static/wechat-bottom2.png" class="preloadImg" >
-      <img src="../../static/wechat-bgpolygan2.png" class="preloadImg" >
-      <img src="../../static/wechat-provide4.png" class="preloadImg" >
-      <img src="../../static/wechat-provide3.png" class="preloadImg" >
-      <img src="../../static/future-car.png" class="preloadImg" >
-      <img src="../../static/future-carwing.png" class="preloadImg" >
-      <img src="../../static/future-cartail.png" class="preloadImg" >
-      <img src="../../static/future-cloud.png" class="preloadImg" >
-      <img src="../../static/future-topbuilding.png" class="preloadImg" >
-      <img src="../../static/bg-cloud-1.png" class="preloadImg" >
-      <img src="../../static/banners.png" class="preloadImg" >
-      <img src="../../static/banner1.png" class="preloadImg" >
-      <img src="../../static/banner2.png" class="preloadImg" >
-      <img src="../../static/banner3.png" class="preloadImg" >
-      <img src="../../static/banner4.png" class="preloadImg" >
-      <img src="../../static/banner5.png" class="preloadImg" >
-      <img src="../../static/banner6.png" class="preloadImg" >
-      <img src="../../static/future-major.png" class="preloadImg" >
-      <img src="../../static/future-major1.png" class="preloadImg" >
-      <img src="../../static/future-major2.png" class="preloadImg" >
-      <img src="../../static/future-major3.png" class="preloadImg" >
-      <img src="../../static/future-major4.png" class="preloadImg" >
-      <img src="../../static/future-topbg.png">
-      <img src="../../static/future-polygan2.png" class="preloadImg" >
-      <img src="../../static/future-polygan3.png" class="preloadImg" >
-      <img src="../../static/future-polygan4.png" class="preloadImg" >
-      <img src="../../static/future-polygan5.png" class="preloadImg" >
-      <img src="../../static/future-polygan7.png" class="preloadImg" >
-      <img src="../../static/years-2022.png" class="preloadImg" >
-      <img src="../../static/years-2021.png" class="preloadImg" >
-      <img src="../../static/years-2020.png" class="preloadImg" >
-      <img src="../../static/years-2019.png" class="preloadImg" >
-      <img src="../../static/wechat-top.png" class="preloadImg" >
-      <img src="../../static/avatar-user.png" class="preloadImg" >
-      <img src="../../static/avatar-1.png" class="preloadImg" >
-      <img src="../../static/pic-1.png" class="preloadImg" >
-      <img src="../../static/avatar-2.png" class="preloadImg" >
-      <img src="../../static/pic-2.png" class="preloadImg" >
-      <img src="../../static/avatar-3.png" class="preloadImg" >
-      <img src="../../static/pic-3.png" class="preloadImg" >
-      <img src="../../static/avatar-4.png" class="preloadImg" >
-      <img src="../../static/pic-4.png" class="preloadImg" >
-      <img src="../../static/avatar-5.png" class="preloadImg" >
-      <img src="../../static/pic-5.png" class="preloadImg" >
-      <img src="../../static/avatar-6.png" class="preloadImg" >
-      <img src="../../static/pic-6.png" class="preloadImg" >
-      <img src="../../static/sprite-saic.png" class="preloadImg" >
-      <img src="../../static/letter-bottom.png" class="preloadImg" >
-      <img src="../../static/letter-top.png" class="preloadImg" >
-      <img src="../../static/letter-inner.png" class="preloadImg" >
-      <img src="../../static/home-bike.png" class="preloadImg" >
-      <img src="../../static/home-car.png" class="preloadImg" >
-      <img src="../../static/home-cloud.png" class="preloadImg" >
-      <img src="../../static/home-windmill-leaves.png" class="preloadImg" >
-      <img src="../../static/home-windmill-range.png" class="preloadImg" >
-      <img src="../../static/provide-car.png" class="preloadImg" >
-      <img src="../../static/share.png" class="preloadImg" >
-      <img src="../../static/music.png" class="preloadImg" >
-      <img src="../../static/music-close.png" class="preloadImg" >
-    </div>
-	</div>
+    <Swiper v-if="start"></Swiper>
+  </div>
 </template>
 
 <script>
-  import { $ } from '../utils/utils.js';
+  /* eslint-disable */
   import wx from 'weixin-js-sdk';
+  import { $, store } from '../utils/utils.js';
+  import Swiper from './Swiper';
   export default {
     data() {
       return {
         count: 0,
         loadCount: 0,
+        start: false,
       };
     },
+    components: {
+      Swiper,
+    },
     created() {
+      let musicPlayed = false;
       /* eslint-disable */
       this.$http.get('/api/jsconfig').then(resp => {
-        const { jsconfig } = resp.json();
-        console.log(jsconfig);
+        const jsconfig = resp.json();
         wx.config(jsconfig);
+        store.set('JSCONFIG', jsconfig);
         const title = '上汽国际2017年校园招聘全面开启！';
         const desc = '驭未来 创世界';
         const link = 'http://srkfytl.gofriend.me/internal';
-        const image = 'http://img5.imgtn.bdimg.com/it/u=4155302816,1201715785&fm=21&gp=0.jpg';
+        const image = 'http://srkfytl.gofriend.me/share.jpg';
         wx.ready(function() {
           wx.onMenuShareTimeline({
             title: `${title}`, // 分享标题
@@ -164,8 +175,17 @@
                 // 用户取消分享后执行的回调函数
             }
           });
+	const audioItem = $('#music')[0];
+	console.log(audioItem);
+          if (audioItem) {
+            audioItem.pause();
+            const startPlay = setTimeout(() => {
+              audioItem.play();
+              clearTimeout(startPlay);
+            }, 100);
+          }
         });
-      });
+     });
     },
     ready() {
       this.loadImg();
@@ -181,15 +201,20 @@
         }
       },
       goHome() {
-        this.$router.go({ name: 'swiper' });
+        // this.$router.go({ name: 'swiper' });
         this.count = 99;
+        this.$set('start', true);
       },
     },
   };
 </script>
 
 <style>
-    .default-loading {
+  .main-layout {
+    height: 100%;
+    width: 100%;
+  }
+  .default-loading {
 			height: 100%;
       width: 100%;
       text-align: center;

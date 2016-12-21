@@ -1,10 +1,5 @@
 <template>
 	<div class="swiper-container main-layout">
-		<div class="sound">
-			<audio id="music" loop="loop" preload="auto">
-				<source src="../../static/music1.mp3" type="audio/mpeg">
-			</audio>
-		</div>
 		<div class="musicBtn" @click="toggleMusic" v-if="showMusicIcon">
 			<div v-if="!isPlayingMusic" class="music-icon-container">
         <img src="../../static/music-close.png" class="musicIcon">
@@ -46,11 +41,12 @@
   import Email from '../components/Email';
 
   import { $ } from '../utils/utils.js';
-
+	/* eslint-disable */
   export default {
     data() {
       return {
         isPlayingMusic: false,
+	      firstPlay: false,
         moveStartY: 0,
         preventWechatAutoplay: false,
         relativeMajorIndex: null,
@@ -71,7 +67,12 @@
       Email,
     },
     ready() {
-      this.startMusic();
+      const audioItem = $('#music')[0];
+      audioItem.onplaying = () => {
+        console.log('audio is playing');
+        this.$set('firstPlay', true);
+        this.$set('isPlayingMusic', true);
+      };
       appSwiper = new Swiper('.swiper-container', {
         direction: 'vertical',
         slidesPerView: 'auto',
@@ -80,6 +81,7 @@
         onInit: (swiper) => {
           swiperAnimateCache(swiper);
           swiperAnimate(swiper);
+          this.startMusic();
         },
         onSlideChangeStart: () => {
           this.$broadcast('initAnimation');
@@ -134,7 +136,7 @@
           }
         },
         onTouchMove: (swiper, event) => {
-          if (swiper.activeIndex === 7) {
+	        if (swiper.activeIndex === 7) {
             const moveDistance = this.moveEmailY - event.changedTouches[0].pageY;
             if (moveDistance > 100) {
               this.$broadcast('showShareMask');
@@ -199,11 +201,9 @@
       startMusic() {
         const audio = $('#music')[0];
         // if (this.playingMusic2) this.stopMusic();
-        if (!this.isPlayingMusic) {
-          audio.play();
-          this.isPlayingMusic = true;
-          // this.playingMusic1 = true;
-        }
+	audio.pause()
+        audio.play();
+        this.isPlayingMusic = true;
       },
       stopMusic() {
         const audio = $('#music')[0];

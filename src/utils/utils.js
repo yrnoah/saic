@@ -2,6 +2,8 @@ export function $(ele) {
   return document.querySelectorAll(ele);
 }
 
+export const store = new Map();
+
 class CurrentUser {
   constructor() {
     this.name = '五年后的我';

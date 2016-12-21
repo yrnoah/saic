@@ -97,25 +97,25 @@
       this.initSwiper();
       wechatSwiper.stopAutoplay();
       // wechatSwiper.disableTouchControl();
-      window.addEventListener('click', () => {
-        if (!this.shouldHideBtn) return;
-        const clearActionBtn = setTimeout(() => {
-          this.activeBtnId = null;
-          this.shouldHideBtn = false;
-          clearTimeout(clearActionBtn);
-        }, 200);
-      });
-      window.addEventListener('touchend', (e) => {
-        const actionBtn = $('.icon-button-action')[0];
-        const actionBtnDiv = $('.action-btns');
-        const actionIcon = $('.btn-icon');
-        const btn = $('button');
-        const input = $('input');
-        const exculdeEl = [actionBtn, ...btn, ...input, ...actionIcon, ...actionBtnDiv];
-        const shouldExculde = exculdeEl.find(x => x === e.target);
-        if (shouldExculde || !this.isWxCircles) return;
-        this.hideAction();
-      });
+      // window.addEventListener('click', () => {
+       // if (!this.shouldHideBtn) return;
+       // const clearActionBtn = setTimeout(() => {
+         // this.activeBtnId = null;
+         // this.shouldHideBtn = false;
+         // clearTimeout(clearActionBtn);
+       // }, 200);
+     // });
+     // window.addEventListener('touchend', (e) => {
+       // const actionBtn = $('.icon-button-action')[0];
+       // const actionBtnDiv = $('.action-btns');
+       // const actionIcon = $('.btn-icon');
+       // const btn = $('button');
+       // const input = $('input');
+       // const exculdeEl = [actionBtn, ...btn, ...input, ...actionIcon, ...actionBtnDiv];
+       // const shouldExculde = exculdeEl.find(x => x === e.target);
+       // if (shouldExculde || !this.isWxCircles) return;
+       // this.hideAction();
+     // });
     },
     events: {
       // 'initHasSlideNext'() {
